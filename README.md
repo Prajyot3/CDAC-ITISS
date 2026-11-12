@@ -94,9 +94,10 @@ reports an authenticated session — protected views never mount for anonymous v
 | State | What renders |
 | :-- | :-- |
 | Clerk initialising | Boot screen (`Verifying secure access…`) |
-| Clerk unreachable for 15s | Fail-closed error screen with retry (content stays locked) |
+| Clerk unreachable for 15s | Sign-in screen with a connection notice (content stays locked) |
 | Signed out | Custom email/username + password login screen — no dashboard, practice, mock or data access |
-| Signed in | The full preparation platform + `UserButton` in the header |
+| Signed in, ≤ 2 devices | The full preparation platform + `UserButton` in the header |
+| Signed in, 3rd device | “Device limit reached” screen: sign out one of the two listed sessions |
 
 Implementation:
 
@@ -104,20 +105,66 @@ Implementation:
   failure and sign-in screens.
 - `src/components/auth/SimpleAuthForm.tsx` — the plain credential UI built on Clerk's headless
   resources: email-or-username + password sign-in, sign-up with e-mail code verification,
-  optional e-mail second factor, and the password-reset code flow. Show/hide password, inline
-  Clerk error messages, busy states. No prebuilt Clerk widget is rendered.
-- `src/main.tsx` — wraps `App` in `ClerkProvider` → `AuthGate`, and refuses to boot the app
-  when `VITE_CLERK_PUBLISHABLE_KEY` is missing (fail-closed, with an actionable error screen).
+  e-mail second factor, new-device (client trust) verification, and the password-reset code
+  flow. Show/hide password, inline Clerk error messages, busy states. No prebuilt Clerk widget
+  is rendered.
+- `src/main.tsx` — wraps `App` in `ClerkProvider` → `AuthGate` → `SessionLimitGate`, and refuses
+  to boot the app when `VITE_CLERK_PUBLISHABLE_KEY` is missing (fail-closed, actionable screen).
 - `src/components/auth/AuthView.tsx` — the signed-in student account page (profile, stats,
   sign-out). Sign-in is no longer handled here.
+
+### Session limit (2 devices)
+
+Passwords are shared, so each account may hold **2 concurrent Clerk sessions**. The check runs
+on sign-in, when the tab regains focus and every 2 minutes:
+
+- `src/components/auth/SessionLimitGate.tsx` asks `/api/session-guard` about the current session.
+- `api/session-guard.js` lists the user's active Clerk sessions (newest first). If the current
+  session is beyond the limit it answers `allowed: false` together with the two newest sessions;
+  the student then signs one of them out from the blocking screen.
+- Sessions beyond the limit are revoked automatically, never the caller's own session.
+- If the API is unreachable the guard fails **open** (the limit is a business rule, not auth) so
+  students are never locked out by an outage.
+
+Limit is configurable with `MAX_ACTIVE_SESSIONS` (default `2`).
+
+### Admin console
+
+`#/admin` (sidebar → **Admin · Users**) lists Clerk accounts and allows searching, banning,
+promoting/demoting administrators, revoking sessions and deleting users — all through the Clerk
+Backend API, with the request authenticated by the caller's Clerk session token.
+
+Access is granted when either is true:
+
+1. `publicMetadata.role === 'admin'` on the Clerk user, or
+2. the account's e-mail is listed in `ADMIN_EMAILS` (default `pujariprajyot00@gmail.com`).
+
+| Endpoint | Purpose |
+| :-- | :-- |
+| `POST /api/session-guard` | Session limit check; `{ action: 'revoke', sessionId }` signs another device out |
+| `GET /api/admin/users?query=&limit=&offset=` | List/search users with active sessions |
+| `POST /api/admin/users` | Create a user `{ email, password, firstName?, lastName?, role? }` |
+| `PATCH /api/admin/users` | `{ userId, banned?, role? }` |
+| `DELETE /api/admin/users?userId=` | Delete a user |
+| `GET /api/admin/sessions?userId=` | Active sessions for one user |
+| `POST /api/admin/sessions` | `{ userId, sessionId }` or `{ userId, revokeAll: true }` |
+
+All `/api/*` routes require `Authorization: Bearer <clerk session token>` and return `401`
+without it; admin routes additionally return `403` for non-admin accounts. Administrators cannot
+ban or delete their own account.
 
 ### Environment
 
 ```bash
 # .env.local (never commit real keys)
 VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
-CLERK_SECRET_KEY=sk_test_...
+CLERK_SECRET_KEY=sk_test_...      # server only: /api/* session + admin calls
+MAX_ACTIVE_SESSIONS=2             # optional, defaults to 2
+ADMIN_EMAILS=pujariprajyot00@gmail.com  # optional, comma separated
 ```
+
+`CLERK_SECRET_KEY` is read by the serverless functions only and must never be prefixed with
+`VITE_` (that would ship it to the browser).
 
 For Vercel, add `VITE_CLERK_PUBLISHABLE_KEY` to **Project → Settings → Environment
 Variables** for Production/Preview/Development, then redeploy — Vite inlines the key at build
