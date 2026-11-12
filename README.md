@@ -85,3 +85,51 @@ npm run build
 
 Educational preparation platform for CDAC ITISS students.
 
+
+## Authentication gate (Clerk)
+
+The entire application is gated. Nothing but the sign-in screen is rendered until Clerk
+reports an authenticated session — protected views never mount for anonymous visitors.
+
+| State | What renders |
+| :-- | :-- |
+| Clerk initialising | Boot screen (`Verifying secure access…`) |
+| Clerk unreachable for 15s | Fail-closed error screen with retry (content stays locked) |
+| Signed out | Blocking Clerk `<SignIn />` gate — no dashboard, practice, mock or data access |
+| Signed in | The full preparation platform + `UserButton` in the header |
+
+Implementation:
+
+- `src/components/auth/AuthGate.tsx` — the gate itself (`AuthGate`), including the boot,
+  failure and sign-in screens.
+- `src/main.tsx` — wraps `App` in `ClerkProvider` → `AuthGate`, and refuses to boot the app
+  when `VITE_CLERK_PUBLISHABLE_KEY` is missing (fail-closed, with an actionable error screen).
+- `src/components/auth/AuthView.tsx` — the signed-in student account page (profile, stats,
+  sign-out). Sign-in is no longer handled here.
+
+### Environment
+
+```bash
+# .env.local (never commit real keys)
+VITE_CLERK_PUBLISHABLE_KEY=pk_test_...
+CLERK_SECRET_KEY=sk_test_...
+```
+
+For Vercel, add `VITE_CLERK_PUBLISHABLE_KEY` to **Project → Settings → Environment
+Variables** for Production/Preview/Development, then redeploy — Vite inlines the key at build
+time, so an existing deployment will not pick it up without a rebuild.
+
+### Verifying the gate
+
+```bash
+npm run dev        # open http://localhost:5173 -> sign-in gate appears before any content
+npm run build      # tsc + vite production build
+```
+
+Manual checks:
+
+1. In a private window the dashboard is not visible and cannot be reached by URL hash.
+2. Signing in unlocks the platform immediately, without a page reload.
+3. Signing out re-locks the platform (gate returns).
+4. Blocking `*.clerk.accounts.dev` in devtools shows the fail-closed error screen, not the app.
+

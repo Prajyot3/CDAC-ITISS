@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Show, ClerkLoaded, ClerkLoading } from '@clerk/react';
 import { Sidebar, NavItem } from './components/layout/Sidebar';
 import { Header } from './components/layout/Header';
 import { DashboardView } from './components/dashboard/DashboardView';
@@ -12,7 +11,6 @@ import { BookmarksView } from './components/questions/BookmarksView';
 import { PerformanceView } from './components/performance/PerformanceView';
 import { SettingsView } from './components/settings/SettingsView';
 import { AuthView } from './components/auth/AuthView';
-import { ClerkAuthGate } from './components/auth/ClerkAuthGate';
 import { AuditModal } from './components/common/AuditModal';
 import { useProgress } from './context/ProgressContext';
 
@@ -68,9 +66,7 @@ export const App: React.FC = () => {
     window.location.hash = 'modules';
   };
 
-  const hasClerk = Boolean(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
-
-  const appLayout = (
+  return (
     <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex">
       {/* Sidebar Navigation */}
       <Sidebar
@@ -132,10 +128,7 @@ export const App: React.FC = () => {
           )}
 
           {currentTab === 'auth' && (
-            <AuthView 
-              onNavigateToDashboard={() => handleSelectTab('dashboard')} 
-              defaultMode={window.location.hash === '#sign-up' ? 'sign-up' : 'sign-in'}
-            />
+            <AuthView onNavigateToDashboard={() => handleSelectTab('dashboard')} />
           )}
         </main>
 
@@ -160,40 +153,5 @@ export const App: React.FC = () => {
         onClose={() => setIsAuditModalOpen(false)}
       />
     </div>
-  );
-
-  if (!hasClerk) {
-    return appLayout;
-  }
-
-  return (
-    <>
-      <ClerkLoading>
-        <div className="min-h-screen bg-[#070A0D] flex flex-col items-center justify-center p-6 text-center select-none">
-          <div className="relative mb-4">
-            <div className="w-12 h-12 border-2 border-[#1E293B] border-t-[#76B900] rounded-full animate-spin" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="w-2.5 h-2.5 bg-[#76B900] rounded-full shadow-[0_0_8px_#76B900]" />
-            </div>
-          </div>
-          <span className="text-xs font-mono font-bold tracking-widest text-[#76B900] uppercase block">
-            CDAC ITISS PLATFORM
-          </span>
-          <span className="text-xs text-[#6B7888] font-mono mt-1 block">
-            Verifying Clerk Authentication Gate...
-          </span>
-        </div>
-      </ClerkLoading>
-
-      <ClerkLoaded>
-        <Show when="signed-in">
-          {appLayout}
-        </Show>
-
-        <Show when="signed-out">
-          <ClerkAuthGate />
-        </Show>
-      </ClerkLoaded>
-    </>
   );
 };

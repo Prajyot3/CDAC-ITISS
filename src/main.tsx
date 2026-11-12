@@ -1,20 +1,39 @@
-import { ClerkProvider } from '@clerk/react';
-import { dark } from '@clerk/themes';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { ClerkProvider } from '@clerk/react';
+import { dark } from '@clerk/themes';
 import { App } from './App';
+import { AuthGate } from './components/auth/AuthGate';
 import { ProgressProvider } from './context/ProgressContext';
 import './index.css';
 
 const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
 
-if (!PUBLISHABLE_KEY) {
-  console.warn('Missing VITE_CLERK_PUBLISHABLE_KEY. Please check your .env.local file.');
-}
+const MissingKeyScreen: React.FC = () => (
+  <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex items-center justify-center p-6">
+    <div className="w-full max-w-md rounded-2xl bg-[#10171E] border border-red-500/30 p-6 sm:p-8 space-y-4">
+      <h1 className="text-base font-bold text-white">Clerk publishable key missing</h1>
+      <p className="text-xs leading-relaxed text-[#9CA3AF]">
+        The access gate cannot start without a Clerk publishable key, so the platform is locked.
+        Set <code className="font-mono text-[#76B900]">VITE_CLERK_PUBLISHABLE_KEY</code> in{' '}
+        <code className="font-mono text-[#76B900]">.env.local</code> (local) or in the Vercel
+        project&apos;s environment variables (production), then rebuild.
+      </p>
+    </div>
+  </div>
+);
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    {PUBLISHABLE_KEY ? (
+const root = ReactDOM.createRoot(document.getElementById('root')!);
+
+if (!PUBLISHABLE_KEY) {
+  root.render(
+    <React.StrictMode>
+      <MissingKeyScreen />
+    </React.StrictMode>,
+  );
+} else {
+  root.render(
+    <React.StrictMode>
       <ClerkProvider
         publishableKey={PUBLISHABLE_KEY}
         afterSignOutUrl="/"
@@ -33,14 +52,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
           },
         }}
       >
-        <ProgressProvider>
-          <App />
-        </ProgressProvider>
+        <AuthGate>
+          <ProgressProvider>
+            <App />
+          </ProgressProvider>
+        </AuthGate>
       </ClerkProvider>
-    ) : (
-      <ProgressProvider>
-        <App />
-      </ProgressProvider>
-    )}
-  </React.StrictMode>
-);
+    </React.StrictMode>,
+  );
+}
