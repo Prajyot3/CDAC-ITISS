@@ -4,6 +4,7 @@ import { ClerkProvider } from '@clerk/react';
 import { dark } from '@clerk/themes';
 import { App } from './App';
 import { AuthGate } from './components/auth/AuthGate';
+import { SessionLimitGate } from './components/auth/SessionLimitGate';
 import { ProgressProvider } from './context/ProgressContext';
 import './index.css';
 
@@ -67,9 +68,11 @@ if (!PUBLISHABLE_KEY) {
         }}
       >
         <AuthGate>
-          <ProgressProvider>
-            <App />
-          </ProgressProvider>
+          <SessionLimitGate>
+            <ProgressProvider>
+              <App />
+            </ProgressProvider>
+          </SessionLimitGate>
         </AuthGate>
       </ClerkProvider>
     </React.StrictMode>,

@@ -9,10 +9,12 @@ import {
   BarChart3, 
   Settings,
   Shield,
+  ShieldCheck,
   ChevronRight,
   LogIn,
   UserCheck
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Show, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 
@@ -25,7 +27,8 @@ export type NavItem =
   | 'bookmarks' 
   | 'performance' 
   | 'settings'
-  | 'auth';
+  | 'auth'
+  | 'admin';
 
 interface SidebarProps {
   currentTab: NavItem;
@@ -72,6 +75,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
   onCloseMobile
 }) => {
   const { bookmarks, attempts, activeModuleId } = useProgress();
+  const { user } = useUser();
+
+  const isAdmin =
+    user?.publicMetadata?.role === 'admin' ||
+    user?.primaryEmailAddress?.emailAddress?.toLowerCase() === 'pujariprajyot00@gmail.com';
 
   const incorrectCount = Object.values(attempts).filter(
     a => a.moduleId === activeModuleId && !a.isCorrect
@@ -79,7 +87,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   const bookmarkCount = bookmarks.length;
 
-  const navItems = [
+  const navItems: { id: NavItem; label: string; icon: LucideIcon; badge?: string; count?: number }[] = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'modules', label: 'All ITISS Modules', icon: Layers, badge: '5 Sections' },
     { id: 'practice', label: 'Practice MCQs', icon: BookOpen },
@@ -90,6 +98,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'settings', label: 'Settings', icon: Settings },
     { id: 'auth', label: 'Student Account', icon: UserCheck, badge: 'Clerk' },
   ];
+
+  if (isAdmin) {
+    navItems.push({ id: 'admin', label: 'Admin · Users', icon: ShieldCheck, badge: 'ADMIN' });
+  }
 
   const handleNavClick = (id: string) => {
     onSelectTab(id as NavItem);
