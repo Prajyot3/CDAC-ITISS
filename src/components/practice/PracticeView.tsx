@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { getQuestionsForModule } from '../../data/moduleRegistry';
 import { getModuleTopics } from '../../config/topics';
@@ -81,7 +81,7 @@ export const PracticeView: React.FC = () => {
       <div className="border-b border-[#1F2933] pb-6">
         <div className="flex items-center gap-2">
           <span className="text-xs font-mono font-semibold px-2 py-0.5 rounded bg-[#76B900]/10 text-[#76B900] border border-[#76B900]/30">
-            FCN PRACTICE ENGINE
+            {moduleCode} PRACTICE ENGINE
           </span>
           <span className="text-xs text-[#8C98A6] font-mono">{allQuestions.length} Total MCQs Available</span>
         </div>
