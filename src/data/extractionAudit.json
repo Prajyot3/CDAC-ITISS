@@ -1,0 +1,101 @@
+{
+  "module": "Fundamentals of Computer Networks (FCN)",
+  "moduleId": "fcn",
+  "totalExtracted": 309,
+  "totalImported": 309,
+  "status": "AVAILABLE",
+  "sources": [
+    {
+      "filename": "FCN01.pdf",
+      "totalPages": 28,
+      "questionsExtracted": 159,
+      "questionsImported": 159,
+      "sections": [
+        {
+          "name": "Part 1 (Core Concepts Q1-Q40)",
+          "count": 40
+        },
+        {
+          "name": "Part 2 (Session Topic MCQs)",
+          "count": 39
+        },
+        {
+          "name": "Part 3 (Mock Examination Set 1)",
+          "count": 40
+        },
+        {
+          "name": "Part 4 (Mock Examination Set 2)",
+          "count": 40
+        }
+      ],
+      "answerExtractionMethod": "Exact red-font color matching (RGB 0xff0000)"
+    },
+    {
+      "filename": "FCN02.pdf",
+      "totalPages": 6,
+      "questionsExtracted": 31,
+      "questionsImported": 31,
+      "sections": [
+        {
+          "name": "FCN Assessment 02",
+          "count": 31
+        }
+      ],
+      "answerExtractionMethod": "Font weight inspection (Times-Bold flags)"
+    },
+    {
+      "filename": "FCN03.pdf",
+      "totalPages": 9,
+      "questionsExtracted": 40,
+      "questionsImported": 40,
+      "sections": [
+        {
+          "name": "FCN Mock Examination Set 1",
+          "count": 40
+        }
+      ],
+      "answerExtractionMethod": "PDF Highlight Annotation quadpoints and rect text mapping"
+    },
+    {
+      "filename": "FCN04.pdf",
+      "totalPages": 9,
+      "questionsExtracted": 40,
+      "questionsImported": 40,
+      "sections": [
+        {
+          "name": "FCN Mock Examination Set 2",
+          "count": 40
+        }
+      ],
+      "answerExtractionMethod": "PDF Highlight Annotation quadpoints and rect text mapping"
+    },
+    {
+      "filename": "FCN05.pdf",
+      "totalPages": 5,
+      "questionsExtracted": 39,
+      "questionsImported": 39,
+      "sections": [
+        {
+          "name": "FCN Module Practice Set",
+          "count": 39
+        }
+      ],
+      "answerExtractionMethod": "PDF Highlight Annotation quadpoints and rect text mapping"
+    }
+  ],
+  "topicBreakdown": {
+    "TCP/IP": 40,
+    "Wireless Networks": 19,
+    "Networking Protocols": 20,
+    "IPv4 and IPv6": 17,
+    "NAT": 37,
+    "Routing": 52,
+    "Switching": 32,
+    "DNS and DHCP": 18,
+    "WAN": 16,
+    "Subnetting": 31,
+    "Network Security": 8,
+    "VLAN": 8,
+    "OSI Model": 11
+  }
+}

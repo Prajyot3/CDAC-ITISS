@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+  
+  body {
+    background-color: #0A0D0F;
+    color: #F3F4F6;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #0D1216;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #222C35;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #76B900;
+  }
+}
+
+.nvidia-border {
+  border: 1px solid #222C35;
+}
+
+.nvidia-card {
+  background-color: #161D24;
+  border: 1px solid #222C35;
+  transition: all 0.2s ease-in-out;
+}
+
+.nvidia-card:hover {
+  border-color: #2E3B47;
+}
+
+.nvidia-card-active {
+  border-color: rgba(118, 185, 0, 0.4);
+  box-shadow: 0 0 15px -3px rgba(118, 185, 0, 0.15);
+}
+
+.nvidia-button {
+  background-color: #76B900;
+  color: #000000;
+  font-weight: 600;
+  transition: all 0.15s ease-in-out;
+}
+
+.nvidia-button:hover {
+  background-color: #87D300;
+  box-shadow: 0 0 12px rgba(118, 185, 0, 0.35);
+}
+
+.nvidia-button-secondary {
+  background-color: #1B242D;
+  border: 1px solid #2A3642;
+  color: #F3F4F6;
+  transition: all 0.15s ease-in-out;
+}
+
+.nvidia-button-secondary:hover {
+  background-color: #222D38;
+  border-color: #76B900;
+}
+
