@@ -10,6 +10,7 @@ import { IncorrectQuestionsView } from './components/questions/IncorrectQuestion
 import { BookmarksView } from './components/questions/BookmarksView';
 import { PerformanceView } from './components/performance/PerformanceView';
 import { SettingsView } from './components/settings/SettingsView';
+import { AuthView } from './components/auth/AuthView';
 import { AuditModal } from './components/common/AuditModal';
 import { useProgress } from './context/ProgressContext';
 
@@ -31,7 +32,10 @@ export const App: React.FC = () => {
         const modSlug = hash.replace('/modules/', '');
         setSelectedModuleId(modSlug);
         setCurrentTab('modules');
-      } else if (['dashboard', 'modules', 'practice', 'mock', 'incorrect', 'bookmarks', 'performance', 'settings'].includes(hash)) {
+      } else if (['sign-in', 'sign-up', 'auth'].includes(hash)) {
+        setCurrentTab('auth');
+        setSelectedModuleId(null);
+      } else if (['dashboard', 'modules', 'practice', 'mock', 'incorrect', 'bookmarks', 'performance', 'settings', 'auth'].includes(hash)) {
         setCurrentTab(hash as NavItem);
         setSelectedModuleId(null);
       }
@@ -78,6 +82,7 @@ export const App: React.FC = () => {
         <Header
           onToggleMobile={() => setIsMobileMenuOpen(prev => !prev)}
           onOpenAudit={() => setIsAuditModalOpen(true)}
+          onNavigateAuth={() => handleSelectTab('auth')}
         />
 
         {/* Dynamic Page Views */}
@@ -121,6 +126,13 @@ export const App: React.FC = () => {
           {currentTab === 'settings' && (
             <SettingsView onOpenAudit={() => setIsAuditModalOpen(true)} />
           )}
+
+          {currentTab === 'auth' && (
+            <AuthView 
+              onNavigateToDashboard={() => handleSelectTab('dashboard')} 
+              defaultMode={window.location.hash === '#sign-up' ? 'sign-up' : 'sign-in'}
+            />
+          )}
         </main>
 
         {/* Platform Footer */}
@@ -146,4 +158,3 @@ export const App: React.FC = () => {
     </div>
   );
 };
-

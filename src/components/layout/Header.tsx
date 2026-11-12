@@ -1,15 +1,20 @@
 import React from 'react';
-import { Menu, ShieldCheck, LogIn } from 'lucide-react';
-import { Show, SignInButton, UserButton } from '@clerk/react';
+import { Menu, ShieldCheck, LogIn, UserCheck } from 'lucide-react';
+import { Show, UserButton } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { ITISS_MODULES } from '../../config/modules';
 
 interface HeaderProps {
   onToggleMobile: () => void;
   onOpenAudit: () => void;
+  onNavigateAuth?: () => void;
 }
 
-export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) => {
+export const Header: React.FC<HeaderProps> = ({ 
+  onToggleMobile, 
+  onOpenAudit,
+  onNavigateAuth 
+}) => {
   const { activeModuleId, getOverallStats } = useProgress();
   const stats = getOverallStats();
 
@@ -63,7 +68,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) =
         {/* Audit Report Button */}
         <button
           onClick={onOpenAudit}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#162028] hover:bg-[#1C2833] border border-[#2A3745] hover:border-[#76B900] text-xs font-medium text-[#C4CDD6] hover:text-white transition-all shadow-sm"
+          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#162028] hover:bg-[#1C2833] border border-[#2A3848] hover:border-[#76B900] text-xs font-medium text-[#C4CDD6] hover:text-white transition-all shadow-sm"
           title="Open Extraction Audit Report"
         >
           <ShieldCheck className="w-4 h-4 text-[#76B900]" />
@@ -74,15 +79,14 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) =
         {/* Clerk Auth Integration */}
         <div className="flex items-center pl-2 border-l border-[#1F2933]">
           <Show when="signed-out">
-            <SignInButton mode="modal">
-              <button 
-                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#76B900] hover:bg-[#68a500] text-black font-semibold text-xs transition-all shadow-sm shadow-[#76B900]/20 hover:scale-[1.02] active:scale-[0.98]"
-                title="Sign in with Clerk"
-              >
-                <LogIn className="w-3.5 h-3.5" />
-                <span>Sign In</span>
-              </button>
-            </SignInButton>
+            <button 
+              onClick={onNavigateAuth}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#76B900] hover:bg-[#68a500] text-black font-semibold text-xs transition-all shadow-sm shadow-[#76B900]/20 hover:scale-[1.02] active:scale-[0.98]"
+              title="Sign in or Register"
+            >
+              <LogIn className="w-3.5 h-3.5" />
+              <span>Sign In</span>
+            </button>
           </Show>
 
           <Show when="signed-in">
@@ -94,6 +98,16 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) =
                   }
                 }}
               />
+              {onNavigateAuth && (
+                <button
+                  onClick={onNavigateAuth}
+                  className="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#141C24] hover:bg-[#1A2530] border border-[#243240] text-[11px] text-[#A2AFBD] hover:text-white font-medium transition-colors"
+                  title="View Student Account Dashboard"
+                >
+                  <UserCheck className="w-3.5 h-3.5 text-[#76B900]" />
+                  <span>Account</span>
+                </button>
+              )}
             </div>
           </Show>
         </div>

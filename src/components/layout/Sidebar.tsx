@@ -10,9 +10,10 @@ import {
   Settings,
   Shield,
   ChevronRight,
-  LogIn
+  LogIn,
+  UserCheck
 } from 'lucide-react';
-import { Show, SignInButton, UserButton, useUser } from '@clerk/react';
+import { Show, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 
 export type NavItem = 
@@ -23,7 +24,8 @@ export type NavItem =
   | 'incorrect' 
   | 'bookmarks' 
   | 'performance' 
-  | 'settings';
+  | 'settings'
+  | 'auth';
 
 interface SidebarProps {
   currentTab: NavItem;
@@ -32,12 +34,16 @@ interface SidebarProps {
   onCloseMobile: () => void;
 }
 
-const UserSidebarProfile: React.FC = () => {
+const UserSidebarProfile: React.FC<{ onOpenAuth: () => void }> = ({ onOpenAuth }) => {
   const { user } = useUser();
   const displayName = user?.fullName || user?.primaryEmailAddress?.emailAddress?.split('@')[0] || 'ITISS Scholar';
 
   return (
-    <div className="flex items-center gap-2.5">
+    <div 
+      onClick={onOpenAuth}
+      className="flex items-center gap-2.5 cursor-pointer hover:bg-[#151E28] p-1.5 -m-1.5 rounded-lg transition-colors group"
+      title="View Student Account Profile"
+    >
       <UserButton 
         appearance={{
           elements: {
@@ -46,7 +52,7 @@ const UserSidebarProfile: React.FC = () => {
         }}
       />
       <div className="min-w-0 flex-1">
-        <div className="text-xs font-semibold text-white truncate">
+        <div className="text-xs font-semibold text-white truncate group-hover:text-[#76B900] transition-colors">
           {displayName}
         </div>
         <div className="text-[10px] text-[#76B900] flex items-center gap-1 font-mono">
@@ -54,6 +60,7 @@ const UserSidebarProfile: React.FC = () => {
           <span>Clerk Verified</span>
         </div>
       </div>
+      <ChevronRight className="w-3.5 h-3.5 text-[#556372] group-hover:text-white transition-colors" />
     </div>
   );
 };
@@ -81,6 +88,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'bookmarks', label: 'Bookmarks', icon: Bookmark, count: bookmarkCount },
     { id: 'performance', label: 'Performance', icon: BarChart3 },
     { id: 'settings', label: 'Settings', icon: Settings },
+    { id: 'auth', label: 'Student Account', icon: UserCheck, badge: 'Clerk' },
   ];
 
   const handleNavClick = (id: string) => {
@@ -183,15 +191,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* User Account / Clerk State in Sidebar */}
         <div className="p-3 border-t border-[#1F2933] bg-[#0B0F13]">
           <Show when="signed-in">
-            <UserSidebarProfile />
+            <UserSidebarProfile onOpenAuth={() => handleNavClick('auth')} />
           </Show>
           <Show when="signed-out">
-            <SignInButton mode="modal">
-              <button className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#141C24] hover:bg-[#18232D] border border-[#232F3D] hover:border-[#76B900] text-xs font-medium text-white transition-all shadow-sm">
-                <LogIn className="w-3.5 h-3.5 text-[#76B900]" />
-                <span>Sign In with Clerk</span>
-              </button>
-            </SignInButton>
+            <button 
+              onClick={() => handleNavClick('auth')}
+              className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#141C24] hover:bg-[#18232D] border border-[#232F3D] hover:border-[#76B900] text-xs font-medium text-white transition-all shadow-sm"
+            >
+              <LogIn className="w-3.5 h-3.5 text-[#76B900]" />
+              <span>Sign In / Register</span>
+            </button>
           </Show>
         </div>
 
