@@ -95,19 +95,20 @@ reports an authenticated session — protected views never mount for anonymous v
 | :-- | :-- |
 | Clerk initialising | Boot screen (`Verifying secure access…`) |
 | Clerk unreachable for 15s | Sign-in screen with a connection notice (content stays locked) |
-| Signed out | Custom email/username + password login screen — no dashboard, practice, mock or data access |
+| Signed out | Branded Clerk sign-in screen (email + password, Google, sign-up) — no dashboard, practice, mock or data access |
 | Signed in, ≤ 2 devices | The full preparation platform + `UserButton` in the header |
 | Signed in, 3rd device | “Device limit reached” screen: sign out one of the two listed sessions |
 
 Implementation:
 
-- `src/components/auth/AuthGate.tsx` — the gate itself (`AuthGate`), including the boot,
-  failure and sign-in screens.
-- `src/components/auth/SimpleAuthForm.tsx` — the plain credential UI built on Clerk's headless
-  resources: email-or-username + password sign-in, sign-up with e-mail code verification,
-  e-mail second factor, new-device (client trust) verification, and the password-reset code
-  flow. Show/hide password, inline Clerk error messages, busy states. No prebuilt Clerk widget
-  is rendered.
+- `src/components/auth/AuthGate.tsx` — the gate itself, including the boot, connection and
+  sign-in screens.
+- `src/components/auth/AuthGate.tsx` renders Clerk's **prebuilt** `<SignIn />` / `<SignUp />`
+  inside the branded shell, because this instance enables Clerk Protect mid-flow challenges,
+  bot sign-up protection and new-device (client trust) verification. The prebuilt components
+  resolve those steps automatically; a hand-rolled form cannot complete a `protect_check`
+  challenge and would leave sign-ups stuck at `missing_requirements` (code verified, no user
+  created). Branding comes from the `ClerkProvider` `appearance` config in `main.tsx`.
 - `src/main.tsx` — wraps `App` in `ClerkProvider` → `AuthGate` → `SessionLimitGate`, and refuses
   to boot the app when `VITE_CLERK_PUBLISHABLE_KEY` is missing (fail-closed, actionable screen).
 - `src/components/auth/AuthView.tsx` — the signed-in student account page (profile, stats,
