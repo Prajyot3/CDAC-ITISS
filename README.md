@@ -79,6 +79,23 @@ npm run build
 | **FCN05.pdf** | 5 | 39 | 39 | PDF Highlight Annotation coordinate mapping |
 | **TOTAL** | **57** | **309** | **309** | **100% Data Integrity** |
 
+## 📊 Module 2 — OS Administration Extraction Audit
+
+| Source File | Type | Imported | Notes |
+| :--- | :--- | :---: | :--- |
+| **LINUX02.pdf** | PDF | 129 | OS theory bank (process, memory, scheduling, deadlock, file systems); 180 raw questions de-duplicated to 129 |
+| **06-linux.pdf** | PDF | 50 | Linux administration / network services bank |
+| **02-windows.pdf** | PDF | 22 | Windows Server, Active Directory, DNS/DHCP questions (fill-in items converted to 4-option MCQs) |
+| **COSA01.docx** | DOCX | 48 | Linux and Windows administration (vi, cron, /proc, Apache, quotas, GPO, Samba, mail/print services) |
+| **TOTAL** | | **249** | 10 topic domains, every question carries an explanation |
+
+Answer-key corrections applied while verifying the banks:
+
+- `06-linux.pdf`: sendmail config `D → A`, init PID `A → B`, swap size `B → C`, `startx` `B → A`, daemon logging `A → B`.
+- `02-windows.pdf`: DNS registration command `a → b` (`ipconfig /registerdns`).
+- `LINUX02.pdf`: dynamic loading answers corrected to *Dynamic loading* (3 duplicates), optimal page replacement corrected, protection/security statement corrected.
+- `LINUX01.docx` contains questions without any options or answer key, so it could not be imported as MCQs.
+
 ---
 
 ## 📄 License
