@@ -4,9 +4,12 @@
   "framework": "vite",
   "rewrites": [
     {
+      "source": "/__clerk/(.*)",
+      "destination": "https://clerk.cdacitissacademy.tech/$1"
+    },
+    {
       "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
 }
-
