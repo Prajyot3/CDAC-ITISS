@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { 
-  Settings, 
   Download, 
   Upload, 
   RotateCcw, 
@@ -10,13 +9,108 @@ import {
   CheckCircle2, 
   AlertTriangle,
   Code2,
-  Layers,
-  Database
+  Database,
+  User,
+  LogIn,
+  ExternalLink
 } from 'lucide-react';
+import { Show, SignInButton, useUser, useClerk } from '@clerk/react';
 
 interface SettingsViewProps {
   onOpenAudit: () => void;
 }
+
+const ClerkAccountSection: React.FC = () => {
+  const { user, isLoaded } = useUser();
+  const { openUserProfile, signOut } = useClerk();
+
+  if (!isLoaded) {
+    return (
+      <div className="p-6 rounded-xl bg-[#141C24] border border-[#222E3A] flex items-center gap-3">
+        <div className="w-5 h-5 rounded-full border-2 border-[#76B900] border-t-transparent animate-spin" />
+        <span className="text-xs text-[#9CA3AF]">Loading authentication status...</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className="p-6 rounded-xl bg-[#141C24] border border-[#222E3A] space-y-4">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <User className="w-4 h-4 text-[#76B900]" />
+          <h2 className="text-sm font-bold text-white uppercase tracking-wider">
+            Student Identity & Clerk Authentication
+          </h2>
+        </div>
+        <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-[#76B900]/10 text-[#76B900] border border-[#76B900]/30 font-semibold">
+          Clerk CLI Integrated
+        </span>
+      </div>
+
+      <Show when="signed-in">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-4 rounded-lg bg-[#0C1014] border border-[#202C38]">
+          <div className="flex items-center gap-3.5">
+            <img 
+              src={user?.imageUrl} 
+              alt="Avatar" 
+              className="w-12 h-12 rounded-full border border-[#76B900]/50 ring-2 ring-[#76B900]/20"
+            />
+            <div>
+              <div className="text-sm font-bold text-white flex items-center gap-2">
+                <span>{user?.fullName || 'ITISS Scholar'}</span>
+                <span className="text-[10px] px-1.5 py-0.2 rounded bg-[#76B900]/20 text-[#76B900] font-mono">
+                  ACTIVE
+                </span>
+              </div>
+              <div className="text-xs text-[#8A97A7] font-mono">
+                {user?.primaryEmailAddress?.emailAddress}
+              </div>
+              <div className="text-[10px] text-[#556372] font-mono mt-0.5">
+                ID: {user?.id}
+              </div>
+            </div>
+          </div>
+
+          <div className="flex items-center gap-2 w-full sm:w-auto">
+            <button
+              onClick={() => openUserProfile()}
+              className="flex-1 sm:flex-initial flex items-center justify-center gap-1.5 px-3 py-2 rounded-lg bg-[#18232D] hover:bg-[#202E3C] border border-[#2A3848] hover:border-[#76B900] text-xs font-medium text-white transition-all"
+            >
+              <ExternalLink className="w-3.5 h-3.5 text-[#76B900]" />
+              <span>Manage Profile</span>
+            </button>
+            <button
+              onClick={() => signOut()}
+              className="px-3 py-2 rounded-lg bg-red-500/10 hover:bg-red-500/20 border border-red-500/30 text-xs font-medium text-red-300 transition-all"
+            >
+              Sign Out
+            </button>
+          </div>
+        </div>
+      </Show>
+
+      <Show when="signed-out">
+        <div className="p-4 rounded-lg bg-[#0C1014] border border-[#202C38] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div className="space-y-1">
+            <div className="text-xs font-semibold text-white">
+              No account linked to this device
+            </div>
+            <div className="text-[11px] text-[#8C98A6]">
+              Sign in with your Clerk account (GitHub, Google, or Email) to sync your examination progress, bookmarks, and mock test scores.
+            </div>
+          </div>
+
+          <SignInButton mode="modal">
+            <button className="flex items-center gap-1.5 px-4 py-2 rounded-lg bg-[#76B900] hover:bg-[#68a500] text-black font-semibold text-xs transition-all shadow-md shadow-[#76B900]/20 shrink-0">
+              <LogIn className="w-3.5 h-3.5" />
+              <span>Sign In with Clerk</span>
+            </button>
+          </SignInButton>
+        </div>
+      </Show>
+    </div>
+  );
+};
 
 export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
   const { 
@@ -108,6 +202,9 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
           <span>{message.text}</span>
         </div>
       )}
+
+      {/* SECTION 0: Clerk Authentication & Student Profile */}
+      <ClerkAccountSection />
 
       {/* SECTION 1: Future Module Activation Architecture */}
       <div className="p-6 rounded-xl bg-[#141C24] border border-[#76B900]/35 space-y-4">
@@ -239,4 +336,3 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
     </div>
   );
 };
-

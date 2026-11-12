@@ -12,8 +12,10 @@ import {
   FileText,
   Filter,
   Check,
-  X
+  X,
+  Sparkles
 } from 'lucide-react';
+import { Show, SignInButton } from '@clerk/react';
 
 interface MockResultViewProps {
   attempt: MockExamAttempt;
@@ -142,6 +144,21 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
           </div>
         </div>
       </div>
+
+      {/* Sync score banner for guest users */}
+      <Show when="signed-out">
+        <div className="p-4 rounded-xl bg-[#11171E] border border-[#232F3D] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="flex items-center gap-2.5 text-[#9CA3AF]">
+            <Sparkles className="w-4 h-4 text-[#76B900] shrink-0" />
+            <span>Sign in with your Clerk account to permanently record this mock exam result in your cloud dashboard.</span>
+          </div>
+          <SignInButton mode="modal">
+            <button className="px-3.5 py-1.5 rounded-lg bg-[#76B900] hover:bg-[#68a500] text-black font-semibold text-xs transition-colors shrink-0">
+              Sign In to Save
+            </button>
+          </SignInButton>
+        </div>
+      </Show>
 
       {/* Detailed Question Review Section */}
       <div className="space-y-5">

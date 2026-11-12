@@ -1,5 +1,6 @@
 import React from 'react';
-import { Menu, ShieldCheck, ChevronDown, CheckCircle2, Award } from 'lucide-react';
+import { Menu, ShieldCheck, LogIn } from 'lucide-react';
+import { Show, SignInButton, UserButton } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { ITISS_MODULES } from '../../config/modules';
 
@@ -9,7 +10,7 @@ interface HeaderProps {
 }
 
 export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) => {
-  const { activeModuleId, setActiveModuleId, getOverallStats } = useProgress();
+  const { activeModuleId, getOverallStats } = useProgress();
   const stats = getOverallStats();
 
   const currentModule = ITISS_MODULES.find(m => m.id === activeModuleId) || ITISS_MODULES[0];
@@ -42,7 +43,7 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) =
         </div>
       </div>
 
-      {/* Right: Real Activity Stats + Audit Button */}
+      {/* Right: Real Activity Stats + Audit Button + Clerk Auth */}
       <div className="flex items-center gap-3">
         {/* Quick activity badges */}
         <div className="hidden lg:flex items-center gap-2 text-xs font-mono">
@@ -69,8 +70,34 @@ export const Header: React.FC<HeaderProps> = ({ onToggleMobile, onOpenAudit }) =
           <span className="hidden sm:inline">Extraction Audit</span>
           <span className="text-[10px] px-1 rounded bg-[#76B900]/20 text-[#76B900] font-mono">309 MCQs</span>
         </button>
+
+        {/* Clerk Auth Integration */}
+        <div className="flex items-center pl-2 border-l border-[#1F2933]">
+          <Show when="signed-out">
+            <SignInButton mode="modal">
+              <button 
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#76B900] hover:bg-[#68a500] text-black font-semibold text-xs transition-all shadow-sm shadow-[#76B900]/20 hover:scale-[1.02] active:scale-[0.98]"
+                title="Sign in with Clerk"
+              >
+                <LogIn className="w-3.5 h-3.5" />
+                <span>Sign In</span>
+              </button>
+            </SignInButton>
+          </Show>
+
+          <Show when="signed-in">
+            <div className="flex items-center gap-2">
+              <UserButton 
+                appearance={{
+                  elements: {
+                    userButtonAvatarBox: 'w-8 h-8 border border-[#76B900]/60 hover:border-[#76B900] transition-colors rounded-full ring-2 ring-[#76B900]/20',
+                  }
+                }}
+              />
+            </div>
+          </Show>
+        </div>
       </div>
     </header>
   );
 };
-

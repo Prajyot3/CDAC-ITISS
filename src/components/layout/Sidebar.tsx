@@ -10,8 +10,9 @@ import {
   Settings,
   Shield,
   ChevronRight,
-  Sparkles
+  LogIn
 } from 'lucide-react';
+import { Show, SignInButton, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 
 export type NavItem = 
@@ -30,6 +31,32 @@ interface SidebarProps {
   isOpenMobile: boolean;
   onCloseMobile: () => void;
 }
+
+const UserSidebarProfile: React.FC = () => {
+  const { user } = useUser();
+  const displayName = user?.fullName || user?.primaryEmailAddress?.emailAddress?.split('@')[0] || 'ITISS Scholar';
+
+  return (
+    <div className="flex items-center gap-2.5">
+      <UserButton 
+        appearance={{
+          elements: {
+            userButtonAvatarBox: 'w-7 h-7 border border-[#76B900]/60 rounded-full ring-2 ring-[#76B900]/20',
+          }
+        }}
+      />
+      <div className="min-w-0 flex-1">
+        <div className="text-xs font-semibold text-white truncate">
+          {displayName}
+        </div>
+        <div className="text-[10px] text-[#76B900] flex items-center gap-1 font-mono">
+          <span className="w-1.5 h-1.5 rounded-full bg-[#76B900]" />
+          <span>Clerk Verified</span>
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export const Sidebar: React.FC<SidebarProps> = ({
   currentTab,
@@ -153,6 +180,21 @@ export const Sidebar: React.FC<SidebarProps> = ({
           })}
         </nav>
 
+        {/* User Account / Clerk State in Sidebar */}
+        <div className="p-3 border-t border-[#1F2933] bg-[#0B0F13]">
+          <Show when="signed-in">
+            <UserSidebarProfile />
+          </Show>
+          <Show when="signed-out">
+            <SignInButton mode="modal">
+              <button className="w-full flex items-center justify-center gap-2 px-3 py-2 rounded-lg bg-[#141C24] hover:bg-[#18232D] border border-[#232F3D] hover:border-[#76B900] text-xs font-medium text-white transition-all shadow-sm">
+                <LogIn className="w-3.5 h-3.5 text-[#76B900]" />
+                <span>Sign In with Clerk</span>
+              </button>
+            </SignInButton>
+          </Show>
+        </div>
+
         {/* Footer info */}
         <div className="p-3 border-t border-[#1F2933] bg-[#0A0D10] text-[11px] text-[#6E7B8B] space-y-1">
           <div className="flex justify-between items-center font-mono">
@@ -168,4 +210,3 @@ export const Sidebar: React.FC<SidebarProps> = ({
     </>
   );
 };
-
