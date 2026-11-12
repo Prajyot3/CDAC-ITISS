@@ -65,10 +65,15 @@ export default async function handler(req, res) {
         password,
         ...(firstName ? { firstName } : {}),
         ...(lastName ? { lastName } : {}),
-        ...(role ? { publicMetadata: { role } } : {}),
         skipPasswordChecks: true,
       });
-      return send(res, 201, { user: summarizeUser(user) });
+
+      if (role) {
+        await clerk.users.updateUserMetadata(user.id, { publicMetadata: { role } });
+      }
+
+      const created = role ? await clerk.users.getUser(user.id) : user;
+      return send(res, 201, { user: summarizeUser(created) });
     }
 
     if (req.method === 'PATCH') {
@@ -79,11 +84,12 @@ export default async function handler(req, res) {
       }
 
       const current = await clerk.users.getUser(userId);
-      const params = {};
       const metadata = { ...(current.publicMetadata || {}) };
       let metadataChanged = false;
 
-      if (typeof banned === 'boolean') params.banned = banned;
+      if (typeof banned === 'boolean') {
+        await (banned ? clerk.users.banUser(userId) : clerk.users.unbanUser(userId));
+      }
 
       if (typeof role === 'string') {
         if (role) metadata.role = role;
@@ -101,9 +107,11 @@ export default async function handler(req, res) {
         metadataChanged = true;
       }
 
-      if (metadataChanged) params.publicMetadata = metadata;
+      if (metadataChanged) {
+        await clerk.users.updateUserMetadata(userId, { publicMetadata: metadata });
+      }
 
-      const updated = await clerk.users.updateUser(userId, params);
+      const updated = await clerk.users.getUser(userId);
       return send(res, 200, { user: summarizeUser(updated, await activeSessionsFor(userId)) });
     }
 
