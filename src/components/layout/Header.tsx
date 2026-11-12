@@ -1,8 +1,9 @@
-import React from 'react';
+﻿import React from 'react';
 import { Menu, ShieldCheck, LogIn, UserCheck } from 'lucide-react';
 import { Show, UserButton } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { ITISS_MODULES } from '../../config/modules';
+import { getTotalQuestionCount } from '../../data/moduleRegistry';
 
 interface HeaderProps {
   onToggleMobile: () => void;
@@ -73,7 +74,7 @@ export const Header: React.FC<HeaderProps> = ({
         >
           <ShieldCheck className="w-4 h-4 text-[#76B900]" />
           <span className="hidden sm:inline">Extraction Audit</span>
-          <span className="text-[10px] px-1 rounded bg-[#76B900]/20 text-[#76B900] font-mono">309 MCQs</span>
+          <span className="text-[10px] px-1 rounded bg-[#76B900]/20 text-[#76B900] font-mono">{getTotalQuestionCount()} MCQs</span>
         </button>
 
         {/* Clerk Auth Integration */}
@@ -115,3 +116,5 @@ export const Header: React.FC<HeaderProps> = ({
     </header>
   );
 };
+
+

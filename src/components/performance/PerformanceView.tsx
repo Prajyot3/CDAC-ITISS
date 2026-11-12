@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { ITISS_MODULES, getModuleById } from '../../config/modules';
-import { FCN_TOPICS } from '../../config/topics';
+import { getModuleTopics } from '../../config/topics';
 import { ProgressBar } from '../common/ProgressBar';
 import { StatusBadge } from '../common/StatusBadge';
 import { 
@@ -33,6 +33,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
 
   const stats = getModuleStats(selectedModId);
   const topicStats = getTopicStats(selectedModId);
+  const moduleTopics = getModuleTopics(selectedModId);
   const modMocks = mockAttempts.filter(m => m.moduleId === selectedModId);
 
   return (
@@ -93,7 +94,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
               onClick={() => setSelectedModId('fcn')}
               className="px-4 py-2 rounded-lg bg-[#76B900] text-black text-xs font-semibold hover:bg-[#87D300] transition-colors"
             >
-              Switch to Active Module (FCN)
+              Switch to Active Module ({getModuleById(activeModuleId)?.code || activeModuleId.toUpperCase()})
             </button>
           </div>
         </div>
@@ -175,7 +176,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
                 {stats.accuracy}%
               </div>
               <div className="text-[11px] text-[#788594] font-mono mt-0.5">
-                Target: ≥ 70%
+                Target: â‰¥ 70%
               </div>
             </div>
 
@@ -196,7 +197,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
               <div className="flex items-center gap-2">
                 <Layers className="w-4 h-4 text-[#76B900]" />
                 <h2 className="text-base font-bold text-white">
-                  Topic-wise Mastery Breakdown (13 Topics)
+                  Topic-wise Mastery Breakdown ({moduleTopics.length} Topics)
                 </h2>
               </div>
               <span className="text-xs text-[#8C98A6] font-mono">
@@ -205,7 +206,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-              {FCN_TOPICS.map((topic) => {
+              {moduleTopics.map((topic) => {
                 const tStat = topicStats[topic.name] || { total: 0, attempted: 0, correct: 0, accuracy: 0 };
 
                 return (
@@ -309,4 +310,5 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
     </div>
   );
 };
+
 

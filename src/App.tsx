@@ -16,6 +16,7 @@ import { AdminView } from './components/admin/AdminView';
 import { AuditModal } from './components/common/AuditModal';
 import { AccessBlocked, AccessRestricted } from './components/common/AccessScreens';
 import { useProgress } from './context/ProgressContext';
+import { getTotalQuestionCount, getActiveModules } from './data/moduleRegistry';
 import { allowedTabs, canOpenModule, resolveAccess } from './lib/access';
 
 export const App: React.FC = () => {
@@ -169,7 +170,7 @@ export const App: React.FC = () => {
               <span>• Version 1.0</span>
             </div>
             <div>
-              <span>309 Questions Verified • 12 Modules Architecture</span>
+              <span>{getTotalQuestionCount()} Questions Verified • {getActiveModules().length} of 12 Modules Active</span>
             </div>
           </div>
         </footer>

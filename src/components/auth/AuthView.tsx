@@ -183,7 +183,7 @@ export const AuthView: React.FC<AuthViewProps> = ({ onNavigateToDashboard }) => 
             <Award className="w-4 h-4 text-cyan-400 mt-0.5 shrink-0" />
             <div>
               <span className="block text-xs font-semibold text-white">Exam access</span>
-              <span className="block text-[11px] text-[#8C98A6]">FCN live · 11 modules updated soon</span>
+              <span className="block text-[11px] text-[#8C98A6]">FCN &amp; OS-ADMIN live · 10 modules updated soon</span>
             </div>
           </div>
         </div>

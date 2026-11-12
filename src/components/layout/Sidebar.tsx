@@ -18,6 +18,8 @@ import type { LucideIcon } from 'lucide-react';
 import { Show, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { allowedTabs, resolveAccess } from '../../lib/access';
+import { getTotalQuestionCount, getActiveModules } from '../../data/moduleRegistry';
+import { getModuleById } from '../../config/modules';
 
 export type NavItem = 
   | 'dashboard' 
@@ -77,6 +79,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 }) => {
   const { bookmarks, attempts, activeModuleId } = useProgress();
   const { user } = useUser();
+  const activeModule = getModuleById(activeModuleId);
 
   const isAdmin =
     user?.publicMetadata?.role === 'admin' ||
@@ -156,10 +159,10 @@ export const Sidebar: React.FC<SidebarProps> = ({
             </span>
           </div>
           <div className="text-xs font-semibold text-white truncate">
-            Fundamentals of Networks
+            {activeModule?.name}
           </div>
           <div className="text-[11px] text-[#76B900] font-mono mt-0.5">
-            FCN • 120 Hours
+            {activeModule?.code} • {activeModule?.duration}
           </div>
         </div>
 
@@ -226,14 +229,16 @@ export const Sidebar: React.FC<SidebarProps> = ({
         <div className="p-3 border-t border-[#1F2933] bg-[#0A0D10] text-[11px] text-[#6E7B8B] space-y-1">
           <div className="flex justify-between items-center font-mono">
             <span>Modules Active:</span>
-            <span className="text-[#76B900] font-semibold">1 / 12</span>
+            <span className="text-[#76B900] font-semibold">{getActiveModules().length} / 12</span>
           </div>
           <div className="flex justify-between items-center font-mono">
             <span>Bank Status:</span>
-            <span className="text-white">309 MCQs</span>
+            <span className="text-white">{getTotalQuestionCount()} MCQs</span>
           </div>
         </div>
       </aside>
     </>
   );
 };
+
+

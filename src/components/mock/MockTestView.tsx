@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { getQuestionsForModule } from '../../data/moduleRegistry';
+import { ITISS_MODULES } from '../../config/modules';
+import { getModuleTopics } from '../../config/topics';
 import { MockExamSession } from './MockExamSession';
 import { MockResultView } from './MockResultView';
 import { MockExamAttempt } from '../../types/userProgress';
@@ -22,6 +24,9 @@ import {
 export const MockTestView: React.FC = () => {
   const { activeModuleId, mockAttempts, saveMockAttempt } = useProgress();
   const allQuestions = getQuestionsForModule(activeModuleId);
+  const activeModule = ITISS_MODULES.find(m => m.id === activeModuleId);
+  const moduleCode = activeModule?.code || activeModuleId.toUpperCase();
+  const moduleTopics = getModuleTopics(activeModuleId);
 
   const [activeSessionQuestions, setActiveSessionQuestions] = useState<Question[] | null>(null);
   const [selectedResultAttempt, setSelectedResultAttempt] = useState<MockExamAttempt | null>(null);
@@ -77,10 +82,10 @@ export const MockTestView: React.FC = () => {
           <span className="text-xs text-[#8C98A6] font-mono">40 Questions • 40 Minutes</span>
         </div>
         <h1 className="text-2xl font-extrabold text-white mt-1.5">
-          FCN Mock Examinations
+          {moduleCode} Mock Examinations
         </h1>
         <p className="text-xs text-[#9CA3AF] mt-1 max-w-2xl">
-          Simulate official CDAC examination conditions. Questions are dynamically drawn from all 13 syllabus topics with real-time countdown timer and question matrix.
+          Simulate official CDAC examination conditions. Questions are dynamically drawn from all {moduleTopics.length} syllabus topics with real-time countdown timer and question matrix.
         </p>
       </div>
 
@@ -96,7 +101,7 @@ export const MockTestView: React.FC = () => {
               Full 40-Question Mock Assessment
             </h2>
             <p className="text-xs text-[#9CA3AF] leading-relaxed">
-              Every mock test dynamically samples exactly 40 MCQs from our 309-question repository. During the test, answers remain hidden to ensure realistic evaluation.
+              Every mock test dynamically samples exactly 40 MCQs from our {allQuestions.length}-question repository. During the test, answers remain hidden to ensure realistic evaluation.
             </p>
           </div>
 
@@ -121,7 +126,7 @@ export const MockTestView: React.FC = () => {
           </div>
           <div className="p-3 rounded-lg bg-[#0F151B] border border-[#202C38]">
             <span className="text-[#8C98A6] block text-[11px]">Passing Criteria</span>
-            <span className="font-mono font-bold text-[#76B900] text-base">≥ 24 / 40 (60%)</span>
+            <span className="font-mono font-bold text-[#76B900] text-base">â‰¥ 24 / 40 (60%)</span>
           </div>
           <div className="p-3 rounded-lg bg-[#0F151B] border border-[#202C38]">
             <span className="text-[#8C98A6] block text-[11px]">Marking Scheme</span>
@@ -210,4 +215,5 @@ export const MockTestView: React.FC = () => {
     </div>
   );
 };
+
 

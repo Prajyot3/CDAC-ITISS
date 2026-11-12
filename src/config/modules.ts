@@ -81,10 +81,22 @@ export const ITISS_MODULES: ITISSModule[] = [
     sectionId: 'section-a',
     sectionName: 'SECTION A: Course Focus',
     duration: '210 Hours',
-    status: 'UPDATED SOON',
+    status: 'AVAILABLE',
     slug: 'os',
     route: '/modules/os',
     description: 'In-depth exploration of Linux and Windows Server administration, kernel architecture, process management, memory virtual memory management, filesystem hierarchies, shell scripting, and PAM authentication.',
+    topics: [
+      'OS Fundamentals',
+      'Process Management',
+      'CPU Scheduling',
+      'Memory Management',
+      'Deadlock and Synchronization',
+      'File Systems',
+      'Linux Administration',
+      'Network Services',
+      'Security and Permissions',
+      'Windows Administration'
+    ],
     syllabusPoints: [
       'Operating System Architectures, Monolithic vs Microkernel Design',
       'Process Scheduling, IPC, Threads, Concurrency, and Deadlock Prevention',

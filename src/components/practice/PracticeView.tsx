@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+﻿import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { getQuestionsForModule } from '../../data/moduleRegistry';
-import { FCN_TOPICS } from '../../config/topics';
+import { getModuleTopics } from '../../config/topics';
+import { ITISS_MODULES } from '../../config/modules';
 import { PracticeSession } from './PracticeSession';
 import { Question } from '../../types/question';
 import { 
@@ -21,6 +22,9 @@ export const PracticeView: React.FC = () => {
   const { activeModuleId, getTopicStats } = useProgress();
   const allQuestions = getQuestionsForModule(activeModuleId);
   const topicStats = getTopicStats(activeModuleId);
+  const moduleTopics = getModuleTopics(activeModuleId);
+  const activeModule = ITISS_MODULES.find(m => m.id === activeModuleId);
+  const moduleCode = activeModule?.code || activeModuleId.toUpperCase();
 
   const [activeSession, setActiveSession] = useState<{
     questions: Question[];
@@ -34,7 +38,7 @@ export const PracticeView: React.FC = () => {
   const handleStartAll = () => {
     setActiveSession({
       questions: allQuestions,
-      title: 'FCN Complete Practice Bank',
+      title: `${moduleCode} Complete Practice Bank`,
       subtitle: `All ${allQuestions.length} Questions in sequential curriculum order`
     });
   };
@@ -46,7 +50,7 @@ export const PracticeView: React.FC = () => {
     setActiveSession({
       questions: selected,
       title: `Random Practice Session (${selected.length} Questions)`,
-      subtitle: `Shuffled across all 13 FCN topics`
+      subtitle: `Shuffled across all ${moduleTopics.length} ${moduleCode} topics`
     });
   };
 
@@ -102,7 +106,7 @@ export const PracticeView: React.FC = () => {
               <h2 className="text-lg font-bold text-white mt-0.5">Complete Question Bank</h2>
             </div>
             <p className="text-xs text-[#9CA3AF] leading-relaxed">
-              Access the complete FCN question bank without the 40-question restriction. Navigate sequentially through all 309 extracted questions with immediate explanations.
+              Access the complete {moduleCode} question bank without the 40-question restriction. Navigate sequentially through all {allQuestions.length} extracted questions with immediate explanations.
             </p>
           </div>
 
@@ -183,14 +187,14 @@ export const PracticeView: React.FC = () => {
               </h2>
             </div>
             <p className="text-xs text-[#8C98A6] mt-0.5">
-              Practice questions rigorously classified into the 13 official networking topic domains.
+              Practice questions rigorously classified into the {moduleTopics.length} official {moduleCode} topic domains.
             </p>
           </div>
-          <span className="text-xs text-[#8C98A6] font-mono">13 Topics</span>
+          <span className="text-xs text-[#8C98A6] font-mono">{moduleTopics.length} Topics</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5">
-          {FCN_TOPICS.map((topic) => {
+          {moduleTopics.map((topic) => {
             const tStat = topicStats[topic.name] || { total: 0, attempted: 0, correct: 0, accuracy: 0 };
 
             return (
@@ -234,4 +238,5 @@ export const PracticeView: React.FC = () => {
     </div>
   );
 };
+
 

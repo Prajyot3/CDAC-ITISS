@@ -19,7 +19,7 @@ import {
   ChevronRight
 } from 'lucide-react';
 import { NavItem } from '../layout/Sidebar';
-import { FCN_TOPICS } from '../../config/topics';
+import { getModuleTopics } from '../../config/topics';
 
 interface ModuleDetailViewProps {
   moduleId: string;
@@ -58,6 +58,7 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
 
   const stats = getModuleStats(module.id);
   const topicStats = getTopicStats(module.id);
+  const moduleTopics = getModuleTopics(module.id);
 
   return (
     <div className="space-y-8 max-w-5xl mx-auto animate-in fade-in duration-200">
@@ -98,7 +99,7 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
               {stats.totalAvailable} Verified MCQs
             </span>
             <span>•</span>
-            <span>13 Curricular Topics</span>
+            <span>{moduleTopics.length} Curricular Topics</span>
           </div>
           <p className="text-sm text-[#9CA3AF] mt-4 leading-relaxed">
             {module.description}
@@ -167,7 +168,7 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
           <div className="flex items-center gap-2">
             <Layers className="w-4 h-4 text-[#76B900]" />
             <h2 className="text-sm font-bold text-white uppercase tracking-wider">
-              Topic-wise Question Breakdown (13 Topics)
+              Topic-wise Question Breakdown ({moduleTopics.length} Topics)
             </h2>
           </div>
           <span className="text-xs text-[#8C98A6] font-mono">
@@ -176,7 +177,7 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3.5">
-          {FCN_TOPICS.map((topic) => {
+          {moduleTopics.map((topic) => {
             const tStat = topicStats[topic.name] || { total: 0, attempted: 0, correct: 0, accuracy: 0 };
 
             return (
@@ -224,15 +225,29 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
           Verified Source PDF Materials
         </h3>
         <p className="text-xs text-[#8C98A6] leading-relaxed">
-          Questions in this module were systematically extracted and verified from the five official CDAC examination papers: 
-          <code className="text-[#76B900] font-mono mx-1">FCN01.pdf (159 Q)</code>, 
-          <code className="text-[#76B900] font-mono mx-1">FCN02.pdf (31 Q)</code>, 
-          <code className="text-[#76B900] font-mono mx-1">FCN03.pdf (40 Q)</code>, 
-          <code className="text-[#76B900] font-mono mx-1">FCN04.pdf (40 Q)</code>, and 
-          <code className="text-[#76B900] font-mono mx-1">FCN05.pdf (39 Q)</code>.
+          {module.id === 'fcn' ? (
+            <>
+              Questions in this module were systematically extracted and verified from the five official CDAC examination papers:
+              <code className="text-[#76B900] font-mono mx-1">FCN01.pdf (159 Q)</code>,
+              <code className="text-[#76B900] font-mono mx-1">FCN02.pdf (31 Q)</code>,
+              <code className="text-[#76B900] font-mono mx-1">FCN03.pdf (40 Q)</code>,
+              <code className="text-[#76B900] font-mono mx-1">FCN04.pdf (40 Q)</code>, and
+              <code className="text-[#76B900] font-mono mx-1">FCN05.pdf (39 Q)</code>.
+            </>
+          ) : (
+            <>
+              Questions in this module were extracted and verified from the official CDAC Linux, Windows and COSA
+              question papers:
+              <code className="text-[#76B900] font-mono mx-1">LINUX02.pdf (129 Q)</code>,
+              <code className="text-[#76B900] font-mono mx-1">06-linux.pdf (50 Q)</code>,
+              <code className="text-[#76B900] font-mono mx-1">02-windows.pdf (22 Q)</code>, and
+              <code className="text-[#76B900] font-mono mx-1">COSA01.docx (48 Q)</code>.
+            </>
+          )}
         </p>
       </div>
     </div>
   );
 };
+
 

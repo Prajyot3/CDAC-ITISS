@@ -63,7 +63,7 @@ export const UpdatedSoonScreen: React.FC<UpdatedSoonScreenProps> = ({ module, on
               Question Bank In Active Preparation
             </h3>
             <p className="text-xs text-[#8C98A6] leading-relaxed">
-              In accordance with Phase 1 release specifications, only <strong className="text-white">Fundamentals of Computer Networks (FCN)</strong> is currently functional with imported examination questions. The question bank for this module will be enabled independently once source question papers are uploaded.
+              In accordance with Phase 1 release specifications, modules are activated one at a time as their examination questions are imported and verified. <strong className="text-white">Fundamentals of Computer Networks (FCN)</strong> and <strong className="text-white">Concepts of Operating System and Administration</strong> are currently functional. The question bank for this module will be enabled independently once its source question papers are uploaded.
             </p>
           </div>
         </div>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Question } from '../../types/question';
+import { getModuleById } from '../../config/modules';
 import { MockExamAttempt, MockQuestionResult } from '../../types/userProgress';
 import { 
   Clock, 
@@ -174,7 +175,7 @@ export const MockExamSession: React.FC<MockExamSessionProps> = ({
           </span>
           <div>
             <h2 className="text-sm font-bold text-white">
-              CDAC ITISS – FCN Examination
+              CDAC ITISS – {getModuleById(moduleId)?.code || moduleId.toUpperCase()} Examination
             </h2>
             <span className="text-xs text-[#8C98A6] font-mono">
               Question {currentIndex + 1} of {questions.length}

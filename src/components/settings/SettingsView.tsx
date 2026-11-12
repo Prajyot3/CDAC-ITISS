@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
+import { getQuestionCountForModule } from '../../data/moduleRegistry';
 import { 
   Download, 
   Upload, 
@@ -233,7 +234,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
             <code className="text-white bg-[#162029] px-1.5 py-0.5 rounded">src/config/modules.ts</code>
           </div>
           <div className="text-[11px] text-[#788594] pt-1">
-            → The module instantly receives its own Practice MCQs, 40-Q Mock Exams, Incorrect Questions Tracker, Bookmarks, and Performance Dashboard automatically.
+            â†’ The module instantly receives its own Practice MCQs, 40-Q Mock Exams, Incorrect Questions Tracker, Bookmarks, and Performance Dashboard automatically.
           </div>
         </div>
       </div>
@@ -248,7 +249,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
             </h3>
           </div>
           <p className="text-xs text-[#8C98A6]">
-            Inspect the exact provenance of all 309 questions extracted from FCN01.pdf through FCN05.pdf.
+            Inspect the exact provenance of all {getQuestionCountForModule('fcn')} FCN questions extracted from FCN01.pdf through FCN05.pdf.
           </p>
         </div>
 
@@ -313,7 +314,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
             className="flex items-center gap-1.5 px-3.5 py-2 rounded-lg bg-[#22161A] hover:bg-[#2C1A20] border border-red-500/30 text-xs text-red-300 font-medium transition-colors"
           >
             <RotateCcw className="w-3.5 h-3.5" />
-            Reset FCN Practice Answers
+            Reset Active Module Answers
           </button>
 
           <button
@@ -336,3 +337,5 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
     </div>
   );
 };
+
+

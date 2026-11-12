@@ -41,7 +41,7 @@ export const AllModulesView: React.FC<AllModulesViewProps> = ({
           className="self-start md:self-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-[#141C24] border border-[#2B3947] hover:border-[#76B900] text-xs font-medium text-white transition-all shadow-sm"
         >
           <ShieldCheck className="w-4 h-4 text-[#76B900]" />
-          <span>FCN Extraction Audit Report</span>
+          <span>Extraction Audit Report</span>
         </button>
       </div>
 

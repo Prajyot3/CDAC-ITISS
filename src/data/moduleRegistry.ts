@@ -1,9 +1,11 @@
 import { Question } from '../types/question';
 import { ITISS_MODULES } from '../config/modules';
 import fcnQuestionsRaw from './fcnQuestions.json';
+import osQuestionsRaw from './osQuestions.json';
 
 // Cast imported raw JSON to strongly-typed Question array
 const fcnQuestions: Question[] = fcnQuestionsRaw as Question[];
+const osQuestions: Question[] = osQuestionsRaw as Question[];
 
 /**
  * MODULE QUESTION BANK REGISTRY
@@ -22,8 +24,8 @@ const fcnQuestions: Question[] = fcnQuestionsRaw as Question[];
  */
 const QUESTION_BANKS: Record<string, Question[]> = {
   fcn: fcnQuestions,
+  os: osQuestions,
   // Future question banks:
-  // os: osQuestions,
   // programming: programmingQuestions,
   // 'it-infrastructure': itInfrastructureQuestions,
   // 'cyber-forensics': cyberForensicsQuestions,
@@ -57,6 +59,10 @@ export const getQuestionCountForModule = (moduleId: string): number => {
 export const getActiveModules = () => {
   return ITISS_MODULES.filter(m => m.status === 'AVAILABLE');
 };
+
+/** Total number of questions across every active module. */
+export const getTotalQuestionCount = (): number =>
+  Object.values(QUESTION_BANKS).reduce((total, bank) => total + bank.length, 0);
 
 /**
  * Check if a module is currently functional

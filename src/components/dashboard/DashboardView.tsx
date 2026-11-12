@@ -18,6 +18,7 @@ import {
 import { useProgress } from '../../context/ProgressContext';
 import { COURSE_SECTIONS, ITISS_MODULES } from '../../config/modules';
 import { StatusBadge } from '../common/StatusBadge';
+import { getQuestionCountForModule, getActiveModules } from '../../data/moduleRegistry';
 import { ProgressBar } from '../common/ProgressBar';
 import { NavItem } from '../layout/Sidebar';
 
@@ -88,7 +89,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             {overallStats.totalAvailable}
           </div>
           <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono">
-            FCN Module
+            {getActiveModules().length} Active Modules
           </div>
         </div>
 
@@ -144,7 +145,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             {overallStats.accuracy}%
           </div>
           <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono">
-            Target: ≥ 70%
+            Target: â‰¥ 70%
           </div>
         </div>
 
@@ -318,7 +319,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
 
                           {isAvailable ? (
                             <span className="text-[#76B900] font-mono font-semibold flex items-center gap-1">
-                              309 MCQs <ArrowRight className="w-3.5 h-3.5" />
+                              {getQuestionCountForModule(mod.id)} MCQs <ArrowRight className="w-3.5 h-3.5" />
                             </span>
                           ) : (
                             <span className="text-[#657383] text-[11px]">
@@ -338,4 +339,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
     </div>
   );
 };
+
+
 

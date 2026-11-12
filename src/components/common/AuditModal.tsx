@@ -1,7 +1,8 @@
-import React from 'react';
+﻿import React from 'react';
 import { X, FileCheck, Layers, BookOpen, CheckCircle2, ShieldCheck, Database } from 'lucide-react';
 import extractionAuditData from '../../data/extractionAudit.json';
 import { ExtractionAuditReport } from '../../types/question';
+import { getQuestionCountForModule } from '../../data/moduleRegistry';
 
 interface AuditModalProps {
   isOpen: boolean;
@@ -136,7 +137,7 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
             <CheckCircle2 className="w-5 h-5 text-[#76B900] shrink-0 mt-0.5" />
             <div className="text-xs text-[#9CA3AF] leading-relaxed">
               <span className="font-semibold text-white">Zero Synthetic Questions Guarantee: </span>
-              All 309 questions were extracted directly from the uploaded source files with original option ordering, question numbering, and page provenance. No AI dummy questions or fabricated answers were generated.
+              All {getQuestionCountForModule('fcn')} FCN questions were extracted directly from the uploaded source files with original option ordering, question numbering, and page provenance. No AI dummy questions or fabricated answers were generated.
             </div>
           </div>
         </div>
@@ -154,4 +155,6 @@ export const AuditModal: React.FC<AuditModalProps> = ({ isOpen, onClose }) => {
     </div>
   );
 };
+
+
 

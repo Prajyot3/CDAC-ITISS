@@ -16,6 +16,7 @@ import {
   Sparkles
 } from 'lucide-react';
 import { Show, SignInButton } from '@clerk/react';
+import { getModuleById } from '../../config/modules';
 
 interface MockResultViewProps {
   attempt: MockExamAttempt;
@@ -77,10 +78,10 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
               Examination Performance Result
             </span>
             <h1 className="text-2xl md:text-3xl font-extrabold text-white">
-              CDAC ITISS – FCN Mock Test
+              CDAC ITISS – {getModuleById(attempt.moduleId)?.code || attempt.moduleId.toUpperCase()} Mock Test
             </h1>
             <p className="text-xs text-[#8C98A6] font-mono">
-              Completed on {attempt.dateFormatted} • Module: FCN
+              Completed on {attempt.dateFormatted} • Module: {getModuleById(attempt.moduleId)?.code || attempt.moduleId.toUpperCase()}
             </p>
           </div>
 
@@ -96,7 +97,7 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
                   ? 'bg-[#76B900]/20 text-[#76B900] border border-[#76B900]/40' 
                   : 'bg-red-500/20 text-red-400 border border-red-500/40'
               }`}>
-                {isPassed ? 'PASSED (≥ 60%)' : 'NEEDS REVISION (< 60%)'}
+                {isPassed ? 'PASSED (â‰¥ 60%)' : 'NEEDS REVISION (< 60%)'}
               </span>
             </div>
           </div>
@@ -329,4 +330,5 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
     </div>
   );
 };
+
 

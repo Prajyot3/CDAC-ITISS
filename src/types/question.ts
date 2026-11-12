@@ -16,7 +16,7 @@ export interface Question {
   correctAnswerText: string;
   explanation: string;
   topic: string;
-  diagram?: string;
+  diagram?: string | null;
 }
 
 export interface PDFSourceAudit {
