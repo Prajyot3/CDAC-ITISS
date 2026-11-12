@@ -131,5 +131,6 @@ Manual checks:
 1. In a private window the dashboard is not visible and cannot be reached by URL hash.
 2. Signing in unlocks the platform immediately, without a page reload.
 3. Signing out re-locks the platform (gate returns).
-4. Blocking `*.clerk.accounts.dev` in devtools shows the fail-closed error screen, not the app.
+4. Blocking the Clerk frontend API in devtools (`*.clerk.accounts.dev` locally,
+   `clerk.cdacitissacademy.tech` in production) shows the fail-closed error screen, not the app.
 
