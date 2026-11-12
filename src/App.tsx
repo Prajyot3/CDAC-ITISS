@@ -16,7 +16,7 @@ import { AdminView } from './components/admin/AdminView';
 import { AuditModal } from './components/common/AuditModal';
 import { AccessBlocked, AccessRestricted } from './components/common/AccessScreens';
 import { useProgress } from './context/ProgressContext';
-import { getTotalQuestionCount, getActiveModules } from './data/moduleRegistry';
+import { getTotalQuestionCount, getActiveModules, getQuestionCountForModule } from './data/moduleRegistry';
 import { allowedTabs, canOpenModule, resolveAccess } from './lib/access';
 
 export const App: React.FC = () => {
@@ -71,8 +71,10 @@ export const App: React.FC = () => {
     setSelectedModuleId(modId);
     setCurrentTab('modules');
     window.location.hash = `/modules/${modId}`;
-    if (modId === 'fcn') {
-      setActiveModuleId('fcn');
+    // Opening a module that has an imported bank makes it the active module for
+    // Practice, Mock Tests and Performance.
+    if (getQuestionCountForModule(modId) > 0) {
+      setActiveModuleId(modId);
     }
   };
 
