@@ -335,9 +335,20 @@ export const SimpleAuthForm: React.FC = () => {
       const attempt = await signUp.create({
         emailAddress: email.trim(),
         password: signUpPassword,
-        ...(firstName.trim() ? { firstName: firstName.trim() } : {}),
-        ...(lastName.trim() ? { lastName: lastName.trim() } : {}),
       });
+
+      // Names are optional and some instances reject them on create; try an update
+      // and ignore failures so sign-up is never blocked by a profile field.
+      if (firstName.trim() || lastName.trim()) {
+        try {
+          await signUp.update({
+            ...(firstName.trim() ? { firstName: firstName.trim() } : {}),
+            ...(lastName.trim() ? { lastName: lastName.trim() } : {}),
+          });
+        } catch {
+          /* profile fields are optional */
+        }
+      }
 
       if (attempt.status === 'complete') {
         if (!attempt.createdSessionId) {

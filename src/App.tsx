@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useUser } from '@clerk/react';
 import { Sidebar, NavItem } from './components/layout/Sidebar';
 import { Header } from './components/layout/Header';
 import { DashboardView } from './components/dashboard/DashboardView';
@@ -13,7 +14,9 @@ import { SettingsView } from './components/settings/SettingsView';
 import { AuthView } from './components/auth/AuthView';
 import { AdminView } from './components/admin/AdminView';
 import { AuditModal } from './components/common/AuditModal';
+import { AccessBlocked, AccessRestricted } from './components/common/AccessScreens';
 import { useProgress } from './context/ProgressContext';
+import { allowedTabs, canOpenModule, resolveAccess } from './lib/access';
 
 export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<NavItem>('dashboard');
@@ -22,6 +25,16 @@ export const App: React.FC = () => {
   const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   const { setActiveModuleId } = useProgress();
+  const { user } = useUser();
+  const access = resolveAccess(user?.publicMetadata);
+  const permittedTabs = allowedTabs(access.level);
+  const isAdmin =
+    user?.publicMetadata?.role === 'admin' ||
+    user?.primaryEmailAddress?.emailAddress?.toLowerCase() === 'pujariprajyot00@gmail.com';
+
+  const tabBlocked = currentTab !== 'admin' && !permittedTabs.includes(currentTab);
+  const moduleBlocked =
+    currentTab === 'modules' && Boolean(selectedModuleId) && !canOpenModule(access.level, selectedModuleId as string);
 
   // Simple hash route listener
   useEffect(() => {
@@ -88,51 +101,63 @@ export const App: React.FC = () => {
 
         {/* Dynamic Page Views */}
         <main className="flex-1 p-4 md:p-8 max-w-7xl mx-auto w-full">
-          {currentTab === 'dashboard' && (
-            <DashboardView
-              onNavigate={handleSelectTab}
-              onSelectModule={handleSelectModule}
-              onOpenAudit={() => setIsAuditModalOpen(true)}
+          {access.level === 'none' ? (
+            <AccessBlocked />
+          ) : tabBlocked || moduleBlocked ? (
+            <AccessRestricted
+              level={access.level}
+              isAdmin={isAdmin}
+              onBack={() => handleSelectTab('dashboard')}
             />
+          ) : (
+            <>
+              {currentTab === 'dashboard' && (
+                <DashboardView
+                  onNavigate={handleSelectTab}
+                  onSelectModule={handleSelectModule}
+                  onOpenAudit={() => setIsAuditModalOpen(true)}
+                />
+              )}
+
+              {currentTab === 'modules' && (
+                selectedModuleId ? (
+                  <ModuleDetailView
+                    moduleId={selectedModuleId}
+                    onBack={handleBackToModules}
+                    onNavigate={handleSelectTab}
+                    onOpenAudit={() => setIsAuditModalOpen(true)}
+                  />
+                ) : (
+                  <AllModulesView
+                    onSelectModule={handleSelectModule}
+                    onOpenAudit={() => setIsAuditModalOpen(true)}
+                  />
+                )
+              )}
+
+              {currentTab === 'practice' && <PracticeView />}
+
+              {currentTab === 'mock' && <MockTestView />}
+
+              {currentTab === 'incorrect' && <IncorrectQuestionsView />}
+
+              {currentTab === 'bookmarks' && <BookmarksView />}
+
+              {currentTab === 'performance' && (
+                <PerformanceView onNavigate={handleSelectTab} />
+              )}
+
+              {currentTab === 'settings' && (
+                <SettingsView onOpenAudit={() => setIsAuditModalOpen(true)} />
+              )}
+
+              {currentTab === 'auth' && (
+                <AuthView onNavigateToDashboard={() => handleSelectTab('dashboard')} />
+              )}
+
+              {currentTab === 'admin' && <AdminView />}
+            </>
           )}
-
-          {currentTab === 'modules' && (
-            selectedModuleId ? (
-              <ModuleDetailView
-                moduleId={selectedModuleId}
-                onBack={handleBackToModules}
-                onNavigate={handleSelectTab}
-                onOpenAudit={() => setIsAuditModalOpen(true)}
-              />
-            ) : (
-              <AllModulesView
-                onSelectModule={handleSelectModule}
-                onOpenAudit={() => setIsAuditModalOpen(true)}
-              />
-            )
-          )}
-
-          {currentTab === 'practice' && <PracticeView />}
-
-          {currentTab === 'mock' && <MockTestView />}
-
-          {currentTab === 'incorrect' && <IncorrectQuestionsView />}
-
-          {currentTab === 'bookmarks' && <BookmarksView />}
-
-          {currentTab === 'performance' && (
-            <PerformanceView onNavigate={handleSelectTab} />
-          )}
-
-          {currentTab === 'settings' && (
-            <SettingsView onOpenAudit={() => setIsAuditModalOpen(true)} />
-          )}
-
-          {currentTab === 'auth' && (
-            <AuthView onNavigateToDashboard={() => handleSelectTab('dashboard')} />
-          )}
-
-          {currentTab === 'admin' && <AdminView />}
         </main>
 
         {/* Platform Footer */}

@@ -4,6 +4,7 @@ import {
   MAX_ACTIVE_SESSIONS,
   readBody,
   requireUser,
+  resolveAccess,
   send,
   sortByLastActive,
   summarizeSession,
@@ -40,12 +41,17 @@ export default async function handler(req, res) {
       limit: 100,
     });
 
+    // Per-student device allowance, set by an administrator (default 2).
+    const user = await clerk.users.getUser(auth.userId);
+    const { maxDevices } = resolveAccess(user.publicMetadata);
+    const max = Math.min(Math.max(maxDevices || MAX_ACTIVE_SESSIONS, 1), 5);
+
     const sessions = sortByLastActive(list.data || []);
     const currentIndex = sessions.findIndex(session => session.id === currentSessionId);
-    const allowed = currentIndex === -1 || currentIndex < MAX_ACTIVE_SESSIONS;
+    const allowed = currentIndex === -1 || currentIndex < max;
 
     // Trim sessions beyond the limit, but never the caller's own session.
-    const overflow = sessions.slice(MAX_ACTIVE_SESSIONS);
+    const overflow = sessions.slice(max);
     const revoked = [];
     for (const session of overflow) {
       if (session.id === currentSessionId) continue;
@@ -57,11 +63,11 @@ export default async function handler(req, res) {
       }
     }
 
-    const kept = sortByLastActive(list.data || []).slice(0, MAX_ACTIVE_SESSIONS);
+    const kept = sortByLastActive(list.data || []).slice(0, max);
 
     return send(res, 200, {
       allowed,
-      max: MAX_ACTIVE_SESSIONS,
+      max,
       currentSessionId,
       sessions: kept.map(session => ({
         ...summarizeSession(session),

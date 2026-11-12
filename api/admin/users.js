@@ -72,7 +72,7 @@ export default async function handler(req, res) {
     }
 
     if (req.method === 'PATCH') {
-      const { userId, banned, role } = readBody(req);
+      const { userId, banned, role, access } = readBody(req);
       if (!userId) return send(res, 400, { error: 'userId is required.' });
       if (userId === admin.userId && banned === true) {
         return send(res, 400, { error: 'You cannot ban your own administrator account.' });
@@ -80,15 +80,28 @@ export default async function handler(req, res) {
 
       const current = await clerk.users.getUser(userId);
       const params = {};
+      const metadata = { ...(current.publicMetadata || {}) };
+      let metadataChanged = false;
 
       if (typeof banned === 'boolean') params.banned = banned;
 
       if (typeof role === 'string') {
-        const metadata = { ...(current.publicMetadata || {}) };
         if (role) metadata.role = role;
         else delete metadata.role;
-        params.publicMetadata = metadata;
+        metadataChanged = true;
       }
+
+      if (access && typeof access === 'object') {
+        const level = ['full', 'study', 'fcn', 'none'].includes(access.level) ? access.level : 'full';
+        const rawDevices = Number(access.maxDevices);
+        const maxDevices = Number.isFinite(rawDevices) && rawDevices > 0
+          ? Math.min(Math.max(Math.round(rawDevices), 1), 5)
+          : 2;
+        metadata.access = { ...(metadata.access || {}), level, maxDevices };
+        metadataChanged = true;
+      }
+
+      if (metadataChanged) params.publicMetadata = metadata;
 
       const updated = await clerk.users.updateUser(userId, params);
       return send(res, 200, { user: summarizeUser(updated, await activeSessionsFor(userId)) });

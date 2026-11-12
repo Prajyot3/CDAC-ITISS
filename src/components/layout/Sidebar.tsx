@@ -17,6 +17,7 @@ import {
 import type { LucideIcon } from 'lucide-react';
 import { Show, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
+import { allowedTabs, resolveAccess } from '../../lib/access';
 
 export type NavItem = 
   | 'dashboard' 
@@ -103,6 +104,11 @@ export const Sidebar: React.FC<SidebarProps> = ({
     navItems.push({ id: 'admin', label: 'Admin · Users', icon: ShieldCheck, badge: 'ADMIN' });
   }
 
+  const permittedTabs = allowedTabs(resolveAccess(user?.publicMetadata).level);
+  const visibleNavItems = navItems.filter(
+    item => item.id === 'admin' || permittedTabs.includes(item.id),
+  );
+
   const handleNavClick = (id: string) => {
     onSelectTab(id as NavItem);
     onCloseMobile();
@@ -159,7 +165,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
         {/* Navigation list */}
         <nav className="flex-1 px-3 py-4 space-y-1 overflow-y-auto">
-          {navItems.map((item) => {
+          {visibleNavItems.map((item) => {
             const Icon = item.icon;
             const isActive = currentTab === item.id;
 

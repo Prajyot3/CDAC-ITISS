@@ -80,6 +80,14 @@ export const requireAdmin = async (req, res) => {
   return { ...auth, user };
 };
 
+export const resolveAccess = metadata => {
+  const access = (metadata && metadata.access) || {};
+  const level = ['full', 'study', 'fcn', 'none'].includes(access.level) ? access.level : 'full';
+  const raw = Number(access.maxDevices);
+  const maxDevices = Number.isFinite(raw) && raw > 0 ? Math.min(Math.max(Math.round(raw), 1), 5) : MAX_ACTIVE_SESSIONS;
+  return { level, maxDevices };
+};
+
 export const summarizeSession = session => {
   const activity = session.latestActivity || {};
   return {
@@ -105,6 +113,7 @@ export const summarizeUser = (user, sessions = []) => ({
   lastName: user.lastName,
   imageUrl: user.imageUrl,
   role: user.publicMetadata?.role || null,
+  access: resolveAccess(user.publicMetadata),
   banned: Boolean(user.banned),
   createdAt: user.createdAt,
   lastSignInAt: user.lastSignInAt || null,

@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { apiRequest } from '../../lib/apiClient';
 import type { GuardSession } from '../auth/SessionLimitGate';
+import { ACCESS_LABELS, ACCESS_LEVELS, type AccessLevel } from '../../lib/access';
 
 interface AdminUser {
   id: string;
@@ -26,6 +27,7 @@ interface AdminUser {
   lastName: string | null;
   imageUrl: string;
   role: string | null;
+  access: { level: AccessLevel; maxDevices: number };
   banned: boolean;
   createdAt: string;
   lastSignInAt: string | null;
@@ -181,6 +183,25 @@ export const AdminView: React.FC = () => {
       'Sessions revoked.',
     );
 
+  const saveAccess = (
+    entry: AdminUser,
+    patch: Partial<{ level: AccessLevel; maxDevices: number }>,
+  ) => {
+    const next = { ...entry.access, ...patch };
+    void mutate(
+      entry.id,
+      async () => {
+        const bearer = await withToken();
+        await apiRequest(`/api/admin/users`, bearer, {
+          method: 'PATCH',
+          body: JSON.stringify({ userId: entry.id, access: next }),
+        });
+        return `${entry.email || entry.id}: ${ACCESS_LABELS[next.level]} · ${next.maxDevices} device${next.maxDevices === 1 ? '' : 's'}.`;
+      },
+      'Access updated.',
+    );
+  };
+
   const deleteUser = (entry: AdminUser) => {
     if (!window.confirm(`Delete ${entry.email || entry.id}? This cannot be undone.`)) return;
     void mutate(
@@ -280,8 +301,8 @@ export const AdminView: React.FC = () => {
 
       <div className="overflow-hidden rounded-xl border border-[#232F3B] bg-[#10171E]">
         <div className="hidden grid-cols-12 gap-3 border-b border-[#1F2933] px-4 py-2.5 text-[10px] font-mono uppercase tracking-wider text-[#718092] md:grid">
-          <span className="col-span-4">Student</span>
-          <span className="col-span-2">Role</span>
+          <span className="col-span-3">Student</span>
+          <span className="col-span-3">Access</span>
           <span className="col-span-2">Devices</span>
           <span className="col-span-2">Last sign-in</span>
           <span className="col-span-2 text-right">Actions</span>
@@ -306,7 +327,7 @@ export const AdminView: React.FC = () => {
             return (
               <div key={entry.id} className="border-b border-[#1A232E] last:border-0">
                 <div className="grid grid-cols-1 items-center gap-3 px-4 py-3 md:grid-cols-12">
-                  <div className="col-span-4 flex min-w-0 items-center gap-2.5">
+                  <div className="col-span-3 flex min-w-0 items-center gap-2.5">
                     <button
                       type="button"
                       onClick={() => setExpanded(isOpen ? null : entry.id)}
@@ -324,6 +345,16 @@ export const AdminView: React.FC = () => {
                             you
                           </span>
                         )}
+                        {entry.role === 'admin' && (
+                          <span className="inline-flex items-center gap-1 rounded border border-amber-500/30 bg-amber-500/10 px-1 py-0.5 font-mono text-[9px] font-semibold text-amber-300">
+                            <Crown className="h-2.5 w-2.5" /> admin
+                          </span>
+                        )}
+                        {entry.banned && (
+                          <span className="rounded border border-red-500/30 bg-red-500/10 px-1 py-0.5 font-mono text-[9px] font-semibold text-red-300">
+                            banned
+                          </span>
+                        )}
                       </div>
                       <div className="truncate text-[11px] font-mono text-[#8C98A6]">
                         {entry.email || entry.id}
@@ -331,19 +362,35 @@ export const AdminView: React.FC = () => {
                     </div>
                   </div>
 
-                  <div className="col-span-2 flex items-center gap-1.5 text-[11px]">
-                    {entry.role === 'admin' ? (
-                      <span className="inline-flex items-center gap-1 rounded border border-amber-500/30 bg-amber-500/10 px-1.5 py-0.5 font-mono font-semibold text-amber-300">
-                        <Crown className="h-3 w-3" /> admin
-                      </span>
-                    ) : (
-                      <span className="font-mono text-[#718092]">student</span>
-                    )}
-                    {entry.banned && (
-                      <span className="rounded border border-red-500/30 bg-red-500/10 px-1.5 py-0.5 font-mono font-semibold text-red-300">
-                        banned
-                      </span>
-                    )}
+                  <div className="col-span-3 flex items-center gap-1.5">
+                    <select
+                      value={entry.access.level}
+                      disabled={busyUserId === entry.id || isSelf}
+                      onChange={event => saveAccess(entry, { level: event.target.value as AccessLevel })}
+                      title="Portal access level"
+                      className="min-w-0 flex-1 rounded-md border border-[#2A3848] bg-[#0C1014] px-2 py-1.5 text-[11px] text-white outline-none transition-colors hover:border-[#76B900] focus:border-[#76B900] disabled:opacity-50"
+                    >
+                      {ACCESS_LEVELS.map(level => (
+                        <option key={level} value={level}>
+                          {ACCESS_LABELS[level]}
+                        </option>
+                      ))}
+                    </select>
+                    <input
+                      type="number"
+                      min={1}
+                      max={5}
+                      value={entry.access.maxDevices}
+                      disabled={busyUserId === entry.id || isSelf}
+                      onChange={event => {
+                        const next = Number(event.target.value);
+                        if (Number.isFinite(next) && next >= 1 && next <= 5) {
+                          saveAccess(entry, { maxDevices: Math.round(next) });
+                        }
+                      }}
+                      title="Devices allowed"
+                      className="w-14 rounded-md border border-[#2A3848] bg-[#0C1014] px-2 py-1.5 text-[11px] font-mono text-white outline-none transition-colors hover:border-[#76B900] focus:border-[#76B900] disabled:opacity-50"
+                    />
                   </div>
 
                   <div className="col-span-2">
