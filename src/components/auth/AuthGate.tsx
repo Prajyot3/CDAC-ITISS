@@ -1,16 +1,7 @@
 import React, { useEffect, useState } from 'react';
-import { SignIn, SignUp, useUser } from '@clerk/react';
-import {
-  AlertTriangle,
-  Award,
-  BookOpen,
-  CheckCircle2,
-  Loader2,
-  Lock,
-  RefreshCw,
-  Shield,
-  Sparkles,
-} from 'lucide-react';
+import { useUser } from '@clerk/react';
+import { AlertTriangle, Loader2, Lock, RefreshCw, Shield, ShieldCheck } from 'lucide-react';
+import { SimpleAuthForm } from './SimpleAuthForm';
 
 /**
  * How long we wait for Clerk to report a session before we fail closed.
@@ -88,28 +79,7 @@ const GateErrorScreen: React.FC = () => (
 /*  Signed-out gate (blocking)                                                 */
 /* -------------------------------------------------------------------------- */
 
-const VALUE_PROPS = [
-  {
-    icon: BookOpen,
-    title: '309 verified MCQs',
-    body: 'Extracted from FCN01–FCN05 with answer provenance for every question.',
-  },
-  {
-    icon: Award,
-    title: '40-question mock exams',
-    body: 'Timed, exam-condition simulations with instant scoring and review.',
-  },
-  {
-    icon: Sparkles,
-    title: '12-module architecture',
-    body: 'FCN is live today; the remaining ITISS modules activate as content lands.',
-  },
-];
-
-const SignInGate: React.FC = () => {
-  const [mode, setMode] = useState<'sign-in' | 'sign-up'>('sign-in');
-
-  return (
+const SignInGate: React.FC = () => (
   <div
     className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex flex-col"
     role="dialog"
@@ -117,7 +87,7 @@ const SignInGate: React.FC = () => {
     aria-label="Sign in required to access the CDAC ITISS preparation platform"
   >
     <header className="border-b border-[#19222B] px-4 sm:px-8 py-4">
-      <div className="max-w-6xl mx-auto flex items-center justify-between gap-4">
+      <div className="max-w-5xl mx-auto flex items-center justify-between gap-4">
         <div className="flex items-center gap-2.5">
           <div className="w-8 h-8 rounded-lg bg-[#10171E] border border-[#76B900]/40 flex items-center justify-center">
             <Shield className="w-4 h-4 text-[#76B900]" />
@@ -131,85 +101,30 @@ const SignInGate: React.FC = () => {
         </div>
         <div className="flex items-center gap-1.5 text-[11px] font-mono text-[#8C98A6]">
           <Lock className="w-3.5 h-3.5 text-[#76B900]" />
-          <span className="hidden sm:inline">Access gated by Clerk</span>
+          <span className="hidden sm:inline">Private student access</span>
         </div>
       </div>
     </header>
 
-    <main className="flex-1 px-4 sm:px-8 py-8 sm:py-12">
-      <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-        {/* Brand / value column */}
-        <section className="lg:col-span-5 space-y-6">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-[#16212B] border border-[#76B900]/40 text-[#76B900] text-[11px] font-mono font-semibold tracking-wider uppercase">
-            <Shield className="w-3.5 h-3.5" />
-            <span>Student access gate</span>
-          </div>
+    <main className="flex-1 flex items-center justify-center px-4 py-10">
+      <div className="w-full max-w-md">
+        <div className="mb-6 text-center">
+          <h1 className="text-xl sm:text-2xl font-black tracking-tight text-white">
+            Sign in to continue
+          </h1>
+          <p className="mt-1.5 text-xs text-[#8C98A6]">
+            Your question bank, mock exams and progress are behind this gate.
+          </p>
+        </div>
 
-          <div className="space-y-3">
-            <h1 className="text-2xl sm:text-3xl font-black tracking-tight text-white">
-              Sign in to unlock your ITISS preparation
-            </h1>
-            <p className="text-sm text-[#9CA3AF] leading-relaxed">
-              Question banks, practice sessions, mock examinations and performance tracking are
-              restricted to authenticated CDAC ITISS students. Your session, bookmarks and scores
-              stay synchronized across devices.
-            </p>
-          </div>
+        <div className="rounded-2xl border border-[#232F3E] bg-[#10171E] p-5 sm:p-7 shadow-2xl shadow-black/70">
+          <SimpleAuthForm />
+        </div>
 
-          <ul className="space-y-3">
-            {VALUE_PROPS.map(({ icon: Icon, title, body }) => (
-              <li
-                key={title}
-                className="flex items-start gap-3 rounded-lg bg-[#0C1014] border border-[#1E2933] p-3.5"
-              >
-                <Icon className="w-4 h-4 shrink-0 mt-0.5 text-[#76B900]" />
-                <div>
-                  <span className="block text-xs font-semibold text-white">{title}</span>
-                  <span className="block text-[11px] text-[#8C98A6] mt-0.5">{body}</span>
-                </div>
-              </li>
-            ))}
-          </ul>
-
-          <div className="flex items-center gap-2 text-[11px] font-mono text-[#637282]">
-            <CheckCircle2 className="w-3.5 h-3.5 text-[#76B900]" />
-            <span>Protected by Clerk · session tokens only, no passwords stored here</span>
-          </div>
-        </section>
-
-        {/* Clerk sign-in column */}
-        <section className="lg:col-span-7 flex justify-center w-full">
-          <div className="w-full max-w-md space-y-4">
-            <div className="flex items-center gap-1 p-1 bg-[#121820] border border-[#232F3D] rounded-xl">
-              <button
-                type="button"
-                onClick={() => setMode('sign-in')}
-                className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${
-                  mode === 'sign-in'
-                    ? 'bg-[#1D2733] text-[#76B900] border border-[#76B900]/40 shadow-sm'
-                    : 'text-[#8C98A6] hover:text-white'
-                }`}
-              >
-                Sign In
-              </button>
-              <button
-                type="button"
-                onClick={() => setMode('sign-up')}
-                className={`flex-1 py-2 text-xs font-semibold rounded-lg transition-all ${
-                  mode === 'sign-up'
-                    ? 'bg-[#1D2733] text-[#76B900] border border-[#76B900]/40 shadow-sm'
-                    : 'text-[#8C98A6] hover:text-white'
-                }`}
-              >
-                Create Account
-              </button>
-            </div>
-
-            <div className="flex justify-center w-full min-h-[380px]">
-              {mode === 'sign-in' ? <SignIn routing="hash" /> : <SignUp routing="hash" />}
-            </div>
-          </div>
-        </section>
+        <div className="mt-5 flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#556372]">
+          <ShieldCheck className="w-3.5 h-3.5 text-[#76B900]" />
+          <span>Protected by Clerk · 256-bit TLS</span>
+        </div>
       </div>
     </main>
 
@@ -217,8 +132,7 @@ const SignInGate: React.FC = () => {
       cdacitissacademy.tech · CDAC ITISS Preparation Platform v1.0
     </footer>
   </div>
-  );
-};
+);
 
 /* -------------------------------------------------------------------------- */
 /*  Gate                                                                       */
@@ -233,7 +147,7 @@ export interface AuthGateProps {
  *
  * - `loading`  → boot screen while Clerk initialises
  * - `stuck`    → fail-closed error screen after {@link CLERK_LOAD_TIMEOUT_MS}
- * - `signedOut`→ blocking Clerk sign-in screen (children never mount)
+ * - `signedOut`→ custom credential screen (children never mount)
  * - `signedIn` → renders `children`
  */
 export const AuthGate: React.FC<AuthGateProps> = ({ children }) => {

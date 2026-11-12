@@ -95,13 +95,17 @@ reports an authenticated session — protected views never mount for anonymous v
 | :-- | :-- |
 | Clerk initialising | Boot screen (`Verifying secure access…`) |
 | Clerk unreachable for 15s | Fail-closed error screen with retry (content stays locked) |
-| Signed out | Blocking Clerk `<SignIn />` gate — no dashboard, practice, mock or data access |
+| Signed out | Custom email/username + password login screen — no dashboard, practice, mock or data access |
 | Signed in | The full preparation platform + `UserButton` in the header |
 
 Implementation:
 
 - `src/components/auth/AuthGate.tsx` — the gate itself (`AuthGate`), including the boot,
   failure and sign-in screens.
+- `src/components/auth/SimpleAuthForm.tsx` — the plain credential UI built on Clerk's headless
+  resources: email-or-username + password sign-in, sign-up with e-mail code verification,
+  optional e-mail second factor, and the password-reset code flow. Show/hide password, inline
+  Clerk error messages, busy states. No prebuilt Clerk widget is rendered.
 - `src/main.tsx` — wraps `App` in `ClerkProvider` → `AuthGate`, and refuses to boot the app
   when `VITE_CLERK_PUBLISHABLE_KEY` is missing (fail-closed, with an actionable error screen).
 - `src/components/auth/AuthView.tsx` — the signed-in student account page (profile, stats,
