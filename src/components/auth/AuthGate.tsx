@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useUser } from '@clerk/react';
+import { useUser, SignIn, SignUp } from '@clerk/react';
 import { AlertTriangle, Loader2, Lock, RefreshCw, Shield, ShieldCheck } from 'lucide-react';
-import { SimpleAuthForm } from './SimpleAuthForm';
 
 /**
  * How long we wait for Clerk to report a session before showing the sign-in
@@ -34,6 +33,76 @@ const BootScreen: React.FC = () => (
     </div>
   </div>
 );
+
+/* -------------------------------------------------------------------------- */
+/*  Clerk auth panel                                                           */
+/* -------------------------------------------------------------------------- */
+
+/**
+ * Clerk's prebuilt components are used on purpose: this instance has Clerk
+ * Protect mid-flow challenges, bot sign-up protection and new-device (client
+ * trust) verification enabled. Those steps are resolved automatically by the
+ * prebuilt components, while a hand-rolled form has to re-implement each
+ * challenge and silently fails when one appears.
+ * Branding comes from the ClerkProvider `appearance` config in `main.tsx`.
+ */
+const ClerkAuthPanel: React.FC = () => {
+  const [mode, setMode] = useState<'sign-in' | 'sign-up'>(() =>
+    window.location.hash.includes('sign-up') ? 'sign-up' : 'sign-in',
+  );
+
+  // Clerk's own footer link navigates to #/sign-up; keep our switch in sync.
+  useEffect(() => {
+    const onHashChange = () => {
+      if (window.location.hash.includes('sign-up')) setMode('sign-up');
+    };
+    window.addEventListener('hashchange', onHashChange);
+    return () => window.removeEventListener('hashchange', onHashChange);
+  }, []);
+
+  const switchMode = (next: 'sign-in' | 'sign-up') => {
+    setMode(next);
+    const { pathname, search } = window.location;
+    window.history.replaceState(null, '', `${pathname}${search}`);
+  };
+
+  return (
+    <div className="w-full space-y-5">
+      <div className="flex items-center gap-1 rounded-xl border border-[#232F3D] bg-[#121820] p-1">
+        <button
+          type="button"
+          onClick={() => switchMode('sign-in')}
+          className={`flex-1 rounded-lg py-2 text-xs font-semibold transition-all ${
+            mode === 'sign-in'
+              ? 'border border-[#76B900]/40 bg-[#1D2733] text-[#76B900] shadow-sm'
+              : 'text-[#8C98A6] hover:text-white'
+          }`}
+        >
+          Sign In
+        </button>
+        <button
+          type="button"
+          onClick={() => switchMode('sign-up')}
+          className={`flex-1 rounded-lg py-2 text-xs font-semibold transition-all ${
+            mode === 'sign-up'
+              ? 'border border-[#76B900]/40 bg-[#1D2733] text-[#76B900] shadow-sm'
+              : 'text-[#8C98A6] hover:text-white'
+          }`}
+        >
+          Create Account
+        </button>
+      </div>
+
+      <div className="flex justify-center">
+        {mode === 'sign-in' ? <SignIn routing="hash" /> : <SignUp routing="hash" />}
+      </div>
+
+      <p className="text-center text-[10px] leading-relaxed text-[#556372] font-mono">
+        Protected by Clerk · new devices confirm with an e-mail code
+      </p>
+    </div>
+  );
+};
 
 /* -------------------------------------------------------------------------- */
 /*  Signed-out gate (blocking)                                                 */
@@ -77,24 +146,25 @@ const SignInGate: React.FC<{ degraded?: boolean }> = ({ degraded = false }) => (
           </p>
         </div>
 
+        {degraded && (
+          <div className="mb-4 flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2.5 text-[11px] leading-relaxed text-amber-200">
+            <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+            <span className="flex-1">
+              Can&apos;t reach the sign-in service right now. Check your connection and retry.
+            </span>
+            <button
+              type="button"
+              onClick={() => window.location.reload()}
+              className="flex shrink-0 items-center gap-1 font-semibold text-amber-100 hover:text-white"
+            >
+              <RefreshCw className="h-3 w-3" />
+              Retry
+            </button>
+          </div>
+        )}
+
         <div className="rounded-2xl border border-[#232F3E] bg-[#10171E] p-5 sm:p-7 shadow-2xl shadow-black/70">
-          {degraded && (
-            <div className="mb-4 flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2.5 text-[11px] leading-relaxed text-amber-200">
-              <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
-              <span className="flex-1">
-                Can&apos;t reach the sign-in service right now. Check your connection and retry.
-              </span>
-              <button
-                type="button"
-                onClick={() => window.location.reload()}
-                className="flex shrink-0 items-center gap-1 font-semibold text-amber-100 hover:text-white"
-              >
-                <RefreshCw className="h-3 w-3" />
-                Retry
-              </button>
-            </div>
-          )}
-          <SimpleAuthForm />
+          <ClerkAuthPanel />
         </div>
 
         <div className="mt-5 flex items-center justify-center gap-1.5 text-[11px] font-mono text-[#556372]">
@@ -123,7 +193,7 @@ export interface AuthGateProps {
  *
  * - `loading`  → boot screen while Clerk initialises
  * - `stuck`    → sign-in screen with a connection notice after {@link CLERK_LOAD_TIMEOUT_MS}
- * - `signedOut`→ custom credential screen (children never mount)
+ * - `signedOut`→ branded Clerk sign-in / sign-up (children never mount)
  * - `signedIn` → renders `children`
  */
 export const AuthGate: React.FC<AuthGateProps> = ({ children }) => {
