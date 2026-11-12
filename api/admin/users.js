@@ -80,16 +80,19 @@ export default async function handler(req, res) {
       const { userId, banned, role, access } = readBody(req);
       if (!userId) return send(res, 400, { error: 'userId is required.' });
       if (userId === admin.userId && banned === true) {
-        return send(res, 400, { error: 'You cannot ban your own administrator account.' });
+        return send(res, 400, { error: 'You cannot block your own administrator account.' });
+      }
+      if (typeof banned === 'boolean') {
+        // Clerk's ban endpoint is a paid-plan feature; the portal block is enforced
+        // through the access level instead.
+        return send(res, 400, {
+          error: 'Banning is not available on this Clerk plan. Set the access level to “Blocked” instead.',
+        });
       }
 
       const current = await clerk.users.getUser(userId);
       const metadata = { ...(current.publicMetadata || {}) };
       let metadataChanged = false;
-
-      if (typeof banned === 'boolean') {
-        await (banned ? clerk.users.banUser(userId) : clerk.users.unbanUser(userId));
-      }
 
       if (typeof role === 'string') {
         if (role) metadata.role = role;
@@ -108,7 +111,8 @@ export default async function handler(req, res) {
       }
 
       if (metadataChanged) {
-        await clerk.users.updateUserMetadata(userId, { publicMetadata: metadata });
+        // Replace (not patch) so a removed role actually disappears.
+        await clerk.users.replaceUserMetadata(userId, { publicMetadata: metadata });
       }
 
       const updated = await clerk.users.getUser(userId);

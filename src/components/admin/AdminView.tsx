@@ -141,18 +141,22 @@ export const AdminView: React.FC = () => {
     return token();
   };
 
-  const toggleBan = (entry: AdminUser) =>
+  const toggleBlock = (entry: AdminUser) =>
     mutate(
       entry.id,
       async () => {
         const bearer = await withToken();
+        const blocked = entry.access.level === 'none';
         await apiRequest(`/api/admin/users`, bearer, {
           method: 'PATCH',
-          body: JSON.stringify({ userId: entry.id, banned: !entry.banned }),
+          body: JSON.stringify({
+            userId: entry.id,
+            access: { ...entry.access, level: blocked ? 'full' : 'none' },
+          }),
         });
-        return entry.banned ? 'Account unbanned.' : 'Account banned and signed out.';
+        return blocked ? 'Portal access restored.' : 'Portal access blocked.';
       },
-      'Account updated.',
+      'Access updated.',
     );
 
   const toggleAdmin = (entry: AdminUser) =>
@@ -429,8 +433,8 @@ export const AdminView: React.FC = () => {
                     <button
                       type="button"
                       disabled={busyUserId === entry.id || isSelf}
-                      onClick={() => void toggleBan(entry)}
-                      title={entry.banned ? 'Unban user' : 'Ban user'}
+                      onClick={() => void toggleBlock(entry)}
+                      title={entry.access.level === 'none' ? 'Unblock portal access' : 'Block portal access'}
                       className="rounded-md border border-[#2A3848] p-1.5 text-[#C4CDD6] transition-colors hover:border-red-400 hover:text-red-300 disabled:opacity-40"
                     >
                       <Ban className="h-3.5 w-3.5" />
