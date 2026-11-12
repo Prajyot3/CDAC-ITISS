@@ -17,6 +17,7 @@ type View = 'sign-in' | 'sign-up' | 'forgot';
 type Step =
   | 'credentials'
   | 'second-factor'
+  | 'client-trust'
   | 'verify-email'
   | 'reset-code'
   | 'new-password';
@@ -232,6 +233,22 @@ export const SimpleAuthForm: React.FC = () => {
         return;
       }
 
+      if (attempt.status === 'needs_client_trust') {
+        const emailFactor = attempt.supportedFirstFactors?.find(
+          factor => factor.strategy === 'email_code' && 'emailAddressId' in factor,
+        );
+        if (emailFactor && 'emailAddressId' in emailFactor) {
+          await signIn.prepareFirstFactor({
+            strategy: 'email_code',
+            emailAddressId: emailFactor.emailAddressId,
+          });
+          setPendingIdentifier(emailFactor.emailAddressId);
+        }
+        setNotice('New device detected — we emailed you a verification code.');
+        setStep('client-trust');
+        return;
+      }
+
       if (attempt.status === 'needs_new_password') {
         setStep('new-password');
         return;
@@ -274,8 +291,33 @@ export const SimpleAuthForm: React.FC = () => {
     }
   };
 
-  /* -------------------------- create account ------------------------- */
+  const handleClientTrust = async (event: React.FormEvent) => {
+    event.preventDefault();
+    if (!signIn || busy) return;
+    resetMessages();
+    if (!code.trim()) {
+      setError('Enter the verification code from your email.');
+      return;
+    }
+    setBusy(true);
+    try {
+      const attempt = await signIn.attemptFirstFactor({
+        strategy: 'email_code',
+        code: code.trim(),
+      });
+      if (attempt.status === 'complete') {
+        await finish(attempt.createdSessionId);
+      } else {
+        setError('That code was not accepted. Request a new one and try again.');
+      }
+    } catch (err) {
+      setError(clerkErrorMessage(err));
+    } finally {
+      setBusy(false);
+    }
+  };
 
+  /* -------------------------- create account ------------------------- */
   const handleSignUp = async (event: React.FormEvent) => {
     event.preventDefault();
     if (!signUp || busy) return;
@@ -542,6 +584,44 @@ export const SimpleAuthForm: React.FC = () => {
           <p className="text-[11px] text-[#718092]">
             A 6-digit code was sent to the email on {pendingIdentifier || 'your account'}.
           </p>
+          <button type="submit" disabled={busy} className={primaryButtonClass}>
+            {busyLabel('Verify & sign in')}
+          </button>
+          <button
+            type="button"
+            className="flex items-center gap-1.5 text-[11px] text-[#8C98A6] hover:text-white transition-colors"
+            onClick={() => {
+              setStep('credentials');
+              setCode('');
+              resetMessages();
+            }}
+          >
+            <ArrowLeft className="h-3.5 w-3.5" /> Back to sign in
+          </button>
+        </form>
+      )}
+
+      {view === 'sign-in' && step === 'client-trust' && (
+        <form onSubmit={handleClientTrust} className="space-y-4">
+          <div>
+            <h2 className="text-sm font-bold text-white">Confirm this device</h2>
+            <p className="mt-1 text-[11px] text-[#8C98A6]">
+              For your security, sign-in from a new device needs the 6-digit code we just emailed
+              you.
+            </p>
+          </div>
+          <Field
+            id="client-trust-code"
+            label="Verification code"
+            icon={<Mail className="h-4 w-4" />}
+            value={code}
+            onChange={event => setCode(event.target.value)}
+            inputMode="numeric"
+            autoComplete="one-time-code"
+            placeholder="123456"
+            maxLength={6}
+            autoFocus
+          />
           <button type="submit" disabled={busy} className={primaryButtonClass}>
             {busyLabel('Verify & sign in')}
           </button>
