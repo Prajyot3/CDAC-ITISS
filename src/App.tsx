@@ -11,6 +11,7 @@ import { BookmarksView } from './components/questions/BookmarksView';
 import { PerformanceView } from './components/performance/PerformanceView';
 import { SettingsView } from './components/settings/SettingsView';
 import { AuthView } from './components/auth/AuthView';
+import { AuthGateModal } from './components/auth/AuthGateModal';
 import { AuditModal } from './components/common/AuditModal';
 import { useProgress } from './context/ProgressContext';
 
@@ -155,6 +156,9 @@ export const App: React.FC = () => {
         isOpen={isAuditModalOpen}
         onClose={() => setIsAuditModalOpen(false)}
       />
+
+      {/* Blocking Access Gate Popup for Unauthenticated Users */}
+      <AuthGateModal />
     </div>
   );
 };

@@ -259,3 +259,4 @@ export const AuthView: React.FC<AuthViewProps> = ({
     </div>
   );
 };
+
