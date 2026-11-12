@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { useAuth } from '@clerk/react';
-import { AlertTriangle, Laptop, Loader2, LogOut, MonitorSmartphone, RefreshCw, ShieldAlert } from 'lucide-react';
+import { AlertTriangle, Laptop, LogOut, MonitorSmartphone, RefreshCw, ShieldAlert } from 'lucide-react';
 import { apiRequest } from '../../lib/apiClient';
 
 export interface GuardSession {
@@ -179,18 +179,9 @@ export const SessionLimitGate: React.FC<{ children: React.ReactNode }> = ({ chil
   );
 
   if (!isLoaded || !isSignedIn) return <>{children}</>;
-  if (state === 'ok' || state === 'offline') return <>{children}</>;
-
-  if (state === 'checking') {
-    return (
-      <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex items-center justify-center p-6">
-        <div className="flex items-center gap-2 text-sm font-mono text-[#A2AFBD]">
-          <Loader2 className="h-4 w-4 animate-spin text-[#76B900]" />
-          Checking active devices…
-        </div>
-      </div>
-    );
-  }
+  // No blocking spinner while the guard resolves — the app renders and the limit
+  // screen only takes over once we actually know the account is over the limit.
+  if (state !== 'blocked') return <>{children}</>;
 
   return (
     <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex items-center justify-center px-4 py-10">

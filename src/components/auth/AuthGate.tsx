@@ -1,38 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { useUser, SignIn, SignUp } from '@clerk/react';
-import { AlertTriangle, Loader2, Lock, RefreshCw, Shield, ShieldCheck } from 'lucide-react';
+import { AlertTriangle, Lock, RefreshCw, Shield, ShieldCheck } from 'lucide-react';
 
 /**
- * How long we wait for Clerk to report a session before showing the sign-in
- * screen with a connection notice. The app never renders while `isLoaded` is false.
+ * How long we wait for Clerk to report a session before showing the connection
+ * notice. The sign-in screen itself renders immediately — Clerk's component
+ * shows its own inline skeleton while it boots.
  */
 const CLERK_LOAD_TIMEOUT_MS = 15_000;
 
 const HASH_PREFIXES_TO_CLEAR = ['#/sign-in', '#/sign-up', '#/sso-callback', '#/factor', '#/verify'];
-
-/* -------------------------------------------------------------------------- */
-/*  Boot screen                                                                */
-/* -------------------------------------------------------------------------- */
-
-const BootScreen: React.FC = () => (
-  <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex items-center justify-center p-6">
-    <div className="flex flex-col items-center gap-4 text-center">
-      <div className="relative">
-        <div className="absolute inset-0 rounded-full bg-[#76B900]/20 blur-xl" />
-        <div className="relative w-14 h-14 rounded-2xl bg-[#10171E] border border-[#76B900]/40 flex items-center justify-center">
-          <Shield className="w-7 h-7 text-[#76B900]" />
-        </div>
-      </div>
-      <div className="flex items-center gap-2 text-sm text-[#A2AFBD] font-mono">
-        <Loader2 className="w-4 h-4 animate-spin text-[#76B900]" />
-        <span>Verifying secure access…</span>
-      </div>
-      <p className="max-w-xs text-[11px] text-[#637282] font-mono">
-        CDAC ITISS Preparation Platform · Clerk Identity
-      </p>
-    </div>
-  </div>
-);
 
 /* -------------------------------------------------------------------------- */
 /*  Clerk auth panel                                                           */
@@ -220,8 +197,9 @@ export const AuthGate: React.FC<AuthGateProps> = ({ children }) => {
   }, [isSignedIn]);
 
   if (isSignedIn) return <>{children}</>;
-  if (!isLoaded) return timedOut ? <SignInGate degraded /> : <BootScreen />;
-  return <SignInGate />;
+  // No dedicated loading screen: the branded sign-in UI renders immediately and
+  // Clerk's component fills itself in as soon as it boots.
+  return <SignInGate degraded={!isLoaded && timedOut} />;
 };
 
 /**
