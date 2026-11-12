@@ -7,7 +7,21 @@ import { AuthGate } from './components/auth/AuthGate';
 import { ProgressProvider } from './context/ProgressContext';
 import './index.css';
 
-const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+/**
+ * Vite inlines the raw environment value, and values pasted through a Windows
+ * shell can carry a UTF-8 BOM (U+FEFF), CRLF or wrapping quotes. Clerk rejects
+ * any of those ("Publishable key not valid"), so sanitize before use.
+ */
+const sanitizeKey = (value: string | undefined): string =>
+  (value ?? '')
+    .replace(/^\uFEFF/, '')
+    .replace(/^[\s"']+|[\s"']+$/g, '');
+
+const PUBLISHABLE_KEY = sanitizeKey(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+
+if (import.meta.env.DEV && import.meta.env.VITE_CLERK_PUBLISHABLE_KEY !== PUBLISHABLE_KEY) {
+  console.warn('[auth] Sanitized whitespace/quotes from VITE_CLERK_PUBLISHABLE_KEY.');
+}
 
 const MissingKeyScreen: React.FC = () => (
   <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex items-center justify-center p-6">

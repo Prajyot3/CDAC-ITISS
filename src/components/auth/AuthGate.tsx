@@ -4,16 +4,15 @@ import { AlertTriangle, Loader2, Lock, RefreshCw, Shield, ShieldCheck } from 'lu
 import { SimpleAuthForm } from './SimpleAuthForm';
 
 /**
- * How long we wait for Clerk to report a session before we fail closed.
- * Without this, a broken/blocked Clerk script leaves `isLoaded === false` forever,
- * and a naive gate (`if (!isLoaded) return null`) would leave the app wide open.
+ * How long we wait for Clerk to report a session before showing the sign-in
+ * screen with a connection notice. The app never renders while `isLoaded` is false.
  */
 const CLERK_LOAD_TIMEOUT_MS = 15_000;
 
 const HASH_PREFIXES_TO_CLEAR = ['#/sign-in', '#/sign-up', '#/sso-callback', '#/factor', '#/verify'];
 
 /* -------------------------------------------------------------------------- */
-/*  Boot / failure screens                                                     */
+/*  Boot screen                                                                */
 /* -------------------------------------------------------------------------- */
 
 const BootScreen: React.FC = () => (
@@ -36,50 +35,11 @@ const BootScreen: React.FC = () => (
   </div>
 );
 
-const GateErrorScreen: React.FC = () => (
-  <div className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex items-center justify-center p-6">
-    <div className="w-full max-w-md rounded-2xl bg-[#10171E] border border-amber-500/30 p-6 sm:p-8 space-y-5 shadow-2xl shadow-black/60">
-      <div className="flex items-start gap-3">
-        <div className="w-10 h-10 shrink-0 rounded-lg bg-amber-500/10 border border-amber-500/30 flex items-center justify-center">
-          <AlertTriangle className="w-5 h-5 text-amber-400" />
-        </div>
-        <div>
-          <h1 className="text-base font-bold text-white">Authentication service unavailable</h1>
-          <p className="mt-1 text-xs leading-relaxed text-[#9CA3AF]">
-            The access gate could not verify your session. The study platform stays locked until
-            Clerk responds, so no exam content is exposed.
-          </p>
-        </div>
-      </div>
-
-      <div className="rounded-lg bg-[#0C1014] border border-[#1E2933] p-3 text-[11px] font-mono text-[#718092] space-y-1">
-        <div className="flex justify-between gap-3">
-          <span>Gate policy</span>
-          <span className="text-amber-400">fail-closed</span>
-        </div>
-        <div className="flex justify-between gap-3">
-          <span>Identity provider</span>
-          <span className="text-white">Clerk Cloud</span>
-        </div>
-      </div>
-
-      <button
-        type="button"
-        onClick={() => window.location.reload()}
-        className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg bg-[#76B900] hover:bg-[#68a500] text-black text-xs font-bold transition-colors"
-      >
-        <RefreshCw className="w-4 h-4" />
-        Retry secure sign-in
-      </button>
-    </div>
-  </div>
-);
-
 /* -------------------------------------------------------------------------- */
 /*  Signed-out gate (blocking)                                                 */
 /* -------------------------------------------------------------------------- */
 
-const SignInGate: React.FC = () => (
+const SignInGate: React.FC<{ degraded?: boolean }> = ({ degraded = false }) => (
   <div
     className="min-h-screen bg-[#0A0D0F] text-[#F3F4F6] flex flex-col"
     role="dialog"
@@ -118,6 +78,22 @@ const SignInGate: React.FC = () => (
         </div>
 
         <div className="rounded-2xl border border-[#232F3E] bg-[#10171E] p-5 sm:p-7 shadow-2xl shadow-black/70">
+          {degraded && (
+            <div className="mb-4 flex items-start gap-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-2.5 text-[11px] leading-relaxed text-amber-200">
+              <AlertTriangle className="mt-0.5 h-3.5 w-3.5 shrink-0" />
+              <span className="flex-1">
+                Can&apos;t reach the sign-in service right now. Check your connection and retry.
+              </span>
+              <button
+                type="button"
+                onClick={() => window.location.reload()}
+                className="flex shrink-0 items-center gap-1 font-semibold text-amber-100 hover:text-white"
+              >
+                <RefreshCw className="h-3 w-3" />
+                Retry
+              </button>
+            </div>
+          )}
           <SimpleAuthForm />
         </div>
 
@@ -146,7 +122,7 @@ export interface AuthGateProps {
  * Blocks the entire application tree until Clerk reports a signed-in session.
  *
  * - `loading`  → boot screen while Clerk initialises
- * - `stuck`    → fail-closed error screen after {@link CLERK_LOAD_TIMEOUT_MS}
+ * - `stuck`    → sign-in screen with a connection notice after {@link CLERK_LOAD_TIMEOUT_MS}
  * - `signedOut`→ custom credential screen (children never mount)
  * - `signedIn` → renders `children`
  */
@@ -154,7 +130,6 @@ export const AuthGate: React.FC<AuthGateProps> = ({ children }) => {
   const { isLoaded, isSignedIn } = useUser();
   const [timedOut, setTimedOut] = useState(false);
 
-  // Fail closed if Clerk never reports a result.
   useEffect(() => {
     if (isLoaded) {
       setTimedOut(false);
@@ -175,7 +150,7 @@ export const AuthGate: React.FC<AuthGateProps> = ({ children }) => {
   }, [isSignedIn]);
 
   if (isSignedIn) return <>{children}</>;
-  if (!isLoaded) return timedOut ? <GateErrorScreen /> : <BootScreen />;
+  if (!isLoaded) return timedOut ? <SignInGate degraded /> : <BootScreen />;
   return <SignInGate />;
 };
 
