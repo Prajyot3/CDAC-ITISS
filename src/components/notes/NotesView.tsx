@@ -72,9 +72,10 @@ export const NotesView: React.FC = () => {
         </div>
         <h1 className="text-2xl font-extrabold text-white flex items-center gap-2">
           <BookOpenText className="w-6 h-6 text-[#76B900]" />
-          {module ? `${module.code} Study Notes` : 'Study Notes'}
+          {module ? `Module ${module.number} Study Notes` : 'Study Notes'}
         </h1>
         <p className="text-xs text-[#9CA3AF] max-w-3xl">
+          {module ? `${module.name} · ` : ''}
           Important points only, written in simple English and organised by topic. Module 2 notes are split into
           separate Linux and Windows sections.
         </p>
@@ -86,6 +87,7 @@ export const NotesView: React.FC = () => {
               onChange={handleModuleChange}
               label="Notes module"
               allowedModuleIds={ITISS_MODULES.filter(m => hasNotes(m.id)).map(m => m.id)}
+              getLabel={m => `Module ${m.number}`}
             />
 
             {groups.length > 1 && (

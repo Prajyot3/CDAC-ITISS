@@ -9,6 +9,8 @@ interface ModuleSelectorProps {
   label?: string;
   /** Optional allow-list, e.g. only modules that actually have notes. */
   allowedModuleIds?: string[];
+  /** Optional custom pill label (defaults to the module code, e.g. FCN). */
+  getLabel?: (module: { id: string; code: string; number: number; name: string }) => string;
 }
 
 /**
@@ -21,6 +23,7 @@ export const ModuleSelector: React.FC<ModuleSelectorProps> = ({
   includeAll = false,
   label = 'Module',
   allowedModuleIds,
+  getLabel,
 }) => {
   const modules = getActiveModules().filter(
     module => !allowedModuleIds || allowedModuleIds.includes(module.id),
@@ -59,7 +62,7 @@ export const ModuleSelector: React.FC<ModuleSelectorProps> = ({
           }`}
           title={module.name}
         >
-          {module.code}
+          {getLabel ? getLabel(module) : module.code}
         </button>
       ))}
     </div>
