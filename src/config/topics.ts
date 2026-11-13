@@ -96,10 +96,34 @@ export const PROGRAMMING_TOPICS: TopicMeta[] = [
   }
 ];
 
+export const INFRA_TOPICS: TopicMeta[] = [
+  {
+    id: 'itil-service-mgmt',
+    name: 'ITIL Service Management',
+    shortDescription: 'Service Strategy, Service Design (SLA/OLA, SDP, RACI), Service Transition, and Service Operation (Incident, Problem, Change)'
+  },
+  {
+    id: 'data-center-mgmt',
+    name: 'Data Center Management (DCM)',
+    shortDescription: 'DC Architecture, PUE, UPS/HVAC/CRAC, Hot/Cold aisle containment, Cabling (MDF/IDF/POD), SNMP, MTBF/MTTR, and High Availability'
+  },
+  {
+    id: 'devops-containerization',
+    name: 'DevOps & Containerization',
+    shortDescription: 'DevOps culture, Git workflows, Docker images/containers/Compose/Swarm, Kubernetes (Pods, Nodes, ReplicaSets, Ingress), and AWS Cloud/VPC'
+  },
+  {
+    id: 'iac-config-monitoring',
+    name: 'IaC, Configuration Management & Monitoring',
+    shortDescription: 'Infrastructure as Code with Terraform, Configuration Automation (Ansible, Chef, Puppet), CI/CD with Jenkins, and Monitoring (Prometheus, Grafana)'
+  }
+];
+
 const MODULE_TOPICS: Record<string, TopicMeta[]> = {
   fcn: FCN_TOPICS,
   os: OS_TOPICS,
   programming: PROGRAMMING_TOPICS,
+  'it-infrastructure': INFRA_TOPICS,
 };
 
 export const getModuleTopics = (moduleId: string): TopicMeta[] =>

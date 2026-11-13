@@ -147,17 +147,25 @@ export const ITISS_MODULES: ITISSModule[] = [
     sectionId: 'section-b',
     sectionName: 'SECTION B: Infrastructure Security with DevOps and Cyber Forensics',
     duration: '120 Hours',
-    status: 'UPDATED SOON',
+    status: 'AVAILABLE',
     slug: 'it-infrastructure',
     route: '/modules/it-infrastructure',
-    description: 'Continuous Integration / Continuous Deployment (CI/CD) pipelines, Docker containerization, Kubernetes orchestration, Ansible configuration management, Terraform IaC, and cloud security architectures.',
+    description: 'Comprehensive IT infrastructure management covering ITIL framework services, data center architecture, power, cooling and storage (SAN/NAS/ZFS), and DevOps practices including Docker, Kubernetes, AWS Cloud, Terraform IaC, Ansible, and Prometheus monitoring.',
+    topics: [
+      'ITIL Service Management',
+      'Data Center Management (DCM)',
+      'DevOps & Containerization',
+      'IaC, Configuration Management & Monitoring'
+    ],
     syllabusPoints: [
-      'Infrastructure as Code (IaC) with Terraform and CloudFormation',
-      'Containerization Architecture: Docker Engine, Container Hardening, and Multi-stage Builds',
-      'Container Orchestration: Kubernetes Pods, Services, Deployments, and RBAC Policies',
-      'Configuration Management and Orchestration with Ansible Playbooks',
-      'CI/CD Security Automation: GitLab CI, Jenkins Pipelines, and Static Code Analysis (SAST)',
-      'Enterprise Monitoring and Observability: Prometheus, Grafana, and ELK Stack'
+      'ITIL Service Management: Service Strategy, Service Design (SLA/OLA/SDP), Service Transition & Operation',
+      'Data Center Architecture: Power Distribution (UPS/PDU), HVAC/CRAC, Hot/Cold Aisles, and Tier Reliability',
+      'DC Cabling & Network Infrastructure: MDF/IDF/POD Structured Cabling, ISP WAN Links, and NOC Operations',
+      'Enterprise Storage Systems: SAN, NAS, iSCSI, and ZFS Pooled Storage with High Availability',
+      'DevOps Culture & Continuous Delivery: CI/CD Pipelines, Build Artifacts, and Git Distributed Version Control',
+      'Containerization & Orchestration: Docker Images, Dockerfile, Compose, Swarm, and Kubernetes (Pods/Nodes/Ingress)',
+      'Cloud Architecture & VPC Networking: AWS EC2, S3, Lambda, VPC Subnets, Internet Gateways, and Security Groups',
+      'Infrastructure as Code & Observability: Terraform (State/Plan/Apply), Ansible Automation, Jenkins, and Prometheus'
     ]
   },
   {

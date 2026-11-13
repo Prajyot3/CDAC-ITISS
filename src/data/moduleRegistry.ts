@@ -3,11 +3,13 @@ import { ITISS_MODULES } from '../config/modules';
 import fcnQuestionsRaw from './fcnQuestions.json';
 import osQuestionsRaw from './osQuestions.json';
 import programmingQuestionsRaw from './programmingQuestions.json';
+import infraQuestionsRaw from './infraQuestions.json';
 
 // Cast imported raw JSON to strongly-typed Question array
 const fcnQuestions: Question[] = fcnQuestionsRaw as Question[];
 const osQuestions: Question[] = osQuestionsRaw as Question[];
 const programmingQuestions: Question[] = programmingQuestionsRaw as Question[];
+const infraQuestions: Question[] = infraQuestionsRaw as Question[];
 
 /**
  * MODULE QUESTION BANK REGISTRY
@@ -28,6 +30,7 @@ const QUESTION_BANKS: Record<string, Question[]> = {
   fcn: fcnQuestions,
   os: osQuestions,
   programming: programmingQuestions,
+  'it-infrastructure': infraQuestions,
   // Future question banks:
   // programming: programmingQuestions,
   // 'it-infrastructure': itInfrastructureQuestions,
