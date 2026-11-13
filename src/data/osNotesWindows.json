@@ -1,0 +1,325 @@
+[
+  {
+    "name": "Windows Deployment and Disk Management",
+    "summary": "Windows Server is installed from an image, configured with roles and features, and stores data on basic or dynamic disks with MBR or GPT partitioning.",
+    "sections": [
+      {
+        "title": "Editions and installation",
+        "points": [
+          "Main Windows Server editions: Standard and Datacenter; Datacenter adds unlimited virtual machine rights.",
+          "Two install options: Desktop Experience (full GUI) and Server Core (command line, less attack surface).",
+          "Minimum practical requirements: 64-bit CPU, 2 GB+ RAM, 32 GB+ disk and a network adapter.",
+          "Modern servers boot with UEFI + GPT; older BIOS systems use MBR.",
+          "Unattended installation uses an answer file (autounattend.xml); image files are install.wim or install.esd.",
+          "After installation, activate Windows with a retail key, MAK (multiple activation key) or KMS (key management service)."
+        ]
+      },
+      {
+        "title": "Roles and features",
+        "points": [
+          "Server Manager installs roles (big services such as AD DS, DNS, DHCP) and features (smaller add-ons).",
+          "PowerShell equivalent: Install-WindowsFeature (older) or Install-WindowsFeature / Add-WindowsFeature via Server Manager module.",
+          "A role can add dependent features automatically (for example DNS adds the DNS Server tools).",
+          "Roles are removed with Remove-WindowsFeature; data and configuration are not always removed with them.",
+          "Server Core is managed remotely with Server Manager, RSAT, PowerShell remoting or sconfig."
+        ]
+      },
+      {
+        "title": "Disks and partitions",
+        "points": [
+          "Basic disk uses primary partitions (maximum 4) and an extended partition with logical drives.",
+          "MBR supports 4 primary partitions and disks up to 2 TB.",
+          "GPT supports up to 128 partitions and disks larger than 2 TB, and stores backup partition data.",
+          "System partition holds boot files; boot partition holds the Windows folder (names are the reverse of what people expect).",
+          "A dynamic disk supports simple, spanned, striped (RAID 0), mirrored (RAID 1) and RAID 5 volumes.",
+          "Disk Management (diskmgmt.msc) and diskpart manage disks, partitions and drive letters."
+        ]
+      },
+      {
+        "title": "Filesystems and quotas",
+        "points": [
+          "NTFS supports permissions, encryption (EFS), compression, quotas and journaling.",
+          "FAT32 is limited to 4 GB per file and is used for small removable drives.",
+          "exFAT removes the 4 GB limit and is good for large removable media, but has no NTFS permissions.",
+          "Disk quotas are configured per volume, not per folder, and can warn a user before denying writes.",
+          "Shadow copies keep previous versions of files for quick restore.",
+          "Cluster size is the smallest disk unit allocated to a file; a large cluster wastes space on small files."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Windows DNS",
+    "summary": "DNS turns names into IP addresses. Windows DNS Server hosts forward and reverse zones, caches answers and integrates with Active Directory and DHCP.",
+    "sections": [
+      {
+        "title": "Zones",
+        "points": [
+          "Forward lookup zone: name to IP. Reverse lookup zone: IP to name, stored under in-addr.arpa.",
+          "Primary zone is a writable copy of the zone; secondary zone is a read-only copy updated by zone transfer.",
+          "AD-integrated zone stores records in Active Directory and replicates with AD instead of zone transfers.",
+          "Stub zone keeps only the name-server records needed to find the authoritative server.",
+          "Conditional forwarder forwards queries for one domain to a specific DNS server.",
+          "A zone starts with an SOA record and NS records that describe the zone and its name servers."
+        ]
+      },
+      {
+        "title": "Records and queries",
+        "points": [
+          "A record maps a name to an IPv4 address; AAAA maps to an IPv6 address.",
+          "CNAME is an alias pointing to another name; MX points to a mail server.",
+          "PTR is used for reverse lookup; SRV records tell clients where services (LDAP, Kerberos) are.",
+          "SOA contains the serial number and timers: refresh, retry, expire and minimum TTL.",
+          "Recursive query: the server finds the full answer for the client. Iterative query: the server returns the next server to ask.",
+          "The DNS cache stores answers until the TTL expires; ipconfig /flushdns clears it.",
+          "ipconfig /registerdns makes a client register its own A and PTR records."
+        ]
+      },
+      {
+        "title": "Zone transfer and maintenance",
+        "points": [
+          "The secondary server checks the primary by comparing the SOA serial number.",
+          "Refresh interval sets how often the secondary checks the primary for changes.",
+          "Retry interval is how long it waits after a failed check; expire time stops answering if the master is unreachable.",
+          "AXFR transfers the whole zone; IXFR transfers only changes.",
+          "Forwarders and root hints resolve names the server does not host.",
+          "Scavenging removes stale dynamic records; DHCP can update DNS records for clients (dynamic update).",
+          "nslookup and Resolve-DnsName test name resolution."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Windows DHCP",
+    "summary": "DHCP gives clients an IP address, subnet mask, gateway and DNS servers automatically using the DORA process.",
+    "sections": [
+      {
+        "title": "Lease process",
+        "points": [
+          "DORA: Discover (client broadcast) -> Offer (server) -> Request (client) -> Acknowledge (server).",
+          "DHCPv4 uses UDP port 67 on the server and 68 on the client; DHCPv6 uses 547 and 546.",
+          "At 50% of the lease the client renews; at 87.5% it rebinds with any server."
+        ]
+      },
+      {
+        "title": "Scopes and options",
+        "points": [
+          "A scope is the range of addresses a server hands out for one subnet.",
+          "Exclusions remove addresses from the range; reservations always give one address to a fixed MAC.",
+          "Common options: 003 router (default gateway), 006 DNS servers, 015 DNS domain name, 051 lease time.",
+          "Default lease time is 8 days on Windows Server.",
+          "A superscope groups several scopes on one physical network.",
+          "Multicast scope hands out multicast addresses instead of unicast addresses."
+        ]
+      },
+      {
+        "title": "Server-side concepts",
+        "points": [
+          "A DHCP server must be authorised in Active Directory before it can give addresses.",
+          "A relay agent (or IP helper on a router) forwards DHCP messages between subnets.",
+          "A DHCP failover partnership shares scopes between two servers (load balance or hot standby).",
+          "Split scope divides the range between two servers for extra resilience.",
+          "DHCP can register client records in DNS on behalf of the client (always, or only if the client asks).",
+          "ipconfig /release gives up the lease; ipconfig /renew asks for a new one."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Active Directory Domain Services",
+    "summary": "AD DS is a directory service that stores users, computers and policies in a hierarchical database and controls domain logon with Kerberos and LDAP.",
+    "sections": [
+      {
+        "title": "Logical and physical structure",
+        "points": [
+          "Forest is the top-level container; a tree is a set of domains sharing a namespace; a domain is the main administrative boundary.",
+          "Organizational units (OUs) group objects for delegation and Group Policy.",
+          "A site represents a physical network with good connectivity; site links connect sites for replication.",
+          "The schema defines which attributes an object can have.",
+          "The global catalog is a partial copy of every object in the forest used for fast searches.",
+          "Each domain has at least one domain controller (DC) holding a writable copy of the directory."
+        ]
+      },
+      {
+        "title": "Replication and FSMO roles",
+        "points": [
+          "Intra-site replication happens quickly (about every 15 seconds) and compresses only between sites.",
+          "Inter-site replication is scheduled and compressed to save bandwidth; the KCC builds the topology.",
+          "Five FSMO roles: Schema Master and Domain Naming Master (one per forest), RID Master, PDC Emulator and Infrastructure Master (one per domain).",
+          "The PDC Emulator is the time source for the domain and handles urgent password changes.",
+          "The RID Master hands out blocks of relative IDs for new security principals.",
+          "repadmin /showrepl and dcdiag check replication and DC health."
+        ]
+      },
+      {
+        "title": "Accounts, groups and trusts",
+        "points": [
+          "Group scopes: global (forest-wide membership view), domain local (used on resources) and universal (forest-wide).",
+          "AGDLP rule: Accounts go into Global groups, Global groups go into Domain Local groups, Permissions are given to Domain Local groups.",
+          "A trust lets users in one domain authenticate in another; a forest trust links two forests.",
+          "Kerberos (port 88) is the default authentication protocol; LDAP (389/636) is used for directory queries.",
+          "DNS must work for AD: DCs register SRV records under _msdcs.",
+          "Deleted objects go to the Recycle Bin (if enabled) and can be restored with ADAC or Restore-ADObject."
+        ]
+      },
+      {
+        "title": "Administration tools",
+        "points": [
+          "dsa.msc = Active Directory Users and Computers; dssite.msc = Sites and Services; domains.msc = Domains and Trusts.",
+          "ADAC (Active Directory Administrative Center) is the modern management console.",
+          "ntdsutil performs database maintenance, authoritativere restore and FSMO seizure.",
+          "PowerShell helpers: Get-ADUser, New-ADUser, Add-ADGroupMember, Get-ADDomainController.",
+          "Group Policy (gpmc.msc) is used to push settings to users and computers."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "AD CS, ADFS, SCCM, Containers and NLB",
+    "summary": "Beyond AD DS, Windows Server provides certificate services, federated identity, system management, container hosting and network load balancing.",
+    "sections": [
+      {
+        "title": "Active Directory Certificate Services (AD CS)",
+        "points": [
+          "A certification authority (CA) issues and manages digital certificates.",
+          "Root CA signs its own certificate; a subordinate CA is signed by another CA.",
+          "Enterprise CA integrates with AD (auto-enrollment); standalone CA does not need AD.",
+          "Certificate templates define how certificates are requested and used.",
+          "Auto-enrollment lets users and computers get certificates automatically through Group Policy.",
+          "CRL and OCSP let clients check whether a certificate has been revoked."
+        ]
+      },
+      {
+        "title": "Active Directory Federation Services (ADFS)",
+        "points": [
+          "ADFS gives claims-based single sign-on between organizations and cloud applications.",
+          "A federation trust is created between a claims provider and a relying party.",
+          "Claims are statements about a user (name, email, group) issued after authentication.",
+          "ADFS supports SAML 2.0, WS-Federation and OAuth/OpenID Connect scenarios.",
+          "The ADFS proxy publishes federation services safely to the Internet."
+        ]
+      },
+      {
+        "title": "SCCM (Configuration Manager)",
+        "points": [
+          "SCCM manages large Windows environments: inventory, software deployment, patching and OS deployment.",
+          "A central administration site (CAS) and primary sites organize the hierarchy.",
+          "Site systems include the management point (MP), distribution point (DP) and software update point (SUP).",
+          "Collections are groups of devices or users that receive deployments.",
+          "Task sequences automate operating-system deployment.",
+          "Clients find their site using boundary groups and network locations."
+        ]
+      },
+      {
+        "title": "Windows containers and NLB",
+        "points": [
+          "Windows containers run isolated applications using OS-level isolation; no full OS per app.",
+          "Process isolation shares the host kernel; Hyper-V isolation uses a lightweight VM for stronger separation.",
+          "Images are built from a base image and stored in a registry; Docker Engine (or containerd) runs them.",
+          "Network Load Balancing (NLB) spreads traffic across several servers using a virtual cluster IP.",
+          "NLB hosts send heartbeats; a host is removed from the cluster if heartbeats stop.",
+          "Port rules and affinity (single, network or none) control how client traffic is distributed."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "VPN, DFS and NPS/RADIUS",
+    "summary": "Remote access with VPN, file sharing with DFS, and central authentication with Network Policy Server (RADIUS) are common Windows Server services.",
+    "sections": [
+      {
+        "title": "VPN",
+        "points": [
+          "VPN creates an encrypted tunnel over an untrusted network between a client and a server (remote access) or two sites (site-to-site).",
+          "PPTP is old and weak; L2TP/IPsec, SSTP, IKEv2 and Always On VPN are modern choices.",
+          "L2TP/IPsec uses UDP 500 and 4500 plus protocol 50 (ESP); SSTP uses TCP 443.",
+          "Authentication methods include MS-CHAPv2, EAP with certificates and PEAP.",
+          "RRAS (Routing and Remote Access Service) provides the VPN server role.",
+          "VPN clients can be pushed DNS servers and routes by the VPN server."
+        ]
+      },
+      {
+        "title": "DFS",
+        "points": [
+          "DFS Namespaces (DFS-N) present shared folders from many servers as one logical namespace.",
+          "A namespace has a root and folders that point to folder targets on different servers.",
+          "DFS Replication (DFS-R) keeps folders in sync between servers using replication groups.",
+          "Replication can be full mesh or hub-and-spoke, and schedule/bandwidth limits protect WAN links.",
+          "Client referrals pick the nearest server (site awareness) for faster access.",
+          "DFS-N and DFS-R are often combined: single namespace plus replicated data."
+        ]
+      },
+      {
+        "title": "NPS and RADIUS",
+        "points": [
+          "NPS (Network Policy Server) is Microsoft's RADIUS server for authentication, authorization and accounting.",
+          "RADIUS client devices (VPN server, wireless controller) must be registered in NPS with a shared secret.",
+          "Connection request policies decide which requests are handled by which NPS server.",
+          "Network policies contain conditions, constraints and settings (for example time limits or VLAN assignment).",
+          "RADIUS uses UDP 1812 (authentication) and 1813 (accounting); the older ports are 1645/1646.",
+          "Certificate-based methods (PEAP-EAP-TLS) give the strongest wireless and VPN authentication."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "PowerShell",
+    "summary": "PowerShell is the Windows command-line shell and scripting language. Everything is an object, so output can be filtered, sorted and piped between commands.",
+    "sections": [
+      {
+        "title": "Cmdlets and help",
+        "points": [
+          "Cmdlets use Verb-Noun naming, for example Get-Service, Set-Service, New-Item.",
+          "Get-Help shows help and examples; Get-Command finds commands; Get-Member lists object properties and methods.",
+          "Use -? for quick help, for example Get-Service -?.",
+          "PowerShell 7 is cross-platform (pwsh); Windows PowerShell 5.1 is built into Windows.",
+          "The execution policy controls whether scripts can run (Restricted, RemoteSigned, AllSigned, Unrestricted)."
+        ]
+      },
+      {
+        "title": "Pipeline and objects",
+        "points": [
+          "The pipeline | passes objects, not text, to the next command.",
+          "Where-Object filters objects; Select-Object picks properties; Sort-Object sorts; ForEach-Object processes each item.",
+          "Format-Table and Format-List only change display, not data.",
+          "Get-Service | Where-Object Status -eq 'Running' | Select-Object Name is a typical one-liner.",
+          "Out-File and Export-Csv save output; Import-Csv reads data back.",
+          "Measure-Object counts and averages values."
+        ]
+      },
+      {
+        "title": "Variables, operators and flow",
+        "points": [
+          "Variables start with $, for example $name = 'server01'.",
+          "Comparison operators: -eq, -ne, -gt, -lt, -like, -match, -contains.",
+          "Control flow: if/elseif/else, switch, foreach, while and do-while.",
+          "try/catch/finally handles errors; $Error stores recent errors.",
+          "Functions are defined with function Verb-Noun { param(...) ... }.",
+          "Modules group related commands; Install-Module adds new modules from the gallery."
+        ]
+      },
+      {
+        "title": "Remote administration",
+        "points": [
+          "WinRM enables PowerShell remoting over TCP 5985 (HTTP) or 5986 (HTTPS).",
+          "Enable-PSRemoting configures the listener; Enter-PSSession opens an interactive remote session.",
+          "Invoke-Command runs a command or script block on one or many computers.",
+          "The Active Directory module provides cmdlets such as Get-ADUser and New-ADUser.",
+          "Scheduled tasks can run PowerShell with Register-ScheduledTask.",
+          "DSC (Desired State Configuration) declares the required state of servers and enforces it."
+        ]
+      },
+      {
+        "title": "Useful admin examples",
+        "points": [
+          "Get-Service | Where-Object Status -eq 'Stopped' lists stopped services.",
+          "Get-EventLog -LogName System -Newest 20 (or Get-WinEvent) reads recent events.",
+          "New-LocalUser / Add-LocalGroupMember create and add local users.",
+          "Get-ChildItem -Recurse | Measure-Object -Property Length -Sum reports folder size.",
+          "Restart-Computer -Force restarts a server; Stop-Computer shuts it down.",
+          "Invoke-Command -ComputerName SRV1 -ScriptBlock { Get-Service } runs a command remotely."
+        ]
+      }
+    ]
+  }
+]

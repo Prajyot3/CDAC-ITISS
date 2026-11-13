@@ -1,0 +1,458 @@
+[
+  {
+    "name": "Linux Fundamentals",
+    "summary": "An operating system manages hardware and software and gives the user an interface to run programs. Linux is a free, open-source, multi-user and multitasking operating system built around the kernel + shell design.",
+    "sections": [
+      {
+        "title": "What an operating system does",
+        "points": [
+          "An OS is a set of programs that controls the computer, manages hardware, and provides services to applications.",
+          "Main jobs: process management, memory management, file management, device management and security.",
+          "Types of OS: batch, multiprogramming, time-sharing (multitasking), real-time, distributed, network and embedded.",
+          "A batch system runs jobs without user interaction; a time-sharing system gives each user a small time slice.",
+          "A real-time OS guarantees a response within a fixed deadline (hard real-time or soft real-time).",
+          "Distributed OS looks like one system spread over many machines; a network OS lets hosts share resources."
+        ]
+      },
+      {
+        "title": "Linux architecture",
+        "points": [
+          "Four main parts: hardware, kernel, shell and system utilities/applications.",
+          "Kernel is the core: it talks to the hardware and provides process, memory, device and file management.",
+          "Shell is the command interpreter between the user and the kernel (bash, sh, zsh, ksh).",
+          "System libraries and utilities are the programs that use the kernel services (ls, cp, ps).",
+          "Linux is a monolithic kernel: drivers can be built in or loaded as modules at runtime.",
+          "Everything in Linux is treated as a file: devices under /dev, running data under /proc."
+        ]
+      },
+      {
+        "title": "Kernel vs shell",
+        "points": [
+          "Kernel runs in kernel (privileged) mode; user programs run in user mode and request actions with system calls.",
+          "Shell is a normal user program - it reads your command, expands it and asks the kernel to run it.",
+          "Shell does not print anything by itself; it starts programs like ls which write to the terminal.",
+          "Common system calls: fork (create process), exec (run program), open/read/write (files), wait (child).",
+          "A shell script is a file of shell commands executed in order."
+        ]
+      },
+      {
+        "title": "Boot process and runlevels",
+        "points": [
+          "Boot order: BIOS/UEFI self-test -> bootloader (GRUB) -> kernel loaded into memory -> initramfs -> root filesystem mount.",
+          "The kernel starts PID 1, which is systemd on modern Linux (init on older systems).",
+          "systemd starts units (services, mounts, targets); older SysV used runlevels 0-6.",
+          "Runlevel 0 = halt, 1 = single-user, 2 = multi-user without network, 3 = full text multi-user, 5 = graphical, 6 = reboot.",
+          "Runlevel 4 is normally unused; systemctl get-default shows the current default target.",
+          "GRUB menu configuration is /boot/grub2/grub.cfg (or /boot/grub/grub.conf on older Red Hat)."
+        ]
+      },
+      {
+        "title": "Important Linux facts",
+        "points": [
+          "Linux is case-sensitive: File, file and FILE are three different names.",
+          "A normal user's UID starts at 1000; root always has UID 0.",
+          "The superuser (root) can do everything; normal users need sudo for privileged commands.",
+          "Linux file extensions do not control the file type; the file command reads the content instead.",
+          "Standard input/stdout/stderr are file descriptors 0, 1 and 2."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Process Management and Scheduling",
+    "summary": "A process is a program in execution with its own memory, state and process control block (PCB). The scheduler decides which ready process gets the CPU next.",
+    "sections": [
+      {
+        "title": "Process basics",
+        "points": [
+          "Program = passive file on disk; process = active copy in memory with PID and state.",
+          "The PCB stores PID, program counter, CPU registers, memory limits, open files and scheduling information.",
+          "Process states: new, ready, running, waiting (blocked), terminated.",
+          "A running process becomes waiting when it asks for I/O and becomes ready when the I/O completes.",
+          "Context switch saves the old process state and loads the new process state; it has overhead.",
+          "A thread is a lightweight process sharing code, data and files, but each thread has its own stack and registers.",
+          "Zombie = finished child not yet reaped by parent; orphan = child whose parent already exited."
+        ]
+      },
+      {
+        "title": "Schedulers",
+        "points": [
+          "Long-term scheduler admits jobs from the job pool into memory and controls the degree of multiprogramming.",
+          "Short-term (CPU) scheduler picks the next ready process for the CPU - it runs very often.",
+          "Medium-term scheduler swaps processes out of memory and brings them back later (reduce thrashing).",
+          "FCFS is simple but causes the convoy effect (short jobs wait behind a long job).",
+          "SJF gives the minimum average waiting time but starvation is possible; SRTF is its preemptive version.",
+          "Priority scheduling can starve low-priority jobs - aging gradually raises their priority.",
+          "Round Robin gives each process a fixed time quantum and is good for time-sharing systems.",
+          "Multilevel queue uses fixed queues (foreground/background); multilevel feedback queue moves processes between queues."
+        ]
+      },
+      {
+        "title": "Scheduling criteria",
+        "points": [
+          "CPU utilization should be as high as possible.",
+          "Throughput = number of processes completed per unit time.",
+          "Turnaround time = completion time - arrival time.",
+          "Waiting time = total time spent in the ready queue.",
+          "Response time = time from submission to the first response (important for interactive systems).",
+          "A fair scheduler ensures no process waits forever (no starvation)."
+        ]
+      },
+      {
+        "title": "Inter-process communication (IPC)",
+        "points": [
+          "Pipe allows related processes to communicate; FIFO (named pipe) works between unrelated processes.",
+          "Message passing and shared memory are the two main IPC models.",
+          "Semaphores protect shared memory and provide synchronisation (wait/signal).",
+          "Classic problems: producer-consumer, readers-writers, dining philosophers.",
+          "A socket is used for communication across the network (TCP/UDP).",
+          "Signals (kill) are software interrupts sent to a process."
+        ]
+      },
+      {
+        "title": "Linux process commands",
+        "points": [
+          "ps aux shows all running processes; top/htop shows them live with CPU and memory usage.",
+          "kill -9 PID forces termination; kill -15 (default) asks the process to stop cleanly.",
+          "nice and renice change process priority (-20 highest priority, 19 lowest; ordinary users can only increase nice value).",
+          "jobs, bg and fg manage background and foreground shell jobs.",
+          "pstree shows the process tree; pgrep finds a PID by process name."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Memory Management",
+    "summary": "The OS allocates and frees memory for processes, gives each process a virtual address space, and uses paging and swapping to run programs bigger than RAM.",
+    "sections": [
+      {
+        "title": "Allocation basics",
+        "points": [
+          "In contiguous allocation each process gets one continuous block of memory.",
+          "Fragmentation: internal waste inside an allocated block, external waste as small free holes.",
+          "First Fit takes the first hole big enough; Best Fit takes the smallest hole big enough; Worst Fit takes the largest hole.",
+          "Compaction reduces external fragmentation but is expensive (shuffles memory).",
+          "Swapping moves a whole process out to disk when memory is full."
+        ]
+      },
+      {
+        "title": "Paging and segmentation",
+        "points": [
+          "Paging divides physical memory into fixed-size frames and logical memory into pages of the same size.",
+          "Page table maps page number to frame number; the TLB caches recent page-table entries.",
+          "Paging removes external fragmentation but can have internal fragmentation in the last page.",
+          "Segmentation divides a program into variable-size logical segments (code, stack, data).",
+          "Segmentation can cause external fragmentation; paging does not support logical grouping.",
+          "In a virtual memory system the page tables and segmentation tables are kept in RAM."
+        ]
+      },
+      {
+        "title": "Virtual memory and page faults",
+        "points": [
+          "Virtual memory gives an illusion of a very large main memory using disk as a backing store.",
+          "Demand paging loads a page only when it is referenced; a page fault occurs when it is not in memory.",
+          "Page replacement algorithms decide which page to remove: FIFO, LRU and Optimal.",
+          "FIFO can suffer from Belady's anomaly (more frames = more faults); LRU and Optimal do not.",
+          "Optimal replaces the page that will not be used for the longest time (not practical, used for comparison).",
+          "Thrashing is excessive paging - the system spends more time swapping than executing."
+        ]
+      },
+      {
+        "title": "Details worth remembering",
+        "points": [
+          "Locality of reference (temporal and spatial) is why cache memory works.",
+          "With 3 frames and a reference string, count faults with FIFO versus LRU for practice questions.",
+          "Swap size for small RAM systems is commonly 1-2 times RAM; a 128 MB workstation needs roughly 100-256 MB swap.",
+          "free -h, vmstat and /proc/meminfo show memory use on Linux.",
+          "A memory leak slowly reduces available memory because the program never frees it.",
+          "32-bit Linux normally supports up to 4 GB of virtual address space per process."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Linux File System and Permissions",
+    "summary": "Linux uses a single directory tree starting at /. Files have owners, groups and rwx permissions, plus special bits such as setuid, setgid and sticky.",
+    "sections": [
+      {
+        "title": "Directory layout (FHS)",
+        "points": [
+          "/ is the root; /bin and /usr/bin hold commands; /sbin holds administrator commands.",
+          "/etc holds configuration files; /home holds user home directories; /root is root's home.",
+          "/var holds variable data such as logs and mail (/var/log, /var/spool/mail).",
+          "/tmp is temporary space and has the sticky bit set.",
+          "/dev holds device files; /proc is a virtual filesystem exposing kernel data.",
+          "/usr contains programs and libraries; /opt holds add-on software.",
+          "A hidden file starts with a dot (.bashrc); ls -a shows hidden files."
+        ]
+      },
+      {
+        "title": "Files, inodes and links",
+        "points": [
+          "Every file has an inode that stores type, owner, group, permissions, size, timestamps and data block pointers.",
+          "The directory maps names to inode numbers.",
+          "Hard link: another name for the same inode (ln file1 file2); it shares data and inode number.",
+          "Symbolic (soft) link: a separate small file that points to a path (ln -s target link).",
+          "A hard link cannot cross filesystems and cannot point to a directory; a symbolic link can.",
+          "Absolute path starts from /; relative path starts from the current directory."
+        ]
+      },
+      {
+        "title": "Permissions",
+        "points": [
+          "Permissions are read (r=4), write (w=2) and execute (x=1) for user, group and others.",
+          "chmod 755 file means rwxr-xr-x; chmod u+x file adds execute for the owner.",
+          "chown changes the owner and chgrp changes the group.",
+          "umask 022 gives new files 644 and new directories 755 (defaults minus umask).",
+          "Special bits: setuid (4000) runs a file as its owner, setgid (2000) runs with the group or keeps a directory group.",
+          "Sticky bit (1000) on a directory lets only the owner delete files - use chmod o+t /tmp or chmod 1777.",
+          "An ACL gives finer permissions: getfacl shows it and setfacl -m u:user:rwx file adds an entry."
+        ]
+      },
+      {
+        "title": "Disks, mounts and filesystems",
+        "points": [
+          "Common filesystems: ext3, ext4 and xfs; ext4 is the default on modern Red Hat and Debian.",
+          "mkfs creates a filesystem, mount attaches it to the tree, umount detaches it.",
+          "/etc/fstab stores permanent mounts; blkid and lsblk show device information.",
+          "df -h shows free space per filesystem; du -sh directory shows size of a directory.",
+          "fsck checks and repairs a filesystem - run it on an unmounted filesystem.",
+          "A swap partition normally has filesystem ID 82.",
+          "LVM uses physical volumes (PV), volume groups (VG) and logical volumes (LV); default extent size is 4 MB."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Linux Commands, Redirection and Regex",
+    "summary": "Most Linux admin work is done from the shell. Important skills are file commands, viewing text, redirection and pipes, regular expressions, vi and cron.",
+    "sections": [
+      {
+        "title": "File and text commands",
+        "points": [
+          "ls -l lists details, ls -la includes hidden files, ls -R lists recursively.",
+          "cp, mv, rm, mkdir, rmdir, touch create or remove files and directories.",
+          "find searches by name, size, time or permissions (find / -name '*.log'), locate uses a database index.",
+          "cat prints a file, less pages through it, head/tail show the beginning/end, tail -f follows a growing file.",
+          "grep searches text (-i ignore case, -r recursive, -v invert match).",
+          "wc counts lines, words and characters; sort sorts; uniq removes adjacent duplicates; cut takes columns.",
+          "tar -czf archive.tar.gz dir creates an archive; tar -xzf extracts; gzip/bzip2 compress single files."
+        ]
+      },
+      {
+        "title": "Redirection and pipes",
+        "points": [
+          "> writes stdout to a file (overwrites); >> appends.",
+          "< takes stdin from a file.",
+          "2> redirects stderr; 2>&1 sends stderr to the same place as stdout; &> redirects both.",
+          "| connects the stdout of one command to the stdin of the next (ps aux | grep sshd).",
+          "tee writes output to a file and also shows it on the screen.",
+          "No output from a command means it succeeded with empty stdout.",
+          "* matches any characters, ? matches one character, [abc] matches a set."
+        ]
+      },
+      {
+        "title": "Regular expressions",
+        "points": [
+          "^ matches the start of a line, $ matches the end.",
+          ". matches any one character; * means zero or more of the previous item; + means one or more (grep -E).",
+          "[0-9] is a character class; [^0-9] means not a digit.",
+          "{n,m} means between n and m repetitions (extended regex).",
+          "\\b is a word boundary; () groups and | means OR in extended regex.",
+          "grep -E uses extended regex; sed replaces text (sed 's/old/new/g' file).",
+          "awk is a field-based text processor (awk '{print $1}' file)."
+        ]
+      },
+      {
+        "title": "vi editor and cron",
+        "points": [
+          "vi modes: command mode (Esc), insert mode (i/a/o), last-line mode (:).",
+          "Save and quit: :w writes, :q quits, :wq or ZZ saves and quits, :q! quits without saving.",
+          "Delete, copy, paste: dd deletes a line, yy copies a line, p pastes, x deletes a character.",
+          "Navigation: h j k l move left/down/up/right; /word searches forward.",
+          "crontab -e edits the schedule; crontab -l lists it; the five fields are minute hour day month weekday.",
+          "30 4 * * 3 runs at 04:30 every Wednesday (weekly).",
+          "* means every value; */5 means every 5 units; @reboot runs at startup."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Users, Groups and System Monitoring",
+    "summary": "Linux keeps user and group accounts in text files and uses them to decide who can do what. Monitoring tools and logs show what the system is doing.",
+    "sections": [
+      {
+        "title": "Account files and commands",
+        "points": [
+          "/etc/passwd holds user name, UID, GID, home directory and shell (no password).",
+          "/etc/shadow holds the password hash and aging information - readable only by root.",
+          "/etc/group lists groups and member users; /etc/gshadow stores group passwords.",
+          "useradd creates a user, usermod changes one, userdel removes one; passwd sets the password.",
+          "id shows UID, GID and all groups; groups username lists group membership.",
+          "usermod -L user locks an account; usermod -U unlocks it; chage manages password expiry.",
+          "su switches user; sudo runs one command as root and is logged.",
+          "An administrator can lock a user account so the password cannot be used."
+        ]
+      },
+      {
+        "title": "Monitoring performance",
+        "points": [
+          "ps aux lists processes; top/htop shows live CPU, memory and load.",
+          "uptime shows load average for 1, 5 and 15 minutes.",
+          "free -h shows RAM and swap; vmstat shows memory, swap and CPU statistics.",
+          "iostat shows disk I/O; netstat -tulpn or ss -tulpn show listening ports.",
+          "lsof lists open files and the processes using them.",
+          "dmesg shows kernel messages (hardware, drivers); journalctl reads the systemd journal."
+        ]
+      },
+      {
+        "title": "Logs",
+        "points": [
+          "/var/log/messages holds general system messages on Red Hat systems.",
+          "/var/log/secure (Red Hat) or /var/log/auth.log (Debian) records authentication and sudo events.",
+          "/var/log/dmesg holds boot-time kernel messages.",
+          "rsyslog writes logs by facility and priority; logrotate prevents logs from filling the disk.",
+          "A daemon's messages normally go to /var/log/messages, not to a file named after the daemon.",
+          "journalctl -u service shows the log for one systemd unit."
+        ]
+      },
+      {
+        "title": "Network configuration",
+        "points": [
+          "ip addr / ifconfig show interfaces; ip route shows the routing table.",
+          "Red Hat stores interface config in /etc/sysconfig/network-scripts/ifcfg-eth0.",
+          "/etc/resolv.conf sets DNS servers; /etc/hosts is a local static name table.",
+          "/etc/nsswitch.conf sets the order of name lookups (files, dns, nis).",
+          "/etc/services maps port numbers to service names.",
+          "systemctl restart network (or NetworkManager) applies network changes."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Shell Scripting",
+    "summary": "A shell script is a text file of shell commands and logic. Scripts automate backups, monitoring, user creation and mail processing.",
+    "sections": [
+      {
+        "title": "Script basics",
+        "points": [
+          "Start with #!/bin/bash (the shebang) so the kernel knows which shell to use.",
+          "Make the script executable with chmod +x script.sh, then run ./script.sh.",
+          "# starts a comment; comments explain the script and are ignored at runtime.",
+          "Variables: name=value (no spaces around =); read it with $name or ${name}.",
+          "Quotes: double quotes allow variable expansion, single quotes do not.",
+          "Command substitution: now=$(date) stores the output of a command.",
+          "Arithmetic: sum=$((a + b))."
+        ]
+      },
+      {
+        "title": "Operators and tests",
+        "points": [
+          "Arithmetic operators: + - * / % and ** for power (inside $(( ))).",
+          "Relational operators for numbers: -eq, -ne, -gt, -lt, -ge, -le.",
+          "String tests: =, !=, -z (empty), -n (not empty).",
+          "File tests: -e exists, -f regular file, -d directory, -r readable, -w writable, -x executable, -s non-empty.",
+          "Boolean operators: && (and), || (or), ! (not).",
+          "test condition is same as [ condition ]; [[ ]] is the safer bash version."
+        ]
+      },
+      {
+        "title": "Control structures",
+        "points": [
+          "if [ condition ]; then ... elif ...; else ...; fi.",
+          "case $value in pattern) ... ;; *) ... ;; esac.",
+          "for i in 1 2 3; do ...; done or for file in *.log.",
+          "while [ condition ]; do ...; done runs while true; until runs until true.",
+          "break exits the loop, continue jumps to the next iteration.",
+          "exit N returns a status code: 0 means success, non-zero means failure.",
+          "$? is the exit status of the last command."
+        ]
+      },
+      {
+        "title": "Functions and arguments",
+        "points": [
+          "Function: name() { commands; } and call it as name.",
+          "$0 is the script name, $1..$9 are arguments, $# is the argument count.",
+          "$@ is all arguments as separate words; $* is all arguments as one string.",
+          "$$ is the current process id; $! is the last background process id.",
+          "Local variables inside functions use the local keyword.",
+          "Final line of a script should normally be exit 0."
+        ]
+      },
+      {
+        "title": "Practical patterns",
+        "points": [
+          "Backup script: date stamp, tar -czf /backup/home-$(date +%F).tar.gz /home, check exit code.",
+          "Log cleanup: find /var/log -name '*.log' -mtime +30 -delete.",
+          "Menu script: read choice, then case statement to call functions.",
+          "Check a service: systemctl is-active sshd || systemctl start sshd.",
+          "Schedule a script with cron (for example 0 2 * * * /usr/local/bin/backup.sh).",
+          "Write errors to a file: command 2>> /var/log/script.err."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Linux Administration and Servers",
+    "summary": "Linux administration covers services, SSH, disks, network settings and common servers such as a mail server. systemd manages services on modern distributions.",
+    "sections": [
+      {
+        "title": "Service management",
+        "points": [
+          "systemctl start/stop/restart/status service controls a service.",
+          "systemctl enable service starts it at boot; disable removes it from boot.",
+          "systemctl list-units --type=service lists running services.",
+          "Old SysV commands: service name start and chkconfig --list for runlevels.",
+          "Enable a service now with service name start; chkconfig only affects boot behaviour.",
+          "journalctl -u name shows the service log."
+        ]
+      },
+      {
+        "title": "Secure SSH",
+        "points": [
+          "sshd listens on TCP 22 and is configured in /etc/ssh/sshd_config.",
+          "Key-based login: ssh-keygen makes a key pair; the public key goes into ~/.ssh/authorized_keys.",
+          "Disable direct root login (PermitRootLogin no) and prefer SSH keys over passwords.",
+          "Change the default port and restrict users with AllowUsers for extra safety.",
+          "scp and sftp copy files securely over SSH; ssh -L creates a local tunnel.",
+          "ssh connects to a remote shell with an encrypted tunnel; Telnet and rlogin send clear text."
+        ]
+      },
+      {
+        "title": "Disk and network administration",
+        "points": [
+          "fdisk -l lists disks; fdisk /dev/sdb partitions a new disk.",
+          "mkfs.ext4 /dev/sdb1 builds the filesystem, mount attaches it, and /etc/fstab makes it permanent.",
+          "LVM: pvcreate, vgcreate, lvcreate, lvextend plus resize2fs to grow a filesystem.",
+          "ip addr add 192.168.1.10/24 dev eth0 sets an address; ip link set eth0 up enables the interface.",
+          "The default gateway is the router interface on the local network.",
+          "firewall: iptables or firewalld (firewall-cmd --add-service=https --permanent).",
+          "ntp/chronyd keeps the clock correct; timedatectl shows time settings."
+        ]
+      },
+      {
+        "title": "Mail server basics",
+        "points": [
+          "MUA (mail client) -> MTA (postfix/sendmail) -> MDA (delivery) -> mailbox -> MRA (dovecot) for IMAP/POP3.",
+          "Sendmail/postfix are MTAs; dovecot is an IMAP/POP3 server; Thunderbird is an MUA.",
+          "Postfix main configuration is /etc/postfix/main.cf.",
+          "SMTP uses port 25 (server to server), 587 (submission with auth); POP3 110, IMAP 143, secure 993/995.",
+          "Mailboxes are stored in /var/spool/mail/<user> for mbox format.",
+          "A user forwards mail with a ~/.forward file; /etc/aliases changes delivery for everyone.",
+          "Mail queue commands: postqueue -p to view and postqueue -f to flush."
+        ]
+      },
+      {
+        "title": "Other common services",
+        "points": [
+          "BIND (named) is the DNS server; its zone files live in /var/named and config in /etc/named.conf.",
+          "Apache (httpd) main config is /etc/httpd/conf/httpd.conf; DocumentRoot is /var/www/html.",
+          "NFS shares directories listed in /etc/exports; the client mounts server:/share.",
+          "Samba shares files and printers with Windows using SMB/CIFS.",
+          "Squid proxy default port is 3128 and config is /etc/squid/squid.conf.",
+          "NTP server uses UDP 123; DNS uses 53; DHCP uses 67/68."
+        ]
+      }
+    ]
+  }
+]
