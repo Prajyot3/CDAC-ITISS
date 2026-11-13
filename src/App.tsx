@@ -6,6 +6,7 @@ import { DashboardView } from './components/dashboard/DashboardView';
 import { AllModulesView } from './components/modules/AllModulesView';
 import { ModuleDetailView } from './components/modules/ModuleDetailView';
 import { PracticeView } from './components/practice/PracticeView';
+import { NotesView } from './components/notes/NotesView';
 import { MockTestView } from './components/mock/MockTestView';
 import { IncorrectQuestionsView } from './components/questions/IncorrectQuestionsView';
 import { BookmarksView } from './components/questions/BookmarksView';
@@ -48,7 +49,7 @@ export const App: React.FC = () => {
       } else if (['sign-in', 'sign-up', 'auth'].includes(hash)) {
         setCurrentTab('auth');
         setSelectedModuleId(null);
-      } else if (['dashboard', 'modules', 'practice', 'mock', 'incorrect', 'bookmarks', 'performance', 'settings', 'auth', 'admin'].includes(hash)) {
+      } else if (['dashboard', 'modules', 'notes', 'practice', 'mock', 'incorrect', 'bookmarks', 'performance', 'settings', 'auth', 'admin'].includes(hash)) {
         setCurrentTab(hash as NavItem);
         setSelectedModuleId(null);
       }
@@ -131,6 +132,8 @@ export const App: React.FC = () => {
               )}
 
               {currentTab === 'practice' && <PracticeView />}
+
+              {currentTab === 'notes' && <NotesView />}
 
               {currentTab === 'mock' && <MockTestView />}
 

@@ -44,6 +44,7 @@ export const resolveAccess = (metadata: unknown): AccessConfig => {
 const STUDY_TABS = [
   'dashboard',
   'modules',
+  'notes',
   'practice',
   'incorrect',
   'bookmarks',

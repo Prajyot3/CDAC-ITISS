@@ -3,6 +3,7 @@ import {
   LayoutDashboard, 
   Layers, 
   BookOpen, 
+  BookOpenText,
   Clock, 
   AlertCircle, 
   Bookmark, 
@@ -24,6 +25,7 @@ import { getModuleById } from '../../config/modules';
 export type NavItem = 
   | 'dashboard' 
   | 'modules' 
+  | 'notes'
   | 'practice' 
   | 'mock' 
   | 'incorrect' 
@@ -61,9 +63,8 @@ const UserSidebarProfile: React.FC<{ onOpenAuth: () => void }> = ({ onOpenAuth }
         <div className="text-xs font-semibold text-white truncate group-hover:text-[#76B900] transition-colors">
           {displayName}
         </div>
-        <div className="text-[10px] text-[#76B900] flex items-center gap-1 font-mono">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#76B900]" />
-          <span>Clerk Verified</span>
+        <div className="truncate text-[10px] text-[#8C98A6] font-mono" title="Signed-in account">
+          {user?.primaryEmailAddress?.emailAddress || 'CDAC ITISS scholar'}
         </div>
       </div>
       <ChevronRight className="w-3.5 h-3.5 text-[#556372] group-hover:text-white transition-colors" />
@@ -92,6 +93,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
   const navItems: { id: NavItem; label: string; icon: LucideIcon; badge?: string; count?: number }[] = [
     { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
     { id: 'modules', label: 'All ITISS Modules', icon: Layers, badge: '5 Sections' },
+    { id: 'notes', label: 'Study Notes', icon: BookOpenText },
     { id: 'practice', label: 'Practice MCQs', icon: BookOpen },
     { id: 'mock', label: 'Mock Tests', icon: Clock, badge: '40 Q' },
     { id: 'incorrect', label: 'Incorrect Questions', icon: AlertCircle, count: incorrectCount },

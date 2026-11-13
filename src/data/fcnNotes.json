@@ -1,0 +1,349 @@
+[
+  {
+    "name": "OSI Model",
+    "summary": "The OSI model is a 7-layer reference model that explains how data moves from an application on one computer to an application on another computer.",
+    "sections": [
+      {
+        "title": "The 7 layers (Layer 7 to Layer 1)",
+        "points": [
+          "Layer 7 - Application: gives network services to the user. Examples: HTTP, FTP, SMTP, DNS, Telnet.",
+          "Layer 6 - Presentation: translates data format, does compression and encryption. Examples: JPEG, MPEG, SSL/TLS.",
+          "Layer 5 - Session: starts, manages and ends sessions between applications.",
+          "Layer 4 - Transport: end-to-end delivery, segmentation, flow control and error recovery. Protocols: TCP, UDP.",
+          "Layer 3 - Network: logical addressing and routing between networks. Protocols: IP, ICMP. Device: router.",
+          "Layer 2 - Data Link: physical (MAC) addressing, framing and error detection. Devices: switch, bridge, NIC.",
+          "Layer 1 - Physical: sends raw bits as electrical, light or radio signals. Devices: hub, cable, repeater."
+        ]
+      },
+      {
+        "title": "PDUs and devices",
+        "points": [
+          "PDU names: Layer 7-5 = data, Layer 4 = segment, Layer 3 = packet, Layer 2 = frame, Layer 1 = bits.",
+          "Encapsulation adds a header at each layer while sending; de-encapsulation removes it while receiving.",
+          "Hub works at Layer 1, switch and bridge at Layer 2, router at Layer 3.",
+          "TCP/IP model maps as: Application = OSI 5-7, Transport = 4, Internet = 3, Network Access = 1-2."
+        ]
+      },
+      {
+        "title": "Easy memory trick",
+        "points": [
+          "Top to bottom: All People Seem To Need Data Processing.",
+          "Bottom to top: Please Do Not Throw Sausage Pizza Away.",
+          "If a question says \"end-to-end delivery\", the answer is the Transport layer."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "TCP/IP",
+    "summary": "TCP/IP is the practical protocol suite used on the Internet. TCP is reliable and connection-oriented, UDP is fast and connectionless.",
+    "sections": [
+      {
+        "title": "TCP basics",
+        "points": [
+          "TCP is connection-oriented and reliable: it uses the 3-way handshake SYN, SYN-ACK, ACK before data is sent.",
+          "TCP numbers every byte (sequence number) and uses acknowledgements and retransmission to recover lost data.",
+          "Windowing controls how much data can be sent before waiting for an ACK (flow control).",
+          "TCP header flags: SYN (start), ACK (acknowledge), FIN (close), RST (reset), PSH (push), URG (urgent).",
+          "TCP is used for web, e-mail, file transfer and SSH where every byte must arrive."
+        ]
+      },
+      {
+        "title": "UDP basics",
+        "points": [
+          "UDP is connectionless: no handshake, no acknowledgement and no retransmission.",
+          "UDP has less overhead and lower delay, so it is used for DNS, DHCP, TFTP, VoIP and video streaming.",
+          "A stateless protocol means the server responds and then forgets the request (example: HTTP)."
+        ]
+      },
+      {
+        "title": "Port numbers to remember",
+        "points": [
+          "FTP 20/21, SSH 22, Telnet 23, SMTP 25, DNS 53, DHCP 67/68, TFTP 69, HTTP 80.",
+          "POP3 110, NTP 123, IMAP 143, SNMP 161/162, HTTPS 443, TACACS+ 49, RADIUS 1812/1813."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "IPv4 and IPv6",
+    "summary": "IPv4 is a 32-bit address used today. IPv6 is a 128-bit address made to solve IPv4 address shortage.",
+    "sections": [
+      {
+        "title": "IPv4 address classes",
+        "points": [
+          "Class A: 1-126 (first bit 0), Class B: 128-191 (first bits 10), Class C: 192-223 (first bits 110).",
+          "Class D: 224-239 is for multicast. Class E: 240-255 is experimental.",
+          "Private ranges: 10.0.0.0/8, 172.16.0.0 to 172.31.255.255, and 192.168.0.0/16.",
+          "Loopback address is 127.0.0.1 (127.0.0.0/8) - it tests the local TCP/IP stack.",
+          "APIPA 169.254.0.0/16 is used when a DHCP client cannot get an address."
+        ]
+      },
+      {
+        "title": "IPv6 basics",
+        "points": [
+          "IPv6 is 128 bits, written as 8 groups of 4 hex digits, e.g. 2001:0db8::1.",
+          "The :: sign replaces one block of all-zero groups only once in an address.",
+          "IPv6 has no broadcast. It uses unicast, multicast and anycast.",
+          "Link-local address starts with fe80::/10 and is used on the local segment.",
+          "EUI-64 builds the last 64 bits of an IPv6 address from the 48-bit MAC address.",
+          "IPv6 header is simpler: no checksum and routers do not fragment packets."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Subnetting",
+    "summary": "Subnetting divides one network into smaller networks using a subnet mask, so broadcast domains stay small and addresses are used better.",
+    "sections": [
+      {
+        "title": "Formula and quick numbers",
+        "points": [
+          "Number of hosts in a subnet = 2 raised to host bits, minus 2 (network and broadcast addresses).",
+          "Block size in an octet = 256 minus the mask value in that octet.",
+          "Common masks: /24 = 254 hosts, /25 = 126, /26 = 62, /27 = 30, /28 = 14, /29 = 6, /30 = 2.",
+          "Network address = all host bits 0. Broadcast address = all host bits 1.",
+          "The first usable address is network + 1, the last usable is broadcast - 1."
+        ]
+      },
+      {
+        "title": "CIDR and VLSM",
+        "points": [
+          "CIDR (classless) shows the mask as /n, e.g. 192.168.1.0/26 means 26 network bits.",
+          "VLSM gives different subnet masks to different subnets so no address is wasted.",
+          "CIDR summarization joins many small networks into one route entry.",
+          "Example: 172.17.175.122/25 has block size 128, so network = 172.17.175.0, broadcast = 172.17.175.127, usable = .1 to .126."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Routing",
+    "summary": "Routing is the process of choosing the best path for a packet between different networks. Routers forward by the routing table.",
+    "sections": [
+      {
+        "title": "Routing basics",
+        "points": [
+          "A router keeps a routing table; the longest matching prefix wins.",
+          "Default route 0.0.0.0/0 sends unknown destination traffic to the next hop.",
+          "Static routes are added manually and do not change automatically.",
+          "Dynamic protocols learn routes automatically when the topology changes.",
+          "Administrative distance shows trust: connected 0, static 1, EIGRP 90, OSPF 110, RIP 120."
+        ]
+      },
+      {
+        "title": "Routing protocols",
+        "points": [
+          "RIP is distance-vector, uses hop count, maximum 15 hops, updates every 30 seconds.",
+          "OSPF is link-state, uses cost (bandwidth), builds areas and elects DR/BDR.",
+          "EIGRP is an advanced hybrid protocol from Cisco, uses bandwidth and delay as its metric.",
+          "Metric is the value inside one protocol; administrative distance compares different protocols."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Switching",
+    "summary": "A switch works at Layer 2 and forwards frames using MAC addresses. It learns addresses and builds a MAC table (CAM table).",
+    "sections": [
+      {
+        "title": "How a switch works",
+        "points": [
+          "The switch learns the source MAC and port and stores it in the MAC table.",
+          "Unknown destination frames are flooded to all ports except the incoming port.",
+          "Known destination frames are forwarded only to the correct port.",
+          "Each switch port is its own collision domain; a VLAN is one broadcast domain.",
+          "Full duplex allows send and receive at the same time; half duplex uses CSMA/CD."
+        ]
+      },
+      {
+        "title": "Spanning Tree Protocol (STP)",
+        "points": [
+          "STP stops Layer 2 loops by blocking extra links and keeping one active path.",
+          "Root bridge is the switch with the lowest bridge ID (priority + MAC).",
+          "Port states: blocking, listening, learning, forwarding, disabled.",
+          "STP timers: hello 2 seconds, forward delay 15 seconds, max age 20 seconds.",
+          "Port security limits which MAC addresses are allowed on a port."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "VLAN",
+    "summary": "A VLAN is a logical LAN made inside switches. It divides one switch into separate broadcast domains without new hardware.",
+    "sections": [
+      {
+        "title": "VLAN basics",
+        "points": [
+          "VLAN 1 is the default VLAN. VLAN IDs for users are 1-1001 (1002-1005 are reserved).",
+          "Access port carries one VLAN for end devices; trunk port carries many VLANs between switches.",
+          "802.1Q adds a 4-byte tag with a 12-bit VLAN ID to the frame.",
+          "Native VLAN traffic goes over a trunk without a tag (always keep it a separate unused VLAN).",
+          "Inter-VLAN communication needs a router or a Layer 3 switch (router-on-a-stick uses subinterfaces)."
+        ]
+      },
+      {
+        "title": "VTP",
+        "points": [
+          "VTP shares the VLAN database between switches in the same domain.",
+          "VTP modes: server (can add/change VLANs), client (learns only), transparent (local only, forwards VTP messages).",
+          "A higher VTP revision number can overwrite the VLAN database, so change VLANs carefully."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "NAT",
+    "summary": "NAT translates private IP addresses into public IP addresses, saving IPv4 space and hiding internal hosts from the Internet.",
+    "sections": [
+      {
+        "title": "Types of NAT",
+        "points": [
+          "Static NAT: one private IP maps to one public IP, used for servers.",
+          "Dynamic NAT: a private IP takes any free address from a public pool.",
+          "PAT (NAT overload): many private IPs share one public IP by using different port numbers.",
+          "NAT works on a router: interfaces are marked inside or outside.",
+          "Commands: ip nat inside, ip nat outside, ip nat inside source list 1 interface gi0/0 overload."
+        ]
+      },
+      {
+        "title": "Remember",
+        "points": [
+          "NAT saves public IPv4 addresses and hides the internal network.",
+          "NAT can break end-to-end protocols such as IPsec VPN and some voice/video applications.",
+          "Private range plus NAT is why the Internet still works with IPv4 today."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "WAN",
+    "summary": "A WAN connects LANs that are far apart. It uses service provider links such as leased lines, MPLS and broadband.",
+    "sections": [
+      {
+        "title": "WAN links and encapsulation",
+        "points": [
+          "Serial links use DTE (router side) and DCE (service provider side) devices; clock rate is set on the DCE.",
+          "HDLC is the default encapsulation on Cisco serial links but is proprietary to Cisco.",
+          "PPP is an open standard used between different vendors and supports authentication.",
+          "PPP uses LCP to set up the link and NCP for each network protocol.",
+          "Frame Relay uses PVC (permanent virtual circuits) and DLCI numbers to identify circuits."
+        ]
+      },
+      {
+        "title": "WAN services",
+        "points": [
+          "Leased line gives a dedicated fixed bandwidth between two sites.",
+          "MPLS is a provider network that carries many customer networks with labels.",
+          "Broadband (DSL/cable) is cheaper but shared and not symmetric.",
+          "Always ask for CIR (committed information rate) in Frame Relay to know the guaranteed speed."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Wireless Networks",
+    "summary": "Wireless LAN (Wi-Fi) uses radio waves instead of cables. 802.11 is the standard family and WPA2/WPA3 protect the traffic.",
+    "sections": [
+      {
+        "title": "802.11 standards",
+        "points": [
+          "802.11b: 11 Mbps on 2.4 GHz. 802.11g: 54 Mbps on 2.4 GHz.",
+          "802.11a: 54 Mbps on 5 GHz. 802.11n: up to 600 Mbps with MIMO on 2.4/5 GHz.",
+          "802.11ac: above 1 Gbps on 5 GHz. 802.11ax (Wi-Fi 6) improves efficiency in crowded areas.",
+          "In 2.4 GHz the non-overlapping channels are 1, 6 and 11.",
+          "Wireless uses CSMA/CA (collision avoidance), not CSMA/CD."
+        ]
+      },
+      {
+        "title": "Wireless security",
+        "points": [
+          "WEP is broken and must not be used.",
+          "WPA used TKIP and is now weak; WPA2 uses AES/CCMP and is still common.",
+          "WPA3 uses SAE and protects weak passwords better.",
+          "Enterprise mode (802.1X with EAP) authenticates each user through a RADIUS server.",
+          "SSID is the wireless network name; hiding it is not real security."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Network Security",
+    "summary": "Network security protects confidentiality, integrity and availability (CIA) using passwords, ACLs, AAA and secure protocols.",
+    "sections": [
+      {
+        "title": "Device security",
+        "points": [
+          "enable secret is stored encrypted (MD5); enable password is stored in clear text, so use enable secret.",
+          "service password-encryption hides clear-text passwords in the configuration.",
+          "Telnet sends data in clear text; SSH encrypts the session, so use SSH.",
+          "Set an exec-timeout so idle sessions close automatically.",
+          "AAA means Authentication (who you are), Authorization (what you can do), Accounting (what you did)."
+        ]
+      },
+      {
+        "title": "ACLs and AAA servers",
+        "points": [
+          "Standard ACL (1-99) filters only the source IP address.",
+          "Extended ACL (100-199) filters source, destination, protocol and port.",
+          "Every ACL ends with an implicit deny, so add an explicit permit when needed.",
+          "TACACS+ uses TCP 49 and encrypts the whole packet; RADIUS uses UDP 1812/1813 and hides only the password.",
+          "Port security, DHCP snooping and dynamic ARP inspection block Layer 2 attacks."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Networking Protocols",
+    "summary": "These are the helper protocols that make a network work: ARP finds MAC addresses, ICMP reports errors, DNS resolves names and DHCP gives IP addresses.",
+    "sections": [
+      {
+        "title": "Address and control protocols",
+        "points": [
+          "ARP finds the MAC address for a known IP address using a broadcast request and unicast reply.",
+          "ARP cache stores the mapping for a short time; arp -a shows it.",
+          "ICMP reports errors and is used by ping (echo request/reply) and traceroute (TTL expiry).",
+          "ICMP does not use TCP or UDP ports.",
+          "RARP is the old way to get an IP from a MAC; DHCP replaced it."
+        ]
+      },
+      {
+        "title": "Service protocols",
+        "points": [
+          "DNS resolves names to IP addresses (port 53).",
+          "DHCP gives IP address, mask, gateway and DNS servers (ports 67/68).",
+          "SNMP monitors devices (161) and sends traps (162).",
+          "FTP uses TCP 20/21; TFTP uses UDP 69 and has no login.",
+          "SMTP sends mail (25), POP3 (110) and IMAP (143) receive mail."
+        ]
+      }
+    ]
+  },
+  {
+    "name": "DNS and DHCP",
+    "summary": "DNS changes names into IP addresses. DHCP gives IP addresses and other settings to hosts automatically.",
+    "sections": [
+      {
+        "title": "DNS",
+        "points": [
+          "DNS is a hierarchy: root, then TLD (.com, .in), then the domain and its authoritative server.",
+          "Recursive query: the server does all the work for the client. Iterative query: the server returns the next server to ask.",
+          "Common records: A (IPv4), AAAA (IPv6), CNAME (alias), MX (mail), NS (name server), PTR (reverse lookup).",
+          "Forward lookup: name to IP. Reverse lookup: IP to name, in the in-addr.arpa zone.",
+          "DNS uses UDP 53 for normal queries and TCP 53 for large answers and zone transfers.",
+          "A DNS cache shortens lookup time. The SOA and NS records describe a zone."
+        ]
+      },
+      {
+        "title": "DHCP",
+        "points": [
+          "DHCP uses DORA: Discover, Offer, Request, Acknowledge.",
+          "Server port is 67, client port is 68.",
+          "A scope is a range of addresses; a reservation always gives the same address to one MAC.",
+          "Lease time controls how long a client keeps the address.",
+          "A DHCP relay agent forwards DHCP messages between subnets."
+        ]
+      }
+    ]
+  }
+]

@@ -7,6 +7,8 @@ interface ModuleSelectorProps {
   onChange: (moduleId: string) => void;
   includeAll?: boolean;
   label?: string;
+  /** Optional allow-list, e.g. only modules that actually have notes. */
+  allowedModuleIds?: string[];
 }
 
 /**
@@ -18,8 +20,11 @@ export const ModuleSelector: React.FC<ModuleSelectorProps> = ({
   onChange,
   includeAll = false,
   label = 'Module',
+  allowedModuleIds,
 }) => {
-  const modules = getActiveModules();
+  const modules = getActiveModules().filter(
+    module => !allowedModuleIds || allowedModuleIds.includes(module.id),
+  );
 
   return (
     <div className="flex flex-wrap items-center gap-2">

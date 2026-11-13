@@ -1,6 +1,6 @@
 import React from 'react';
 import { Menu, LogIn, UserCheck } from 'lucide-react';
-import { Show, UserButton } from '@clerk/react';
+import { Show, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { ITISS_MODULES } from '../../config/modules';
 
@@ -14,7 +14,15 @@ export const Header: React.FC<HeaderProps> = ({
   onNavigateAuth 
 }) => {
   const { activeModuleId, getOverallStats } = useProgress();
+  const { user } = useUser();
   const stats = getOverallStats();
+
+  const displayName =
+    user?.firstName ||
+    user?.fullName?.split(' ')[0] ||
+    user?.primaryEmailAddress?.emailAddress?.split('@')[0] ||
+    'Account';
+  const userEmail = user?.primaryEmailAddress?.emailAddress;
 
   const currentModule = ITISS_MODULES.find(m => m.id === activeModuleId) || ITISS_MODULES[0];
 
@@ -89,10 +97,10 @@ export const Header: React.FC<HeaderProps> = ({
                 <button
                   onClick={onNavigateAuth}
                   className="hidden sm:flex items-center gap-1 px-2.5 py-1 rounded-md bg-[#141C24] hover:bg-[#1A2530] border border-[#243240] text-[11px] text-[#A2AFBD] hover:text-white font-medium transition-colors"
-                  title="View Student Account Dashboard"
+                  title={userEmail ? `Signed in as ${userEmail}` : 'View Student Account Dashboard'}
                 >
                   <UserCheck className="w-3.5 h-3.5 text-[#76B900]" />
-                  <span>Account</span>
+                  <span className="max-w-[120px] truncate">{displayName}</span>
                 </button>
               )}
             </div>
