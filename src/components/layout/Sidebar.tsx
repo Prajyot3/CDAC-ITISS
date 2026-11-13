@@ -6,6 +6,7 @@ import {
   BookOpenText,
   Clock, 
   AlertCircle, 
+  CheckCircle2,
   Bookmark, 
   BarChart3, 
   Settings,
@@ -29,6 +30,7 @@ export type NavItem =
   | 'practice' 
   | 'mock' 
   | 'incorrect' 
+  | 'correct'
   | 'bookmarks' 
   | 'performance' 
   | 'settings'
@@ -88,6 +90,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
 
   // Counts span every module, matching the cross-module Incorrect/Bookmarks views.
   const incorrectCount = Object.values(attempts).filter(a => !a.isCorrect).length;
+  const correctCount = Object.values(attempts).filter(a => a.isCorrect).length;
   const bookmarkCount = bookmarks.length;
 
   const navItems: { id: NavItem; label: string; icon: LucideIcon; badge?: string; count?: number }[] = [
@@ -97,6 +100,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
     { id: 'practice', label: 'Practice MCQs', icon: BookOpen },
     { id: 'mock', label: 'Mock Tests', icon: Clock, badge: '40 Q' },
     { id: 'incorrect', label: 'Incorrect Questions', icon: AlertCircle, count: incorrectCount },
+    { id: 'correct', label: 'Correct Questions', icon: CheckCircle2, count: correctCount },
     { id: 'bookmarks', label: 'Bookmarks', icon: Bookmark, count: bookmarkCount },
     { id: 'performance', label: 'Performance', icon: BarChart3 },
     { id: 'settings', label: 'Settings', icon: Settings },

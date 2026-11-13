@@ -105,30 +105,40 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
         </div>
 
         {/* Correct Answers */}
-        <div className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A] hover:border-[#2C3B4A] transition-all">
+        <div 
+          onClick={() => onNavigate('correct')}
+          className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A] hover:border-[#76B900]/60 hover:bg-[#16202A] transition-all cursor-pointer group"
+          title="View all correct questions solved"
+        >
           <div className="flex items-center justify-between text-xs text-[#8C98A6] mb-1.5">
-            <span>Correct</span>
+            <span className="group-hover:text-white transition-colors">Correct</span>
             <CheckCircle2 className="w-4 h-4 text-[#76B900]" />
           </div>
           <div className="text-2xl font-bold font-mono text-[#76B900]">
             {overallStats.correct}
           </div>
-          <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono">
-            Accurate answers
+          <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono flex items-center justify-between">
+            <span>Accurate answers</span>
+            <span className="text-[10px] text-[#76B900] opacity-0 group-hover:opacity-100 transition-opacity font-sans">View →</span>
           </div>
         </div>
 
         {/* Incorrect Answers */}
-        <div className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A] hover:border-[#2C3B4A] transition-all">
+        <div 
+          onClick={() => onNavigate('incorrect')}
+          className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A] hover:border-red-500/50 hover:bg-[#16202A] transition-all cursor-pointer group"
+          title="View all incorrect questions for retry"
+        >
           <div className="flex items-center justify-between text-xs text-[#8C98A6] mb-1.5">
-            <span>Incorrect</span>
+            <span className="group-hover:text-white transition-colors">Incorrect</span>
             <XCircle className="w-4 h-4 text-red-400" />
           </div>
           <div className="text-2xl font-bold font-mono text-red-400">
             {overallStats.incorrect}
           </div>
-          <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono">
-            Needs review
+          <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono flex items-center justify-between">
+            <span>Needs review</span>
+            <span className="text-[10px] text-red-400 opacity-0 group-hover:opacity-100 transition-opacity font-sans">View →</span>
           </div>
         </div>
 

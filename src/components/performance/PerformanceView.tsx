@@ -150,23 +150,33 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A]">
-              <div className="text-xs text-[#8C98A6] mb-1">Correct Answers</div>
+            <div 
+              onClick={() => onNavigate('correct')}
+              className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A] hover:border-[#76B900]/60 hover:bg-[#16202A] transition-all cursor-pointer group"
+              title="View all correct questions"
+            >
+              <div className="text-xs text-[#8C98A6] mb-1 group-hover:text-white transition-colors">Correct Answers</div>
               <div className="text-2xl font-bold font-mono text-[#76B900]">
                 {stats.correct}
               </div>
-              <div className="text-[11px] text-[#788594] font-mono mt-0.5">
-                Accurate solutions
+              <div className="text-[11px] text-[#788594] font-mono mt-0.5 flex items-center justify-between">
+                <span>Accurate solutions</span>
+                <span className="text-[10px] text-[#76B900] opacity-0 group-hover:opacity-100 transition-opacity font-sans">View →</span>
               </div>
             </div>
 
-            <div className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A]">
-              <div className="text-xs text-[#8C98A6] mb-1">Incorrect Answers</div>
+            <div 
+              onClick={() => onNavigate('incorrect')}
+              className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A] hover:border-red-500/50 hover:bg-[#16202A] transition-all cursor-pointer group"
+              title="View all incorrect questions"
+            >
+              <div className="text-xs text-[#8C98A6] mb-1 group-hover:text-white transition-colors">Incorrect Answers</div>
               <div className="text-2xl font-bold font-mono text-red-400">
                 {stats.incorrect}
               </div>
-              <div className="text-[11px] text-[#788594] font-mono mt-0.5">
-                Needs review
+              <div className="text-[11px] text-[#788594] font-mono mt-0.5 flex items-center justify-between">
+                <span>Needs review</span>
+                <span className="text-[10px] text-red-400 opacity-0 group-hover:opacity-100 transition-opacity font-sans">View →</span>
               </div>
             </div>
 

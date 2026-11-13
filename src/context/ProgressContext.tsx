@@ -25,8 +25,10 @@ interface ProgressContextType {
   getModuleStats: (moduleId: string) => UserStats;
   getOverallStats: () => UserStats;
   getIncorrectQuestions: (moduleId: string) => Question[];
+  getCorrectQuestions: (moduleId: string) => Question[];
   getBookmarkedQuestions: (moduleId: string) => Question[];
   getAllIncorrectQuestions: () => Question[];
+  getAllCorrectQuestions: () => Question[];
   getAllBookmarkedQuestions: () => Question[];
   getTopicStats: (moduleId: string) => Record<string, { total: number; attempted: number; correct: number; accuracy: number }>;
 }
@@ -304,6 +306,16 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return questions.filter(q => incorrectIds.has(q.id));
   };
 
+  const getCorrectQuestions = (moduleId: string): Question[] => {
+    const questions = getQuestionsForModule(moduleId);
+    const correctIds = new Set(
+      Object.values(attempts)
+        .filter(att => att.moduleId === moduleId && att.isCorrect)
+        .map(att => att.questionId)
+    );
+    return questions.filter(q => correctIds.has(q.id));
+  };
+
   const getBookmarkedQuestions = (moduleId: string): Question[] => {
     const questions = getQuestionsForModule(moduleId);
     const bookmarkSet = new Set(bookmarks);
@@ -319,6 +331,18 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     );
     return getActiveModules().flatMap(module =>
       getQuestionsForModule(module.id).filter(q => incorrectIds.has(q.id))
+    );
+  };
+
+  /** Correct questions across every active module (each keeps its own moduleId). */
+  const getAllCorrectQuestions = (): Question[] => {
+    const correctIds = new Set(
+      Object.values(attempts)
+        .filter(att => att.isCorrect)
+        .map(att => att.questionId)
+    );
+    return getActiveModules().flatMap(module =>
+      getQuestionsForModule(module.id).filter(q => correctIds.has(q.id))
     );
   };
 
@@ -380,8 +404,10 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       getModuleStats,
       getOverallStats,
       getIncorrectQuestions,
+      getCorrectQuestions,
       getBookmarkedQuestions,
       getAllIncorrectQuestions,
+      getAllCorrectQuestions,
       getAllBookmarkedQuestions,
       getTopicStats
     }}>

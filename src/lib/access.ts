@@ -47,6 +47,7 @@ const STUDY_TABS = [
   'notes',
   'practice',
   'incorrect',
+  'correct',
   'bookmarks',
   'performance',
   'settings',
