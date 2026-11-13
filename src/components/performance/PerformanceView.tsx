@@ -137,7 +137,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
               <div className="text-2xl font-bold font-mono text-white">
                 {stats.totalAvailable}
               </div>
-              <div className="text-[11px] text-[#788594] font-mono mt-0.5">5 PDF Sources</div>
+              <div className="text-[11px] text-[#788594] font-mono mt-0.5">Verified Bank</div>
             </div>
 
             <div className="p-4 rounded-xl bg-[#141C24] border border-[#222E3A]">

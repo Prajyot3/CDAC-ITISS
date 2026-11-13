@@ -62,7 +62,7 @@ export const ModuleSelector: React.FC<ModuleSelectorProps> = ({
           }`}
           title={module.name}
         >
-          {getLabel ? getLabel(module) : module.code}
+          {getLabel ? getLabel(module) : `MODULE ${module.number}`}
         </button>
       ))}
     </div>

@@ -12,7 +12,6 @@ import {
   BookOpen, 
   Info,
   Grid,
-  FileText,
   Layers,
   ArrowLeft
 } from 'lucide-react';
@@ -186,7 +185,7 @@ export const PracticeSession: React.FC<PracticeSessionProps> = ({
 
       {/* Main Question Card */}
       <div className="p-6 md:p-8 rounded-xl bg-[#141C24] border border-[#222E3A] space-y-6">
-        {/* Meta badges: Topic & Provenance */}
+        {/* Meta badges: Topic */}
         <div className="flex flex-wrap items-center justify-between gap-2 text-xs">
           <div className="flex items-center gap-2">
             <span className="px-2.5 py-0.5 rounded-full bg-[#76B900]/10 text-[#76B900] font-mono font-medium border border-[#76B900]/30">
@@ -195,15 +194,6 @@ export const PracticeSession: React.FC<PracticeSessionProps> = ({
             <span className="px-2.5 py-0.5 rounded-full bg-[#18232C] text-[#8C98A6] font-mono border border-[#243340]">
               {currentQ.id}
             </span>
-          </div>
-
-          <div className="text-[11px] font-mono text-[#7D8A99] flex items-center gap-1.5">
-            <FileText className="w-3.5 h-3.5 text-[#5B6978]" />
-            <span>Source: {currentQ.sourcePdf}</span>
-            <span>•</span>
-            <span>{currentQ.sourceQuestionNumber}</span>
-            <span>•</span>
-            <span>Page {currentQ.pageNumber}</span>
           </div>
         </div>
 

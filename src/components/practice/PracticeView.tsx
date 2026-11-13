@@ -100,7 +100,7 @@ export const PracticeView: React.FC = () => {
           <ModuleSelector value={moduleId} onChange={handleModuleChange} label="Practice module" />
         </div>
         <p className="text-xs text-[#9CA3AF] mt-1 max-w-2xl">
-          Select your preparation mode. Experience instant answer reveals, in-depth technical explanations, and source provenance across all questions.
+          Select your preparation mode. Experience instant answer reveals, in-depth technical explanations, and timed examination simulations.
         </p>
       </div>
 

@@ -332,9 +332,6 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
                   <p className="leading-relaxed pl-3 border-l border-[#243342]">
                     {q.explanation}
                   </p>
-                  <div className="text-[10px] text-[#6E7B8B] font-mono pt-1">
-                    Source: {q.sourcePdf} • {q.sourceQuestionNumber} • Page {q.pageNumber}
-                  </div>
                 </div>
               </div>
             );

@@ -93,7 +93,7 @@ export const BookmarksView: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-[#76B900] font-bold">#{idx + 1}</span>
                   <span className="px-2 py-0.5 rounded bg-[#76B900]/10 text-[#76B900] border border-[#76B900]/30">
-                    {getModuleById(q.moduleId)?.code || q.moduleId.toUpperCase()}
+                    MODULE {getModuleById(q.moduleId)?.number ?? q.moduleId.toUpperCase()}
                   </span>
                   <span className="px-2 py-0.5 rounded bg-[#10151C] text-[#8C98A6] border border-[#222E3A]">
                     {q.topic}
@@ -161,9 +161,6 @@ export const BookmarksView: React.FC = () => {
                 <p className="leading-relaxed pl-2.5 border-l border-[#243342]">
                   {q.explanation}
                 </p>
-                <div className="text-[10px] text-[#6E7B8B] font-mono pt-1">
-                  Source: {q.sourcePdf} • {q.sourceQuestionNumber} • Page {q.pageNumber}
-                </div>
               </div>
             </div>
           ))}

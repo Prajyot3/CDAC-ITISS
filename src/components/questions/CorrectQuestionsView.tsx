@@ -93,7 +93,7 @@ export const CorrectQuestionsView: React.FC = () => {
                 <div className="flex items-center gap-2">
                   <span className="text-[#76B900] font-bold">#{idx + 1}</span>
                   <span className="px-2 py-0.5 rounded bg-[#76B900]/10 text-[#76B900] border border-[#76B900]/30 font-semibold">
-                    {getModuleById(q.moduleId)?.code || q.moduleId.toUpperCase()}
+                    MODULE {getModuleById(q.moduleId)?.number ?? q.moduleId.toUpperCase()}
                   </span>
                   <span className="px-2 py-0.5 rounded bg-[#10151C] text-[#8C98A6] border border-[#222E3A]">
                     {q.topic}
