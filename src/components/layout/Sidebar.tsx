@@ -20,7 +20,6 @@ import type { LucideIcon } from 'lucide-react';
 import { Show, UserButton, useUser } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { allowedTabs, resolveAccess } from '../../lib/access';
-import { getTotalQuestionCount, getActiveModules } from '../../data/moduleRegistry';
 import { getModuleById } from '../../config/modules';
 
 export type NavItem = 
@@ -237,12 +236,12 @@ export const Sidebar: React.FC<SidebarProps> = ({
         {/* Footer info */}
         <div className="p-3 border-t border-[#1F2933] bg-[#0A0D10] text-[11px] text-[#6E7B8B] space-y-1">
           <div className="flex justify-between items-center font-mono">
-            <span>Modules Active:</span>
-            <span className="text-[#76B900] font-semibold">{getActiveModules().length} / 12</span>
+            <span>System Status:</span>
+            <span className="text-[#76B900] font-semibold">Online</span>
           </div>
           <div className="flex justify-between items-center font-mono">
-            <span>Bank Status:</span>
-            <span className="text-white">{getTotalQuestionCount()} MCQs</span>
+            <span>Environment:</span>
+            <span className="text-[#8C98A6]">Production</span>
           </div>
         </div>
       </aside>

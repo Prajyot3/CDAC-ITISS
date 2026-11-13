@@ -17,7 +17,7 @@ import { AuthView } from './components/auth/AuthView';
 import { AdminView } from './components/admin/AdminView';
 import { AccessBlocked, AccessRestricted } from './components/common/AccessScreens';
 import { useProgress } from './context/ProgressContext';
-import { getTotalQuestionCount, getActiveModules, getQuestionCountForModule } from './data/moduleRegistry';
+import { getQuestionCountForModule } from './data/moduleRegistry';
 import { allowedTabs, canOpenModule, resolveAccess } from './lib/access';
 
 export const App: React.FC = () => {
@@ -168,7 +168,7 @@ export const App: React.FC = () => {
               <span>• Version 1.0</span>
             </div>
             <div>
-              <span>{getTotalQuestionCount()} Questions Verified • {getActiveModules().length} of 12 Modules Active</span>
+              <span>PGCP-ITISS Examination Portal</span>
             </div>
           </div>
         </footer>

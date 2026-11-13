@@ -92,7 +92,7 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
             </span>
             <span>•</span>
             <span className="text-[#76B900] font-semibold">
-              {stats.totalAvailable} Verified MCQs
+              {stats.totalAvailable} MCQs
             </span>
             <span>•</span>
             <span>{moduleTopics.length} Curricular Topics</span>

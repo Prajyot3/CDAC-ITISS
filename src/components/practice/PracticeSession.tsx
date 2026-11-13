@@ -300,7 +300,7 @@ export const PracticeSession: React.FC<PracticeSessionProps> = ({
             </p>
 
             <div className="pt-2 border-t border-[#1C2733] flex flex-wrap items-center justify-between gap-2 text-[11px] text-[#788696] font-mono">
-              <span>Verified Course Subject: {currentQ.topic}</span>
+              <span>Topic: {currentQ.topic}</span>
               <span>Question ID: {currentQ.id}</span>
             </div>
           </div>
