@@ -12,8 +12,7 @@ import {
   ShieldCheck,
   Award,
   Zap,
-  Flame,
-  FileCheck2
+  Flame
 } from 'lucide-react';
 import { useProgress } from '../../context/ProgressContext';
 import { COURSE_SECTIONS, ITISS_MODULES } from '../../config/modules';
@@ -25,13 +24,11 @@ import { NavItem } from '../layout/Sidebar';
 interface DashboardViewProps {
   onNavigate: (tab: NavItem) => void;
   onSelectModule: (moduleId: string) => void;
-  onOpenAudit: () => void;
 }
 
 export const DashboardView: React.FC<DashboardViewProps> = ({
   onNavigate,
-  onSelectModule,
-  onOpenAudit
+  onSelectModule
 }) => {
   const { getOverallStats, getModuleStats } = useProgress();
   const overallStats = getOverallStats();
@@ -230,13 +227,6 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               >
                 <Clock className="w-4 h-4 text-[#76B900]" />
                 Launch Mock Exam
-              </button>
-              <button
-                onClick={onOpenAudit}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg bg-[#11171D] hover:bg-[#161E26] border border-[#222E3A] text-[#9CA3AF] hover:text-white text-xs transition-all"
-              >
-                <FileCheck2 className="w-3.5 h-3.5 text-[#76B900]" />
-                View 5-PDF Audit
               </button>
             </div>
           </div>

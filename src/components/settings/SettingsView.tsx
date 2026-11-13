@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
-import { getQuestionCountForModule } from '../../data/moduleRegistry';
 import { 
   Download, 
   Upload, 
   RotateCcw, 
   Trash2, 
-  ShieldCheck, 
   CheckCircle2, 
   AlertTriangle,
   Code2,
@@ -16,10 +14,6 @@ import {
   ExternalLink
 } from 'lucide-react';
 import { Show, SignInButton, useUser, useClerk } from '@clerk/react';
-
-interface SettingsViewProps {
-  onOpenAudit: () => void;
-}
 
 const ClerkAccountSection: React.FC = () => {
   const { user, isLoaded } = useUser();
@@ -113,7 +107,7 @@ const ClerkAccountSection: React.FC = () => {
   );
 };
 
-export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
+export const SettingsView: React.FC = () => {
   const { 
     activeModuleId, 
     resetModuleProgress, 
@@ -234,32 +228,9 @@ export const SettingsView: React.FC<SettingsViewProps> = ({ onOpenAudit }) => {
             <code className="text-white bg-[#162029] px-1.5 py-0.5 rounded">src/config/modules.ts</code>
           </div>
           <div className="text-[11px] text-[#788594] pt-1">
-            â†’ The module instantly receives its own Practice MCQs, 40-Q Mock Exams, Incorrect Questions Tracker, Bookmarks, and Performance Dashboard automatically.
+            → The module instantly receives its own Practice MCQs, 40-Q Mock Exams, Incorrect Questions Tracker, Bookmarks, and Performance Dashboard automatically.
           </div>
         </div>
-      </div>
-
-      {/* SECTION 2: Extraction Audit Access */}
-      <div className="p-6 rounded-xl bg-[#141C24] border border-[#222E3A] flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-[#76B900]" />
-            <h3 className="text-sm font-bold text-white">
-              PDF Extraction Audit Report
-            </h3>
-          </div>
-          <p className="text-xs text-[#8C98A6]">
-            Inspect the exact provenance of all {getQuestionCountForModule('fcn')} FCN questions extracted from FCN01.pdf through FCN05.pdf.
-          </p>
-        </div>
-
-        <button
-          onClick={onOpenAudit}
-          className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#18232D] hover:bg-[#202E3C] border border-[#2A3848] hover:border-[#76B900] text-xs font-semibold text-white transition-all shrink-0"
-        >
-          <ShieldCheck className="w-4 h-4 text-[#76B900]" />
-          View Full Audit
-        </button>
       </div>
 
       {/* SECTION 3: Data Backup and Restore */}

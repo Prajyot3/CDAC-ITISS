@@ -13,7 +13,6 @@ import { PerformanceView } from './components/performance/PerformanceView';
 import { SettingsView } from './components/settings/SettingsView';
 import { AuthView } from './components/auth/AuthView';
 import { AdminView } from './components/admin/AdminView';
-import { AuditModal } from './components/common/AuditModal';
 import { AccessBlocked, AccessRestricted } from './components/common/AccessScreens';
 import { useProgress } from './context/ProgressContext';
 import { getTotalQuestionCount, getActiveModules, getQuestionCountForModule } from './data/moduleRegistry';
@@ -23,7 +22,6 @@ export const App: React.FC = () => {
   const [currentTab, setCurrentTab] = useState<NavItem>('dashboard');
   const [selectedModuleId, setSelectedModuleId] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [isAuditModalOpen, setIsAuditModalOpen] = useState(false);
 
   const { setActiveModuleId } = useProgress();
   const { user } = useUser();
@@ -98,7 +96,6 @@ export const App: React.FC = () => {
         {/* Sticky Header */}
         <Header
           onToggleMobile={() => setIsMobileMenuOpen(prev => !prev)}
-          onOpenAudit={() => setIsAuditModalOpen(true)}
           onNavigateAuth={() => handleSelectTab('auth')}
         />
 
@@ -118,7 +115,6 @@ export const App: React.FC = () => {
                 <DashboardView
                   onNavigate={handleSelectTab}
                   onSelectModule={handleSelectModule}
-                  onOpenAudit={() => setIsAuditModalOpen(true)}
                 />
               )}
 
@@ -128,13 +124,9 @@ export const App: React.FC = () => {
                     moduleId={selectedModuleId}
                     onBack={handleBackToModules}
                     onNavigate={handleSelectTab}
-                    onOpenAudit={() => setIsAuditModalOpen(true)}
                   />
                 ) : (
-                  <AllModulesView
-                    onSelectModule={handleSelectModule}
-                    onOpenAudit={() => setIsAuditModalOpen(true)}
-                  />
+                  <AllModulesView onSelectModule={handleSelectModule} />
                 )
               )}
 
@@ -150,9 +142,7 @@ export const App: React.FC = () => {
                 <PerformanceView onNavigate={handleSelectTab} />
               )}
 
-              {currentTab === 'settings' && (
-                <SettingsView onOpenAudit={() => setIsAuditModalOpen(true)} />
-              )}
+              {currentTab === 'settings' && <SettingsView />}
 
               {currentTab === 'auth' && (
                 <AuthView onNavigateToDashboard={() => handleSelectTab('dashboard')} />
@@ -177,12 +167,6 @@ export const App: React.FC = () => {
           </div>
         </footer>
       </div>
-
-      {/* Extraction Audit Modal */}
-      <AuditModal
-        isOpen={isAuditModalOpen}
-        onClose={() => setIsAuditModalOpen(false)}
-      />
     </div>
   );
 };

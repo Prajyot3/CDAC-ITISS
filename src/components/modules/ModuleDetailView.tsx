@@ -11,7 +11,6 @@ import {
   XCircle, 
   Target, 
   Layers, 
-  FileCheck2, 
   ArrowLeft,
   BookOpen,
   Award,
@@ -25,14 +24,12 @@ interface ModuleDetailViewProps {
   moduleId: string;
   onBack: () => void;
   onNavigate: (tab: NavItem) => void;
-  onOpenAudit: () => void;
 }
 
 export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
   moduleId,
   onBack,
-  onNavigate,
-  onOpenAudit
+  onNavigate
 }) => {
   const module = getModuleById(moduleId);
   const { getModuleStats, getTopicStats } = useProgress();
@@ -151,13 +148,6 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
           >
             <Clock className="w-4 h-4 text-[#76B900]" />
             Take 40-Q Mock Exam
-          </button>
-          <button
-            onClick={onOpenAudit}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[#11171D] hover:bg-[#161F27] border border-[#232F3B] text-[#9CA3AF] hover:text-white text-xs transition-all"
-          >
-            <FileCheck2 className="w-4 h-4 text-[#76B900]" />
-            View Extraction Audit Report
           </button>
         </div>
       </div>

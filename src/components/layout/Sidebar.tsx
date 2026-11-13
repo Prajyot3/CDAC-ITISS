@@ -133,9 +133,14 @@ export const Sidebar: React.FC<SidebarProps> = ({
           isOpenMobile ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
-        {/* Brand / Logo */}
+        {/* Brand / Logo — click returns to the dashboard */}
         <div className="h-16 flex items-center px-5 border-b border-[#1F2933] bg-[#0A0D10]">
-          <div className="flex items-center gap-3">
+          <button
+            type="button"
+            onClick={() => handleNavClick('dashboard')}
+            title="Go to Dashboard"
+            className="flex items-center gap-3 rounded-lg text-left transition-opacity hover:opacity-85 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#76B900]/50"
+          >
             <div className="w-9 h-9 rounded-lg bg-[#141C22] border border-[#76B900]/40 flex items-center justify-center text-[#76B900] shadow-[0_0_12px_rgba(118,185,0,0.2)]">
               <Shield className="w-5 h-5 fill-[#76B900]/20" />
             </div>
@@ -146,7 +151,7 @@ export const Sidebar: React.FC<SidebarProps> = ({
               </div>
               <div className="text-[11px] text-[#7E8B9B] tracking-tight">Exam Prep Platform</div>
             </div>
-          </div>
+          </button>
         </div>
 
         {/* Active Module Indicator Card */}

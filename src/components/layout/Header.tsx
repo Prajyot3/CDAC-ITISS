@@ -1,19 +1,16 @@
-﻿import React from 'react';
-import { Menu, ShieldCheck, LogIn, UserCheck } from 'lucide-react';
+import React from 'react';
+import { Menu, LogIn, UserCheck } from 'lucide-react';
 import { Show, UserButton } from '@clerk/react';
 import { useProgress } from '../../context/ProgressContext';
 import { ITISS_MODULES } from '../../config/modules';
-import { getTotalQuestionCount } from '../../data/moduleRegistry';
 
 interface HeaderProps {
   onToggleMobile: () => void;
-  onOpenAudit: () => void;
   onNavigateAuth?: () => void;
 }
 
 export const Header: React.FC<HeaderProps> = ({ 
   onToggleMobile, 
-  onOpenAudit,
   onNavigateAuth 
 }) => {
   const { activeModuleId, getOverallStats } = useProgress();
@@ -49,7 +46,7 @@ export const Header: React.FC<HeaderProps> = ({
         </div>
       </div>
 
-      {/* Right: Real Activity Stats + Audit Button + Clerk Auth */}
+      {/* Right: Real Activity Stats + Clerk Auth */}
       <div className="flex items-center gap-3">
         {/* Quick activity badges */}
         <div className="hidden lg:flex items-center gap-2 text-xs font-mono">
@@ -65,17 +62,6 @@ export const Header: React.FC<HeaderProps> = ({
             </span>
           </div>
         </div>
-
-        {/* Audit Report Button */}
-        <button
-          onClick={onOpenAudit}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#162028] hover:bg-[#1C2833] border border-[#2A3848] hover:border-[#76B900] text-xs font-medium text-[#C4CDD6] hover:text-white transition-all shadow-sm"
-          title="Open Extraction Audit Report"
-        >
-          <ShieldCheck className="w-4 h-4 text-[#76B900]" />
-          <span className="hidden sm:inline">Extraction Audit</span>
-          <span className="text-[10px] px-1 rounded bg-[#76B900]/20 text-[#76B900] font-mono">{getTotalQuestionCount()} MCQs</span>
-        </button>
 
         {/* Clerk Auth Integration */}
         <div className="flex items-center pl-2 border-l border-[#1F2933]">

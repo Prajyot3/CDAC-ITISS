@@ -2,20 +2,16 @@ import React from 'react';
 import { COURSE_SECTIONS, ITISS_MODULES } from '../../config/modules';
 import { ITISSModule } from '../../types/module';
 import { StatusBadge } from '../common/StatusBadge';
-import { Clock, Layers, ArrowRight, ShieldCheck, CheckCircle2, BookOpen } from 'lucide-react';
+import { Clock, Layers, ArrowRight, CheckCircle2, BookOpen } from 'lucide-react';
 import { useProgress } from '../../context/ProgressContext';
+import { getQuestionCountForModule } from '../../data/moduleRegistry';
 
 interface AllModulesViewProps {
   onSelectModule: (moduleId: string) => void;
-  onOpenAudit: () => void;
 }
 
-export const AllModulesView: React.FC<AllModulesViewProps> = ({
-  onSelectModule,
-  onOpenAudit
-}) => {
+export const AllModulesView: React.FC<AllModulesViewProps> = ({ onSelectModule }) => {
   const { getModuleStats } = useProgress();
-  const fcnStats = getModuleStats('fcn');
 
   return (
     <div className="space-y-8 animate-in fade-in duration-200">
@@ -35,14 +31,6 @@ export const AllModulesView: React.FC<AllModulesViewProps> = ({
             Complete syllabus structure for the CDAC Post Graduate Diploma in IT Infrastructure, Systems & Security, organized across all 5 official sections.
           </p>
         </div>
-
-        <button
-          onClick={onOpenAudit}
-          className="self-start md:self-auto flex items-center gap-2 px-4 py-2 rounded-lg bg-[#141C24] border border-[#2B3947] hover:border-[#76B900] text-xs font-medium text-white transition-all shadow-sm"
-        >
-          <ShieldCheck className="w-4 h-4 text-[#76B900]" />
-          <span>Extraction Audit Report</span>
-        </button>
       </div>
 
       {/* Sections List */}
@@ -117,7 +105,7 @@ export const AllModulesView: React.FC<AllModulesViewProps> = ({
 
                         {isAvailable ? (
                           <div className="flex items-center gap-1 text-[#76B900] font-semibold">
-                            <span>{fcnStats.totalAvailable} Questions</span>
+                            <span>{getQuestionCountForModule(mod.id)} Questions</span>
                             <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
                           </div>
                         ) : (
