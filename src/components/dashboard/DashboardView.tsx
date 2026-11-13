@@ -45,13 +45,13 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
           <div className="space-y-2">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#76B900]/10 border border-[#76B900]/30 text-xs text-[#76B900] font-mono">
               <Zap className="w-3.5 h-3.5 fill-[#76B900]" />
-              <span>OFFICIAL CDAC PREPARATION PORTAL</span>
+              <span>STUDENT PREPARATION PORTAL</span>
             </div>
             <h1 className="text-2xl md:text-3xl font-extrabold text-white tracking-tight">
               ITISS Examination Preparation
             </h1>
             <p className="text-sm text-[#9CA3AF] max-w-2xl leading-relaxed">
-              Welcome to the official Post Graduate Diploma in IT Infrastructure, Systems & Security examination portal. Prepare systematically with comprehensive MCQ banks, timed mock examinations, and real-time performance diagnostics.
+              Welcome to the Post Graduate Diploma in IT Infrastructure, Systems & Security student preparation platform. Prepare systematically with comprehensive MCQ banks, timed mock examinations, and real-time performance diagnostics.
             </p>
           </div>
 
@@ -244,7 +244,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
               </h2>
             </div>
             <p className="text-xs text-[#8C98A6] mt-0.5">
-              Official CDAC Course Curriculum organized into 5 independent sections.
+              CDAC Course Curriculum organized into 5 independent sections.
             </p>
           </div>
           <button

@@ -14,7 +14,6 @@ import {
   ArrowLeft,
   BookOpen,
   Award,
-  ShieldCheck,
   ChevronRight
 } from 'lucide-react';
 import { NavItem } from '../layout/Sidebar';
@@ -206,35 +205,6 @@ export const ModuleDetailView: React.FC<ModuleDetailViewProps> = ({
             );
           })}
         </div>
-      </div>
-
-      {/* PDF Provenance Card */}
-      <div className="p-6 rounded-xl bg-[#11171E] border border-[#1F2B37] space-y-3">
-        <h3 className="text-xs font-bold text-white uppercase tracking-wider flex items-center gap-2">
-          <ShieldCheck className="w-4 h-4 text-[#76B900]" />
-          Verified Source PDF Materials
-        </h3>
-        <p className="text-xs text-[#8C98A6] leading-relaxed">
-          {module.id === 'fcn' ? (
-            <>
-              Questions in this module were systematically extracted and verified from the five official CDAC examination papers:
-              <code className="text-[#76B900] font-mono mx-1">FCN01.pdf (159 Q)</code>,
-              <code className="text-[#76B900] font-mono mx-1">FCN02.pdf (31 Q)</code>,
-              <code className="text-[#76B900] font-mono mx-1">FCN03.pdf (40 Q)</code>,
-              <code className="text-[#76B900] font-mono mx-1">FCN04.pdf (40 Q)</code>, and
-              <code className="text-[#76B900] font-mono mx-1">FCN05.pdf (39 Q)</code>.
-            </>
-          ) : (
-            <>
-              Questions in this module were extracted and verified from the official CDAC Linux, Windows and COSA
-              question papers:
-              <code className="text-[#76B900] font-mono mx-1">LINUX02.pdf (129 Q)</code>,
-              <code className="text-[#76B900] font-mono mx-1">06-linux.pdf (50 Q)</code>,
-              <code className="text-[#76B900] font-mono mx-1">02-windows.pdf (22 Q)</code>, and
-              <code className="text-[#76B900] font-mono mx-1">COSA01.docx (48 Q)</code>.
-            </>
-          )}
-        </p>
       </div>
     </div>
   );
