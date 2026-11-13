@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { PracticeSession } from '../practice/PracticeSession';
+import { ModuleSelector } from '../common/ModuleSelector';
+import { getModuleById } from '../../config/modules';
 import { 
   AlertCircle, 
   Play, 
@@ -9,12 +11,18 @@ import {
   CheckCircle2, 
   X,
   FileText,
-  Info
+  Info,
+  Bookmark
 } from 'lucide-react';
 
 export const IncorrectQuestionsView: React.FC = () => {
-  const { activeModuleId, getIncorrectQuestions, clearIncorrectAttempt } = useProgress();
-  const incorrectQuestions = getIncorrectQuestions(activeModuleId);
+  const { getAllIncorrectQuestions, clearIncorrectAttempt, toggleBookmark, isBookmarked } = useProgress();
+  const [moduleFilter, setModuleFilter] = useState('all');
+  const allIncorrect = getAllIncorrectQuestions();
+  const incorrectQuestions =
+    moduleFilter === 'all'
+      ? allIncorrect
+      : allIncorrect.filter(question => question.moduleId === moduleFilter);
 
   const [isPracticing, setIsPracticing] = useState(false);
 
@@ -39,15 +47,18 @@ export const IncorrectQuestionsView: React.FC = () => {
               REVISION QUEUE
             </span>
             <span className="text-xs text-[#8C98A6] font-mono">
-              {incorrectQuestions.length} Incorrect Question{incorrectQuestions.length === 1 ? '' : 's'}
+              {incorrectQuestions.length} of {allIncorrect.length} Incorrect Question{allIncorrect.length === 1 ? '' : 's'}
             </span>
           </div>
           <h1 className="text-2xl font-extrabold text-white mt-1.5">
             Incorrect Questions
           </h1>
           <p className="text-xs text-[#9CA3AF] mt-1">
-            Questions you answered incorrectly during practice or mock exams. Target and resolve conceptual gaps.
+            Questions you answered incorrectly across every module — practise them or resolve them once mastered.
           </p>
+          <div className="mt-3">
+            <ModuleSelector value={moduleFilter} onChange={setModuleFilter} includeAll label="Filter module" />
+          </div>
         </div>
 
         {incorrectQuestions.length > 0 && (
@@ -83,20 +94,36 @@ export const IncorrectQuestionsView: React.FC = () => {
               <div className="flex items-center justify-between text-xs font-mono">
                 <div className="flex items-center gap-2">
                   <span className="text-red-400 font-bold">#{idx + 1}</span>
+                  <span className="px-2 py-0.5 rounded bg-[#76B900]/10 text-[#76B900] border border-[#76B900]/30">
+                    {getModuleById(q.moduleId)?.code || q.moduleId.toUpperCase()}
+                  </span>
                   <span className="px-2 py-0.5 rounded bg-[#10151C] text-[#8C98A6] border border-[#222E3A]">
                     {q.topic}
                   </span>
                   <span className="text-[#6D7A88] text-[11px]">{q.id}</span>
                 </div>
 
-                <button
-                  onClick={() => clearIncorrectAttempt(q.id)}
-                  className="flex items-center gap-1 text-[11px] text-[#7C8998] hover:text-[#76B900] transition-colors"
-                  title="Mark as resolved"
-                >
-                  <CheckCircle2 className="w-3.5 h-3.5 text-[#76B900]" />
-                  <span>Mark Resolved</span>
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => toggleBookmark(q.id)}
+                    className={`flex items-center gap-1 text-[11px] transition-colors ${
+                      isBookmarked(q.id) ? 'text-[#76B900]' : 'text-[#7C8998] hover:text-[#76B900]'
+                    }`}
+                    title={isBookmarked(q.id) ? 'Remove bookmark' : 'Bookmark this question'}
+                  >
+                    <Bookmark className={`w-3.5 h-3.5 ${isBookmarked(q.id) ? 'fill-[#76B900]' : ''}`} />
+                    <span>{isBookmarked(q.id) ? 'Bookmarked' : 'Bookmark'}</span>
+                  </button>
+
+                  <button
+                    onClick={() => clearIncorrectAttempt(q.id)}
+                    className="flex items-center gap-1 text-[11px] text-[#7C8998] hover:text-[#76B900] transition-colors"
+                    title="Mark as resolved"
+                  >
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#76B900]" />
+                    <span>Mark Resolved</span>
+                  </button>
+                </div>
               </div>
 
               <div className="text-sm font-medium text-white leading-relaxed">

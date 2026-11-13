@@ -13,10 +13,12 @@ import {
   Filter,
   Check,
   X,
+  Bookmark,
   Sparkles
 } from 'lucide-react';
 import { Show, SignInButton } from '@clerk/react';
 import { getModuleById } from '../../config/modules';
+import { useProgress } from '../../context/ProgressContext';
 
 interface MockResultViewProps {
   attempt: MockExamAttempt;
@@ -32,6 +34,7 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
   onExit
 }) => {
   const [filter, setFilter] = useState<'all' | 'incorrect' | 'correct' | 'unanswered'>('all');
+  const { toggleBookmark, isBookmarked } = useProgress();
 
   const questionMap = new Map(questions.map(q => [q.id, q]));
 
@@ -239,7 +242,18 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
                     </span>
                   </div>
 
-                  <div>
+                  <div className="flex items-center gap-3">
+                    <button
+                      onClick={() => toggleBookmark(q.id)}
+                      className={`inline-flex items-center gap-1 transition-colors ${
+                        isBookmarked(q.id) ? 'text-[#76B900]' : 'text-[#7C8998] hover:text-[#76B900]'
+                      }`}
+                      title={isBookmarked(q.id) ? 'Remove bookmark' : 'Bookmark this question'}
+                    >
+                      <Bookmark className={`w-3.5 h-3.5 ${isBookmarked(q.id) ? 'fill-[#76B900]' : ''}`} />
+                      <span className="hidden sm:inline">{isBookmarked(q.id) ? 'Bookmarked' : 'Bookmark'}</span>
+                    </button>
+
                     {res.isCorrect ? (
                       <span className="inline-flex items-center gap-1 text-[#76B900] font-semibold">
                         <Check className="w-3.5 h-3.5" /> Correct (+1)

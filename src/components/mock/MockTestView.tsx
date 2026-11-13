@@ -1,10 +1,11 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { getQuestionsForModule } from '../../data/moduleRegistry';
 import { ITISS_MODULES } from '../../config/modules';
 import { getModuleTopics } from '../../config/topics';
 import { MockExamSession } from './MockExamSession';
 import { MockResultView } from './MockResultView';
+import { ModuleSelector } from '../common/ModuleSelector';
 import { MockExamAttempt } from '../../types/userProgress';
 import { Question } from '../../types/question';
 import { 
@@ -22,11 +23,19 @@ import {
 } from 'lucide-react';
 
 export const MockTestView: React.FC = () => {
-  const { activeModuleId, mockAttempts, saveMockAttempt } = useProgress();
-  const allQuestions = getQuestionsForModule(activeModuleId);
-  const activeModule = ITISS_MODULES.find(m => m.id === activeModuleId);
-  const moduleCode = activeModule?.code || activeModuleId.toUpperCase();
-  const moduleTopics = getModuleTopics(activeModuleId);
+  const { activeModuleId, setActiveModuleId, mockAttempts, saveMockAttempt } = useProgress();
+  const [moduleId, setModuleId] = useState(activeModuleId);
+  const allQuestions = getQuestionsForModule(moduleId);
+  const activeModule = ITISS_MODULES.find(m => m.id === moduleId);
+  const moduleCode = activeModule?.code || moduleId.toUpperCase();
+  const moduleTopics = getModuleTopics(moduleId);
+
+  const handleModuleChange = (nextModuleId: string) => {
+    setModuleId(nextModuleId);
+    setActiveModuleId(nextModuleId);
+    setActiveSessionQuestions(null);
+    setSelectedResultAttempt(null);
+  };
 
   const [activeSessionQuestions, setActiveSessionQuestions] = useState<Question[] | null>(null);
   const [selectedResultAttempt, setSelectedResultAttempt] = useState<MockExamAttempt | null>(null);
@@ -49,7 +58,7 @@ export const MockTestView: React.FC = () => {
     return (
       <MockExamSession
         questions={activeSessionQuestions}
-        moduleId={activeModuleId}
+        moduleId={moduleId}
         durationMinutes={40}
         onComplete={handleExamComplete}
         onExit={() => setActiveSessionQuestions(null)}
@@ -69,7 +78,7 @@ export const MockTestView: React.FC = () => {
   }
 
   // Filter mock attempts for this module
-  const moduleMocks = mockAttempts.filter(m => m.moduleId === activeModuleId);
+  const moduleMocks = mockAttempts.filter(m => m.moduleId === moduleId);
 
   return (
     <div className="space-y-8 animate-in fade-in duration-200">
@@ -87,6 +96,9 @@ export const MockTestView: React.FC = () => {
         <p className="text-xs text-[#9CA3AF] mt-1 max-w-2xl">
           Simulate official CDAC examination conditions. Questions are dynamically drawn from all {moduleTopics.length} syllabus topics with real-time countdown timer and question matrix.
         </p>
+        <div className="mt-3">
+          <ModuleSelector value={moduleId} onChange={handleModuleChange} label="Mock module" />
+        </div>
       </div>
 
       {/* Hero Exam Launcher Card */}

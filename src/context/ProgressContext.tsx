@@ -26,6 +26,8 @@ interface ProgressContextType {
   getOverallStats: () => UserStats;
   getIncorrectQuestions: (moduleId: string) => Question[];
   getBookmarkedQuestions: (moduleId: string) => Question[];
+  getAllIncorrectQuestions: () => Question[];
+  getAllBookmarkedQuestions: () => Question[];
   getTopicStats: (moduleId: string) => Record<string, { total: number; attempted: number; correct: number; accuracy: number }>;
 }
 
@@ -308,6 +310,26 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     return questions.filter(q => bookmarkSet.has(q.id));
   };
 
+  /** Incorrect questions across every active module (each keeps its own moduleId). */
+  const getAllIncorrectQuestions = (): Question[] => {
+    const incorrectIds = new Set(
+      Object.values(attempts)
+        .filter(att => !att.isCorrect)
+        .map(att => att.questionId)
+    );
+    return getActiveModules().flatMap(module =>
+      getQuestionsForModule(module.id).filter(q => incorrectIds.has(q.id))
+    );
+  };
+
+  /** Bookmarked questions across every active module. */
+  const getAllBookmarkedQuestions = (): Question[] => {
+    const bookmarkSet = new Set(bookmarks);
+    return getActiveModules().flatMap(module =>
+      getQuestionsForModule(module.id).filter(q => bookmarkSet.has(q.id))
+    );
+  };
+
   const getTopicStats = (moduleId: string) => {
     const questions = getQuestionsForModule(moduleId);
     const result: Record<string, { total: number; attempted: number; correct: number; accuracy: number }> = {};
@@ -359,6 +381,8 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       getOverallStats,
       getIncorrectQuestions,
       getBookmarkedQuestions,
+      getAllIncorrectQuestions,
+      getAllBookmarkedQuestions,
       getTopicStats
     }}>
       {children}

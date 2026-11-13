@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useProgress } from '../../context/ProgressContext';
 import { PracticeSession } from '../practice/PracticeSession';
+import { ModuleSelector } from '../common/ModuleSelector';
+import { getModuleById } from '../../config/modules';
 import { 
   Bookmark, 
   Play, 
@@ -12,8 +14,13 @@ import {
 } from 'lucide-react';
 
 export const BookmarksView: React.FC = () => {
-  const { activeModuleId, getBookmarkedQuestions, toggleBookmark } = useProgress();
-  const bookmarkedQuestions = getBookmarkedQuestions(activeModuleId);
+  const { getAllBookmarkedQuestions, toggleBookmark } = useProgress();
+  const [moduleFilter, setModuleFilter] = useState('all');
+  const allBookmarks = getAllBookmarkedQuestions();
+  const bookmarkedQuestions =
+    moduleFilter === 'all'
+      ? allBookmarks
+      : allBookmarks.filter(question => question.moduleId === moduleFilter);
 
   const [isPracticing, setIsPracticing] = useState(false);
 
@@ -38,15 +45,18 @@ export const BookmarksView: React.FC = () => {
               SAVED QUESTIONS
             </span>
             <span className="text-xs text-[#8C98A6] font-mono">
-              {bookmarkedQuestions.length} Bookmarked Item{bookmarkedQuestions.length === 1 ? '' : 's'}
+              {bookmarkedQuestions.length} of {allBookmarks.length} Bookmarked Item{allBookmarks.length === 1 ? '' : 's'}
             </span>
           </div>
           <h1 className="text-2xl font-extrabold text-white mt-1.5">
             Bookmarked Questions
           </h1>
           <p className="text-xs text-[#9CA3AF] mt-1">
-            Your personal question collection saved during practice and mock exams for quick revision.
+            Questions you saved from practice sessions and mock reviews, across every module.
           </p>
+          <div className="mt-3">
+            <ModuleSelector value={moduleFilter} onChange={setModuleFilter} includeAll label="Filter module" />
+          </div>
         </div>
 
         {bookmarkedQuestions.length > 0 && (
@@ -82,6 +92,9 @@ export const BookmarksView: React.FC = () => {
               <div className="flex items-center justify-between text-xs font-mono">
                 <div className="flex items-center gap-2">
                   <span className="text-[#76B900] font-bold">#{idx + 1}</span>
+                  <span className="px-2 py-0.5 rounded bg-[#76B900]/10 text-[#76B900] border border-[#76B900]/30">
+                    {getModuleById(q.moduleId)?.code || q.moduleId.toUpperCase()}
+                  </span>
                   <span className="px-2 py-0.5 rounded bg-[#10151C] text-[#8C98A6] border border-[#222E3A]">
                     {q.topic}
                   </span>

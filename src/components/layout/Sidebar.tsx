@@ -85,10 +85,8 @@ export const Sidebar: React.FC<SidebarProps> = ({
     user?.publicMetadata?.role === 'admin' ||
     user?.primaryEmailAddress?.emailAddress?.toLowerCase() === 'pujariprajyot00@gmail.com';
 
-  const incorrectCount = Object.values(attempts).filter(
-    a => a.moduleId === activeModuleId && !a.isCorrect
-  ).length;
-
+  // Counts span every module, matching the cross-module Incorrect/Bookmarks views.
+  const incorrectCount = Object.values(attempts).filter(a => !a.isCorrect).length;
   const bookmarkCount = bookmarks.length;
 
   const navItems: { id: NavItem; label: string; icon: LucideIcon; badge?: string; count?: number }[] = [

@@ -17,14 +17,16 @@ import {
   Clock
 } from 'lucide-react';
 import { ProgressBar } from '../common/ProgressBar';
+import { ModuleSelector } from '../common/ModuleSelector';
 
 export const PracticeView: React.FC = () => {
-  const { activeModuleId, getTopicStats } = useProgress();
-  const allQuestions = getQuestionsForModule(activeModuleId);
-  const topicStats = getTopicStats(activeModuleId);
-  const moduleTopics = getModuleTopics(activeModuleId);
-  const activeModule = ITISS_MODULES.find(m => m.id === activeModuleId);
-  const moduleCode = activeModule?.code || activeModuleId.toUpperCase();
+  const { activeModuleId, setActiveModuleId, getTopicStats } = useProgress();
+  const [moduleId, setModuleId] = useState(activeModuleId);
+  const allQuestions = getQuestionsForModule(moduleId);
+  const topicStats = getTopicStats(moduleId);
+  const moduleTopics = getModuleTopics(moduleId);
+  const activeModule = ITISS_MODULES.find(m => m.id === moduleId);
+  const moduleCode = activeModule?.code || moduleId.toUpperCase();
 
   const [activeSession, setActiveSession] = useState<{
     questions: Question[];
@@ -33,6 +35,12 @@ export const PracticeView: React.FC = () => {
   } | null>(null);
 
   const [randomCount, setRandomCount] = useState<number>(20);
+
+  const handleModuleChange = (nextModuleId: string) => {
+    setModuleId(nextModuleId);
+    setActiveModuleId(nextModuleId);
+    setActiveSession(null);
+  };
 
   // Mode A: All Questions
   const handleStartAll = () => {
@@ -88,6 +96,9 @@ export const PracticeView: React.FC = () => {
         <h1 className="text-2xl font-extrabold text-white mt-1.5">
           Practice Examination MCQs
         </h1>
+        <div className="mt-3">
+          <ModuleSelector value={moduleId} onChange={handleModuleChange} label="Practice module" />
+        </div>
         <p className="text-xs text-[#9CA3AF] mt-1 max-w-2xl">
           Select your preparation mode. Experience instant answer reveals, in-depth technical explanations, and source provenance across all questions.
         </p>
