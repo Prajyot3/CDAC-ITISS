@@ -116,16 +116,25 @@ export const ITISS_MODULES: ITISSModule[] = [
     sectionId: 'section-a',
     sectionName: 'SECTION A: Course Focus',
     duration: '90 Hours',
-    status: 'UPDATED SOON',
+    status: 'AVAILABLE',
     slug: 'programming',
     route: '/modules/programming',
-    description: 'Advanced systems and automation programming with Python and C, data structures, socket programming, memory safety, concurrency, and security automation scripts.',
+    description: 'Advanced programming concepts covering Python scripting, standard library modules, socket programming, regular expressions, automation, and MySQL relational database queries, DDL schemas, constraints, and ACID transactions.',
+    topics: [
+      'MySQL Query Construction',
+      'MySQL Database Administration & DDL',
+      'Python Code Tracing & Output',
+      'Python Architecture & Standard Library'
+    ],
     syllabusPoints: [
-      'C Systems Programming: Pointers, Dynamic Memory Allocation, and Buffer Overflow Mechanics',
-      'Python for Cybersecurity: Automation, Scapy Network Packet Crafting, and Paramiko SSH',
-      'Socket Programming: Client-Server Architecture in TCP/UDP and Multi-threaded Servers',
-      'Secure Coding Standards: OWASP Secure Coding Practices, Input Sanitization, and Error Handling',
-      'Regular Expressions and Parsing for Security Log Analysis'
+      'MySQL Queries: Data Filtering (WHERE, HAVING), Aggregations, GROUP BY, and LIMIT',
+      'MySQL Joins and Subqueries: INNER JOIN, LEFT JOIN, and Subquery Evaluations',
+      'MySQL Database Administration: DDL Schemas, Constraints, Indexing, and ACID Transactions',
+      'Python Syntax & Data Structures: Lists, Tuples, Dictionaries, Sets, and Comprehensions',
+      'Python Control Flow & Functions: Closures, Recursion, *args, Lambda, Map, and Filter',
+      'Python Standard Library: Regex (re), pathlib, datetime, hashlib, and System Modules',
+      'Object-Oriented Python: Classes, Instance Variables, Method Overriding, and Encapsulation',
+      'Python Exception Handling & Network Programming: try/except/finally and Sockets'
     ]
   },
 

@@ -185,3 +185,4 @@ export const CorrectQuestionsView: React.FC = () => {
     </div>
   );
 };
+

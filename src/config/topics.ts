@@ -73,9 +73,33 @@ export const OS_TOPICS: TopicMeta[] = [
   },
 ];
 
+export const PROGRAMMING_TOPICS: TopicMeta[] = [
+  {
+    id: 'mysql-queries',
+    name: 'MySQL Query Construction',
+    shortDescription: 'SELECT, WHERE, HAVING, GROUP BY, ORDER BY, LIMIT, INNER/LEFT JOINs, subqueries and aggregations'
+  },
+  {
+    id: 'mysql-ddl-admin',
+    name: 'MySQL Database Administration & DDL',
+    shortDescription: 'CREATE/ALTER/DROP, schemas, constraints, indexes, transactions, ACID properties and SQL injection defense'
+  },
+  {
+    id: 'python-code-tracing',
+    name: 'Python Code Tracing & Output',
+    shortDescription: 'Code execution tracing: list/dict manipulations, slicing, closures, recursion, regex, OOP, and exception handling'
+  },
+  {
+    id: 'python-architecture',
+    name: 'Python Architecture & Standard Library',
+    shortDescription: 'Virtual environments, data model, standard libraries (hashlib, datetime, pathlib, socket) and network programming'
+  }
+];
+
 const MODULE_TOPICS: Record<string, TopicMeta[]> = {
   fcn: FCN_TOPICS,
   os: OS_TOPICS,
+  programming: PROGRAMMING_TOPICS,
 };
 
 export const getModuleTopics = (moduleId: string): TopicMeta[] =>
