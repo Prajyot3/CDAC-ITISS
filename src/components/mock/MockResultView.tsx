@@ -100,7 +100,7 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
                   ? 'bg-[#76B900]/20 text-[#76B900] border border-[#76B900]/40' 
                   : 'bg-red-500/20 text-red-400 border border-red-500/40'
               }`}>
-                {isPassed ? 'PASSED (â‰¥ 60%)' : 'NEEDS REVISION (< 60%)'}
+                {isPassed ? 'PASSED (≥ 60%)' : 'NEEDS REVISION (< 60%)'}
               </span>
             </div>
           </div>

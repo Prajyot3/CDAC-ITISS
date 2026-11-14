@@ -186,7 +186,7 @@ export const PerformanceView: React.FC<PerformanceViewProps> = ({ onNavigate }) 
                 {stats.accuracy}%
               </div>
               <div className="text-[11px] text-[#788594] font-mono mt-0.5">
-                Target: â‰¥ 70%
+                Target: ≥ 70%
               </div>
             </div>
 

@@ -152,7 +152,7 @@ export const DashboardView: React.FC<DashboardViewProps> = ({
             {overallStats.accuracy}%
           </div>
           <div className="text-[11px] text-[#7E8B9A] mt-1 font-mono">
-            Target: â‰¥ 70%
+            Target: ≥ 70%
           </div>
         </div>
 

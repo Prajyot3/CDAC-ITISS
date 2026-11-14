@@ -138,7 +138,7 @@ export const MockTestView: React.FC = () => {
           </div>
           <div className="p-3 rounded-lg bg-[#0F151B] border border-[#202C38]">
             <span className="text-[#8C98A6] block text-[11px]">Passing Criteria</span>
-            <span className="font-mono font-bold text-[#76B900] text-base">â‰¥ 24 / 40 (60%)</span>
+            <span className="font-mono font-bold text-[#76B900] text-base">≥ 24 / 40 (60%)</span>
           </div>
           <div className="p-3 rounded-lg bg-[#0F151B] border border-[#202C38]">
             <span className="text-[#8C98A6] block text-[11px]">Marking Scheme</span>
