@@ -18,10 +18,37 @@ const sanitizeKey = (value: string | undefined): string =>
     .replace(/^\uFEFF/, '')
     .replace(/^[\s"']+|[\s"']+$/g, '');
 
-const PUBLISHABLE_KEY = sanitizeKey(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+const LIVE_PUBLISHABLE_KEY = 'pk_live_Y2xlcmsuY2RhY2l0aXNzYWNhZGVteS50ZWNoJA';
+const TEST_PUBLISHABLE_KEY = 'pk_test_c2VsZWN0ZWQtc2hlZXAtNzU2OS5jbGVyay5hY2NvdW50cy5kZXYk';
+
+// Automatically redirect traffic on the default Vercel domain to the custom production domain
+if (typeof window !== 'undefined' && window.location.hostname === 'cdac-itiss.vercel.app') {
+  window.location.replace(`https://cdacitissacademy.tech${window.location.pathname}${window.location.search}${window.location.hash}`);
+}
+
+const resolvePublishableKey = (): string => {
+  if (typeof window !== 'undefined') {
+    const host = window.location.hostname.toLowerCase();
+    // Production custom domain (always uses live Clerk instance)
+    if (host.includes('cdacitissacademy.tech')) {
+      return LIVE_PUBLISHABLE_KEY;
+    }
+    // Local development
+    if (host === 'localhost' || host === '127.0.0.1' || host === '0.0.0.0') {
+      const localKey = sanitizeKey(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+      return localKey.startsWith('pk_test_') ? localKey : TEST_PUBLISHABLE_KEY;
+    }
+  }
+
+  const envKey = sanitizeKey(import.meta.env.VITE_CLERK_PUBLISHABLE_KEY);
+  if (envKey) return envKey;
+  return import.meta.env.PROD ? LIVE_PUBLISHABLE_KEY : TEST_PUBLISHABLE_KEY;
+};
+
+const PUBLISHABLE_KEY = resolvePublishableKey();
 
 if (import.meta.env.DEV && import.meta.env.VITE_CLERK_PUBLISHABLE_KEY !== PUBLISHABLE_KEY) {
-  console.warn('[auth] Sanitized whitespace/quotes from VITE_CLERK_PUBLISHABLE_KEY.');
+  console.warn('[auth] Using Clerk publishable key:', PUBLISHABLE_KEY.slice(0, 12) + '...');
 }
 
 const MissingKeyScreen: React.FC = () => (
