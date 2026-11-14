@@ -191,9 +191,11 @@ export const PracticeSession: React.FC<PracticeSessionProps> = ({
             <span className="px-2.5 py-0.5 rounded-full bg-[#76B900]/10 text-[#76B900] font-mono font-medium border border-[#76B900]/30">
               {currentQ.topic}
             </span>
-            <span className="px-2.5 py-0.5 rounded-full bg-[#18232C] text-[#8C98A6] font-mono border border-[#243340]">
-              {currentQ.id}
-            </span>
+            {isAnswerRevealed && (
+              <span className="px-2.5 py-0.5 rounded-full bg-[#18232C] text-[#8C98A6] font-mono border border-[#243340]">
+                {currentQ.id}
+              </span>
+            )}
           </div>
         </div>
 
