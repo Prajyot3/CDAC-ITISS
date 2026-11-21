@@ -128,7 +128,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q5",
     "pageNumber": 1,
-    "question": "How would you find out what your current login shell is?",
+    "question": "Which command prints the value of the SHELL environment variable, which conventionally identifies your login shell?",
     "options": [
       {
         "key": "A",
@@ -149,7 +149,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "echo $SHELL",
-    "explanation": "The SHELL environment variable holds the path of the login shell, so echo $SHELL prints it.",
+    "explanation": "SHELL conventionally contains the path to the configured login shell. It can differ from the shell process currently running.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-005"
@@ -221,7 +221,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q8",
     "pageNumber": 1,
-    "question": "What is the full path for grub's (version 1) configuration file?",
+    "question": "Where is the GRUB Legacy configuration file on older Red Hat systems?",
     "options": [
       {
         "key": "A",
@@ -242,7 +242,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "/boot/grub/grub.conf",
-    "explanation": "On Red Hat based GRUB 1 systems the menu configuration lives at /boot/grub/grub.conf; menu.lst is the Debian/Ubuntu name.",
+    "explanation": "GRUB Legacy on Red Hat stored its configuration in /boot/grub/grub.conf. Other distributions could use menu.lst.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-008"
@@ -345,7 +345,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q12",
     "pageNumber": 1,
-    "question": "How would you lock the user account named cdac?",
+    "question": "How do you lock password authentication for the Linux user cdac?",
     "options": [
       {
         "key": "A",
@@ -366,7 +366,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "usermod -L cdac",
-    "explanation": "usermod -L prefixes the password hash with !, locking the account; -l would instead change the login name.",
+    "explanation": "usermod -L locks password authentication for the account by prefixing the password hash with an exclamation point.",
     "topic": "Security and Permissions",
     "diagram": null,
     "id": "OS-012"
@@ -376,7 +376,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q13",
     "pageNumber": 1,
-    "question": "What does the command \"chmod go+rw\" do?",
+    "question": "What does chmod go+rw report.txt do?",
     "options": [
       {
         "key": "A",
@@ -384,7 +384,7 @@
       },
       {
         "key": "B",
-        "text": "Gives group and others read & write permissions on all files in the current working directory."
+        "text": "Adds read and write permissions for the group and others on report.txt."
       },
       {
         "key": "C",
@@ -396,8 +396,8 @@
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Gives group and others read & write permissions on all files in the current working directory.",
-    "explanation": "go+rw adds read and write for group (g) and others (o) on every file in the current directory; it has nothing to do with a file named go.",
+    "correctAnswerText": "Adds read and write permissions for the group and others on report.txt.",
+    "explanation": "g targets the file group and o targets others. +rw adds read and write permission for both classes on each named file.",
     "topic": "Security and Permissions",
     "diagram": null,
     "id": "OS-013"
@@ -562,7 +562,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q19",
     "pageNumber": 1,
-    "question": "Which of the following is the main Apache configuration file?",
+    "question": "Which is the main Apache HTTP Server configuration file on Red Hat Enterprise Linux?",
     "options": [
       {
         "key": "A",
@@ -578,12 +578,12 @@
       },
       {
         "key": "D",
-        "text": "/etc/http/conf/httpd.conf"
+        "text": "/etc/httpd/conf/httpd.conf"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "/etc/http/conf/httpd.conf",
-    "explanation": "On Red Hat style systems Apache's main configuration file is /etc/httpd/conf/httpd.conf (the question's /etc/http/conf/httpd.conf is the same layout with 'http' for 'httpd').",
+    "correctAnswerText": "/etc/httpd/conf/httpd.conf",
+    "explanation": "The Red Hat httpd package uses /etc/httpd/conf/httpd.conf as its main Apache configuration file.",
     "topic": "Network Services",
     "diagram": null,
     "id": "OS-019"
@@ -593,7 +593,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q20",
     "pageNumber": 1,
-    "question": "How many primary partitions can exist on a single drive?",
+    "question": "How many primary partitions can an MBR partition table hold?",
     "options": [
       {
         "key": "A",
@@ -614,7 +614,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "4",
-    "explanation": "The MBR partition table allows at most four primary partitions; more partitions require an extended partition with logical drives.",
+    "explanation": "An MBR partition table has four primary partition entries. One can instead describe an extended partition.",
     "topic": "File Systems",
     "diagram": null,
     "id": "OS-020"
@@ -624,7 +624,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q21",
     "pageNumber": 1,
-    "question": "Which daemon is used to set up a firewall on a Linux system?",
+    "question": "Which command configures legacy Linux netfilter packet-filtering rules?",
     "options": [
       {
         "key": "A",
@@ -645,7 +645,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "iptables",
-    "explanation": "iptables manages the kernel netfilter rules that implement packet filtering and NAT.",
+    "explanation": "iptables is the userspace command for managing legacy Linux netfilter packet-filtering rules.",
     "topic": "Security and Permissions",
     "diagram": null,
     "id": "OS-021"
@@ -655,7 +655,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q22",
     "pageNumber": 1,
-    "question": "In which file can it be specified which users or network can access the system via FTP?",
+    "question": "On a legacy system where the FTP daemon uses TCP Wrappers, which file can explicitly allow client hosts or networks?",
     "options": [
       {
         "key": "A",
@@ -676,7 +676,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "/etc/hosts.allow",
-    "explanation": "/etc/hosts.allow (with hosts.deny) grants or denies TCP-wrapper access by host or network; /etc/ftpusers only lists accounts forbidden from FTP.",
+    "explanation": "An FTP daemon built with TCP Wrappers support can use /etc/hosts.allow to permit specific client hosts or networks.",
     "topic": "Network Services",
     "diagram": null,
     "id": "OS-022"
@@ -872,11 +872,11 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q29",
     "pageNumber": 1,
-    "question": "A user would like personal e-mail to be redirected to another system. Which file may be modified to perform this action?",
+    "question": "Which file in a user’s home directory can specify a Sendmail forwarding destination?",
     "options": [
       {
         "key": "A",
-        "text": "/etc/aliases"
+        "text": "$HOME/.forward"
       },
       {
         "key": "B",
@@ -891,9 +891,9 @@
         "text": "/etc/netsvc.conf"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "/$HOME/.forward",
-    "explanation": "A ~/.forward file tells the local MDA where to forward that user's mail; /etc/aliases would change it for everyone.",
+    "correctAnswer": "A",
+    "correctAnswerText": "$HOME/.forward",
+    "explanation": "Sendmail checks a user’s .forward file in their home directory for forwarding instructions.",
     "topic": "Network Services",
     "diagram": null,
     "id": "OS-029"
@@ -1017,7 +1017,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "An X server is under the control of a window manager.",
-    "explanation": "The window manager is an X client that manages windows; it does not control the X server.",
+    "explanation": "A window manager is a client of the X server. The server provides display and input services to its clients.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-033"
@@ -1027,7 +1027,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q34",
     "pageNumber": 1,
-    "question": "Which of the following is a reasonable size for a swap partition for a Linux workstation with 128 MB RAM?",
+    "question": "For a legacy workstation with 128 MB of RAM, which listed swap size is closest to the amount of installed RAM?",
     "options": [
       {
         "key": "A",
@@ -1048,7 +1048,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "100 MB",
-    "explanation": "The classic rule is swap = 1-2x RAM for small systems, so about 100-256 MB fits a 128 MB workstation; 0.5 MB is unusable and 5 GB excessive.",
+    "explanation": "100 MB is the only listed option on roughly the same scale as 128 MB of RAM. Swap requirements depend on workload and system policy.",
     "topic": "Memory Management",
     "diagram": null,
     "id": "OS-034"
@@ -1120,7 +1120,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q37",
     "pageNumber": 1,
-    "question": "Where is the configuration information for network interface eth0 stored?",
+    "question": "Where does an older Red Hat system that uses network-scripts store the configuration for eth0?",
     "options": [
       {
         "key": "A",
@@ -1141,7 +1141,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "/etc/sysconfig/network-scripts/ifcfg-eth0",
-    "explanation": "Red Hat style systems keep per-interface settings in /etc/sysconfig/network-scripts/ifcfg-eth0.",
+    "explanation": "Older Red Hat releases using network-scripts store per-interface configuration in files such as ifcfg-eth0.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-037"
@@ -1213,7 +1213,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q40",
     "pageNumber": 1,
-    "question": "The default umask for a non-privileged user on a Red Hat system is:",
+    "question": "Which umask turns requested file mode 0666 into 0644 and directory mode 0777 into 0755?",
     "options": [
       {
         "key": "A",
@@ -1234,7 +1234,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "022",
-    "explanation": "umask 022 removes group and other write bits, so new files get 644 and directories 755.",
+    "explanation": "A umask of 022 clears group and other write bits. From requested modes 0666 and 0777, it yields 0644 for files and 0755 for directories.",
     "topic": "Security and Permissions",
     "diagram": null,
     "id": "OS-040"
@@ -1244,7 +1244,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q41",
     "pageNumber": 1,
-    "question": "What is the default filesystem type under the current version of Red Hat?",
+    "question": "What was the default filesystem for new Red Hat Enterprise Linux 6 installations?",
     "options": [
       {
         "key": "A",
@@ -1265,7 +1265,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "ext4",
-    "explanation": "Modern Red Hat Enterprise Linux and Fedora default to ext4 (with xfs on RHEL 7+); older releases used ext3.",
+    "explanation": "Red Hat Enterprise Linux 6 used ext4 by default. Red Hat Enterprise Linux 7 switched the default to XFS.",
     "topic": "File Systems",
     "diagram": null,
     "id": "OS-041"
@@ -1337,7 +1337,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q44",
     "pageNumber": 1,
-    "question": "What is the name of the tool that configures a network authentication scheme?",
+    "question": "Which tool configured system authentication on traditional Red Hat Enterprise Linux 6 or 7 installations?",
     "options": [
       {
         "key": "A",
@@ -1358,7 +1358,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "authconfig",
-    "explanation": "authconfig configures NIS, LDAP, Kerberos and other identity sources and writes the matching nsswitch.conf and PAM files.",
+    "explanation": "authconfig was the tool for configuring system authentication on traditional RHEL 6 and RHEL 7 installations.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-044"
@@ -1368,7 +1368,7 @@
     "sourcePdf": "06-linux.pdf",
     "sourceQuestionNumber": "Q45",
     "pageNumber": 1,
-    "question": "Most daemon log messages get logged to:",
+    "question": "On a legacy Red Hat system with a traditional syslog configuration, where are general daemon messages commonly logged?",
     "options": [
       {
         "key": "A",
@@ -1389,7 +1389,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "/var/log/messages",
-    "explanation": "rsyslog's default rules send most facility messages to /var/log/messages; dmesg only holds kernel ring-buffer output.",
+    "explanation": "A traditional RHEL syslog configuration writes many general daemon messages to /var/log/messages.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-045"
@@ -1740,7 +1740,7 @@
     "sourcePdf": "02-windows.pdf",
     "sourceQuestionNumber": "Q57",
     "pageNumber": 1,
-    "question": "Which command registers the Active Directory Schema Master management snap-in?",
+    "question": "Which command registers the Active Directory Schema MMC snap-in?",
     "options": [
       {
         "key": "A",
@@ -1761,7 +1761,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "regsvr32 schmmgmt.dll",
-    "explanation": "regsvr32 registers the schmmgmt.dll COM component, after which the Active Directory Schema snap-in can be added to MMC.",
+    "explanation": "Register schmmgmt.dll to make the Active Directory Schema MMC snap-in available.",
     "topic": "Windows Administration",
     "diagram": null,
     "id": "OS-057"
@@ -1868,7 +1868,7 @@
     "options": [
       {
         "key": "A",
-        "text": "Flexible Single Master Operation"
+        "text": "Flexible Single Master Operations"
       },
       {
         "key": "B",
@@ -1884,8 +1884,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "Flexible Single Master Operation",
-    "explanation": "Active Directory has five FSMO roles, such as Schema Master and RID Master, that must be held by a single domain controller.",
+    "correctAnswerText": "Flexible Single Master Operations",
+    "explanation": "Active Directory has five Flexible Single Master Operations roles, each assigned to one domain controller within its forest or domain scope.",
     "topic": "Windows Administration",
     "diagram": null,
     "id": "OS-061"
@@ -1895,7 +1895,7 @@
     "sourcePdf": "02-windows.pdf",
     "sourceQuestionNumber": "Q62",
     "pageNumber": 1,
-    "question": "Which command is used for finding errors in a running application on Windows?",
+    "question": "Which legacy Windows XP command starts the Dr. Watson application crash diagnostic utility?",
     "options": [
       {
         "key": "A",
@@ -1916,7 +1916,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "drwtsn32",
-    "explanation": "Dr. Watson (drwtsn32) captures a crash dump and stack trace for a failing user-mode application.",
+    "explanation": "Dr. Watson (drwtsn32) could record crash information and a dump for a failing user-mode application.",
     "topic": "Windows Administration",
     "diagram": null,
     "id": "OS-062"
@@ -2112,7 +2112,7 @@
     "sourcePdf": "02-windows.pdf",
     "sourceQuestionNumber": "Q69",
     "pageNumber": 1,
-    "question": "You are designing a subnet mask for 172.27.0.0 to get 800 subnets with up to 50 hosts each. Which mask should you use?",
+    "question": "Which mask divides 172.27.0.0/16 into at least 800 subnets, each with room for at least 50 usable IPv4 addresses?",
     "options": [
       {
         "key": "A",
@@ -2133,7 +2133,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "255.255.255.192",
-    "explanation": "800 subnets need 10 bits (2^10 = 1024), which leaves 6 host bits (62 hosts) - that is a /26 or 255.255.255.192.",
+    "explanation": "Starting with a /16, a /26 borrows ten bits for up to 1,024 subnets and leaves six host bits for up to 62 usable addresses per subnet.",
     "topic": "Windows Administration",
     "diagram": null,
     "id": "OS-069"
@@ -2577,7 +2577,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q84",
     "pageNumber": 1,
-    "question": "The command \"ls *.*\" returns a list of files. What best describes them?",
+    "question": "Assuming ordinary shell globbing and at least one match, what does ls -d -- *.* list?",
     "options": [
       {
         "key": "A",
@@ -2589,7 +2589,7 @@
       },
       {
         "key": "C",
-        "text": "A list of all files in the present working directory that have a dot in the name, but not as a first character."
+        "text": "Non-hidden names in the current directory that contain a dot."
       },
       {
         "key": "D",
@@ -2597,8 +2597,8 @@
       }
     ],
     "correctAnswer": "C",
-    "correctAnswerText": "A list of all files in the present working directory that have a dot in the name, but not as a first character.",
-    "explanation": "The shell expands *.* to names containing a dot that is not the leading character, so dot-files are excluded.",
+    "correctAnswerText": "Non-hidden names in the current directory that contain a dot.",
+    "explanation": "Under default shell globbing, *.* matches visible names with a dot. ls -d lists directory matches themselves.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-084"
@@ -2763,28 +2763,28 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q90",
     "pageNumber": 1,
-    "question": "What is the file system id of a Linux swap partition?",
+    "question": "What MBR partition type code marks a Linux swap partition?",
     "options": [
       {
         "key": "A",
-        "text": "/dev/hda1"
+        "text": "0x82"
       },
       {
         "key": "B",
-        "text": "/swap"
+        "text": "0x05"
       },
       {
         "key": "C",
-        "text": "82"
+        "text": "0x83"
       },
       {
         "key": "D",
-        "text": "83"
+        "text": "0x07"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "82",
-    "explanation": "Partition type 82 marks a Linux swap partition; 83 is a normal Linux filesystem.",
+    "correctAnswer": "A",
+    "correctAnswerText": "0x82",
+    "explanation": "An MBR partition table uses hexadecimal type code 0x82 for Linux swap.",
     "topic": "File Systems",
     "diagram": null,
     "id": "OS-090"
@@ -2794,7 +2794,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q91",
     "pageNumber": 1,
-    "question": "By default, the home directory of every user falls under:",
+    "question": "Under which directory are ordinary Linux users’ home directories conventionally created?",
     "options": [
       {
         "key": "A",
@@ -2815,7 +2815,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "/home",
-    "explanation": "useradd creates /home/<username> unless a different base directory is configured in /etc/default/useradd or login.defs.",
+    "explanation": "/home is the conventional parent directory for regular users’ home directories. System accounts and configured exceptions can use other paths.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-091"
@@ -2825,7 +2825,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q92",
     "pageNumber": 1,
-    "question": "The name of a reverse lookup zone file has to end in:",
+    "question": "Which DNS domain suffix is used for IPv4 reverse lookup zones?",
     "options": [
       {
         "key": "A",
@@ -2846,7 +2846,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "in-addr.arpa",
-    "explanation": "Reverse zones are named after the reversed network octets plus in-addr.arpa, e.g. 1.168.192.in-addr.arpa.",
+    "explanation": "IPv4 reverse DNS zones use the in-addr.arpa domain. A zone’s on-disk file name can be chosen independently.",
     "topic": "Network Services",
     "diagram": null,
     "id": "OS-092"
@@ -2856,7 +2856,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q93",
     "pageNumber": 1,
-    "question": "To enable a service immediately from the command line, you have to use:",
+    "question": "Which command invokes a SysV service’s start action immediately?",
     "options": [
       {
         "key": "A",
@@ -2877,7 +2877,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "service",
-    "explanation": "\"service <name> start\" starts the daemon now; chkconfig only controls whether it starts at boot.",
+    "explanation": "On a SysV-style system, service NAME start starts the service immediately. Boot-time enablement uses a separate setting.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-093"
@@ -2887,7 +2887,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q94",
     "pageNumber": 1,
-    "question": "What is the unused runlevel?",
+    "question": "Which runlevel is normally unused in the traditional Red Hat SysV runlevel scheme?",
     "options": [
       {
         "key": "A",
@@ -2908,7 +2908,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "4",
-    "explanation": "Runlevel 4 is undefined by convention: 0 halt, 1 single-user, 2 multi-user without NFS, 3 full multi-user, 5 graphical, 6 reboot.",
+    "explanation": "In the traditional Red Hat SysV runlevel scheme, runlevel 4 is available for custom use.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-094"
@@ -3166,11 +3166,11 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q103",
     "pageNumber": 1,
-    "question": "What happens when you end a disconnected session running on the remote server?",
+    "question": "What happens when an administrator ends a disconnected Remote Desktop session?",
     "options": [
       {
         "key": "A",
-        "text": "all data is lost"
+        "text": "The session’s applications close and unsaved work may be lost."
       },
       {
         "key": "B",
@@ -3186,8 +3186,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "all data is lost",
-    "explanation": "Ending (as opposed to disconnecting) a session terminates its processes, so unsaved work in its applications is lost.",
+    "correctAnswerText": "The session’s applications close and unsaved work may be lost.",
+    "explanation": "Signing out or ending the session terminates its running applications. Unsaved work can be lost.",
     "topic": "Windows Administration",
     "diagram": null,
     "id": "OS-103"
@@ -3197,28 +3197,28 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q104",
     "pageNumber": 1,
-    "question": "Which of the following is NOT a good practice regarding password policy on a Windows server?",
+    "question": "Which action should generally be avoided for a Windows domain account when there is no sign of compromise?",
     "options": [
       {
         "key": "A",
-        "text": "Requiring a change in password by the administrator at regular time intervals"
+        "text": "Requiring routine password changes on a fixed schedule"
       },
       {
         "key": "B",
-        "text": "Creating a minimum password length"
+        "text": "Setting a minimum password length"
       },
       {
         "key": "C",
-        "text": "Creating a maximum password age"
+        "text": "Checking new passwords against a list of known compromised passwords"
       },
       {
         "key": "D",
-        "text": "Allowing the user to change his password"
+        "text": "Allowing users to change their own passwords"
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "Requiring a change in password by the administrator at regular time intervals",
-    "explanation": "Administrators should not know or reset passwords routinely; users should choose their own passwords under length/age policy.",
+    "correctAnswerText": "Requiring routine password changes on a fixed schedule",
+    "explanation": "Modern password guidance recommends checking new passwords against a blocklist and requiring a change when there is evidence of compromise.",
     "topic": "Windows Administration",
     "diagram": null,
     "id": "OS-104"
@@ -3352,7 +3352,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q109",
     "pageNumber": 1,
-    "question": "What is the DocumentRoot path in Apache on Red Hat systems?",
+    "question": "What is the default DocumentRoot path for the Apache httpd package on Red Hat Enterprise Linux?",
     "options": [
       {
         "key": "A",
@@ -3360,7 +3360,7 @@
       },
       {
         "key": "B",
-        "text": "/var/www"
+        "text": "/var/www/html"
       },
       {
         "key": "C",
@@ -3372,8 +3372,8 @@
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "/var/www",
-    "explanation": "DocumentRoot is /var/www/html by default on Red Hat, with /var/www as the web root hierarchy.",
+    "correctAnswerText": "/var/www/html",
+    "explanation": "The default document root for the Red Hat httpd package is /var/www/html.",
     "topic": "Network Services",
     "diagram": null,
     "id": "OS-109"
@@ -3383,28 +3383,28 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q110",
     "pageNumber": 1,
-    "question": "What is the default block/chunk size for an LVM physical volume?",
+    "question": "What is the default physical extent size when creating an LVM volume group?",
     "options": [
       {
         "key": "A",
-        "text": "8MB"
+        "text": "8 MiB"
       },
       {
         "key": "B",
-        "text": "16MB"
+        "text": "16 MiB"
       },
       {
         "key": "C",
-        "text": "4MB"
+        "text": "4 MiB"
       },
       {
         "key": "D",
-        "text": "12MB"
+        "text": "12 MiB"
       }
     ],
     "correctAnswer": "C",
-    "correctAnswerText": "4MB",
-    "explanation": "LVM allocates in physical extents of 4 MB by default; vgcreate/pvcreate can change the PE size (1 MB to 1 GB).",
+    "correctAnswerText": "4 MiB",
+    "explanation": "An LVM volume group uses 4 MiB physical extents by default. vgcreate can set a different extent size.",
     "topic": "File Systems",
     "diagram": null,
     "id": "OS-110"
@@ -3507,7 +3507,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q114",
     "pageNumber": 1,
-    "question": "Which protocol is used to download mail from a mail server?",
+    "question": "Which listed protocol synchronizes a mail client with folders stored on the mail server?",
     "options": [
       {
         "key": "A",
@@ -3528,7 +3528,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "IMAP",
-    "explanation": "IMAP (port 143/993) keeps mail on the server and syncs it to the client; Thunderbird is a client and Dovecot a server.",
+    "explanation": "IMAP accesses and synchronizes server-stored mail and folders. SMTP submits or relays outgoing mail.",
     "topic": "Network Services",
     "diagram": null,
     "id": "OS-114"
@@ -3662,7 +3662,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q119",
     "pageNumber": 1,
-    "question": "What command is used to halt a Linux system?",
+    "question": "Which listed command shuts down a Linux system that uses SysV init?",
     "options": [
       {
         "key": "A",
@@ -3683,7 +3683,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "init 0",
-    "explanation": "Runlevel 0 means halt; \"init 0\" (or shutdown -h now) powers the system down cleanly.",
+    "explanation": "On a SysV-init system, init 0 switches to the shutdown runlevel.",
     "topic": "Linux Administration",
     "diagram": null,
     "id": "OS-119"
@@ -3693,7 +3693,7 @@
     "sourcePdf": "COSA01.docx",
     "sourceQuestionNumber": "Q120",
     "pageNumber": 1,
-    "question": "What can be used to set up a firewall on a Linux system?",
+    "question": "Which tool configured kernel packet-filtering rules on Linux 2.2?",
     "options": [
       {
         "key": "A",
@@ -3714,7 +3714,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "ipchains",
-    "explanation": "ipchains (older) and iptables manage packet-filter rules; netstat and route only display network state.",
+    "explanation": "ipchains was used for packet filtering with Linux 2.2. Later systems moved to iptables and then nftables.",
     "topic": "Security and Permissions",
     "diagram": null,
     "id": "OS-120"
@@ -3817,7 +3817,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q124",
     "pageNumber": 1,
-    "question": "Which of the following is crucial time while accessing data on the disk?",
+    "question": "Which part of magnetic disk access time measures the movement of the head to the target track?",
     "options": [
       {
         "key": "A",
@@ -3838,7 +3838,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "Seek time",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Seek time”.",
+    "explanation": "Seek time is the time the disk head takes to move to the target track. Rotational latency is the subsequent wait for the sector to rotate under the head.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-124"
@@ -4197,7 +4197,7 @@
       },
       {
         "key": "B",
-        "text": "Main thread terminates after the termination of child threads."
+        "text": "Threads in a process share the process address space."
       },
       {
         "key": "C",
@@ -4209,8 +4209,8 @@
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Main thread terminates after the termination of child threads.",
-    "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Main thread terminates after the termination of child threads.”.",
+    "correctAnswerText": "Threads in a process share the process address space.",
+    "explanation": "Threads in one process share its address space and normally have separate stacks and register state.",
     "topic": "Process Management",
     "diagram": null,
     "id": "OS-136"
@@ -4499,7 +4499,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q146",
     "pageNumber": 1,
-    "question": "Which directory implementation is used in most Operating System?",
+    "question": "Which directory structure organizes directories hierarchically under a root?",
     "options": [
       {
         "key": "A",
@@ -4520,7 +4520,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Tree directory structure",
-    "explanation": "The file system stores metadata (owner, permissions, location) in structures such as the FCB/inode and organises names in a directory tree. Correct choice: “Tree directory structure”.",
+    "explanation": "A tree describes how directories are organized into parent and child directories.",
     "topic": "File Systems",
     "diagram": null,
     "id": "OS-146"
@@ -4592,11 +4592,11 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q149",
     "pageNumber": 1,
-    "question": "Resource locking ________.",
+    "question": "What does an exclusive lock do for a shared resource?",
     "options": [
       {
         "key": "A",
-        "text": "Allows multiple tasks to simultaneously use resource"
+        "text": "Allows only one task at a time to hold the lock for that resource."
       },
       {
         "key": "B",
@@ -4611,9 +4611,9 @@
         "text": "Is not used for disk drives"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Forces only one task to use any resource at any time",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Forces only one task to use any resource at any time”.",
+    "correctAnswer": "A",
+    "correctAnswerText": "Allows only one task at a time to hold the lock for that resource.",
+    "explanation": "An exclusive lock allows only one task at a time to hold the lock for the protected resource.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-149"
@@ -4623,7 +4623,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q150",
     "pageNumber": 1,
-    "question": "Using Priority Scheduling algorithm, find the average waiting time for the following set of processes given with their priorities in the order: Process : Burst Time : Priority respectively . P1 : 10 : 3 , P2 : 1 : 1 , P3 : 2 : 4 , P4 : 1 : 5 , P5 : 5 : 2.",
+    "question": "All processes arrive at time zero. With nonpreemptive priority scheduling and lower numbers indicating higher priority, what is the average waiting time? Each pair is (burst time in ms, priority): P1 (10, 3), P2 (1, 1), P3 (2, 4), P4 (1, 5), P5 (5, 2).",
     "options": [
       {
         "key": "A",
@@ -4644,7 +4644,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "8.2 milliseconds",
-    "explanation": "CPU schedulers pick the next ready process; the goal is to balance throughput, waiting time and response time (round robin for time-sharing, aging to avoid starvation). Correct choice: “8.2 milliseconds”.",
+    "explanation": "All jobs are ready at time zero. Priority order P2, P5, P1, P3, P4 yields waiting times 0, 1, 6, 16 and 18 ms. Their average is 8.2 ms.",
     "topic": "CPU Scheduling",
     "diagram": null,
     "id": "OS-150"
@@ -4809,28 +4809,28 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q156",
     "pageNumber": 1,
-    "question": "Under multiprogramming, turnaround time for short jobs is usually ________ and that for long jobs is slightly ___________.",
+    "question": "Compared with running a single job at a time, why can multiprogramming improve CPU utilization?",
     "options": [
       {
         "key": "A",
-        "text": "Lengthened; Shortened"
+        "text": "It shortens every job’s CPU burst."
       },
       {
         "key": "B",
-        "text": "Shortened; Lengthened"
+        "text": "It lets a ready job use the CPU while another waits for I/O."
       },
       {
         "key": "C",
-        "text": "Shortened; Shortened"
+        "text": "It prevents jobs from waiting for I/O."
       },
       {
         "key": "D",
-        "text": "Shortened; Unchanged"
+        "text": "It always shortens the turnaround time of every job."
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Shortened; Lengthened",
-    "explanation": "CPU schedulers pick the next ready process; the goal is to balance throughput, waiting time and response time (round robin for time-sharing, aging to avoid starvation). Correct choice: “Shortened; Lengthened”.",
+    "correctAnswerText": "It lets a ready job use the CPU while another waits for I/O.",
+    "explanation": "When one job waits for I/O, another ready job can use the CPU.",
     "topic": "CPU Scheduling",
     "diagram": null,
     "id": "OS-156"
@@ -5078,7 +5078,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "9",
-    "explanation": "Memory allocation and paging trade internal fragmentation against external fragmentation; demand paging loads pages only when referenced. Correct choice: “9”.",
+    "explanation": "FIFO faults at references 1, 2, 3, 5, 6, 7, 8, 10 and 11. A hit keeps the current FIFO order.",
     "topic": "Memory Management",
     "diagram": null,
     "id": "OS-164"
@@ -5119,7 +5119,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q166",
     "pageNumber": 1,
-    "question": "When two or more processes attempt to access the same resource a _________ occurs.",
+    "question": "When the result of concurrent access to shared data depends on the order of operations, what is this called?",
     "options": [
       {
         "key": "A",
@@ -5140,7 +5140,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Race condition",
-    "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Race condition”.",
+    "explanation": "A race condition occurs when the result depends on the timing or ordering of concurrent operations on shared state.",
     "topic": "Process Management",
     "diagram": null,
     "id": "OS-166"
@@ -5429,7 +5429,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q176",
     "pageNumber": 1,
-    "question": "A process that is based on IPC mechanism which executes on different systems and can communicate with other processes using message based communication, is called ________.",
+    "question": "Which communication mechanism lets a client invoke a procedure on a remote system?",
     "options": [
       {
         "key": "A",
@@ -5450,7 +5450,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Remote Procedure Call",
-    "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Remote Procedure Call”.",
+    "explanation": "RPC lets a process invoke a procedure that runs in another process, potentially on another machine.",
     "topic": "Process Management",
     "diagram": null,
     "id": "OS-176"
@@ -5491,7 +5491,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q178",
     "pageNumber": 1,
-    "question": "A page fault occurs",
+    "question": "In demand paging, when does a reference to a valid page fault?",
     "options": [
       {
         "key": "A",
@@ -5512,7 +5512,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "when the page is not in the memory",
-    "explanation": "Memory allocation and paging trade internal fragmentation against external fragmentation; demand paging loads pages only when referenced. Correct choice: “when the page is not in the memory”.",
+    "explanation": "In demand paging, a reference to a valid page absent from physical memory triggers a page fault.",
     "topic": "Memory Management",
     "diagram": null,
     "id": "OS-178"
@@ -5553,7 +5553,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q180",
     "pageNumber": 1,
-    "question": "Let S and Q be two semaphores initialized to 1, where P0 and P1 processes the following statements wait(S);wait(Q); ---; signal(S);signal(Q) and wait(Q); wait(S);---;signal(Q);signal(S); respectively. The above situation depicts a _________ .",
+    "question": "Semaphores S and Q are initially 1. P0 acquires S before Q, and P1 acquires Q before S. If each process acquires its first semaphore before requesting its second, what occurs?",
     "options": [
       {
         "key": "A",
@@ -5574,7 +5574,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Deadlock",
-    "explanation": "Deadlocks need mutual exclusion, hold-and-wait, no preemption and circular wait; semaphores and monitors provide mutual exclusion and ordering. Correct choice: “Deadlock”.",
+    "explanation": "Deadlock is possible if each process first acquires a different semaphore, then waits for the semaphore held by the other.",
     "topic": "Deadlock and Synchronization",
     "diagram": null,
     "id": "OS-180"
@@ -5698,7 +5698,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "321",
-    "explanation": "CPU schedulers pick the next ready process; the goal is to balance throughput, waiting time and response time (round robin for time-sharing, aging to avoid starvation). Correct choice: “321”.",
+    "explanation": "FCFS services the requests in order and moves the head 66 + 61 + 23 + 110 + 59 + 2 = 321 tracks.",
     "topic": "CPU Scheduling",
     "diagram": null,
     "id": "OS-184"
@@ -6018,11 +6018,11 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q195",
     "pageNumber": 1,
-    "question": "The Banker¿s algorithm is used",
+    "question": "What is the Banker’s algorithm used for?",
     "options": [
       {
         "key": "A",
-        "text": "to prevent deadlock in operating systems"
+        "text": "Avoiding deadlock by keeping allocations in a safe state"
       },
       {
         "key": "B",
@@ -6038,8 +6038,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "to prevent deadlock in operating systems",
-    "explanation": "Deadlocks need mutual exclusion, hold-and-wait, no preemption and circular wait; semaphores and monitors provide mutual exclusion and ordering. Correct choice: “to prevent deadlock in operating systems”.",
+    "correctAnswerText": "Avoiding deadlock by keeping allocations in a safe state",
+    "explanation": "The Banker’s algorithm avoids deadlock by granting a request only when the resulting allocation leaves the system in a safe state.",
     "topic": "Deadlock and Synchronization",
     "diagram": null,
     "id": "OS-195"
@@ -6173,7 +6173,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q200",
     "pageNumber": 1,
-    "question": "Which is not an Operating System ?",
+    "question": "Which product is a graphical environment that starts from MS-DOS?",
     "options": [
       {
         "key": "A",
@@ -6194,7 +6194,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Windows 3.1",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Windows 3.1”.",
+    "explanation": "Windows 3.1 runs on top of MS-DOS as a graphical environment. Windows 95 and 2000 are operating-system releases.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-200"
@@ -6297,28 +6297,28 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q204",
     "pageNumber": 1,
-    "question": "Consider the two statements. (A) Protection is an internal problem. (B) Security is considered as an external environment within which the system works. Which of the statement is not true?",
+    "question": "Which statement best distinguishes protection from security in an operating system?",
     "options": [
       {
         "key": "A",
-        "text": "Only A"
+        "text": "Protection controls access to system resources. Security addresses threats to those resources and the system."
       },
       {
         "key": "B",
-        "text": "Only B"
+        "text": "Protection and security apply only to the physical computer case."
       },
       {
         "key": "C",
-        "text": "Both A and B"
+        "text": "Protection only covers backup storage. Security only covers processor scheduling."
       },
       {
         "key": "D",
-        "text": "None of the above"
+        "text": "Protection and security are both disk allocation algorithms."
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "Both A and B",
-    "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Both A and B”.",
+    "correctAnswer": "A",
+    "correctAnswerText": "Protection controls access to system resources. Security addresses threats to those resources and the system.",
+    "explanation": "Protection enforces rules for accessing resources. Security addresses threats and preserves properties such as confidentiality, integrity and availability.",
     "topic": "Process Management",
     "diagram": null,
     "id": "OS-204"
@@ -6390,7 +6390,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q207",
     "pageNumber": 1,
-    "question": "What is the name of the software which can be legally compiled and often used for free?",
+    "question": "Which term describes software whose copyright has expired or that has been validly dedicated to the public domain?",
     "options": [
       {
         "key": "A",
@@ -6411,7 +6411,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Public domain program",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Public domain program”.",
+    "explanation": "Public-domain software can be used, copied or modified without copyright permission.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-207"
@@ -6607,7 +6607,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q214",
     "pageNumber": 1,
-    "question": "The higher versions of operating systems are so written that programs designed for earlier versions can still be run. What is it called ?",
+    "question": "What property allows a newer operating system to run applications written for an older release?",
     "options": [
       {
         "key": "A",
@@ -6623,12 +6623,12 @@
       },
       {
         "key": "D",
-        "text": "Upward Compatibility"
+        "text": "Backward compatibility"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "Upward Compatibility",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Upward Compatibility”.",
+    "correctAnswerText": "Backward compatibility",
+    "explanation": "Backward compatibility means the newer system supports software written for older releases.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-214"
@@ -6952,7 +6952,7 @@
     "options": [
       {
         "key": "A",
-        "text": "solves the memory fragmentation problem"
+        "text": "Eliminates external fragmentation of physical memory when allocating page frames"
       },
       {
         "key": "B",
@@ -6968,8 +6968,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "solves the memory fragmentation problem",
-    "explanation": "Memory allocation and paging trade internal fragmentation against external fragmentation; demand paging loads pages only when referenced. Correct choice: “solves the memory fragmentation problem”.",
+    "correctAnswerText": "Eliminates external fragmentation of physical memory when allocating page frames",
+    "explanation": "Fixed-size frames avoid external fragmentation when allocating physical memory to pages. A partially filled final page can still cause internal fragmentation.",
     "topic": "Memory Management",
     "diagram": null,
     "id": "OS-225"
@@ -6979,7 +6979,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q226",
     "pageNumber": 1,
-    "question": "Real time systems are ________.",
+    "question": "What distinguishes a real-time operating system?",
     "options": [
       {
         "key": "A",
@@ -6987,7 +6987,7 @@
       },
       {
         "key": "B",
-        "text": "Used for monitoring events as they occur"
+        "text": "Tasks must meet defined timing constraints."
       },
       {
         "key": "C",
@@ -6999,8 +6999,8 @@
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Used for monitoring events as they occur",
-    "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Used for monitoring events as they occur”.",
+    "correctAnswerText": "Tasks must meet defined timing constraints.",
+    "explanation": "Real-time systems are designed around timing requirements. A result may be incorrect if it arrives too late.",
     "topic": "Process Management",
     "diagram": null,
     "id": "OS-226"
@@ -7289,7 +7289,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q236",
     "pageNumber": 1,
-    "question": "The time taken by the disk arm to locate the specific address of a sector for getting information is called __________.",
+    "question": "What is the time required to move a disk head to the correct track called?",
     "options": [
       {
         "key": "A",
@@ -7310,7 +7310,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Seek Time",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Seek Time”.",
+    "explanation": "Seek time measures head movement to the correct track. The wait for the desired sector to rotate under the head is rotational latency.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-236"
@@ -7320,7 +7320,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q237",
     "pageNumber": 1,
-    "question": "Which file system does Windows 95 typically use ?",
+    "question": "Which filesystem was introduced in Windows 95 OSR2?",
     "options": [
       {
         "key": "A",
@@ -7341,7 +7341,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "FAT32",
-    "explanation": "The file system stores metadata (owner, permissions, location) in structures such as the FCB/inode and organises names in a directory tree. Correct choice: “FAT32”.",
+    "explanation": "Windows 95 OSR2 added FAT32 support. Earlier Windows 95 releases typically used FAT16.",
     "topic": "File Systems",
     "diagram": null,
     "id": "OS-237"
@@ -7351,7 +7351,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q238",
     "pageNumber": 1,
-    "question": "Identify the odd thing in the services of operating system.",
+    "question": "Which is not a standard operating-system service?",
     "options": [
       {
         "key": "A",
@@ -7363,16 +7363,16 @@
       },
       {
         "key": "C",
-        "text": "Error detection and correction"
+        "text": "Error detection"
       },
       {
         "key": "D",
-        "text": "Dead lock handling"
+        "text": "Designing the CPU instruction set"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "Error detection and correction",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Error detection and correction”.",
+    "correctAnswer": "D",
+    "correctAnswerText": "Designing the CPU instruction set",
+    "explanation": "CPU instruction-set design is a processor architecture task. Accounting, protection and error detection are standard operating-system services.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-238"
@@ -7475,11 +7475,11 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q242",
     "pageNumber": 1,
-    "question": "An optimal scheduling algorithm in terms of minimizing the average waiting time of a given set of processes is ________.",
+    "question": "Which scheduling algorithm minimizes average waiting time for ready jobs with known CPU burst lengths?",
     "options": [
       {
         "key": "A",
-        "text": "FCFS scheduling algorithm"
+        "text": "First-come, first-served scheduling"
       },
       {
         "key": "B",
@@ -7487,7 +7487,7 @@
       },
       {
         "key": "C",
-        "text": "Shorest job - first scheduling algorithm"
+        "text": "Shortest-job-first scheduling"
       },
       {
         "key": "D",
@@ -7495,8 +7495,8 @@
       }
     ],
     "correctAnswer": "C",
-    "correctAnswerText": "Shorest job - first scheduling algorithm",
-    "explanation": "CPU schedulers pick the next ready process; the goal is to balance throughput, waiting time and response time (round robin for time-sharing, aging to avoid starvation). Correct choice: “Shorest job - first scheduling algorithm”.",
+    "correctAnswerText": "Shortest-job-first scheduling",
+    "explanation": "For jobs available at the same time with known burst lengths, running the shortest job first minimizes average waiting time.",
     "topic": "CPU Scheduling",
     "diagram": null,
     "id": "OS-242"
@@ -7537,7 +7537,7 @@
     "sourcePdf": "LINUX02.pdf",
     "sourceQuestionNumber": "Q244",
     "pageNumber": 1,
-    "question": "CPU performance is measured through ________.",
+    "question": "Which performance metric measures completed jobs per unit of time?",
     "options": [
       {
         "key": "A",
@@ -7558,7 +7558,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "Throughput",
-    "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Throughput”.",
+    "explanation": "Throughput measures completion rate, such as completed jobs per unit of time.",
     "topic": "OS Fundamentals",
     "diagram": null,
     "id": "OS-244"

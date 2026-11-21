@@ -3270,7 +3270,7 @@
     "sourceSection": "Part A – DCM",
     "sourceQuestionNumber": "Q103",
     "pageNumber": 19,
-    "question": "Which concept is described by the following statement? planning accounts for rack footprints, maintenance clearance, cable routes and unoccupied expansion space.",
+    "question": "Which data center planning task accounts for rack footprints, maintenance clearance, cable routes and space for future expansion?",
     "options": [
       {
         "key": "A",
@@ -3286,12 +3286,12 @@
       },
       {
         "key": "D",
-        "text": "Raised Floor and Equipment Space"
+        "text": "Equipment space planning"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "Raised Floor and Equipment Space",
-    "explanation": "The statement defines Raised Floor and Equipment Space: planning accounts for rack footprints, maintenance clearance, cable routes and unoccupied expansion space.",
+    "correctAnswerText": "Equipment space planning",
+    "explanation": "Equipment space planning reserves room for racks, service clearances, cabling and future expansion.",
     "topic": "Data Center Management (DCM)",
     "diagram": null
   },
@@ -3302,7 +3302,7 @@
     "sourceSection": "Part A – DCM",
     "sourceQuestionNumber": "Q104",
     "pageNumber": 19,
-    "question": "A layout leaves aisle clearance and spare rack capacity instead of filling every square metre with equipment. Which concept or technology is most directly involved?",
+    "question": "A data center layout reserves maintenance clearance and space for future racks. Which planning task covers those requirements?",
     "options": [
       {
         "key": "A",
@@ -3314,7 +3314,7 @@
       },
       {
         "key": "C",
-        "text": "Raised Floor and Equipment Space"
+        "text": "Equipment space planning"
       },
       {
         "key": "D",
@@ -3322,8 +3322,8 @@
       }
     ],
     "correctAnswer": "C",
-    "correctAnswerText": "Raised Floor and Equipment Space",
-    "explanation": "Raised Floor and Equipment Space is the best match. planning accounts for rack footprints, maintenance clearance, cable routes and unoccupied expansion space.",
+    "correctAnswerText": "Equipment space planning",
+    "explanation": "Equipment space planning accounts for both service clearance and growth.",
     "topic": "Data Center Management (DCM)",
     "diagram": null
   },
@@ -6790,7 +6790,7 @@
     "sourceSection": "Part B – DevOps (Containers & Cloud)",
     "sourceQuestionNumber": "Q213",
     "pageNumber": 37,
-    "question": "Which concept is described by the following statement? is a distributed version control system in which each clone contains repository history.",
+    "question": "Which distributed version control system lets developers commit locally and synchronize changes with a remote repository?",
     "options": [
       {
         "key": "A",
@@ -6811,7 +6811,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Git",
-    "explanation": "The statement defines Git: is a distributed version control system in which each clone contains repository history.",
+    "explanation": "Git stores history and supports local commits. A shallow clone deliberately limits how much history it downloads.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -6854,7 +6854,7 @@
     "sourceSection": "Part B – DevOps (Containers & Cloud)",
     "sourceQuestionNumber": "Q215",
     "pageNumber": 38,
-    "question": "Which concept is described by the following statement? creates a local copy of a remote repository, including its history.",
+    "question": "Which Git command creates a local copy of a repository and, by default, fetches its history?",
     "options": [
       {
         "key": "A",
@@ -6875,7 +6875,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "git clone",
-    "explanation": "The statement defines git clone: creates a local copy of a remote repository, including its history.",
+    "explanation": "git clone creates a new local repository from an existing one. A shallow clone can limit the history it fetches.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -7910,7 +7910,7 @@
     "sourceSection": "Part B – DevOps (Containers & Cloud)",
     "sourceQuestionNumber": "Q248",
     "pageNumber": 43,
-    "question": "A developer pushes a tagged image to a public or private image repository. Which concept or technology is most directly involved?",
+    "question": "A developer wants to push a tagged container image to Docker’s hosted registry. Which service is that?",
     "options": [
       {
         "key": "A",
@@ -7931,7 +7931,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Docker Hub",
-    "explanation": "Docker Hub is the best match. is a hosted registry where container images can be stored, shared and pulled.",
+    "explanation": "Docker Hub is Docker’s hosted registry for public and private image repositories.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -7942,7 +7942,7 @@
     "sourceSection": "Part B – DevOps (Containers & Cloud)",
     "sourceQuestionNumber": "Q249",
     "pageNumber": 43,
-    "question": "Which concept is described by the following statement? is a label used to identify a particular image version or variant.",
+    "question": "What is the label after the colon in an image reference such as app:v2?",
     "options": [
       {
         "key": "A",
@@ -7963,7 +7963,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Image Tag",
-    "explanation": "The statement defines Image Tag: is a label used to identify a particular image version or variant.",
+    "explanation": "The tag is a readable label that can point to an image version. An image digest identifies a specific image by content.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -7995,7 +7995,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Image Tag",
-    "explanation": "Image Tag is the best match. is a label used to identify a particular image version or variant.",
+    "explanation": "The v2 portion is a tag. If the tag is moved later, it can resolve to a different image.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -8294,7 +8294,7 @@
     "sourceSection": "Part B – DevOps (Containers & Cloud)",
     "sourceQuestionNumber": "Q260",
     "pageNumber": 45,
-    "question": "A cluster schedules application Pods onto available worker machines. Which concept or technology is most directly involved?",
+    "question": "What is the Kubernetes term for the worker machine on which an application Pod runs?",
     "options": [
       {
         "key": "A",
@@ -8315,7 +8315,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Kubernetes Node",
-    "explanation": "Kubernetes Node is the best match. is a worker machine, physical or virtual, that runs Pods in a Kubernetes cluster.",
+    "explanation": "A node is a physical or virtual worker machine that runs Pods.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -9286,7 +9286,7 @@
     "sourceSection": "Part B – DevOps (Containers & Cloud)",
     "sourceQuestionNumber": "Q291",
     "pageNumber": 50,
-    "question": "Which concept is described by the following statement? provides temporary credentials and permissions that can be assumed by trusted users or AWS services.",
+    "question": "Which AWS IAM identity can a trusted principal assume to obtain temporary credentials with defined permissions?",
     "options": [
       {
         "key": "A",
@@ -9307,7 +9307,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "IAM Role",
-    "explanation": "The statement defines IAM Role: provides temporary credentials and permissions that can be assumed by trusted users or AWS services.",
+    "explanation": "An IAM role defines permissions and who can assume it. AWS issues temporary credentials for the resulting role session.",
     "topic": "DevOps & Containerization",
     "diagram": null
   },
@@ -12678,7 +12678,7 @@
     "sourceSection": "Part B – DevOps (IaC & Monitoring)",
     "sourceQuestionNumber": "Q397",
     "pageNumber": 67,
-    "question": "Which concept is described by the following statement? is an isolated location within an AWS Region designed to provide fault isolation and high availability.",
+    "question": "What does AWS call an isolated location within a Region used to limit the impact of a local infrastructure failure?",
     "options": [
       {
         "key": "A",
@@ -12699,7 +12699,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "AWS Availability Zone",
-    "explanation": "The statement defines AWS Availability Zone: is an isolated location within an AWS Region designed to provide fault isolation and high availability.",
+    "explanation": "An Availability Zone is an isolated location inside an AWS Region. Spreading workloads across zones helps isolate failures.",
     "topic": "IaC, Configuration Management & Monitoring",
     "diagram": null
   },

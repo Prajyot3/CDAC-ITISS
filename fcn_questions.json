@@ -38,19 +38,19 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.2)",
     "pageNumber": 1,
-    "question": "Identify the FALSE statement",
+    "question": "Which statement about Ethernet and Wi-Fi is false?",
     "options": [
       {
         "key": "A",
-        "text": "Wireless LAN and Ethernet are broadcast medium"
+        "text": "Both Wi-Fi and Ethernet support broadcast traffic."
       },
       {
         "key": "B",
-        "text": "Wireless LAN & Ethernet cannot co-exist"
+        "text": "Wireless LAN and Ethernet cannot coexist."
       },
       {
         "key": "C",
-        "text": "WLAN provides less bandwidth compared to Gigabit Ethernet"
+        "text": "Wi-Fi and Ethernet both support unicast frames."
       },
       {
         "key": "D",
@@ -58,8 +58,8 @@
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Wireless LAN & Ethernet cannot co-exist",
-    "explanation": "Correct option is (B) 'Wireless LAN & Ethernet cannot co-exist'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswerText": "Wireless LAN and Ethernet cannot coexist.",
+    "explanation": "Wired Ethernet and Wi-Fi can coexist and can carry IP traffic on the same bridged LAN.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -74,11 +74,11 @@
     "options": [
       {
         "key": "A",
-        "text": "ICMP sends 5 types of error reporting messages and 4 pairs of query messages to support unreliable and connection less IP"
+        "text": "ICMP can report errors in IP packet delivery."
       },
       {
         "key": "B",
-        "text": "The source-quench error message is sent in an effort to alleviate congestion"
+        "text": "ICMP Time Exceeded can report an expired IPv4 TTL."
       },
       {
         "key": "C",
@@ -91,7 +91,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "ICMP messages are not encapsulated in IP datagram",
-    "explanation": "ICMP provides error-reporting and operational information (echo request/reply, destination unreachable, source quench, time exceeded). It does not provide transport-layer reliability.",
+    "explanation": "ICMPv4 messages are carried inside IPv4 packets, which identify ICMP with protocol number 1.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -326,7 +326,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.11)",
     "pageNumber": 2,
-    "question": "Which of the following uniquely identifiers a TCP connection?",
+    "question": "Which set of values uniquely identifies a TCP connection?",
     "options": [
       {
         "key": "A",
@@ -345,9 +345,9 @@
         "text": "Sender MAC & Sender IP, Receiver MAC & Receiver IP"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Sender port, Receiver port",
-    "explanation": "Correct option is (B) 'Sender port, Receiver port'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Sender IP & Sender Port, Receiver IP & Receiver Port",
+    "explanation": "A TCP connection is identified by the two endpoints: source IP and port, plus destination IP and port.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -486,7 +486,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.16)",
     "pageNumber": 3,
-    "question": "A hub connects 24 computers. In that A and B are two machines. A sends data to B. How many computers will receive that data?",
+    "question": "A hub connects 24 computers. A sends an Ethernet frame to B. Which computers receive the repeated signal from the hub?",
     "options": [
       {
         "key": "A",
@@ -505,9 +505,9 @@
         "text": "All computers except A will receive"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "All 24 computers will receive",
-    "explanation": "Correct option is (B) 'All 24 computers will receive'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "D",
+    "correctAnswerText": "All computers except A will receive",
+    "explanation": "A hub repeats the signal onto all ports except the incoming port, so the other 23 computers see it. B accepts the frame addressed to it.",
     "topic": "Switching",
     "diagram": null
   },
@@ -518,7 +518,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.17)",
     "pageNumber": 3,
-    "question": "Which type of NAT maps private IP address to a public IP address on one to one basis?",
+    "question": "Which type of NAT creates a fixed one-to-one mapping between a private IP address and a public IP address?",
     "options": [
       {
         "key": "A",
@@ -537,9 +537,9 @@
         "text": "None"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "Port Address Translation",
-    "explanation": "Correct option is (C) 'Port Address Translation'. This addresses the networking requirement in NAT.",
+    "correctAnswer": "A",
+    "correctAnswerText": "Static NAT",
+    "explanation": "Static NAT creates a fixed one-to-one mapping between a private IP address and a public IP address.",
     "topic": "NAT",
     "diagram": null
   },
@@ -550,7 +550,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.18)",
     "pageNumber": 3,
-    "question": "Which of the following TCP flag is set in the first packet that goes from the web client to a web server while opening a web site?",
+    "question": "When a client opens a new TCP connection to a web server, which flag is set in its first TCP segment?",
     "options": [
       {
         "key": "A",
@@ -571,7 +571,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SYN",
-    "explanation": "Correct option is (A) 'SYN'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "The initiating client sends SYN to start the TCP three-way handshake.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -582,7 +582,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.19)",
     "pageNumber": 3,
-    "question": "Which of the statements is not true related to a network switch?",
+    "question": "Which statement is false about a default single-VLAN Ethernet switch?",
     "options": [
       {
         "key": "A",
@@ -594,7 +594,7 @@
       },
       {
         "key": "C",
-        "text": "The switch uses source and destination MAC address fields in Ethernet frames to create MAC table"
+        "text": "The switch learns MAC table entries from source MAC addresses."
       },
       {
         "key": "D",
@@ -603,7 +603,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Each port of a switch is a different broadcast domain",
-    "explanation": "Correct option is (B) 'Each port of a switch is a different broadcast domain'. This addresses the networking requirement in NAT.",
+    "explanation": "By default, all access ports belong to the same VLAN and broadcast domain. The switch learns from source MAC addresses and uses destination MAC addresses to forward frames.",
     "topic": "NAT",
     "diagram": null
   },
@@ -1190,7 +1190,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.38)",
     "pageNumber": 6,
-    "question": "How to set the privileged mode password in cisco router?",
+    "question": "Which legacy Cisco IOS command sets the enable password in global configuration mode?",
     "options": [
       {
         "key": "A",
@@ -1211,7 +1211,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "router(config)# enable password cdac",
-    "explanation": "Correct option is (D) 'router(config)# enable password cdac'. This addresses the networking requirement in Routing.",
+    "explanation": "The enable password command is entered in global configuration mode. The enable secret command is the separate hashed-credential configuration.",
     "topic": "Routing",
     "diagram": null
   },
@@ -1222,7 +1222,7 @@
     "sourceSection": "Part 1 (Core Concepts Q1-Q40)",
     "sourceQuestionNumber": "Q.39)",
     "pageNumber": 6,
-    "question": "Administrator have configured an inbound access list on a serial interface to deny the packet entry for tcp and udp port 21,23,25. Now, what type of packet will be passing through the network :",
+    "question": "An inbound ACL denies TCP and UDP ports 21, 23 and 25, then explicitly permits all other traffic. Which listed protocol can use its default port?",
     "options": [
       {
         "key": "A",
@@ -1243,7 +1243,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "HTTP",
-    "explanation": "Correct option is (C) 'HTTP'. This addresses the networking requirement in WAN.",
+    "explanation": "HTTP normally uses TCP port 80, so an ACL that denies only ports 21, 23 and 25 still allows it when other traffic is explicitly permitted.",
     "topic": "WAN",
     "diagram": null
   },
@@ -1270,7 +1270,7 @@
       },
       {
         "key": "D",
-        "text": "Serial Module Name: Fundamentals of Computers and Networks (FCN) Session 1:"
+        "text": "Serial"
       }
     ],
     "correctAnswer": "B",
@@ -1286,7 +1286,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.1.",
     "pageNumber": 6,
-    "question": "The maximum frame size supported by a communication link is known as?",
+    "question": "What is the maximum network-layer packet size a link can carry without fragmentation called?",
     "options": [
       {
         "key": "A",
@@ -1302,12 +1302,12 @@
       },
       {
         "key": "D",
-        "text": "Delay Session 2:"
+        "text": "Delay"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "MTU",
-    "explanation": "Correct option is (C) 'MTU'. This addresses the networking requirement in Networking Protocols.",
+    "explanation": "The MTU gives the largest network-layer packet the link can carry without fragmentation.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -1318,7 +1318,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.3.",
     "pageNumber": 7,
-    "question": "Which of the following IP Header field is used by the traceroute (tracert) command to find the route to the destination?",
+    "question": "Which IPv4 header field does traceroute use to discover successive hops?",
     "options": [
       {
         "key": "A",
@@ -1339,7 +1339,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "TTL",
-    "explanation": "Correct option is (A) 'TTL'. This addresses the networking requirement in NAT.",
+    "explanation": "Traceroute varies the IPv4 TTL so successive routers return ICMP Time Exceeded messages.",
     "topic": "NAT",
     "diagram": null
   },
@@ -1350,7 +1350,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.4.",
     "pageNumber": 7,
-    "question": "Which of the following command allows you to release IP address assigned to the computer and get it renewed from the DHCP server?",
+    "question": "Which Windows command can release and renew a DHCP-assigned IPv4 address?",
     "options": [
       {
         "key": "A",
@@ -1371,7 +1371,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "ipconfig",
-    "explanation": "Correct option is (B) 'ipconfig'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "On Windows, ipconfig /release releases a DHCP lease and ipconfig /renew requests a new lease.",
     "topic": "DNS and DHCP",
     "diagram": null
   },
@@ -1398,12 +1398,12 @@
       },
       {
         "key": "D",
-        "text": "ping Session 3:"
+        "text": "ping"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "arp",
-    "explanation": "Correct option is (C) 'arp'. This addresses the networking requirement in IPv4 and IPv6.",
+    "explanation": "The ARP cache stores IPv4-to-MAC mappings. On Windows, arp -a displays them.",
     "topic": "IPv4 and IPv6",
     "diagram": null
   },
@@ -1435,7 +1435,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Single Mode Fiber",
-    "explanation": "Correct option is (D) 'Single Mode Fiber'. This addresses the networking requirement in Switching.",
+    "explanation": "Single-mode fiber supports longer link distances than multimode fiber or twisted-pair copper.",
     "topic": "Switching",
     "diagram": null
   },
@@ -1462,12 +1462,12 @@
       },
       {
         "key": "D",
-        "text": "It uses Infrared light for data transmission. Session 4"
+        "text": "It uses Infrared light for data transmission."
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It is less affected by the Electro Magnetic Interference than UTP",
-    "explanation": "Correct option is (C) 'It is less affected by the Electro Magnetic Interference than UTP'. This addresses the networking requirement in Switching.",
+    "explanation": "Shielding helps reduce electromagnetic interference in twisted-pair cabling.",
     "topic": "Switching",
     "diagram": null
   },
@@ -1499,7 +1499,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Data Link",
-    "explanation": "Correct option is (B) 'Data Link'. This addresses the networking requirement in Switching.",
+    "explanation": "MAC addresses identify interfaces for frame delivery at the data link layer.",
     "topic": "Switching",
     "diagram": null
   },
@@ -1531,7 +1531,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "Transport",
-    "explanation": "Correct option is (A) 'Transport'. This addresses the networking requirement in OSI Model.",
+    "explanation": "The transport layer can provide end-to-end reliability through a protocol such as TCP.",
     "topic": "OSI Model",
     "diagram": null
   },
@@ -1550,16 +1550,20 @@
       },
       {
         "key": "B",
-        "text": "Application C: Network"
+        "text": "Application"
+      },
+      {
+        "key": "C",
+        "text": "Network"
       },
       {
         "key": "D",
-        "text": "Presentation Session 5"
+        "text": "Presentation"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Application C: Network",
-    "explanation": "Correct option is (B) 'Application C: Network'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Network",
+    "explanation": "The TCP/IP application layer covers the OSI application, presentation and session layers. The OSI network layer maps to the TCP/IP internet layer.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -1591,7 +1595,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Error Detection",
-    "explanation": "Correct option is (D) 'Error Detection'. This addresses the networking requirement in Routing.",
+    "explanation": "Ethernet uses its frame check sequence to detect corrupted frames.",
     "topic": "Routing",
     "diagram": null
   },
@@ -1602,11 +1606,15 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.12.",
     "pageNumber": 8,
-    "question": "Which of the following ICMP packet is sent by the host when you ping to a network computer from it?",
+    "question": "Which ICMP message does the sending host transmit when it runs ping?",
     "options": [
       {
         "key": "A",
-        "text": "Echo Reply B: Ping request"
+        "text": "Echo Reply"
+      },
+      {
+        "key": "B",
+        "text": "Destination Unreachable"
       },
       {
         "key": "C",
@@ -1614,12 +1622,12 @@
       },
       {
         "key": "D",
-        "text": "Ping reply"
+        "text": "Time Exceeded"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Echo request",
-    "explanation": "Correct option is (C) 'Echo request'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "Ping sends an ICMP Echo Request. A responding host returns an Echo Reply.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -1630,7 +1638,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.13.",
     "pageNumber": 8,
-    "question": "Which of the following device can function at Layer 2 and layer 3?",
+    "question": "Which device, in its multilayer form, can switch traffic at Layer 2 and route traffic at Layer 3?",
     "options": [
       {
         "key": "A",
@@ -1638,7 +1646,7 @@
       },
       {
         "key": "B",
-        "text": "Switch"
+        "text": "Multilayer switch"
       },
       {
         "key": "C",
@@ -1646,12 +1654,12 @@
       },
       {
         "key": "D",
-        "text": "Bridge Session 6"
+        "text": "Bridge"
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Switch",
-    "explanation": "Correct option is (B) 'Switch'. This addresses the networking requirement in Switching.",
+    "correctAnswerText": "Multilayer switch",
+    "explanation": "A multilayer switch can forward Ethernet frames at Layer 2 and route IP packets at Layer 3.",
     "topic": "Switching",
     "diagram": null
   },
@@ -1662,7 +1670,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.14.",
     "pageNumber": 8,
-    "question": "What is the first field of the Ethernet frame without considering Preamble?",
+    "question": "What is the first field of an Ethernet MAC frame after the preamble and start-frame delimiter?",
     "options": [
       {
         "key": "A",
@@ -1683,7 +1691,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Destination MAC Address",
-    "explanation": "Correct option is (D) 'Destination MAC Address'. This addresses the networking requirement in NAT.",
+    "explanation": "The first field of the Ethernet MAC frame is the destination MAC address.",
     "topic": "NAT",
     "diagram": null
   },
@@ -1694,28 +1702,28 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.15.",
     "pageNumber": 8,
-    "question": "What is Fast Ethernet?",
+    "question": "What is the nominal line rate of Fast Ethernet?",
     "options": [
       {
         "key": "A",
-        "text": "It supports 10/100 Mbps speed"
+        "text": "10 Mb/s"
       },
       {
         "key": "B",
-        "text": "It supports only 10 Mbps speed"
+        "text": "1,000 Mb/s"
       },
       {
         "key": "C",
-        "text": "It supports only 100 Mbps speed"
+        "text": "100 Mb/s"
       },
       {
         "key": "D",
-        "text": "It supports 1 Gbps speed"
+        "text": "10,000 Mb/s"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "It supports 10/100 Mbps speed",
-    "explanation": "Correct option is (A) 'It supports 10/100 Mbps speed'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "100 Mb/s",
+    "explanation": "Fast Ethernet denotes 100 Mb/s Ethernet, such as 100BASE-TX. Some ports also negotiate 10 Mb/s for compatibility.",
     "topic": "Switching",
     "diagram": null
   },
@@ -1726,7 +1734,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.16.",
     "pageNumber": 8,
-    "question": "What is the maximum frame size supported by the Ethernet?",
+    "question": "What is the maximum standard untagged Ethernet frame size, including the FCS and excluding the preamble?",
     "options": [
       {
         "key": "A",
@@ -1738,12 +1746,16 @@
       },
       {
         "key": "C",
-        "text": "1518 Bytes D: 1024 Bytes Session 7"
+        "text": "1518 Bytes"
+      },
+      {
+        "key": "D",
+        "text": "1024 Bytes"
       }
     ],
     "correctAnswer": "C",
-    "correctAnswerText": "1518 Bytes D: 1024 Bytes Session 7",
-    "explanation": "Correct option is (C) '1518 Bytes D: 1024 Bytes Session 7'. This addresses the networking requirement in Switching.",
+    "correctAnswerText": "1518 Bytes",
+    "explanation": "An untagged Ethernet frame with a 1500-byte payload, 14-byte header and 4-byte FCS is 1518 bytes.",
     "topic": "Switching",
     "diagram": null
   },
@@ -1762,7 +1774,11 @@
       },
       {
         "key": "B",
-        "text": "Token Ring C: Ethernet"
+        "text": "Token Ring"
+      },
+      {
+        "key": "C",
+        "text": "Ethernet"
       },
       {
         "key": "D",
@@ -1770,8 +1786,8 @@
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "Token Ring C: Ethernet",
-    "explanation": "Correct option is (B) 'Token Ring C: Ethernet'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswerText": "Token Ring",
+    "explanation": "IEEE 802.5 specifies Token Ring.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -1782,7 +1798,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.18.",
     "pageNumber": 8,
-    "question": "What is the maximum speed supported by the Token Ring network while using Twisted pair cables?",
+    "question": "What was the higher of the two classic twisted-pair Token Ring rates?",
     "options": [
       {
         "key": "A",
@@ -1790,7 +1806,7 @@
       },
       {
         "key": "B",
-        "text": "8 Mbps"
+        "text": "4 Mb/s"
       },
       {
         "key": "C",
@@ -1798,12 +1814,12 @@
       },
       {
         "key": "D",
-        "text": "1 Gbps Session 8 & 9"
+        "text": "1 Gbps"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "16 Mbps",
-    "explanation": "Correct option is (A) '16 Mbps'. This addresses the networking requirement in Networking Protocols.",
+    "explanation": "Classic Token Ring installations used 4 or 16 Mb/s. The higher of these two rates is 16 Mb/s.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -1835,7 +1851,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "PPP",
-    "explanation": "Correct option is (B) 'PPP'. This addresses the networking requirement in WAN.",
+    "explanation": "PPP supports peer authentication through protocols such as PAP and CHAP.",
     "topic": "WAN",
     "diagram": null
   },
@@ -1867,7 +1883,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "CHAP",
-    "explanation": "Correct option is (D) 'CHAP'. This addresses the networking requirement in WAN.",
+    "explanation": "CHAP verifies a challenge-dependent response derived from a shared secret without sending the secret itself.",
     "topic": "WAN",
     "diagram": null
   },
@@ -1899,7 +1915,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "SNMP",
-    "explanation": "Correct option is (C) 'SNMP'. This addresses the networking requirement in Networking Protocols.",
+    "explanation": "An SNMP agent can send a trap notification to a monitoring system when an event occurs.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -1926,12 +1942,12 @@
       },
       {
         "key": "D",
-        "text": "SNMP Session 10"
+        "text": "SNMP"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "ICMP",
-    "explanation": "Correct option is (A) 'ICMP'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "ICMP carries IP-related errors back toward the sender, such as Destination Unreachable or Time Exceeded.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -1963,7 +1979,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "WPA-Enterprise",
-    "explanation": "Correct option is (C) 'WPA-Enterprise'. This addresses the networking requirement in Wireless Networks.",
+    "explanation": "WPA-Enterprise uses 802.1X, commonly backed by a RADIUS authentication server.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -1995,7 +2011,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "128 Bit",
-    "explanation": "Correct option is (D) '128 Bit'. This addresses the networking requirement in IPv4 and IPv6.",
+    "explanation": "An IPv6 address is 128 bits long.",
     "topic": "IPv4 and IPv6",
     "diagram": null
   },
@@ -2006,7 +2022,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.25.",
     "pageNumber": 9,
-    "question": "What is the correct EUI-64 representation of the MAC address 00-02-4A-57-6B-73?",
+    "question": "What IPv6 interface identifier does Modified EUI-64 derive from MAC address 00-02-4A-57-6B-73?",
     "options": [
       {
         "key": "A",
@@ -2025,9 +2041,9 @@
         "text": "0202:4AFF:FE57:6B73"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "0002:4AFF:FE57:6B73",
-    "explanation": "In IPv6 EUI-64 format, the 48-bit MAC address is split into two 24-bit halves, 'FFFE' is inserted in between, and the 7th bit (Universal/Local bit) from the left is inverted.",
+    "correctAnswer": "D",
+    "correctAnswerText": "0202:4AFF:FE57:6B73",
+    "explanation": "Insert FF:FE between the MAC address halves and flip the universal/local bit in the first octet. 00 becomes 02, yielding 0202:4AFF:FE57:6B73.",
     "topic": "IPv4 and IPv6",
     "diagram": null
   },
@@ -2038,7 +2054,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.26.",
     "pageNumber": 9,
-    "question": "Which of the following IEEE standard for wireless networks supports streaming of multimedia files?",
+    "question": "Which IEEE 802.11 amendment specifically introduced MAC-layer quality-of-service mechanisms for traffic such as voice and video?",
     "options": [
       {
         "key": "A",
@@ -2054,12 +2070,12 @@
       },
       {
         "key": "D",
-        "text": "802.11n Session 11"
+        "text": "802.11n"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "802.11a",
-    "explanation": "Correct option is (A) '802.11a'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "B",
+    "correctAnswerText": "802.11e",
+    "explanation": "IEEE 802.11e introduced MAC-layer quality-of-service mechanisms that help prioritize delay-sensitive voice and video traffic.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -2082,12 +2098,16 @@
       },
       {
         "key": "C",
-        "text": "255.192.0.0 D: 255.255.0.0"
+        "text": "255.192.0.0"
+      },
+      {
+        "key": "D",
+        "text": "255.255.0.0"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "255.255.192.0",
-    "explanation": "Correct option is (A) '255.255.192.0'. This addresses the networking requirement in Subnetting.",
+    "explanation": "Eighteen leading one bits give 255.255.192.0.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -2102,7 +2122,11 @@
     "options": [
       {
         "key": "A",
-        "text": "Static NAT B: Dynamic NAT"
+        "text": "Static NAT"
+      },
+      {
+        "key": "B",
+        "text": "Dynamic NAT"
       },
       {
         "key": "C",
@@ -2115,7 +2139,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "NAT Overload",
-    "explanation": "NAT Overload (Port Address Translation / PAT) maps multiple private IP addresses to a single public IP address by assigning unique source port numbers to each session.",
+    "explanation": "NAT overload uses port translation to let several internal hosts share one public IPv4 address.",
     "topic": "NAT",
     "diagram": null
   },
@@ -2126,28 +2150,28 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.29.",
     "pageNumber": 10,
-    "question": "How many hosts you get within a IP subnet, with the subnet mask of /19?",
+    "question": "How many usable host addresses are in an IPv4 /19 subnet?",
     "options": [
       {
         "key": "A",
-        "text": "64 Hosts"
+        "text": "8,192 hosts"
       },
       {
         "key": "B",
-        "text": "16 Hosts"
+        "text": "4,094 hosts"
       },
       {
         "key": "C",
-        "text": "8 Hosts"
+        "text": "2,046 hosts"
       },
       {
         "key": "D",
-        "text": "32 Hosts"
+        "text": "8,190 hosts"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "32 Hosts",
-    "explanation": "Correct option is (D) '32 Hosts'. This addresses the networking requirement in Subnetting.",
+    "correctAnswerText": "8,190 hosts",
+    "explanation": "A /19 leaves 13 host bits, giving 8,192 addresses. Excluding the network and broadcast addresses leaves 8,190 usable host addresses.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -2166,7 +2190,7 @@
       },
       {
         "key": "B",
-        "text": "192.168.10.47"
+        "text": "192.168.10.15"
       },
       {
         "key": "C",
@@ -2174,12 +2198,12 @@
       },
       {
         "key": "D",
-        "text": "192.168.10.125 Session 12"
+        "text": "192.168.10.125"
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "192.168.10.47",
-    "explanation": "Correct option is (B) '192.168.10.47'. This addresses the networking requirement in NAT.",
+    "correctAnswerText": "192.168.10.15",
+    "explanation": "A /28 contains 16 addresses. The 192.168.10.0 subnet ends at 192.168.10.15, its broadcast address.",
     "topic": "NAT",
     "diagram": null
   },
@@ -2190,7 +2214,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.31.",
     "pageNumber": 10,
-    "question": "You have configured routers between 4 IP subnets. You have sub netted a network address 192.168.1.0 to create 4 IP subnets. You have configured RIP however the network is not established. What may be the reason?",
+    "question": "You configure RIP to exchange routes for variable-length IPv4 subnets. Which configuration could explain why the subnet routes are missing or incorrect?",
     "options": [
       {
         "key": "A",
@@ -2211,7 +2235,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "You configured RIP version 1",
-    "explanation": "Correct option is (A) 'You configured RIP version 1'. This addresses the networking requirement in Subnetting.",
+    "explanation": "RIPv1 omits subnet masks from routing updates, so it cannot advertise variable-length subnet masks. RIPv2 includes subnet masks.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -2243,7 +2267,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "110",
-    "explanation": "The default administrative distance for OSPF is 110. For comparison: Connected=0, Static=1, EIGRP internal=90, IGRP=100, RIP=120, External EIGRP=170, External BGP=20.",
+    "explanation": "Cisco routers assign OSPF routes a default administrative distance of 110.",
     "topic": "Routing",
     "diagram": null
   },
@@ -2270,12 +2294,12 @@
       },
       {
         "key": "D",
-        "text": "IGRP Session 13"
+        "text": "IGRP"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "IGRP Session 13",
-    "explanation": "Correct option is (D) 'IGRP Session 13'. This addresses the networking requirement in Subnetting.",
+    "correctAnswerText": "IGRP",
+    "explanation": "IGRP is classful and does not advertise subnet masks. EIGRP, OSPF and RIPv2 support VLSM.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -2307,7 +2331,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "TTL",
-    "explanation": "Correct option is (C) 'TTL'. This addresses the networking requirement in NAT.",
+    "explanation": "IPv4 routers decrement TTL by at least one before forwarding, discarding a packet if its TTL expires.",
     "topic": "NAT",
     "diagram": null
   },
@@ -2318,7 +2342,7 @@
     "sourceSection": "Part 2 (Session Topic MCQs)",
     "sourceQuestionNumber": "Q.No.35.",
     "pageNumber": 11,
-    "question": "Which of the following IP header field flag is used by the TCP protocol to find the MTU supported between the source and the destination?",
+    "question": "Which IPv4 flag is set by classic Path MTU Discovery?",
     "options": [
       {
         "key": "A",
@@ -2339,7 +2363,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Don’t Fragment",
-    "explanation": "Maximum Transmission Unit (MTU) defines the maximum size of a packet or frame that can be sent in a single piece over a communication network without fragmentation. Standard Ethernet MTU is 1500 bytes (1518 bytes frame with header/FCS).",
+    "explanation": "Classic IPv4 Path MTU Discovery sets the DF flag so a router that cannot forward a packet without fragmentation returns an ICMP error.",
     "topic": "NAT",
     "diagram": null
   },
@@ -2366,12 +2390,12 @@
       },
       {
         "key": "D",
-        "text": "8 Session 14"
+        "text": "8"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "11",
-    "explanation": "The Time to Live (TTL) field in an IPv4 packet header prevents packets from circulating indefinitely in routing loops. Each router decrements TTL by at least 1; if TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is returned.",
+    "explanation": "ICMPv4 type 11 is Time Exceeded. Code 0 indicates that TTL expired in transit.",
     "topic": "IPv4 and IPv6",
     "diagram": null
   },
@@ -2403,7 +2427,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "STP",
-    "explanation": "Correct option is (D) 'STP'. This addresses the networking requirement in VLAN.",
+    "explanation": "Spanning Tree Protocol prevents Layer 2 forwarding loops by blocking redundant paths as needed.",
     "topic": "VLAN",
     "diagram": null
   },
@@ -2435,7 +2459,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "VTP",
-    "explanation": "Correct option is (A) 'VTP'. This addresses the networking requirement in VLAN.",
+    "explanation": "Cisco VLAN Trunking Protocol distributes VLAN configuration across participating switches in a VTP domain.",
     "topic": "VLAN",
     "diagram": null
   },
@@ -2467,7 +2491,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "1",
-    "explanation": "A repeater hub operates at Layer 1 (Physical) and shares a single collision domain across all its ports. Switches, by contrast, create a separate collision domain per port.",
+    "explanation": "All ports on a shared Ethernet hub belong to one collision domain.",
     "topic": "Switching",
     "diagram": null
   },
@@ -2499,7 +2523,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "1",
-    "explanation": "By default, all ports on a Layer 2 switch belong to the same default VLAN (VLAN 1), thus forming exactly 1 broadcast domain unless sub-divided by VLANs.",
+    "explanation": "With all 24 ports in one VLAN and no Layer 3 separation, the switch has one broadcast domain.",
     "topic": "Switching",
     "diagram": null
   },
@@ -2510,11 +2534,15 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 1",
     "pageNumber": 12,
-    "question": "Which functions of the OSI model occur at layer two?",
+    "question": "Which function occurs at Layer 2 of the OSI model?",
     "options": [
       {
         "key": "A",
-        "text": "physical addressing                                                   B: encoding"
+        "text": "physical addressing"
+      },
+      {
+        "key": "B",
+        "text": "encoding"
       },
       {
         "key": "C",
@@ -2526,8 +2554,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "physical addressing                                                   B: encoding",
-    "explanation": "Correct option is (A) 'physical addressing                                                   B: encoding'. This addresses the networking requirement in OSI Model.",
+    "correctAnswerText": "physical addressing",
+    "explanation": "Ethernet uses physical MAC addresses at the data link layer.",
     "topic": "OSI Model",
     "diagram": null
   },
@@ -2559,7 +2587,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
-    "explanation": "Correct option is (C) 'enable secret'. This addresses the networking requirement in Switching.",
+    "explanation": "The enable secret command sets a hashed credential for privileged EXEC access.",
     "topic": "Switching",
     "diagram": null
   },
@@ -2591,7 +2619,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "transport",
-    "explanation": "Correct option is (D) 'transport'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A reliable transport protocol such as TCP detects missing data and requests retransmission.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -2623,7 +2651,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "an upper-layer, connection-oriented protocol or service",
-    "explanation": "Correct option is (D) 'an upper-layer, connection-oriented protocol or service'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A connection-oriented higher-layer protocol can acknowledge received data and trigger retransmission of missing data.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -2634,7 +2662,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 5",
     "pageNumber": 12,
-    "question": "Which subnet mask will allow 2040 hosts per subnet on the IP network 10.0.0.0?",
+    "question": "What is the most specific subnet mask that allows at least 2,040 usable host addresses per subnet on 10.0.0.0?",
     "options": [
       {
         "key": "A",
@@ -2655,7 +2683,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "255.255.248.0",
-    "explanation": "Correct option is (D) '255.255.248.0'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /21 leaves 11 host bits for 2,046 usable IPv4 host addresses. A /22 provides only 1,022.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -2687,7 +2715,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "It specifies the remaining “life” of the packet.",
-    "explanation": "The Time to Live (TTL) field in an IPv4 packet header prevents packets from circulating indefinitely in routing loops. Each router decrements TTL by at least 1; if TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is returned.",
+    "explanation": "TTL limits how long an IPv4 packet can circulate. Each router decrements it before forwarding.",
     "topic": "IPv4 and IPv6",
     "diagram": null
   },
@@ -2719,7 +2747,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "peer-to-peer",
-    "explanation": "Correct option is (C) 'peer-to-peer'. This addresses the networking requirement in Networking Protocols.",
+    "explanation": "In a peer-to-peer network, peers can both request and provide resources without a dedicated server.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -2751,7 +2779,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "router",
-    "explanation": "Correct option is (C) 'router'. This addresses the networking requirement in Wireless Networks.",
+    "explanation": "Routers forward packets between IP networks and are the devices to check for an inter-network routing issue.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -2783,7 +2811,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Configure individual interfaces.",
-    "explanation": "Correct option is (C) 'Configure individual interfaces.'. This addresses the networking requirement in Routing.",
+    "explanation": "Router(config-if)# is the interface configuration prompt, used to configure the selected interface.",
     "topic": "Routing",
     "diagram": null
   },
@@ -2815,7 +2843,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "active TCP connections",
-    "explanation": "Correct option is (C) 'active TCP connections'. This addresses the networking requirement in Subnetting.",
+    "explanation": "Netstat can show active TCP connections and their local and remote endpoints.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -2847,7 +2875,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It can provide a list of physical addresses on the network.",
-    "explanation": "Correct option is (C) 'It can provide a list of physical addresses on the network.'. This addresses the networking requirement in NAT.",
+    "explanation": "The ARP cache shows IPv4 addresses and corresponding MAC addresses learned on the local link.",
     "topic": "NAT",
     "diagram": null
   },
@@ -2879,7 +2907,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "frame",
-    "explanation": "Correct option is (B) 'frame'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A frame is the data link layer protocol data unit.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -2911,7 +2939,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Telnet",
-    "explanation": "Correct option is (D) 'Telnet'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "Telnet provides an interactive remote terminal session. It is the remote login protocol among these choices.",
     "topic": "DNS and DHCP",
     "diagram": null
   },
@@ -2943,7 +2971,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It matches a resource name with the required network address.",
-    "explanation": "Correct option is (C) 'It matches a resource name with the required network address.'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "DNS resolves names to records, including A and AAAA records for IPv4 and IPv6 addresses.",
     "topic": "DNS and DHCP",
     "diagram": null
   },
@@ -2954,7 +2982,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 15",
     "pageNumber": 14,
-    "question": "Which password would allow a user to establish a Telnet session with a Cisco device?",
+    "question": "With Cisco IOS VTY line-password authentication enabled, which password is used to establish a Telnet session?",
     "options": [
       {
         "key": "A",
@@ -2975,7 +3003,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "VTY password",
-    "explanation": "Correct option is (A) 'VTY password'. This addresses the networking requirement in Network Security.",
+    "explanation": "Cisco IOS virtual terminal (VTY) lines handle remote Telnet sessions. A line password applies when line-password authentication is configured.",
     "topic": "Network Security",
     "diagram": null
   },
@@ -3007,7 +3035,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "physical source and destination addresses",
-    "explanation": "Correct option is (D) 'physical source and destination addresses'. This addresses the networking requirement in NAT.",
+    "explanation": "The Ethernet header carries both source and destination MAC addresses.",
     "topic": "NAT",
     "diagram": null
   },
@@ -3018,7 +3046,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 17",
     "pageNumber": 14,
-    "question": "What happens when a node on an Ethernet network is creating a frame and it does not have the destination MAC address?",
+    "question": "An IPv4 host needs to send an Ethernet frame to a host on the same subnet and has no ARP entry for it. What does it do?",
     "options": [
       {
         "key": "A",
@@ -3039,7 +3067,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "The node sends out an ARP request with the destination IP address.",
-    "explanation": "Correct option is (D) 'The node sends out an ARP request with the destination IP address.'. This addresses the networking requirement in NAT.",
+    "explanation": "For a destination on the same IPv4 subnet, the sender broadcasts an ARP request to learn the destination host’s MAC address.",
     "topic": "NAT",
     "diagram": null
   },
@@ -3071,7 +3099,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Issue the erase startup-config command, and then reboot the router.",
-    "explanation": "Correct option is (C) 'Issue the erase startup-config command, and then reboot the router.'. This addresses the networking requirement in Routing.",
+    "explanation": "Erasing the startup configuration removes the saved settings. A reload without saving the running configuration restarts the device without those settings.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3103,7 +3131,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "router",
-    "explanation": "Correct option is (C) 'router'. This addresses the networking requirement in Wireless Networks.",
+    "explanation": "A router forwards traffic between IP subnets.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -3135,7 +3163,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "HyperTerminal",
-    "explanation": "Correct option is (A) 'HyperTerminal'. This addresses the networking requirement in Routing.",
+    "explanation": "HyperTerminal is a terminal emulator that can open a serial session through the router’s console port.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3165,9 +3193,9 @@
         "text": "Peers can either make requests, or respond to requests, but not both."
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "Peers can either make requests, or respond to requests, but not both.",
-    "explanation": "Correct option is (D) 'Peers can either make requests, or respond to requests, but not both.'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "B",
+    "correctAnswerText": "Access control is decentralized.",
+    "explanation": "Peers share files directly and can manage access to their own resources without a dedicated file server.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -3178,7 +3206,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 22",
     "pageNumber": 16,
-    "question": "What is primary responsibilities of the Ethernet MAC sublayer?",
+    "question": "Which broad function of the Ethernet MAC sublayer includes frame delimiting and error detection?",
     "options": [
       {
         "key": "A",
@@ -3199,7 +3227,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "data encapsulation",
-    "explanation": "Correct option is (B) 'data encapsulation'. This addresses the networking requirement in OSI Model.",
+    "explanation": "The MAC sublayer handles data encapsulation, including frame delimiting, MAC addressing and error detection.",
     "topic": "OSI Model",
     "diagram": null
   },
@@ -3231,7 +3259,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "line",
-    "explanation": "Correct option is (A) 'line'. This addresses the networking requirement in Routing.",
+    "explanation": "Remote terminal access is configured under virtual terminal lines in line configuration mode.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3263,7 +3291,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "provides device identification to users logging on remotely",
-    "explanation": "Correct option is (C) 'provides device identification to users logging on remotely'. This addresses the networking requirement in Routing.",
+    "explanation": "A hostname identifies the device to administrators and normally appears in the device prompt.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3295,7 +3323,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "R1#",
-    "explanation": "Correct option is (B) 'R1#'. This addresses the networking requirement in Routing.",
+    "explanation": "The # suffix in R1# identifies privileged EXEC mode. The > suffix identifies user EXEC mode.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3327,7 +3355,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Interconnect the two PCs with a crossover cable.",
-    "explanation": "Correct option is (C) 'Interconnect the two PCs with a crossover cable.'. This addresses the networking requirement in Switching.",
+    "explanation": "A crossover cable connects the transmit and receive pairs of the two older NICs directly when they lack auto-MDI-X.",
     "topic": "Switching",
     "diagram": null
   },
@@ -3357,9 +3385,9 @@
         "text": "The Fast Ethernet interface is emulating a serial interface by assigning it a timing signal."
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "The no shutdown command has not been applied to the interfaces.",
-    "explanation": "Correct option is (A) 'The no shutdown command has not been applied to the interfaces.'. This addresses the networking requirement in WAN.",
+    "correctAnswer": "B",
+    "correctAnswerText": "The clock rate command has not been entered on the DCE interface.",
+    "explanation": "The interface can be physically up while the line protocol remains down if the DCE end of the serial link supplies no clock signal.",
     "topic": "WAN",
     "diagram": null
   },
@@ -3370,7 +3398,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 28",
     "pageNumber": 17,
-    "question": "An organization has been assigned network ID 10.10.128.0 and subnet mask 255.255.224.0. Which IP address range can be used for this organization?",
+    "question": "What is the full address range, including network and broadcast addresses, of 10.10.128.0 with subnet mask 255.255.224.0?",
     "options": [
       {
         "key": "A",
@@ -3391,7 +3419,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "10.10.128.0 to 10.10.159.255",
-    "explanation": "Correct option is (B) '10.10.128.0 to 10.10.159.255'. This addresses the networking requirement in Subnetting.",
+    "explanation": "The /19 block covers third-octet values 128 through 159, inclusive. The first and last addresses are the network and broadcast addresses.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -3423,7 +3451,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "when the interface is functioning as a DCE device",
-    "explanation": "Correct option is (D) 'when the interface is functioning as a DCE device'. This addresses the networking requirement in WAN.",
+    "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
     "topic": "WAN",
     "diagram": null
   },
@@ -3455,7 +3483,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "The entries specify four Telnet lines for remote access.",
-    "explanation": "Correct option is (B) 'The entries specify four Telnet lines for remote access.'. This addresses the networking requirement in Routing.",
+    "explanation": "The VTY range 0 through 3 contains four lines. The password and login commands enable line-password checking on those lines.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3466,7 +3494,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 31",
     "pageNumber": 18,
-    "question": "Which password is automatically encrypted when it is created?",
+    "question": "Which Cisco IOS password setting stores a hash by default?",
     "options": [
       {
         "key": "A",
@@ -3487,7 +3515,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
-    "explanation": "Correct option is (C) 'enable secret'. This addresses the networking requirement in Network Security.",
+    "explanation": "Cisco IOS stores the enable secret in hashed form.",
     "topic": "Network Security",
     "diagram": null
   },
@@ -3519,7 +3547,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Switch-6J#",
-    "explanation": "Correct option is (B) 'Switch-6J#'. This addresses the networking requirement in Switching.",
+    "explanation": "The # suffix with no configuration-mode qualifier is privileged EXEC, where the copy command runs.",
     "topic": "Switching",
     "diagram": null
   },
@@ -3530,7 +3558,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 33",
     "pageNumber": 18,
-    "question": "Which information is used by the router to determine the path between the source and destination hosts?",
+    "question": "Which part of the destination IP address is used to match a routing-table prefix?",
     "options": [
       {
         "key": "A",
@@ -3551,7 +3579,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "the network portion of the IP address",
-    "explanation": "Correct option is (B) 'the network portion of the IP address'. This addresses the networking requirement in NAT.",
+    "explanation": "The router matches the destination IP address against routing-table prefixes and forwards using the longest matching prefix.",
     "topic": "NAT",
     "diagram": null
   },
@@ -3583,7 +3611,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "0 to 1023",
-    "explanation": "Correct option is (B) '0 to 1023'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "IANA assigns system ports in the range 0 to 1023. Port 0 is reserved.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -3594,7 +3622,7 @@
     "sourceSection": "Part 3 (Mock Examination Set 1)",
     "sourceQuestionNumber": "Q. No. 35",
     "pageNumber": 18,
-    "question": "Which IPv4 address represents subnet broadcast addresses?",
+    "question": "Which IPv4 address is a subnet broadcast address?",
     "options": [
       {
         "key": "A",
@@ -3615,7 +3643,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "192.168.4.63 /26",
-    "explanation": "Correct option is (A) '192.168.4.63 /26'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /26 subnet has 64 addresses, so 192.168.4.0/26 ends at the broadcast address 192.168.4.63.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -3647,7 +3675,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "A portion of the address is used to identify the network.",
-    "explanation": "Correct option is (C) 'A portion of the address is used to identify the network.'. This addresses the networking requirement in Switching.",
+    "explanation": "A Layer 3 address contains a network prefix. Routers use that prefix when selecting a route.",
     "topic": "Switching",
     "diagram": null
   },
@@ -3679,7 +3707,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Layer 3",
-    "explanation": "Correct option is (C) 'Layer 3'. This addresses the networking requirement in Routing.",
+    "explanation": "Routers forward packets between networks using Layer 3 addresses.",
     "topic": "Routing",
     "diagram": null
   },
@@ -3711,7 +3739,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "2046",
-    "explanation": "Correct option is (C) '2046'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /21 leaves 11 host bits and has 2,048 total addresses. Removing the network and broadcast addresses leaves 2,046.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -3743,7 +3771,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "packet",
-    "explanation": "Correct option is (D) 'packet'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "The TCP/IP internet layer encapsulates data into an IP packet.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -3767,11 +3795,15 @@
       {
         "key": "C",
         "text": "DHCP"
+      },
+      {
+        "key": "D",
+        "text": "Telnet"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "DNS",
-    "explanation": "Correct option is (B) 'DNS'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "Nslookup sends DNS queries to resolve names or inspect DNS records.",
     "topic": "DNS and DHCP",
     "diagram": null
   },
@@ -3814,7 +3846,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 2",
     "pageNumber": 20,
-    "question": "In a packet-switched data network, what is used to reassemble the packets in the correct order at the destination device?",
+    "question": "What field lets a TCP receiver place received data bytes in the correct order?",
     "options": [
       {
         "key": "A",
@@ -3835,7 +3867,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "sequence number",
-    "explanation": "Correct option is (B) 'sequence number'. This addresses the networking requirement in NAT.",
+    "explanation": "The TCP sequence number identifies the position of the segment’s data in the byte stream.",
     "topic": "NAT",
     "diagram": null
   },
@@ -3910,7 +3942,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 5",
     "pageNumber": 21,
-    "question": "Which subnet mask should be used for a Class B network that is divided into subnets and will accommodate between 800 hosts and 1000 hosts?",
+    "question": "Which most specific subnet mask can support up to 1,000 usable IPv4 host addresses per subnet?",
     "options": [
       {
         "key": "A",
@@ -3931,7 +3963,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "255.255.252.0",
-    "explanation": "Correct option is (C) '255.255.252.0'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /22 provides 1,022 usable addresses. A /23 provides only 510.",
     "topic": "Subnetting",
     "diagram": null
   },
@@ -3961,9 +3993,9 @@
         "text": "R1(config-router)#"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "R1#",
-    "explanation": "Correct option is (B) 'R1#'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "A",
+    "correctAnswerText": "R1>",
+    "explanation": "R1> is the Cisco IOS user EXEC prompt. R1# indicates privileged EXEC.",
     "topic": "Routing",
     "diagram": null
   },
@@ -4134,7 +4166,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 12",
     "pageNumber": 22,
-    "question": "Which type of media can provide bandwidth up to 1 Gb/s?",
+    "question": "Which Ethernet standard listed has a nominal speed of 1 Gb/s?",
     "options": [
       {
         "key": "A",
@@ -4150,12 +4182,12 @@
       },
       {
         "key": "D",
-        "text": "1000 BASE-TX"
+        "text": "1000BASE-T"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "1000 BASE-TX",
-    "explanation": "Correct option is (D) '1000 BASE-TX'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswerText": "1000BASE-T",
+    "explanation": "1000BASE-T is Gigabit Ethernet over twisted-pair copper.",
     "topic": "Networking Protocols",
     "diagram": null
   },
@@ -4313,9 +4345,9 @@
         "text": "rules for determining which processes can be used to route messages through an internetwork"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "rules for packet acknowledgment, error recovery, and sequencing",
-    "explanation": "Correct option is (A) 'rules for packet acknowledgment, error recovery, and sequencing'. This addresses the networking requirement in NAT.",
+    "correctAnswer": "B",
+    "correctAnswerText": "rules for the handoff from the internet layer to the network access protocols",
+    "explanation": "The network access layer defines how IP packets are handed to link protocols and transmitted on the local network.",
     "topic": "NAT",
     "diagram": null
   },
@@ -4358,7 +4390,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 19",
     "pageNumber": 23,
-    "question": "Which application belongs to the category of the client/server model?",
+    "question": "Which example directly connects a network client program to a remote server?",
     "options": [
       {
         "key": "A",
@@ -4366,7 +4398,7 @@
       },
       {
         "key": "B",
-        "text": "exchanging information via instant messaging"
+        "text": "Editing a local text file"
       },
       {
         "key": "C",
@@ -4377,9 +4409,9 @@
         "text": "scanning a document with a directly connected scanner"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "printing a document to a locally connected printer",
-    "explanation": "Correct option is (C) 'printing a document to a locally connected printer'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "A",
+    "correctAnswerText": "using Telnet to access a router",
+    "explanation": "Telnet uses a client program to connect to a remote Telnet server.",
     "topic": "Routing",
     "diagram": null
   },
@@ -4550,7 +4582,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 25",
     "pageNumber": 24,
-    "question": "What type of cable is being used if a network administrator is connecting two Cisco routers and uses the 100BaseTX standard?",
+    "question": "Which cable directly connects two 100BASE-TX router interfaces that lack auto-MDI-X?",
     "options": [
       {
         "key": "A",
@@ -4571,7 +4603,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "crossover UTP",
-    "explanation": "Correct option is (C) 'crossover UTP'. This addresses the networking requirement in Routing.",
+    "explanation": "Absent auto-MDI-X, a direct 100BASE-TX link between like ports uses a crossover cable.",
     "topic": "Routing",
     "diagram": null
   },
@@ -4614,7 +4646,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 27",
     "pageNumber": 25,
-    "question": "What is purpose for configuring a banner on a router?",
+    "question": "Why might an administrator configure a security login banner on a router?",
     "options": [
       {
         "key": "A",
@@ -4630,12 +4662,12 @@
       },
       {
         "key": "D",
-        "text": "to assist in legal prosecution for unauthorized access"
+        "text": "To show an authorized-use warning before login"
       }
     ],
     "correctAnswer": "D",
-    "correctAnswerText": "to assist in legal prosecution for unauthorized access",
-    "explanation": "Correct option is (D) 'to assist in legal prosecution for unauthorized access'. This addresses the networking requirement in Routing.",
+    "correctAnswerText": "To show an authorized-use warning before login",
+    "explanation": "A login banner can warn users that access is restricted to authorized users and may be monitored.",
     "topic": "Routing",
     "diagram": null
   },
@@ -4902,7 +4934,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 36",
     "pageNumber": 27,
-    "question": "A network has grown too large for technicians to configure network addresses and hosts files for name resolution. Which one application layer services should be added to the server to allow these needs to be satisfied dynamically?",
+    "question": "Which application-layer service automatically assigns client IP settings and DNS server addresses?",
     "options": [
       {
         "key": "A",
@@ -4923,7 +4955,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "DHCP",
-    "explanation": "Correct option is (B) 'DHCP'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "DHCP assigns IP configuration, including the IP address, subnet mask, gateway and DNS server addresses. DNS performs name resolution.",
     "topic": "DNS and DHCP",
     "diagram": null
   },
@@ -4934,7 +4966,7 @@
     "sourceSection": "Part 4 (Mock Examination Set 2)",
     "sourceQuestionNumber": "Q. No. 37",
     "pageNumber": 27,
-    "question": "An administrator needs management access to a switch from a remote offsite location. Which configuration is required on the switch to allow the administrator to have remote access using either SSH or Telnet?",
+    "question": "A Layer 2 Cisco switch already has a management IP and working remote-login settings. What allows it to reply to a management station on a different subnet when IP routing is disabled?",
     "options": [
       {
         "key": "A",
@@ -4953,9 +4985,9 @@
         "text": "vty line password"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "vty line password",
-    "explanation": "Correct option is (D) 'vty line password'. This addresses the networking requirement in VLAN.",
+    "correctAnswer": "A",
+    "correctAnswerText": "default gateway",
+    "explanation": "With IP routing disabled, the switch needs a default gateway to reply to a management station on another subnet.",
     "topic": "VLAN",
     "diagram": null
   },
@@ -5051,7 +5083,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "when the interface is functioning as a DCE device",
-    "explanation": "Correct option is (D) 'when the interface is functioning as a DCE device'. This addresses the networking requirement in WAN.",
+    "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
     "topic": "WAN",
     "diagram": null
   },
@@ -5126,7 +5158,7 @@
     "sourceSection": "FCN Assessment 02",
     "sourceQuestionNumber": "Q.3",
     "pageNumber": 1,
-    "question": "Fig 1 denotes a  _____ and fig 2 denotes a _____",
+    "question": "In these examples, which diagram represents a typical Ethernet LAN and which represents a typical PPP WAN link?",
     "options": [
       {
         "key": "A",
@@ -5147,7 +5179,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "LAN, WAN",
-    "explanation": "Correct option is (A) 'LAN, WAN'. This addresses the networking requirement in WAN.",
+    "explanation": "Figure 1 uses IEEE 802.3 Ethernet, typical of a wired LAN. Figure 2 uses PPP, historically common on point-to-point WAN links.",
     "topic": "WAN",
     "diagram": "Fig 1:                   Fig 2:\n[   TCP   ]              [   TCP   ]\n[   IP    ]              [   IP    ]\n[  802.3  ]              [   PPP   ]\n[Physical ]              [Physical ]"
   },
@@ -5198,7 +5230,7 @@
       },
       {
         "key": "B",
-        "text": "No routing is needed for connectivity"
+        "text": "No routing is needed for connectivity between VLANs."
       },
       {
         "key": "C",
@@ -5206,14 +5238,14 @@
       },
       {
         "key": "D",
-        "text": "VLANS operates at layer 2 TCP IP PPP Physical Layer TCP IP 802.3 Physical Layer Fig 2 Fig 1"
+        "text": "VLANs operate at Layer 2."
       }
     ],
     "correctAnswer": "B",
-    "correctAnswerText": "No routing is needed for connectivity",
-    "explanation": "Correct option is (B) 'No routing is needed for connectivity'. This addresses the networking requirement in VLAN.",
+    "correctAnswerText": "No routing is needed for connectivity between VLANs.",
+    "explanation": "Traffic between separate VLANs requires Layer 3 routing.",
     "topic": "VLAN",
-    "diagram": "Fig 1:                   Fig 2:\n[   TCP   ]              [   TCP   ]\n[   IP    ]              [   IP    ]\n[  802.3  ]              [   PPP   ]\n[Physical ]              [Physical ]"
+    "diagram": null
   },
   {
     "id": "FCN02-006",
@@ -5414,7 +5446,7 @@
     "sourceSection": "FCN Assessment 02",
     "sourceQuestionNumber": "Q.12",
     "pageNumber": 2,
-    "question": "A hub connects 24 computers. In that A and B are two machines. A sends data to B. How many computers will receive that data?",
+    "question": "A hub connects 24 computers. A sends an Ethernet frame to B. Which computers receive the repeated signal from the hub?",
     "options": [
       {
         "key": "A",
@@ -5435,7 +5467,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "All computers except A will receive",
-    "explanation": "Correct option is (D) 'All computers except A will receive'. This addresses the networking requirement in Switching.",
+    "explanation": "A hub repeats the signal onto all ports except the incoming port, so the other 23 computers see it. B accepts the frame addressed to it.",
     "topic": "Switching",
     "diagram": null
   },
@@ -5510,19 +5542,19 @@
     "sourceSection": "FCN Assessment 02",
     "sourceQuestionNumber": "Q.15",
     "pageNumber": 3,
-    "question": "Identify the FALSE statement",
+    "question": "Which statement about Ethernet and Wi-Fi is false?",
     "options": [
       {
         "key": "A",
-        "text": "Wireless LAN and Ethernet are broadcast medium"
+        "text": "Both Wi-Fi and Ethernet support broadcast traffic."
       },
       {
         "key": "B",
-        "text": "WLAN provides less bandwidth compared to Gigabit Ethernet"
+        "text": "Wi-Fi and Ethernet both support unicast frames."
       },
       {
         "key": "C",
-        "text": "Wireless LAN & Ethernet can not co-exist"
+        "text": "Wireless LAN and Ethernet cannot coexist."
       },
       {
         "key": "D",
@@ -5530,8 +5562,8 @@
       }
     ],
     "correctAnswer": "C",
-    "correctAnswerText": "Wireless LAN & Ethernet can not co-exist",
-    "explanation": "Correct option is (C) 'Wireless LAN & Ethernet can not co-exist'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswerText": "Wireless LAN and Ethernet cannot coexist.",
+    "explanation": "Wired Ethernet and Wi-Fi can coexist and can carry IP traffic on the same bridged LAN.",
     "topic": "Wireless Networks",
     "diagram": null
   },
@@ -5574,7 +5606,7 @@
     "sourceSection": "FCN Assessment 02",
     "sourceQuestionNumber": "Q.17",
     "pageNumber": 3,
-    "question": "Which of the following uniquely identifiers a TCP connection?",
+    "question": "Which set of values uniquely identifies a TCP connection?",
     "options": [
       {
         "key": "A",
@@ -5595,7 +5627,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "Sender IP & Sender Port, Receiver IP & Receiver Port",
-    "explanation": "Correct option is (D) 'Sender IP & Sender Port, Receiver IP & Receiver Port'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A TCP connection is identified by the two endpoints: source IP and port, plus destination IP and port.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -5798,11 +5830,11 @@
     "sourceSection": "FCN Assessment 02",
     "sourceQuestionNumber": "Q.24",
     "pageNumber": 4,
-    "question": "Which of the following is the valid sequence in the three-way handshake for tcp connection establishment(SEQ= sequence number, ACK= acknowledge number & SYN = syn flag)",
+    "question": "Which sequence represents a TCP three-way handshake?",
     "options": [
       {
         "key": "A",
-        "text": "SYN(SEQ=x), SYN(SEQ=y, ACK=x+1), (SEQ=x+1, ACK=y+1)"
+        "text": "SYN (seq=x), SYN-ACK (seq=y, ack=x+1), ACK (seq=x+1, ack=y+1)"
       },
       {
         "key": "B",
@@ -5818,8 +5850,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "SYN(SEQ=x), SYN(SEQ=y, ACK=x+1), (SEQ=x+1, ACK=y+1)",
-    "explanation": "Correct option is (A) 'SYN(SEQ=x), SYN(SEQ=y, ACK=x+1), (SEQ=x+1, ACK=y+1)'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswerText": "SYN (seq=x), SYN-ACK (seq=y, ack=x+1), ACK (seq=x+1, ack=y+1)",
+    "explanation": "The initiator sends SYN with sequence x, the responder sends SYN-ACK acknowledging x+1, and the initiator sends ACK acknowledging y+1.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -5990,7 +6022,7 @@
     "sourceSection": "FCN Assessment 02",
     "sourceQuestionNumber": "Q.30",
     "pageNumber": 5,
-    "question": "As data moves from the lower to upper layers (ie Layer X to Layer X+1) in a TCP/IP network , headers are getting ________ but when data moves between the devices in the same layers (ie Layer X of Device A and Layer X of Device B) headers are getting ________",
+    "question": "As data moves up the protocol stack at the receiver, headers are ________. When an IPv4 packet passes through a router, its IP header is ________.",
     "options": [
       {
         "key": "A",
@@ -6011,7 +6043,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Deleted, Modified",
-    "explanation": "Correct option is (B) 'Deleted, Modified'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "Decapsulation removes the corresponding layer header at the receiver. An IPv4 router reduces the TTL and updates the IPv4 header checksum.",
     "topic": "TCP/IP",
     "diagram": null
   },
@@ -6054,7 +6086,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.1",
     "pageNumber": 1,
-    "question": "Which functions of the OSI model occur at layer two?",
+    "question": "Which function occurs at Layer 2 of the OSI model?",
     "options": [
       {
         "key": "A",
@@ -6075,7 +6107,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "physical addressing",
-    "explanation": "Correct option is (A) 'physical addressing'. This addresses the networking requirement in OSI Model.",
+    "explanation": "Ethernet uses physical MAC addresses at the data link layer.",
     "topic": "OSI Model"
   },
   {
@@ -6104,9 +6136,9 @@
         "text": "VTY"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "console",
-    "explanation": "Correct option is (A) 'console'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "enable secret",
+    "explanation": "The enable secret command sets a hashed credential for privileged EXEC access.",
     "topic": "Switching"
   },
   {
@@ -6137,7 +6169,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "transport",
-    "explanation": "Correct option is (D) 'transport'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A reliable transport protocol such as TCP detects missing data and requests retransmission.",
     "topic": "TCP/IP"
   },
   {
@@ -6166,9 +6198,9 @@
         "text": "an upper-layer, connection-oriented protocol or service"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "IP",
-    "explanation": "Correct option is (A) 'IP'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "D",
+    "correctAnswerText": "an upper-layer, connection-oriented protocol or service",
+    "explanation": "A connection-oriented higher-layer protocol can acknowledge received data and trigger retransmission of missing data.",
     "topic": "TCP/IP"
   },
   {
@@ -6178,7 +6210,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.5",
     "pageNumber": 1,
-    "question": "Which subnet mask will allow 2040 hosts per subnet on the IP network 10.0.0.0? transport",
+    "question": "What is the most specific subnet mask that allows at least 2,040 usable host addresses per subnet on 10.0.0.0?",
     "options": [
       {
         "key": "A",
@@ -6197,9 +6229,9 @@
         "text": "255.255.248.0"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "255.255.0.0",
-    "explanation": "Correct option is (A) '255.255.0.0'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "D",
+    "correctAnswerText": "255.255.248.0",
+    "explanation": "A /21 leaves 11 host bits for 2,046 usable IPv4 host addresses. A /22 provides only 1,022.",
     "topic": "Subnetting"
   },
   {
@@ -6230,7 +6262,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "It specifies the remaining “life” of the packet.",
-    "explanation": "The Time to Live (TTL) field in an IPv4 packet header prevents packets from circulating indefinitely in routing loops. Each router decrements TTL by at least 1; if TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is returned.",
+    "explanation": "TTL limits how long an IPv4 packet can circulate. Each router decrements it before forwarding.",
     "topic": "IPv4 and IPv6"
   },
   {
@@ -6259,9 +6291,9 @@
         "text": "centralized"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "client/server",
-    "explanation": "Correct option is (B) 'client/server'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "C",
+    "correctAnswerText": "peer-to-peer",
+    "explanation": "In a peer-to-peer network, peers can both request and provide resources without a dedicated server.",
     "topic": "Networking Protocols"
   },
   {
@@ -6290,9 +6322,9 @@
         "text": "switch"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "hub",
-    "explanation": "Correct option is (B) 'hub'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "C",
+    "correctAnswerText": "router",
+    "explanation": "Routers forward packets between IP networks and are the devices to check for an inter-network routing issue.",
     "topic": "Wireless Networks"
   },
   {
@@ -6321,9 +6353,9 @@
         "text": "Configure individual terminal lines."
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Perform basic tests.",
-    "explanation": "Correct option is (B) 'Perform basic tests.'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Configure individual interfaces.",
+    "explanation": "Router(config-if)# is the interface configuration prompt, used to configure the selected interface.",
     "topic": "Routing"
   },
   {
@@ -6352,9 +6384,9 @@
         "text": "the locally configured subnet mask"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "the routing protocol",
-    "explanation": "Correct option is (B) 'the routing protocol'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "C",
+    "correctAnswerText": "active TCP connections",
+    "explanation": "Netstat can show active TCP connections and their local and remote endpoints.",
     "topic": "Subnetting"
   },
   {
@@ -6385,7 +6417,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It can provide a list of physical addresses on the network.",
-    "explanation": "Correct option is (C) 'It can provide a list of physical addresses on the network.'. This addresses the networking requirement in NAT.",
+    "explanation": "The ARP cache shows IPv4 addresses and corresponding MAC addresses learned on the local link.",
     "topic": "NAT"
   },
   {
@@ -6414,9 +6446,9 @@
         "text": "segment"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "packet",
-    "explanation": "Correct option is (C) 'packet'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "B",
+    "correctAnswerText": "frame",
+    "explanation": "A frame is the data link layer protocol data unit.",
     "topic": "TCP/IP"
   },
   {
@@ -6445,9 +6477,9 @@
         "text": "Telnet"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "SMTP",
-    "explanation": "Correct option is (C) 'SMTP'. This addresses the networking requirement in DNS and DHCP.",
+    "correctAnswer": "D",
+    "correctAnswerText": "Telnet",
+    "explanation": "Telnet provides an interactive remote terminal session. It is the remote login protocol among these choices.",
     "topic": "DNS and DHCP"
   },
   {
@@ -6470,11 +6502,15 @@
       {
         "key": "C",
         "text": "It matches a resource name with the required network address."
+      },
+      {
+        "key": "D",
+        "text": "It requests and assigns an IP address, default gateway, and server addresses to hosts."
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It matches a resource name with the required network address.",
-    "explanation": "Correct option is (C) 'It matches a resource name with the required network address.'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "DNS resolves names to records, including A and AAAA records for IPv4 and IPv6 addresses.",
     "topic": "DNS and DHCP"
   },
   {
@@ -6484,7 +6520,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.15",
     "pageNumber": 3,
-    "question": "Which password would allow a user to establish a Telnet session with a Cisco device?",
+    "question": "With Cisco IOS VTY line-password authentication enabled, which password is used to establish a Telnet session?",
     "options": [
       {
         "key": "A",
@@ -6503,9 +6539,9 @@
         "text": "enable secret password"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "console password",
-    "explanation": "Correct option is (C) 'console password'. This addresses the networking requirement in Network Security.",
+    "correctAnswer": "A",
+    "correctAnswerText": "VTY password",
+    "explanation": "Cisco IOS virtual terminal (VTY) lines handle remote Telnet sessions. A line password applies when line-password authentication is configured.",
     "topic": "Network Security"
   },
   {
@@ -6536,7 +6572,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "physical source and destination addresses",
-    "explanation": "Correct option is (D) 'physical source and destination addresses'. This addresses the networking requirement in NAT.",
+    "explanation": "The Ethernet header carries both source and destination MAC addresses.",
     "topic": "NAT"
   },
   {
@@ -6546,7 +6582,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.17",
     "pageNumber": 4,
-    "question": "What happens when a node on an Ethernet network is creating a frame and it does not have the destination MAC address?",
+    "question": "An IPv4 host needs to send an Ethernet frame to a host on the same subnet and has no ARP entry for it. What does it do?",
     "options": [
       {
         "key": "A",
@@ -6567,7 +6603,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "The node sends out an ARP request with the destination IP address.",
-    "explanation": "Correct option is (D) 'The node sends out an ARP request with the destination IP address.'. This addresses the networking requirement in NAT.",
+    "explanation": "For a destination on the same IPv4 subnet, the sender broadcasts an ARP request to learn the destination host’s MAC address.",
     "topic": "NAT"
   },
   {
@@ -6596,9 +6632,9 @@
         "text": "Issue the erase running-config command, and then reboot the router."
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Reboot the router.",
-    "explanation": "Correct option is (A) 'Reboot the router.'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Issue the erase startup-config command, and then reboot the router.",
+    "explanation": "Erasing the startup configuration removes the saved settings. A reload without saving the running configuration restarts the device without those settings.",
     "topic": "Routing"
   },
   {
@@ -6629,7 +6665,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "router",
-    "explanation": "Correct option is (C) 'router'. This addresses the networking requirement in Wireless Networks.",
+    "explanation": "A router forwards traffic between IP subnets.",
     "topic": "Wireless Networks"
   },
   {
@@ -6660,7 +6696,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "HyperTerminal",
-    "explanation": "Correct option is (A) 'HyperTerminal'. This addresses the networking requirement in Routing.",
+    "explanation": "HyperTerminal is a terminal emulator that can open a serial session through the router’s console port.",
     "topic": "Routing"
   },
   {
@@ -6689,9 +6725,9 @@
         "text": "Peers can either make requests, or respond to requests, but not both."
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "Peers can either make requests, or respond to requests, but not both.",
-    "explanation": "Correct option is (D) 'Peers can either make requests, or respond to requests, but not both.'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "B",
+    "correctAnswerText": "Access control is decentralized.",
+    "explanation": "Peers share files directly and can manage access to their own resources without a dedicated file server.",
     "topic": "Networking Protocols"
   },
   {
@@ -6701,7 +6737,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.22",
     "pageNumber": 5,
-    "question": "What is primary responsibilities of the Ethernet MAC sublayer?",
+    "question": "Which broad function of the Ethernet MAC sublayer includes frame delimiting and error detection?",
     "options": [
       {
         "key": "A",
@@ -6722,7 +6758,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "data encapsulation",
-    "explanation": "Correct option is (B) 'data encapsulation'. This addresses the networking requirement in OSI Model.",
+    "explanation": "The MAC sublayer handles data encapsulation, including frame delimiting, MAC addressing and error detection.",
     "topic": "OSI Model"
   },
   {
@@ -6753,7 +6789,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "line",
-    "explanation": "Correct option is (A) 'line'. This addresses the networking requirement in Routing.",
+    "explanation": "Remote terminal access is configured under virtual terminal lines in line configuration mode.",
     "topic": "Routing"
   },
   {
@@ -6784,7 +6820,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "provides device identification to users logging on remotely",
-    "explanation": "Correct option is (C) 'provides device identification to users logging on remotely'. This addresses the networking requirement in Routing.",
+    "explanation": "A hostname identifies the device to administrators and normally appears in the device prompt.",
     "topic": "Routing"
   },
   {
@@ -6815,7 +6851,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "R1#",
-    "explanation": "Correct option is (B) 'R1#'. This addresses the networking requirement in Routing.",
+    "explanation": "The # suffix in R1# identifies privileged EXEC mode. The > suffix identifies user EXEC mode.",
     "topic": "Routing"
   },
   {
@@ -6846,7 +6882,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Interconnect the two PCs with a crossover cable.",
-    "explanation": "Correct option is (C) 'Interconnect the two PCs with a crossover cable.'. This addresses the networking requirement in Switching.",
+    "explanation": "A crossover cable connects the transmit and receive pairs of the two older NICs directly when they lack auto-MDI-X.",
     "topic": "Switching"
   },
   {
@@ -6877,7 +6913,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "The clock rate command has not been entered on the DCE interface.",
-    "explanation": "Correct option is (B) 'The clock rate command has not been entered on the DCE interface.'. This addresses the networking requirement in WAN.",
+    "explanation": "The interface can be physically up while the line protocol remains down if the DCE end of the serial link supplies no clock signal.",
     "topic": "WAN"
   },
   {
@@ -6887,7 +6923,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.28",
     "pageNumber": 6,
-    "question": "An organization has been assigned network ID 10.10.128.0 and subnet mask 255.255.224.0. Which IP address range can be used for this organization?",
+    "question": "What is the full address range, including network and broadcast addresses, of 10.10.128.0 with subnet mask 255.255.224.0?",
     "options": [
       {
         "key": "A",
@@ -6908,7 +6944,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "10.10.128.0 to 10.10.159.255",
-    "explanation": "Correct option is (B) '10.10.128.0 to 10.10.159.255'. This addresses the networking requirement in Subnetting.",
+    "explanation": "The /19 block covers third-octet values 128 through 159, inclusive. The first and last addresses are the network and broadcast addresses.",
     "topic": "Subnetting"
   },
   {
@@ -6939,7 +6975,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "when the interface is functioning as a DCE device",
-    "explanation": "Correct option is (D) 'when the interface is functioning as a DCE device'. This addresses the networking requirement in WAN.",
+    "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
     "topic": "WAN"
   },
   {
@@ -6970,7 +7006,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "The entries specify four Telnet lines for remote access.",
-    "explanation": "Correct option is (B) 'The entries specify four Telnet lines for remote access.'. This addresses the networking requirement in Routing.",
+    "explanation": "The VTY range 0 through 3 contains four lines. The password and login commands enable line-password checking on those lines.",
     "topic": "Routing"
   },
   {
@@ -6980,7 +7016,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.31",
     "pageNumber": 7,
-    "question": "Which password is automatically encrypted when it is created?",
+    "question": "Which Cisco IOS password setting stores a hash by default?",
     "options": [
       {
         "key": "A",
@@ -7001,7 +7037,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
-    "explanation": "Correct option is (C) 'enable secret'. This addresses the networking requirement in Network Security.",
+    "explanation": "Cisco IOS stores the enable secret in hashed form.",
     "topic": "Network Security"
   },
   {
@@ -7032,7 +7068,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Switch-6J#",
-    "explanation": "Correct option is (B) 'Switch-6J#'. This addresses the networking requirement in Switching.",
+    "explanation": "The # suffix with no configuration-mode qualifier is privileged EXEC, where the copy command runs.",
     "topic": "Switching"
   },
   {
@@ -7042,7 +7078,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.33",
     "pageNumber": 7,
-    "question": "Which information is used by the router to determine the path between the source and destination hosts?",
+    "question": "Which part of the destination IP address is used to match a routing-table prefix?",
     "options": [
       {
         "key": "A",
@@ -7063,7 +7099,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "the network portion of the IP address",
-    "explanation": "Correct option is (B) 'the network portion of the IP address'. This addresses the networking requirement in NAT.",
+    "explanation": "The router matches the destination IP address against routing-table prefixes and forwards using the longest matching prefix.",
     "topic": "NAT"
   },
   {
@@ -7094,7 +7130,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "0 to 1023",
-    "explanation": "Correct option is (B) '0 to 1023'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "IANA assigns system ports in the range 0 to 1023. Port 0 is reserved.",
     "topic": "TCP/IP"
   },
   {
@@ -7104,7 +7140,7 @@
     "sourceSection": "FCN Mock Examination Set 1",
     "sourceQuestionNumber": "Q.35",
     "pageNumber": 8,
-    "question": "Which IPv4 address represents subnet broadcast addresses?",
+    "question": "Which IPv4 address is a subnet broadcast address?",
     "options": [
       {
         "key": "A",
@@ -7125,7 +7161,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "192.168.4.63 /26",
-    "explanation": "Correct option is (A) '192.168.4.63 /26'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /26 subnet has 64 addresses, so 192.168.4.0/26 ends at the broadcast address 192.168.4.63.",
     "topic": "Subnetting"
   },
   {
@@ -7156,7 +7192,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "A portion of the address is used to identify the network.",
-    "explanation": "Correct option is (C) 'A portion of the address is used to identify the network.'. This addresses the networking requirement in Switching.",
+    "explanation": "A Layer 3 address contains a network prefix. Routers use that prefix when selecting a route.",
     "topic": "Switching"
   },
   {
@@ -7187,7 +7223,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "Layer 3",
-    "explanation": "Correct option is (C) 'Layer 3'. This addresses the networking requirement in Routing.",
+    "explanation": "Routers forward packets between networks using Layer 3 addresses.",
     "topic": "Routing"
   },
   {
@@ -7218,7 +7254,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "2046",
-    "explanation": "Correct option is (C) '2046'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /21 leaves 11 host bits and has 2,048 total addresses. Removing the network and broadcast addresses leaves 2,046.",
     "topic": "Subnetting"
   },
   {
@@ -7247,9 +7283,9 @@
         "text": "packet"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "frame",
-    "explanation": "Correct option is (C) 'frame'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "D",
+    "correctAnswerText": "packet",
+    "explanation": "The TCP/IP internet layer encapsulates data into an IP packet.",
     "topic": "TCP/IP"
   },
   {
@@ -7280,7 +7316,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "DNS",
-    "explanation": "Correct option is (B) 'DNS'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "Nslookup sends DNS queries to resolve names or inspect DNS records.",
     "topic": "DNS and DHCP"
   },
   {
@@ -7290,7 +7326,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.1",
     "pageNumber": 1,
-    "question": "Which functions of the OSI model occur at layer two?",
+    "question": "Which function occurs at Layer 2 of the OSI model?",
     "options": [
       {
         "key": "A",
@@ -7311,7 +7347,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "physical addressing",
-    "explanation": "Correct option is (A) 'physical addressing'. This addresses the networking requirement in OSI Model.",
+    "explanation": "Ethernet uses physical MAC addresses at the data link layer.",
     "topic": "OSI Model"
   },
   {
@@ -7340,9 +7376,9 @@
         "text": "VTY"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "enable",
-    "explanation": "Correct option is (B) 'enable'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "enable secret",
+    "explanation": "The enable secret command sets a hashed credential for privileged EXEC access.",
     "topic": "Switching"
   },
   {
@@ -7373,7 +7409,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "transport",
-    "explanation": "Correct option is (D) 'transport'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A reliable transport protocol such as TCP detects missing data and requests retransmission.",
     "topic": "TCP/IP"
   },
   {
@@ -7404,7 +7440,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "an upper-layer, connection-oriented protocol or service",
-    "explanation": "Correct option is (D) 'an upper-layer, connection-oriented protocol or service'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "A connection-oriented higher-layer protocol can acknowledge received data and trigger retransmission of missing data.",
     "topic": "TCP/IP"
   },
   {
@@ -7414,7 +7450,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.5",
     "pageNumber": 1,
-    "question": "Which subnet mask will allow 2040 hosts per subnet on the IP network 10.0.0.0?",
+    "question": "What is the most specific subnet mask that allows at least 2,040 usable host addresses per subnet on 10.0.0.0?",
     "options": [
       {
         "key": "A",
@@ -7435,7 +7471,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "255.255.248.0",
-    "explanation": "Correct option is (D) '255.255.248.0'. This addresses the networking requirement in Subnetting.",
+    "explanation": "A /21 leaves 11 host bits for 2,046 usable IPv4 host addresses. A /22 provides only 1,022.",
     "topic": "Subnetting"
   },
   {
@@ -7464,9 +7500,9 @@
         "text": "It denotes the data payload type that the packet is carrying."
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "It denotes the data payload type that the packet is carrying.",
-    "explanation": "The Time to Live (TTL) field in an IPv4 packet header prevents packets from circulating indefinitely in routing loops. Each router decrements TTL by at least 1; if TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is returned.",
+    "correctAnswer": "B",
+    "correctAnswerText": "It specifies the remaining “life” of the packet.",
+    "explanation": "TTL limits how long an IPv4 packet can circulate. Each router decrements it before forwarding.",
     "topic": "IPv4 and IPv6"
   },
   {
@@ -7495,9 +7531,9 @@
         "text": "centralized"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "centralized",
-    "explanation": "Correct option is (D) 'centralized'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "C",
+    "correctAnswerText": "peer-to-peer",
+    "explanation": "In a peer-to-peer network, peers can both request and provide resources without a dedicated server.",
     "topic": "Networking Protocols"
   },
   {
@@ -7526,9 +7562,9 @@
         "text": "switch"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "switch",
-    "explanation": "Correct option is (D) 'switch'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "C",
+    "correctAnswerText": "router",
+    "explanation": "Routers forward packets between IP networks and are the devices to check for an inter-network routing issue.",
     "topic": "Wireless Networks"
   },
   {
@@ -7557,9 +7593,9 @@
         "text": "Configure individual terminal lines."
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "Configure individual terminal lines.",
-    "explanation": "Correct option is (D) 'Configure individual terminal lines.'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Configure individual interfaces.",
+    "explanation": "Router(config-if)# is the interface configuration prompt, used to configure the selected interface.",
     "topic": "Routing"
   },
   {
@@ -7588,9 +7624,9 @@
         "text": "the locally configured subnet mask"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "the locally configured subnet mask",
-    "explanation": "Correct option is (D) 'the locally configured subnet mask'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "C",
+    "correctAnswerText": "active TCP connections",
+    "explanation": "Netstat can show active TCP connections and their local and remote endpoints.",
     "topic": "Subnetting"
   },
   {
@@ -7621,7 +7657,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It can provide a list of physical addresses on the network.",
-    "explanation": "Correct option is (C) 'It can provide a list of physical addresses on the network.'. This addresses the networking requirement in NAT.",
+    "explanation": "The ARP cache shows IPv4 addresses and corresponding MAC addresses learned on the local link.",
     "topic": "NAT"
   },
   {
@@ -7650,9 +7686,9 @@
         "text": "segment"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "packet",
-    "explanation": "Correct option is (C) 'packet'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "B",
+    "correctAnswerText": "frame",
+    "explanation": "A frame is the data link layer protocol data unit.",
     "topic": "TCP/IP"
   },
   {
@@ -7681,9 +7717,9 @@
         "text": "Telnet"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "SMTP",
-    "explanation": "Correct option is (C) 'SMTP'. This addresses the networking requirement in DNS and DHCP.",
+    "correctAnswer": "D",
+    "correctAnswerText": "Telnet",
+    "explanation": "Telnet provides an interactive remote terminal session. It is the remote login protocol among these choices.",
     "topic": "DNS and DHCP"
   },
   {
@@ -7706,11 +7742,15 @@
       {
         "key": "C",
         "text": "It matches a resource name with the required network address."
+      },
+      {
+        "key": "D",
+        "text": "It requests and assigns an IP address, default gateway, and server addresses to hosts."
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It matches a resource name with the required network address.",
-    "explanation": "Correct option is (C) 'It matches a resource name with the required network address.'. This addresses the networking requirement in DNS and DHCP.",
+    "explanation": "DNS resolves names to records, including A and AAAA records for IPv4 and IPv6 addresses.",
     "topic": "DNS and DHCP"
   },
   {
@@ -7720,7 +7760,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.15",
     "pageNumber": 3,
-    "question": "Which password would allow a user to establish a Telnet session with a Cisco device?",
+    "question": "With Cisco IOS VTY line-password authentication enabled, which password is used to establish a Telnet session?",
     "options": [
       {
         "key": "A",
@@ -7739,9 +7779,9 @@
         "text": "enable secret password"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "console password",
-    "explanation": "Correct option is (C) 'console password'. This addresses the networking requirement in Network Security.",
+    "correctAnswer": "A",
+    "correctAnswerText": "VTY password",
+    "explanation": "Cisco IOS virtual terminal (VTY) lines handle remote Telnet sessions. A line password applies when line-password authentication is configured.",
     "topic": "Network Security"
   },
   {
@@ -7772,7 +7812,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "physical source and destination addresses",
-    "explanation": "Correct option is (D) 'physical source and destination addresses'. This addresses the networking requirement in NAT.",
+    "explanation": "The Ethernet header carries both source and destination MAC addresses.",
     "topic": "NAT"
   },
   {
@@ -7782,7 +7822,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.17",
     "pageNumber": 4,
-    "question": "What happens when a node on an Ethernet network is creating a frame and it does not have the destination MAC address?",
+    "question": "An IPv4 host needs to send an Ethernet frame to a host on the same subnet and has no ARP entry for it. What does it do?",
     "options": [
       {
         "key": "A",
@@ -7803,7 +7843,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "The node sends out an ARP request with the destination IP address.",
-    "explanation": "Correct option is (D) 'The node sends out an ARP request with the destination IP address.'. This addresses the networking requirement in NAT.",
+    "explanation": "For a destination on the same IPv4 subnet, the sender broadcasts an ARP request to learn the destination host’s MAC address.",
     "topic": "NAT"
   },
   {
@@ -7832,9 +7872,9 @@
         "text": "Issue the erase running-config command, and then reboot the router."
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "Issue the erase running-config command, and then reboot the router.",
-    "explanation": "Correct option is (D) 'Issue the erase running-config command, and then reboot the router.'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Issue the erase startup-config command, and then reboot the router.",
+    "explanation": "Erasing the startup configuration removes the saved settings. A reload without saving the running configuration restarts the device without those settings.",
     "topic": "Routing"
   },
   {
@@ -7863,9 +7903,9 @@
         "text": "wireless access point"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "wireless access point",
-    "explanation": "Correct option is (D) 'wireless access point'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "C",
+    "correctAnswerText": "router",
+    "explanation": "A router forwards traffic between IP subnets.",
     "topic": "Wireless Networks"
   },
   {
@@ -7894,9 +7934,9 @@
         "text": "Telnet"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "Telnet",
-    "explanation": "Correct option is (D) 'Telnet'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "A",
+    "correctAnswerText": "HyperTerminal",
+    "explanation": "HyperTerminal is a terminal emulator that can open a serial session through the router’s console port.",
     "topic": "Routing"
   },
   {
@@ -7925,9 +7965,9 @@
         "text": "Peers can either make requests, or respond to requests, but not both."
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "A dedicated server is required.",
-    "explanation": "Correct option is (A) 'A dedicated server is required.'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "B",
+    "correctAnswerText": "Access control is decentralized.",
+    "explanation": "Peers share files directly and can manage access to their own resources without a dedicated file server.",
     "topic": "Networking Protocols"
   },
   {
@@ -7937,7 +7977,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.22",
     "pageNumber": 5,
-    "question": "What is primary responsibilities of the Ethernet MAC sublayer?",
+    "question": "Which broad function of the Ethernet MAC sublayer includes frame delimiting and error detection?",
     "options": [
       {
         "key": "A",
@@ -7956,9 +7996,9 @@
         "text": "error detection"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "frame delimiting",
-    "explanation": "Correct option is (A) 'frame delimiting'. This addresses the networking requirement in OSI Model.",
+    "correctAnswer": "B",
+    "correctAnswerText": "data encapsulation",
+    "explanation": "The MAC sublayer handles data encapsulation, including frame delimiting, MAC addressing and error detection.",
     "topic": "OSI Model"
   },
   {
@@ -7989,7 +8029,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "line",
-    "explanation": "Correct option is (A) 'line'. This addresses the networking requirement in Routing.",
+    "explanation": "Remote terminal access is configured under virtual terminal lines in line configuration mode.",
     "topic": "Routing"
   },
   {
@@ -8018,9 +8058,9 @@
         "text": "determines the hosts that are allowed to connect to the device"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "uniquely identifies a router on the internet",
-    "explanation": "Correct option is (A) 'uniquely identifies a router on the internet'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "C",
+    "correctAnswerText": "provides device identification to users logging on remotely",
+    "explanation": "A hostname identifies the device to administrators and normally appears in the device prompt.",
     "topic": "Routing"
   },
   {
@@ -8049,9 +8089,9 @@
         "text": "R1(config-router)#"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "R1>",
-    "explanation": "Correct option is (A) 'R1>'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "B",
+    "correctAnswerText": "R1#",
+    "explanation": "The # suffix in R1# identifies privileged EXEC mode. The > suffix identifies user EXEC mode.",
     "topic": "Routing"
   },
   {
@@ -8080,9 +8120,9 @@
         "text": "Interconnect the two PCs with two crossover cables and a hub."
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Interconnect the two PCs with two rollover cables and a hub.",
-    "explanation": "Correct option is (B) 'Interconnect the two PCs with two rollover cables and a hub.'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Interconnect the two PCs with a crossover cable.",
+    "explanation": "A crossover cable connects the transmit and receive pairs of the two older NICs directly when they lack auto-MDI-X.",
     "topic": "Switching"
   },
   {
@@ -8113,7 +8153,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "The clock rate command has not been entered on the DCE interface.",
-    "explanation": "Correct option is (B) 'The clock rate command has not been entered on the DCE interface.'. This addresses the networking requirement in WAN.",
+    "explanation": "The interface can be physically up while the line protocol remains down if the DCE end of the serial link supplies no clock signal.",
     "topic": "WAN"
   },
   {
@@ -8123,7 +8163,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.28",
     "pageNumber": 6,
-    "question": "An organization has been assigned network ID 10.10.128.0 and subnet mask 255.255.224.0. Which IP address range can be used for this organization?",
+    "question": "What is the full address range, including network and broadcast addresses, of 10.10.128.0 with subnet mask 255.255.224.0?",
     "options": [
       {
         "key": "A",
@@ -8144,7 +8184,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "10.10.128.0 to 10.10.159.255",
-    "explanation": "Correct option is (B) '10.10.128.0 to 10.10.159.255'. This addresses the networking requirement in Subnetting.",
+    "explanation": "The /19 block covers third-octet values 128 through 159, inclusive. The first and last addresses are the network and broadcast addresses.",
     "topic": "Subnetting"
   },
   {
@@ -8173,9 +8213,9 @@
         "text": "when the interface is functioning as a DCE device"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "when the interface timers have been cleared",
-    "explanation": "Correct option is (B) 'when the interface timers have been cleared'. This addresses the networking requirement in WAN.",
+    "correctAnswer": "D",
+    "correctAnswerText": "when the interface is functioning as a DCE device",
+    "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
     "topic": "WAN"
   },
   {
@@ -8206,7 +8246,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "The entries specify four Telnet lines for remote access.",
-    "explanation": "Correct option is (B) 'The entries specify four Telnet lines for remote access.'. This addresses the networking requirement in Routing.",
+    "explanation": "The VTY range 0 through 3 contains four lines. The password and login commands enable line-password checking on those lines.",
     "topic": "Routing"
   },
   {
@@ -8216,7 +8256,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.31",
     "pageNumber": 7,
-    "question": "Which password is automatically encrypted when it is created?",
+    "question": "Which Cisco IOS password setting stores a hash by default?",
     "options": [
       {
         "key": "A",
@@ -8235,9 +8275,9 @@
         "text": "enable password"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "console",
-    "explanation": "Correct option is (B) 'console'. This addresses the networking requirement in Network Security.",
+    "correctAnswer": "C",
+    "correctAnswerText": "enable secret",
+    "explanation": "Cisco IOS stores the enable secret in hashed form.",
     "topic": "Network Security"
   },
   {
@@ -8268,7 +8308,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "Switch-6J#",
-    "explanation": "Correct option is (B) 'Switch-6J#'. This addresses the networking requirement in Switching.",
+    "explanation": "The # suffix with no configuration-mode qualifier is privileged EXEC, where the copy command runs.",
     "topic": "Switching"
   },
   {
@@ -8278,7 +8318,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.33",
     "pageNumber": 7,
-    "question": "Which information is used by the router to determine the path between the source and destination hosts?",
+    "question": "Which part of the destination IP address is used to match a routing-table prefix?",
     "options": [
       {
         "key": "A",
@@ -8299,7 +8339,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "the network portion of the IP address",
-    "explanation": "Correct option is (B) 'the network portion of the IP address'. This addresses the networking requirement in NAT.",
+    "explanation": "The router matches the destination IP address against routing-table prefixes and forwards using the longest matching prefix.",
     "topic": "NAT"
   },
   {
@@ -8330,7 +8370,7 @@
     ],
     "correctAnswer": "B",
     "correctAnswerText": "0 to 1023",
-    "explanation": "Correct option is (B) '0 to 1023'. This addresses the networking requirement in TCP/IP.",
+    "explanation": "IANA assigns system ports in the range 0 to 1023. Port 0 is reserved.",
     "topic": "TCP/IP"
   },
   {
@@ -8340,7 +8380,7 @@
     "sourceSection": "FCN Mock Examination Set 2",
     "sourceQuestionNumber": "Q.35",
     "pageNumber": 8,
-    "question": "Which IPv4 address represents subnet broadcast addresses?",
+    "question": "Which IPv4 address is a subnet broadcast address?",
     "options": [
       {
         "key": "A",
@@ -8359,9 +8399,9 @@
         "text": "192.168.4.221 /27"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "192.168.4.129 /26",
-    "explanation": "Correct option is (B) '192.168.4.129 /26'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "A",
+    "correctAnswerText": "192.168.4.63 /26",
+    "explanation": "A /26 subnet has 64 addresses, so 192.168.4.0/26 ends at the broadcast address 192.168.4.63.",
     "topic": "Subnetting"
   },
   {
@@ -8390,9 +8430,9 @@
         "text": "It does not support broadcasts."
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Network layer addressing is used by Ethernet switches to make forwarding decisions.",
-    "explanation": "Correct option is (B) 'Network layer addressing is used by Ethernet switches to make forwarding decisions.'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "A portion of the address is used to identify the network.",
+    "explanation": "A Layer 3 address contains a network prefix. Routers use that prefix when selecting a route.",
     "topic": "Switching"
   },
   {
@@ -8421,9 +8461,9 @@
         "text": "Layer 4"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "Layer 2",
-    "explanation": "Correct option is (B) 'Layer 2'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Layer 3",
+    "explanation": "Routers forward packets between networks using Layer 3 addresses.",
     "topic": "Routing"
   },
   {
@@ -8452,9 +8492,9 @@
         "text": "2048"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "256",
-    "explanation": "Correct option is (B) '256'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "C",
+    "correctAnswerText": "2046",
+    "explanation": "A /21 leaves 11 host bits and has 2,048 total addresses. Removing the network and broadcast addresses leaves 2,046.",
     "topic": "Subnetting"
   },
   {
@@ -8483,9 +8523,9 @@
         "text": "packet"
       }
     ],
-    "correctAnswer": "B",
-    "correctAnswerText": "data",
-    "explanation": "Correct option is (B) 'data'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "D",
+    "correctAnswerText": "packet",
+    "explanation": "The TCP/IP internet layer encapsulates data into an IP packet.",
     "topic": "TCP/IP"
   },
   {
@@ -8514,9 +8554,9 @@
         "text": "Telnet"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "DHCP",
-    "explanation": "Correct option is (C) 'DHCP'. This addresses the networking requirement in DNS and DHCP.",
+    "correctAnswer": "B",
+    "correctAnswerText": "DNS",
+    "explanation": "Nslookup sends DNS queries to resolve names or inspect DNS records.",
     "topic": "DNS and DHCP"
   },
   {
@@ -8526,7 +8566,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.1.",
     "pageNumber": 1,
-    "question": "The maximum frame size supported by a communication link is known as?",
+    "question": "What is the maximum network-layer packet size a link can carry without fragmentation called?",
     "options": [
       {
         "key": "A",
@@ -8547,7 +8587,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "MTU",
-    "explanation": "Correct option is (C) 'MTU'. This addresses the networking requirement in Networking Protocols.",
+    "explanation": "The MTU gives the largest network-layer packet the link can carry without fragmentation.",
     "topic": "Networking Protocols"
   },
   {
@@ -8557,7 +8597,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.3.",
     "pageNumber": 1,
-    "question": "Which of the following IP Header field is used by the traceroute (tracert) command to find the route to the destination?",
+    "question": "Which IPv4 header field does traceroute use to discover successive hops?",
     "options": [
       {
         "key": "A",
@@ -8576,9 +8616,9 @@
         "text": "Flags"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "Version",
-    "explanation": "Correct option is (C) 'Version'. This addresses the networking requirement in NAT.",
+    "correctAnswer": "A",
+    "correctAnswerText": "TTL",
+    "explanation": "Traceroute varies the IPv4 TTL so successive routers return ICMP Time Exceeded messages.",
     "topic": "NAT"
   },
   {
@@ -8588,7 +8628,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.4.",
     "pageNumber": 1,
-    "question": "Which of the following command allows you to release IP address assigned to the computer and get it renewed from the DHCP server?",
+    "question": "Which Windows command can release and renew a DHCP-assigned IPv4 address?",
     "options": [
       {
         "key": "A",
@@ -8607,9 +8647,9 @@
         "text": "tracert"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "arp",
-    "explanation": "Correct option is (C) 'arp'. This addresses the networking requirement in DNS and DHCP.",
+    "correctAnswer": "B",
+    "correctAnswerText": "ipconfig",
+    "explanation": "On Windows, ipconfig /release releases a DHCP lease and ipconfig /renew requests a new lease.",
     "topic": "DNS and DHCP"
   },
   {
@@ -8640,7 +8680,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "arp",
-    "explanation": "Correct option is (C) 'arp'. This addresses the networking requirement in IPv4 and IPv6.",
+    "explanation": "The ARP cache stores IPv4-to-MAC mappings. On Windows, arp -a displays them.",
     "topic": "IPv4 and IPv6"
   },
   {
@@ -8669,9 +8709,9 @@
         "text": "Single Mode Fiber"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "STP Cable",
-    "explanation": "Correct option is (C) 'STP Cable'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "D",
+    "correctAnswerText": "Single Mode Fiber",
+    "explanation": "Single-mode fiber supports longer link distances than multimode fiber or twisted-pair copper.",
     "topic": "Switching"
   },
   {
@@ -8697,12 +8737,12 @@
       },
       {
         "key": "D",
-        "text": "It uses Infrared light for data transmission. Session 4"
+        "text": "It uses Infrared light for data transmission."
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "It is less affected by the Electro Magnetic Interference than UTP",
-    "explanation": "Correct option is (C) 'It is less affected by the Electro Magnetic Interference than UTP'. This addresses the networking requirement in Switching.",
+    "explanation": "Shielding helps reduce electromagnetic interference in twisted-pair cabling.",
     "topic": "Switching"
   },
   {
@@ -8731,9 +8771,9 @@
         "text": "Transport"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "Network",
-    "explanation": "Correct option is (C) 'Network'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "B",
+    "correctAnswerText": "Data Link",
+    "explanation": "MAC addresses identify interfaces for frame delivery at the data link layer.",
     "topic": "Switching"
   },
   {
@@ -8764,7 +8804,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "Transport",
-    "explanation": "Correct option is (A) 'Transport'. This addresses the networking requirement in OSI Model.",
+    "explanation": "The transport layer can provide end-to-end reliability through a protocol such as TCP.",
     "topic": "OSI Model"
   },
   {
@@ -8790,12 +8830,12 @@
       },
       {
         "key": "D",
-        "text": "Presentation Session 5"
+        "text": "Presentation"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Session",
-    "explanation": "Correct option is (A) 'Session'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Network",
+    "explanation": "The TCP/IP application layer covers the OSI application, presentation and session layers. The OSI network layer maps to the TCP/IP internet layer.",
     "topic": "TCP/IP"
   },
   {
@@ -8824,9 +8864,9 @@
         "text": "Error Detection"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Error Correction",
-    "explanation": "Correct option is (A) 'Error Correction'. This addresses the networking requirement in Routing.",
+    "correctAnswer": "D",
+    "correctAnswerText": "Error Detection",
+    "explanation": "Ethernet uses its frame check sequence to detect corrupted frames.",
     "topic": "Routing"
   },
   {
@@ -8836,7 +8876,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.12.",
     "pageNumber": 2,
-    "question": "Which of the following ICMP packet is sent by the host when you ping to a network computer from it?",
+    "question": "Which ICMP message does the sending host transmit when it runs ping?",
     "options": [
       {
         "key": "A",
@@ -8844,7 +8884,7 @@
       },
       {
         "key": "B",
-        "text": "Ping request"
+        "text": "Destination Unreachable"
       },
       {
         "key": "C",
@@ -8852,12 +8892,12 @@
       },
       {
         "key": "D",
-        "text": "Ping reply"
+        "text": "Time Exceeded"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Echo Reply",
-    "explanation": "Correct option is (A) 'Echo Reply'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "C",
+    "correctAnswerText": "Echo request",
+    "explanation": "Ping sends an ICMP Echo Request. A responding host returns an Echo Reply.",
     "topic": "TCP/IP"
   },
   {
@@ -8867,7 +8907,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.13.",
     "pageNumber": 2,
-    "question": "Which of the following device can function at Layer 2 and layer 3?",
+    "question": "Which device, in its multilayer form, can switch traffic at Layer 2 and route traffic at Layer 3?",
     "options": [
       {
         "key": "A",
@@ -8875,7 +8915,7 @@
       },
       {
         "key": "B",
-        "text": "Switch"
+        "text": "Multilayer switch"
       },
       {
         "key": "C",
@@ -8883,12 +8923,12 @@
       },
       {
         "key": "D",
-        "text": "Bridge Session 6"
+        "text": "Bridge"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Hub",
-    "explanation": "Correct option is (A) 'Hub'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "B",
+    "correctAnswerText": "Multilayer switch",
+    "explanation": "A multilayer switch can forward Ethernet frames at Layer 2 and route IP packets at Layer 3.",
     "topic": "Switching"
   },
   {
@@ -8898,7 +8938,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.14.",
     "pageNumber": 2,
-    "question": "What is the first field of the Ethernet frame without considering Preamble?",
+    "question": "What is the first field of an Ethernet MAC frame after the preamble and start-frame delimiter?",
     "options": [
       {
         "key": "A",
@@ -8917,9 +8957,9 @@
         "text": "Destination MAC Address"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Source MAC Address",
-    "explanation": "Correct option is (A) 'Source MAC Address'. This addresses the networking requirement in NAT.",
+    "correctAnswer": "D",
+    "correctAnswerText": "Destination MAC Address",
+    "explanation": "The first field of the Ethernet MAC frame is the destination MAC address.",
     "topic": "NAT"
   },
   {
@@ -8929,28 +8969,28 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.15.",
     "pageNumber": 2,
-    "question": "What is Fast Ethernet?",
+    "question": "What is the nominal line rate of Fast Ethernet?",
     "options": [
       {
         "key": "A",
-        "text": "It supports 10/100 Mbps speed"
+        "text": "10 Mb/s"
       },
       {
         "key": "B",
-        "text": "It supports only 10 Mbps speed"
+        "text": "1,000 Mb/s"
       },
       {
         "key": "C",
-        "text": "It supports only 100 Mbps speed"
+        "text": "100 Mb/s"
       },
       {
         "key": "D",
-        "text": "It supports 1 Gbps speed"
+        "text": "10,000 Mb/s"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "It supports 10/100 Mbps speed",
-    "explanation": "Correct option is (A) 'It supports 10/100 Mbps speed'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "100 Mb/s",
+    "explanation": "Fast Ethernet denotes 100 Mb/s Ethernet, such as 100BASE-TX. Some ports also negotiate 10 Mb/s for compatibility.",
     "topic": "Switching"
   },
   {
@@ -8960,7 +9000,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.16.",
     "pageNumber": 2,
-    "question": "What is the maximum frame size supported by the Ethernet?",
+    "question": "What is the maximum standard untagged Ethernet frame size, including the FCS and excluding the preamble?",
     "options": [
       {
         "key": "A",
@@ -8976,12 +9016,12 @@
       },
       {
         "key": "D",
-        "text": "1024 Bytes Session 7"
+        "text": "1024 Bytes"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "64 Bytes",
-    "explanation": "Correct option is (A) '64 Bytes'. This addresses the networking requirement in Switching.",
+    "correctAnswer": "C",
+    "correctAnswerText": "1518 Bytes",
+    "explanation": "An untagged Ethernet frame with a 1500-byte payload, 14-byte header and 4-byte FCS is 1518 bytes.",
     "topic": "Switching"
   },
   {
@@ -9010,9 +9050,9 @@
         "text": "Frame Relay"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "Wireless",
-    "explanation": "Correct option is (A) 'Wireless'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "B",
+    "correctAnswerText": "Token Ring",
+    "explanation": "IEEE 802.5 specifies Token Ring.",
     "topic": "Wireless Networks"
   },
   {
@@ -9022,7 +9062,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.18.",
     "pageNumber": 3,
-    "question": "What is the maximum speed supported by the Token Ring network while using Twisted pair cables?",
+    "question": "What was the higher of the two classic twisted-pair Token Ring rates?",
     "options": [
       {
         "key": "A",
@@ -9030,7 +9070,7 @@
       },
       {
         "key": "B",
-        "text": "8 Mbps"
+        "text": "4 Mb/s"
       },
       {
         "key": "C",
@@ -9038,12 +9078,12 @@
       },
       {
         "key": "D",
-        "text": "1 Gbps Session 8 & 9"
+        "text": "1 Gbps"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "1 Gbps Session 8 & 9",
-    "explanation": "Correct option is (D) '1 Gbps Session 8 & 9'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "A",
+    "correctAnswerText": "16 Mbps",
+    "explanation": "Classic Token Ring installations used 4 or 16 Mb/s. The higher of these two rates is 16 Mb/s.",
     "topic": "Networking Protocols"
   },
   {
@@ -9072,9 +9112,9 @@
         "text": "Frame Relay"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "Frame Relay",
-    "explanation": "Correct option is (D) 'Frame Relay'. This addresses the networking requirement in WAN.",
+    "correctAnswer": "B",
+    "correctAnswerText": "PPP",
+    "explanation": "PPP supports peer authentication through protocols such as PAP and CHAP.",
     "topic": "WAN"
   },
   {
@@ -9105,7 +9145,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "CHAP",
-    "explanation": "Correct option is (D) 'CHAP'. This addresses the networking requirement in WAN.",
+    "explanation": "CHAP verifies a challenge-dependent response derived from a shared secret without sending the secret itself.",
     "topic": "WAN"
   },
   {
@@ -9134,9 +9174,9 @@
         "text": "PPTP"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "PPTP",
-    "explanation": "Correct option is (D) 'PPTP'. This addresses the networking requirement in Networking Protocols.",
+    "correctAnswer": "C",
+    "correctAnswerText": "SNMP",
+    "explanation": "An SNMP agent can send a trap notification to a monitoring system when an event occurs.",
     "topic": "Networking Protocols"
   },
   {
@@ -9162,12 +9202,12 @@
       },
       {
         "key": "D",
-        "text": "SNMP Session 10"
+        "text": "SNMP"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "SNMP Session 10",
-    "explanation": "Correct option is (D) 'SNMP Session 10'. This addresses the networking requirement in TCP/IP.",
+    "correctAnswer": "A",
+    "correctAnswerText": "ICMP",
+    "explanation": "ICMP carries IP-related errors back toward the sender, such as Destination Unreachable or Time Exceeded.",
     "topic": "TCP/IP"
   },
   {
@@ -9196,9 +9236,9 @@
         "text": "TKIP"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "TKIP",
-    "explanation": "Correct option is (D) 'TKIP'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "C",
+    "correctAnswerText": "WPA-Enterprise",
+    "explanation": "WPA-Enterprise uses 802.1X, commonly backed by a RADIUS authentication server.",
     "topic": "Wireless Networks"
   },
   {
@@ -9229,7 +9269,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "128 Bit",
-    "explanation": "Correct option is (D) '128 Bit'. This addresses the networking requirement in IPv4 and IPv6.",
+    "explanation": "An IPv6 address is 128 bits long.",
     "topic": "IPv4 and IPv6"
   },
   {
@@ -9239,7 +9279,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.25.",
     "pageNumber": 3,
-    "question": "What is the correct EUI-64 representation of the MAC address 00-02-4A-57-6B-73?",
+    "question": "What IPv6 interface identifier does Modified EUI-64 derive from MAC address 00-02-4A-57-6B-73?",
     "options": [
       {
         "key": "A",
@@ -9260,7 +9300,7 @@
     ],
     "correctAnswer": "D",
     "correctAnswerText": "0202:4AFF:FE57:6B73",
-    "explanation": "In IPv6 EUI-64 format, the 48-bit MAC address is split into two 24-bit halves, 'FFFE' is inserted in between, and the 7th bit (Universal/Local bit) from the left is inverted.",
+    "explanation": "Insert FF:FE between the MAC address halves and flip the universal/local bit in the first octet. 00 becomes 02, yielding 0202:4AFF:FE57:6B73.",
     "topic": "IPv4 and IPv6"
   },
   {
@@ -9270,7 +9310,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.26.",
     "pageNumber": 3,
-    "question": "Which of the following IEEE standard for wireless networks supports streaming of multimedia files?",
+    "question": "Which IEEE 802.11 amendment specifically introduced MAC-layer quality-of-service mechanisms for traffic such as voice and video?",
     "options": [
       {
         "key": "A",
@@ -9286,12 +9326,12 @@
       },
       {
         "key": "D",
-        "text": "802.11n Session 11"
+        "text": "802.11n"
       }
     ],
-    "correctAnswer": "D",
-    "correctAnswerText": "802.11n Session 11",
-    "explanation": "Correct option is (D) '802.11n Session 11'. This addresses the networking requirement in Wireless Networks.",
+    "correctAnswer": "B",
+    "correctAnswerText": "802.11e",
+    "explanation": "IEEE 802.11e introduced MAC-layer quality-of-service mechanisms that help prioritize delay-sensitive voice and video traffic.",
     "topic": "Wireless Networks"
   },
   {
@@ -9320,9 +9360,9 @@
         "text": "255.255.0.0"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "255.192.0.0",
-    "explanation": "Correct option is (C) '255.192.0.0'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "A",
+    "correctAnswerText": "255.255.192.0",
+    "explanation": "Eighteen leading one bits give 255.255.192.0.",
     "topic": "Subnetting"
   },
   {
@@ -9353,7 +9393,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "NAT Overload",
-    "explanation": "NAT Overload (Port Address Translation / PAT) maps multiple private IP addresses to a single public IP address by assigning unique source port numbers to each session.",
+    "explanation": "NAT overload uses port translation to let several internal hosts share one public IPv4 address.",
     "topic": "NAT"
   },
   {
@@ -9363,28 +9403,28 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.29.",
     "pageNumber": 4,
-    "question": "How many hosts you get within a IP subnet, with the subnet mask of /19?",
+    "question": "How many usable host addresses are in an IPv4 /19 subnet?",
     "options": [
       {
         "key": "A",
-        "text": "64 Hosts"
+        "text": "8,192 hosts"
       },
       {
         "key": "B",
-        "text": "16 Hosts"
+        "text": "4,094 hosts"
       },
       {
         "key": "C",
-        "text": "8 Hosts"
+        "text": "2,046 hosts"
       },
       {
         "key": "D",
-        "text": "32 Hosts"
+        "text": "8,190 hosts"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "8 Hosts",
-    "explanation": "Correct option is (C) '8 Hosts'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "D",
+    "correctAnswerText": "8,190 hosts",
+    "explanation": "A /19 leaves 13 host bits, giving 8,192 addresses. Excluding the network and broadcast addresses leaves 8,190 usable host addresses.",
     "topic": "Subnetting"
   },
   {
@@ -9402,7 +9442,7 @@
       },
       {
         "key": "B",
-        "text": "192.168.10.47"
+        "text": "192.168.10.15"
       },
       {
         "key": "C",
@@ -9410,12 +9450,12 @@
       },
       {
         "key": "D",
-        "text": "192.168.10.125 Session 12"
+        "text": "192.168.10.125"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "192.168.10.54",
-    "explanation": "Correct option is (C) '192.168.10.54'. This addresses the networking requirement in NAT.",
+    "correctAnswer": "B",
+    "correctAnswerText": "192.168.10.15",
+    "explanation": "A /28 contains 16 addresses. The 192.168.10.0 subnet ends at 192.168.10.15, its broadcast address.",
     "topic": "NAT"
   },
   {
@@ -9425,7 +9465,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.31.",
     "pageNumber": 4,
-    "question": "You have configured routers between 4 IP subnets. You have sub netted a network address 192.168.1.0 to create 4 IP subnets. You have configured RIP however the network is not established. What may be the reason?",
+    "question": "You configure RIP to exchange routes for variable-length IPv4 subnets. Which configuration could explain why the subnet routes are missing or incorrect?",
     "options": [
       {
         "key": "A",
@@ -9444,9 +9484,9 @@
         "text": "RIP is not a routing protocol"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "You forgot to enter static routes",
-    "explanation": "Correct option is (C) 'You forgot to enter static routes'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "A",
+    "correctAnswerText": "You configured RIP version 1",
+    "explanation": "RIPv1 omits subnet masks from routing updates, so it cannot advertise variable-length subnet masks. RIPv2 includes subnet masks.",
     "topic": "Subnetting"
   },
   {
@@ -9477,7 +9517,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "110",
-    "explanation": "The default administrative distance for OSPF is 110. For comparison: Connected=0, Static=1, EIGRP internal=90, IGRP=100, RIP=120, External EIGRP=170, External BGP=20.",
+    "explanation": "Cisco routers assign OSPF routes a default administrative distance of 110.",
     "topic": "Routing"
   },
   {
@@ -9503,12 +9543,12 @@
       },
       {
         "key": "D",
-        "text": "IGRP Session 13"
+        "text": "IGRP"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "RIP v2",
-    "explanation": "Correct option is (C) 'RIP v2'. This addresses the networking requirement in Subnetting.",
+    "correctAnswer": "D",
+    "correctAnswerText": "IGRP",
+    "explanation": "IGRP is classful and does not advertise subnet masks. EIGRP, OSPF and RIPv2 support VLSM.",
     "topic": "Subnetting"
   },
   {
@@ -9539,7 +9579,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "TTL",
-    "explanation": "Correct option is (C) 'TTL'. This addresses the networking requirement in NAT.",
+    "explanation": "IPv4 routers decrement TTL by at least one before forwarding, discarding a packet if its TTL expires.",
     "topic": "NAT"
   },
   {
@@ -9549,7 +9589,7 @@
     "sourceSection": "FCN Module Practice Set",
     "sourceQuestionNumber": "Q.No.35.",
     "pageNumber": 5,
-    "question": "Which of the following IP header field flag is used by the TCP protocol to find the MTU supported between the source and the destination?",
+    "question": "Which IPv4 flag is set by classic Path MTU Discovery?",
     "options": [
       {
         "key": "A",
@@ -9568,9 +9608,9 @@
         "text": "HLEN"
       }
     ],
-    "correctAnswer": "A",
-    "correctAnswerText": "TTL",
-    "explanation": "Maximum Transmission Unit (MTU) defines the maximum size of a packet or frame that can be sent in a single piece over a communication network without fragmentation. Standard Ethernet MTU is 1500 bytes (1518 bytes frame with header/FCS).",
+    "correctAnswer": "B",
+    "correctAnswerText": "Don’t Fragment",
+    "explanation": "Classic IPv4 Path MTU Discovery sets the DF flag so a router that cannot forward a packet without fragmentation returns an ICMP error.",
     "topic": "NAT"
   },
   {
@@ -9596,12 +9636,12 @@
       },
       {
         "key": "D",
-        "text": "8 Session 14"
+        "text": "8"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "11",
-    "explanation": "The Time to Live (TTL) field in an IPv4 packet header prevents packets from circulating indefinitely in routing loops. Each router decrements TTL by at least 1; if TTL reaches 0, the packet is discarded and an ICMP Time Exceeded message is returned.",
+    "explanation": "ICMPv4 type 11 is Time Exceeded. Code 0 indicates that TTL expired in transit.",
     "topic": "IPv4 and IPv6"
   },
   {
@@ -9630,9 +9670,9 @@
         "text": "STP"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "NNTP",
-    "explanation": "Correct option is (C) 'NNTP'. This addresses the networking requirement in VLAN.",
+    "correctAnswer": "D",
+    "correctAnswerText": "STP",
+    "explanation": "Spanning Tree Protocol prevents Layer 2 forwarding loops by blocking redundant paths as needed.",
     "topic": "VLAN"
   },
   {
@@ -9661,9 +9701,9 @@
         "text": "SNMP"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "ICMP",
-    "explanation": "Correct option is (C) 'ICMP'. This addresses the networking requirement in VLAN.",
+    "correctAnswer": "A",
+    "correctAnswerText": "VTP",
+    "explanation": "Cisco VLAN Trunking Protocol distributes VLAN configuration across participating switches in a VTP domain.",
     "topic": "VLAN"
   },
   {
@@ -9692,9 +9732,9 @@
         "text": "Depends on no. of ports"
       }
     ],
-    "correctAnswer": "C",
-    "correctAnswerText": "255",
-    "explanation": "A repeater hub operates at Layer 1 (Physical) and shares a single collision domain across all its ports. Switches, by contrast, create a separate collision domain per port.",
+    "correctAnswer": "A",
+    "correctAnswerText": "1",
+    "explanation": "All ports on a shared Ethernet hub belong to one collision domain.",
     "topic": "Switching"
   },
   {
@@ -9725,7 +9765,7 @@
     ],
     "correctAnswer": "C",
     "correctAnswerText": "1",
-    "explanation": "By default, all ports on a Layer 2 switch belong to the same default VLAN (VLAN 1), thus forming exactly 1 broadcast domain unless sub-divided by VLANs.",
+    "explanation": "With all 24 ports in one VLAN and no Layer 3 separation, the switch has one broadcast domain.",
     "topic": "Switching"
   }
 ]

@@ -14,7 +14,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM employees HAVING salary > 50;"
+        "text": "SELECT * FROM employees WHERE salary >= 50;"
       },
       {
         "key": "C",
@@ -27,7 +27,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM employees WHERE salary > 50;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -46,7 +46,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM students HAVING marks > 55;"
+        "text": "SELECT * FROM students WHERE marks >= 55;"
       },
       {
         "key": "C",
@@ -59,7 +59,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM students WHERE marks > 55;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -78,7 +78,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM orders HAVING amount > 60;"
+        "text": "SELECT * FROM orders WHERE amount >= 60;"
       },
       {
         "key": "C",
@@ -91,7 +91,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM orders WHERE amount > 60;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -110,7 +110,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM servers HAVING cpu_usage > 65;"
+        "text": "SELECT * FROM servers WHERE cpu_usage >= 65;"
       },
       {
         "key": "C",
@@ -123,7 +123,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM servers WHERE cpu_usage > 65;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -142,7 +142,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM alerts HAVING risk_score > 70;"
+        "text": "SELECT * FROM alerts WHERE risk_score >= 70;"
       },
       {
         "key": "C",
@@ -155,7 +155,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM alerts WHERE risk_score > 70;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -174,7 +174,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM payments HAVING amount > 75;"
+        "text": "SELECT * FROM payments WHERE amount >= 75;"
       },
       {
         "key": "C",
@@ -187,7 +187,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM payments WHERE amount > 75;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -206,7 +206,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM tickets HAVING priority > 80;"
+        "text": "SELECT * FROM tickets WHERE priority >= 80;"
       },
       {
         "key": "C",
@@ -219,7 +219,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM tickets WHERE priority > 80;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -238,7 +238,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM products HAVING price > 85;"
+        "text": "SELECT * FROM products WHERE price >= 85;"
       },
       {
         "key": "C",
@@ -251,7 +251,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM products WHERE price > 85;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -270,7 +270,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM events HAVING event_count > 90;"
+        "text": "SELECT * FROM events WHERE event_count >= 90;"
       },
       {
         "key": "C",
@@ -283,7 +283,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM events WHERE event_count > 90;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -302,7 +302,7 @@
       },
       {
         "key": "B",
-        "text": "SELECT * FROM scans HAVING duration > 95;"
+        "text": "SELECT * FROM scans WHERE duration >= 95;"
       },
       {
         "key": "C",
@@ -315,7 +315,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "SELECT * FROM scans WHERE duration > 95;",
-    "explanation": "WHERE filters individual rows before grouping; HAVING is for filtering grouped results.",
+    "explanation": "WHERE applies the strict greater-than condition to each row.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -326,7 +326,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q11",
     "pageNumber": 3,
-    "question": "An analyst needs the first 3 employees rows ordered by salary (highest first). Which query is valid?",
+    "question": "An analyst needs the first 3 employees rows ordered by salary (highest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -358,7 +358,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q12",
     "pageNumber": 3,
-    "question": "An analyst needs the first 4 students rows ordered by marks (lowest first). Which query is valid?",
+    "question": "An analyst needs the first 4 students rows ordered by marks (lowest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -390,7 +390,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q13",
     "pageNumber": 3,
-    "question": "An analyst needs the first 5 orders rows ordered by amount (highest first). Which query is valid?",
+    "question": "An analyst needs the first 5 orders rows ordered by amount (highest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -422,7 +422,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q14",
     "pageNumber": 4,
-    "question": "An analyst needs the first 6 servers rows ordered by cpu_usage (lowest first). Which query is valid?",
+    "question": "An analyst needs the first 6 servers rows ordered by cpu_usage (lowest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -454,7 +454,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q15",
     "pageNumber": 4,
-    "question": "An analyst needs the first 7 alerts rows ordered by risk_score (highest first). Which query is valid?",
+    "question": "An analyst needs the first 7 alerts rows ordered by risk_score (highest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -486,7 +486,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q16",
     "pageNumber": 4,
-    "question": "An analyst needs the first 8 payments rows ordered by amount (lowest first). Which query is valid?",
+    "question": "An analyst needs the first 8 payments rows ordered by amount (lowest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -518,7 +518,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q17",
     "pageNumber": 4,
-    "question": "An analyst needs the first 9 tickets rows ordered by priority (highest first). Which query is valid?",
+    "question": "An analyst needs the first 9 tickets rows ordered by priority (highest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -550,7 +550,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q18",
     "pageNumber": 4,
-    "question": "An analyst needs the first 10 products rows ordered by price (lowest first). Which query is valid?",
+    "question": "An analyst needs the first 10 products rows ordered by price (lowest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -582,7 +582,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q19",
     "pageNumber": 4,
-    "question": "An analyst needs the first 11 events rows ordered by event_count (highest first). Which query is valid?",
+    "question": "An analyst needs the first 11 events rows ordered by event_count (highest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -614,7 +614,7 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q20",
     "pageNumber": 4,
-    "question": "An analyst needs the first 12 scans rows ordered by duration (lowest first). Which query is valid?",
+    "question": "An analyst needs the first 12 scans rows ordered by duration (lowest first). Which query returns the requested rows in that order?",
     "options": [
       {
         "key": "A",
@@ -1446,28 +1446,28 @@
     "sourceSection": "MYSQL — QUERY-BASED",
     "sourceQuestionNumber": "Q46",
     "pageNumber": 9,
-    "question": "An analyst needs the smallest positive payment. Which statement correctly uses a subquery?",
+    "question": "Which query returns all payments tied for the smallest strictly positive amount?",
     "options": [
       {
         "key": "A",
-        "text": "SELECT * FROM payments WHERE amount < (SELECT MIN(amount) FROM payments WHERE amount>0);"
+        "text": "SELECT * FROM payments WHERE amount = (SELECT MIN(amount) FROM payments WHERE amount > 0);"
       },
       {
         "key": "B",
-        "text": "SELECT * FROM payments GROUP BY amount WHERE amount < (SELECT MIN(amount) FROM payments WHERE amount>0);"
+        "text": "SELECT * FROM payments WHERE amount < (SELECT MIN(amount) FROM payments WHERE amount > 0);"
       },
       {
         "key": "C",
-        "text": "SELECT * FROM payments ORDER BY amount < (SELECT MIN(amount) FROM payments WHERE amount>0);"
+        "text": "SELECT * FROM payments WHERE amount = (SELECT MIN(amount) FROM payments);"
       },
       {
         "key": "D",
-        "text": "SELECT * FROM payments WHERE amount=(SELECT amount FROM payments);"
+        "text": "SELECT * FROM payments WHERE amount = (SELECT MAX(amount) FROM payments);"
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "SELECT * FROM payments WHERE amount < (SELECT MIN(amount) FROM payments WHERE amount>0);",
-    "explanation": "The inner SELECT computes a value or set; the outer SELECT uses it to filter rows.",
+    "correctAnswerText": "SELECT * FROM payments WHERE amount = (SELECT MIN(amount) FROM payments WHERE amount > 0);",
+    "explanation": "The subquery computes the smallest strictly positive amount. The outer query uses equality to return every payment having that amount.",
     "topic": "MySQL Query Construction",
     "diagram": null
   },
@@ -2374,11 +2374,11 @@
     "sourceSection": "MYSQL — THEORY",
     "sourceQuestionNumber": "Q75",
     "pageNumber": 14,
-    "question": "Why is `column = NULL` not the correct NULL test?",
+    "question": "How should a MySQL query test whether a column contains NULL?",
     "options": [
       {
         "key": "A",
-        "text": "Use IS NULL or IS NOT NULL"
+        "text": "Use column_name IS NULL"
       },
       {
         "key": "B",
@@ -2394,8 +2394,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "Use IS NULL or IS NOT NULL",
-    "explanation": "NULL is tested with IS NULL, not ordinary equality.",
+    "correctAnswerText": "Use column_name IS NULL",
+    "explanation": "Comparing to NULL with = produces UNKNOWN. IS NULL tests for missing values.",
     "topic": "MySQL Database Administration & DDL",
     "diagram": null
   },
@@ -2726,11 +2726,11 @@
     "sourceSection": "MYSQL — THEORY",
     "sourceQuestionNumber": "Q86",
     "pageNumber": 15,
-    "question": "A scalar subquery returns what?",
+    "question": "What can a scalar subquery return in MySQL?",
     "options": [
       {
         "key": "A",
-        "text": "One value (one row and one column)"
+        "text": "One column and at most one row"
       },
       {
         "key": "B",
@@ -2746,8 +2746,8 @@
       }
     ],
     "correctAnswer": "A",
-    "correctAnswerText": "One value (one row and one column)",
-    "explanation": "A scalar subquery produces one value.",
+    "correctAnswerText": "One column and at most one row",
+    "explanation": "A scalar subquery has one output column and at most one result row. Zero rows produce NULL in a scalar expression.",
     "topic": "MySQL Database Administration & DDL",
     "diagram": null
   },
@@ -3366,7 +3366,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q106",
     "pageNumber": 19,
-    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values?",
+    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -3398,7 +3398,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q107",
     "pageNumber": 19,
-    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values?",
+    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -3430,7 +3430,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q108",
     "pageNumber": 19,
-    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values?",
+    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -3462,7 +3462,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q109",
     "pageNumber": 19,
-    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values?",
+    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -3494,7 +3494,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q110",
     "pageNumber": 19,
-    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values?",
+    "question": "A parser extracts a substring using positive and negative slicing. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -3702,7 +3702,7 @@
       },
       {
         "key": "D",
-        "text": "5"
+        "text": "-5"
       }
     ],
     "correctAnswer": "B",
@@ -3734,7 +3734,7 @@
       },
       {
         "key": "D",
-        "text": "5"
+        "text": "-5"
       }
     ],
     "correctAnswer": "A",
@@ -3762,7 +3762,7 @@
       },
       {
         "key": "C",
-        "text": "5"
+        "text": "-5"
       },
       {
         "key": "D",
@@ -3798,7 +3798,7 @@
       },
       {
         "key": "D",
-        "text": "5"
+        "text": "-5"
       }
     ],
     "correctAnswer": "C",
@@ -3822,7 +3822,7 @@
       },
       {
         "key": "B",
-        "text": "5"
+        "text": "-5"
       },
       {
         "key": "C",
@@ -4182,14 +4182,14 @@
       },
       {
         "key": "D",
-        "text": "13"
+        "text": "15"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "13",
     "explanation": "continue skips the rest of the current iteration; range excludes its stop.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "total=0\nfor i in range(1,6):\nif i==2: continue\ntotal+=i\nprint(total)"
+    "diagram": "total=0\nfor i in range(1,6):\n    if i==2: continue\n    total+=i\nprint(total)"
   },
   {
     "id": "PROG-132",
@@ -4214,14 +4214,14 @@
       },
       {
         "key": "D",
-        "text": "18"
+        "text": "21"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "18",
     "explanation": "continue skips the rest of the current iteration; range excludes its stop.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "total=0\nfor i in range(1,7):\nif i==3: continue\ntotal+=i\nprint(total)"
+    "diagram": "total=0\nfor i in range(1,7):\n    if i==3: continue\n    total+=i\nprint(total)"
   },
   {
     "id": "PROG-133",
@@ -4238,7 +4238,7 @@
       },
       {
         "key": "B",
-        "text": "24"
+        "text": "28"
       },
       {
         "key": "C",
@@ -4253,7 +4253,7 @@
     "correctAnswerText": "24",
     "explanation": "continue skips the rest of the current iteration; range excludes its stop.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "total=0\nfor i in range(1,8):\nif i==4: continue\ntotal+=i\nprint(total)"
+    "diagram": "total=0\nfor i in range(1,8):\n    if i==4: continue\n    total+=i\nprint(total)"
   },
   {
     "id": "PROG-134",
@@ -4274,7 +4274,7 @@
       },
       {
         "key": "C",
-        "text": "31"
+        "text": "36"
       },
       {
         "key": "D",
@@ -4285,7 +4285,7 @@
     "correctAnswerText": "31",
     "explanation": "continue skips the rest of the current iteration; range excludes its stop.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "total=0\nfor i in range(1,9):\nif i==5: continue\ntotal+=i\nprint(total)"
+    "diagram": "total=0\nfor i in range(1,9):\n    if i==5: continue\n    total+=i\nprint(total)"
   },
   {
     "id": "PROG-135",
@@ -4306,7 +4306,7 @@
       },
       {
         "key": "C",
-        "text": "39"
+        "text": "45"
       },
       {
         "key": "D",
@@ -4317,7 +4317,7 @@
     "correctAnswerText": "39",
     "explanation": "continue skips the rest of the current iteration; range excludes its stop.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "total=0\nfor i in range(1,10):\nif i==6: continue\ntotal+=i\nprint(total)"
+    "diagram": "total=0\nfor i in range(1,10):\n    if i==6: continue\n    total+=i\nprint(total)"
   },
   {
     "id": "PROG-136",
@@ -4342,14 +4342,14 @@
       },
       {
         "key": "D",
-        "text": "6"
+        "text": "18"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "6",
     "explanation": "The inner loop executes three times for every outer iteration.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "n=2; c=0\nfor r in range(n):\nfor col in range(3): c+=1\nprint(c)"
+    "diagram": "n=2; c=0\nfor r in range(n):\n    for col in range(3): c+=1\nprint(c)"
   },
   {
     "id": "PROG-137",
@@ -4366,7 +4366,7 @@
       },
       {
         "key": "B",
-        "text": "9"
+        "text": "27"
       },
       {
         "key": "C",
@@ -4381,7 +4381,7 @@
     "correctAnswerText": "9",
     "explanation": "The inner loop executes three times for every outer iteration.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "n=3; c=0\nfor r in range(n):\nfor col in range(3): c+=1\nprint(c)"
+    "diagram": "n=3; c=0\nfor r in range(n):\n    for col in range(3): c+=1\nprint(c)"
   },
   {
     "id": "PROG-138",
@@ -4402,7 +4402,7 @@
       },
       {
         "key": "C",
-        "text": "12"
+        "text": "36"
       },
       {
         "key": "D",
@@ -4413,7 +4413,7 @@
     "correctAnswerText": "12",
     "explanation": "The inner loop executes three times for every outer iteration.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "n=4; c=0\nfor r in range(n):\nfor col in range(3): c+=1\nprint(c)"
+    "diagram": "n=4; c=0\nfor r in range(n):\n    for col in range(3): c+=1\nprint(c)"
   },
   {
     "id": "PROG-139",
@@ -4430,7 +4430,7 @@
       },
       {
         "key": "B",
-        "text": "15"
+        "text": "45"
       },
       {
         "key": "C",
@@ -4445,7 +4445,7 @@
     "correctAnswerText": "15",
     "explanation": "The inner loop executes three times for every outer iteration.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "n=5; c=0\nfor r in range(n):\nfor col in range(3): c+=1\nprint(c)"
+    "diagram": "n=5; c=0\nfor r in range(n):\n    for col in range(3): c+=1\nprint(c)"
   },
   {
     "id": "PROG-140",
@@ -4470,14 +4470,14 @@
       },
       {
         "key": "D",
-        "text": "18"
+        "text": "54"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "18",
     "explanation": "The inner loop executes three times for every outer iteration.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "n=6; c=0\nfor r in range(n):\nfor col in range(3): c+=1\nprint(c)"
+    "diagram": "n=6; c=0\nfor r in range(n):\n    for col in range(3): c+=1\nprint(c)"
   },
   {
     "id": "PROG-141",
@@ -4662,7 +4662,7 @@
       },
       {
         "key": "D",
-        "text": "9"
+        "text": "3"
       }
     ],
     "correctAnswer": "B",
@@ -4694,7 +4694,7 @@
       },
       {
         "key": "D",
-        "text": "12"
+        "text": "3"
       }
     ],
     "correctAnswer": "B",
@@ -4722,7 +4722,7 @@
       },
       {
         "key": "C",
-        "text": "15"
+        "text": "3"
       },
       {
         "key": "D",
@@ -4754,7 +4754,7 @@
       },
       {
         "key": "C",
-        "text": "18"
+        "text": "3"
       },
       {
         "key": "D",
@@ -4790,7 +4790,7 @@
       },
       {
         "key": "D",
-        "text": "21"
+        "text": "3"
       }
     ],
     "correctAnswer": "A",
@@ -5302,7 +5302,7 @@
       },
       {
         "key": "D",
-        "text": "['20']"
+        "text": "20"
       }
     ],
     "correctAnswer": "B",
@@ -5330,7 +5330,7 @@
       },
       {
         "key": "C",
-        "text": "['21']"
+        "text": "21"
       },
       {
         "key": "D",
@@ -5366,7 +5366,7 @@
       },
       {
         "key": "D",
-        "text": "['22']"
+        "text": "22"
       }
     ],
     "correctAnswer": "C",
@@ -5398,7 +5398,7 @@
       },
       {
         "key": "D",
-        "text": "['23']"
+        "text": "23"
       }
     ],
     "correctAnswer": "B",
@@ -5426,7 +5426,7 @@
       },
       {
         "key": "C",
-        "text": "['24']"
+        "text": "24"
       },
       {
         "key": "D",
@@ -5462,7 +5462,7 @@
       },
       {
         "key": "D",
-        "text": "200"
+        "text": "1"
       }
     ],
     "correctAnswer": "C",
@@ -5494,7 +5494,7 @@
       },
       {
         "key": "D",
-        "text": "201"
+        "text": "1"
       }
     ],
     "correctAnswer": "A",
@@ -5526,7 +5526,7 @@
       },
       {
         "key": "D",
-        "text": "202"
+        "text": "1"
       }
     ],
     "correctAnswer": "A",
@@ -5554,7 +5554,7 @@
       },
       {
         "key": "C",
-        "text": "203"
+        "text": "1"
       },
       {
         "key": "D",
@@ -5590,7 +5590,7 @@
       },
       {
         "key": "D",
-        "text": "204"
+        "text": "1"
       }
     ],
     "correctAnswer": "B",
@@ -5622,14 +5622,14 @@
       },
       {
         "key": "D",
-        "text": "12"
+        "text": "10"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "12",
     "explanation": "An inner function can read a variable from its enclosing function scope.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def outer():\nx=10\ndef inner(): return x+2\nreturn inner()\nprint(outer())"
+    "diagram": "def outer():\n    x=10\n    def inner(): return x+2\n    return inner()\nprint(outer())"
   },
   {
     "id": "PROG-177",
@@ -5650,7 +5650,7 @@
       },
       {
         "key": "C",
-        "text": "13"
+        "text": "11"
       },
       {
         "key": "D",
@@ -5661,7 +5661,7 @@
     "correctAnswerText": "13",
     "explanation": "An inner function can read a variable from its enclosing function scope.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def outer():\nx=11\ndef inner(): return x+2\nreturn inner()\nprint(outer())"
+    "diagram": "def outer():\n    x=11\n    def inner(): return x+2\n    return inner()\nprint(outer())"
   },
   {
     "id": "PROG-178",
@@ -5682,7 +5682,7 @@
       },
       {
         "key": "C",
-        "text": "14"
+        "text": "12"
       },
       {
         "key": "D",
@@ -5693,7 +5693,7 @@
     "correctAnswerText": "14",
     "explanation": "An inner function can read a variable from its enclosing function scope.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def outer():\nx=12\ndef inner(): return x+2\nreturn inner()\nprint(outer())"
+    "diagram": "def outer():\n    x=12\n    def inner(): return x+2\n    return inner()\nprint(outer())"
   },
   {
     "id": "PROG-179",
@@ -5718,14 +5718,14 @@
       },
       {
         "key": "D",
-        "text": "15"
+        "text": "13"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "15",
     "explanation": "An inner function can read a variable from its enclosing function scope.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def outer():\nx=13\ndef inner(): return x+2\nreturn inner()\nprint(outer())"
+    "diagram": "def outer():\n    x=13\n    def inner(): return x+2\n    return inner()\nprint(outer())"
   },
   {
     "id": "PROG-180",
@@ -5750,14 +5750,14 @@
       },
       {
         "key": "D",
-        "text": "16"
+        "text": "14"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "16",
     "explanation": "An inner function can read a variable from its enclosing function scope.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def outer():\nx=14\ndef inner(): return x+2\nreturn inner()\nprint(outer())"
+    "diagram": "def outer():\n    x=14\n    def inner(): return x+2\n    return inner()\nprint(outer())"
   },
   {
     "id": "PROG-181",
@@ -5778,7 +5778,7 @@
       },
       {
         "key": "C",
-        "text": "6"
+        "text": "2"
       },
       {
         "key": "D",
@@ -5789,7 +5789,7 @@
     "correctAnswerText": "6",
     "explanation": "The base case returns 1; recursive calls multiply down to the base case.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def f(n):\nif n<=1:return 1\nreturn n*f(n-1)\nprint(f(3))"
+    "diagram": "def f(n):\n    if n<=1:return 1\n    return n*f(n-1)\nprint(f(3))"
   },
   {
     "id": "PROG-182",
@@ -5806,7 +5806,7 @@
       },
       {
         "key": "B",
-        "text": "24"
+        "text": "6"
       },
       {
         "key": "C",
@@ -5821,7 +5821,7 @@
     "correctAnswerText": "24",
     "explanation": "The base case returns 1; recursive calls multiply down to the base case.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def f(n):\nif n<=1:return 1\nreturn n*f(n-1)\nprint(f(4))"
+    "diagram": "def f(n):\n    if n<=1:return 1\n    return n*f(n-1)\nprint(f(4))"
   },
   {
     "id": "PROG-183",
@@ -5846,14 +5846,14 @@
       },
       {
         "key": "D",
-        "text": "120"
+        "text": "24"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "120",
     "explanation": "The base case returns 1; recursive calls multiply down to the base case.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def f(n):\nif n<=1:return 1\nreturn n*f(n-1)\nprint(f(5))"
+    "diagram": "def f(n):\n    if n<=1:return 1\n    return n*f(n-1)\nprint(f(5))"
   },
   {
     "id": "PROG-184",
@@ -5878,14 +5878,14 @@
       },
       {
         "key": "D",
-        "text": "720"
+        "text": "120"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "720",
     "explanation": "The base case returns 1; recursive calls multiply down to the base case.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def f(n):\nif n<=1:return 1\nreturn n*f(n-1)\nprint(f(6))"
+    "diagram": "def f(n):\n    if n<=1:return 1\n    return n*f(n-1)\nprint(f(6))"
   },
   {
     "id": "PROG-185",
@@ -5910,14 +5910,14 @@
       },
       {
         "key": "D",
-        "text": "5040"
+        "text": "720"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "5040",
     "explanation": "The base case returns 1; recursive calls multiply down to the base case.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def f(n):\nif n<=1:return 1\nreturn n*f(n-1)\nprint(f(7))"
+    "diagram": "def f(n):\n    if n<=1:return 1\n    return n*f(n-1)\nprint(f(7))"
   },
   {
     "id": "PROG-186",
@@ -5926,7 +5926,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q186",
     "pageNumber": 34,
-    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values?",
+    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -5958,7 +5958,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q187",
     "pageNumber": 34,
-    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values?",
+    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -5990,7 +5990,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q188",
     "pageNumber": 34,
-    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values?",
+    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6022,7 +6022,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q189",
     "pageNumber": 34,
-    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values?",
+    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6054,7 +6054,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q190",
     "pageNumber": 35,
-    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values?",
+    "question": "An exception handler catches an invalid list index. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6109,7 +6109,7 @@
     "correctAnswerText": "1 [2, 3]",
     "explanation": "next consumes the first value; list then consumes the remaining generator values.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def g():\nfor i in range(3): yield i+1\nit=g()\nprint(next(it), list(it))"
+    "diagram": "def g():\n    for i in range(3): yield i+1\nit=g()\nprint(next(it), list(it))"
   },
   {
     "id": "PROG-192",
@@ -6141,7 +6141,7 @@
     "correctAnswerText": "1 [2, 3, 4]",
     "explanation": "next consumes the first value; list then consumes the remaining generator values.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def g():\nfor i in range(4): yield i+1\nit=g()\nprint(next(it), list(it))"
+    "diagram": "def g():\n    for i in range(4): yield i+1\nit=g()\nprint(next(it), list(it))"
   },
   {
     "id": "PROG-193",
@@ -6173,7 +6173,7 @@
     "correctAnswerText": "1 [2, 3, 4, 5]",
     "explanation": "next consumes the first value; list then consumes the remaining generator values.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def g():\nfor i in range(5): yield i+1\nit=g()\nprint(next(it), list(it))"
+    "diagram": "def g():\n    for i in range(5): yield i+1\nit=g()\nprint(next(it), list(it))"
   },
   {
     "id": "PROG-194",
@@ -6205,7 +6205,7 @@
     "correctAnswerText": "1 [2, 3, 4, 5, 6]",
     "explanation": "next consumes the first value; list then consumes the remaining generator values.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def g():\nfor i in range(6): yield i+1\nit=g()\nprint(next(it), list(it))"
+    "diagram": "def g():\n    for i in range(6): yield i+1\nit=g()\nprint(next(it), list(it))"
   },
   {
     "id": "PROG-195",
@@ -6237,7 +6237,7 @@
     "correctAnswerText": "1 [2, 3, 4, 5, 6, 7]",
     "explanation": "next consumes the first value; list then consumes the remaining generator values.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def g():\nfor i in range(7): yield i+1\nit=g()\nprint(next(it), list(it))"
+    "diagram": "def g():\n    for i in range(7): yield i+1\nit=g()\nprint(next(it), list(it))"
   },
   {
     "id": "PROG-196",
@@ -6246,7 +6246,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q196",
     "pageNumber": 36,
-    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values?",
+    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6278,7 +6278,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q197",
     "pageNumber": 36,
-    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values?",
+    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6310,7 +6310,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q198",
     "pageNumber": 36,
-    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values?",
+    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6342,7 +6342,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q199",
     "pageNumber": 36,
-    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values?",
+    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6374,7 +6374,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q200",
     "pageNumber": 36,
-    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values?",
+    "question": "enumerate supplies an index starting at a chosen number. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -6902,7 +6902,7 @@
       },
       {
         "key": "D",
-        "text": "host0|linux|active"
+        "text": "host0,linux,active"
       }
     ],
     "correctAnswer": "B",
@@ -6934,7 +6934,7 @@
       },
       {
         "key": "D",
-        "text": "host1|linux|active"
+        "text": "host1,linux,active"
       }
     ],
     "correctAnswer": "A",
@@ -6958,7 +6958,7 @@
       },
       {
         "key": "B",
-        "text": "host2|linux|active"
+        "text": "host2,linux,active"
       },
       {
         "key": "C",
@@ -6994,7 +6994,7 @@
       },
       {
         "key": "C",
-        "text": "host3|linux|active"
+        "text": "host3,linux,active"
       },
       {
         "key": "D",
@@ -7026,7 +7026,7 @@
       },
       {
         "key": "C",
-        "text": "host4|linux|active"
+        "text": "host4,linux,active"
       },
       {
         "key": "D",
@@ -7062,14 +7062,14 @@
       },
       {
         "key": "D",
-        "text": "9"
+        "text": "5"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "9",
     "explanation": "self refers to the current instance; the method updates that object's attribute.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class C:\ndef __init__(self,n): self.n=n\ndef add(self,x): self.n+=x\nc=C(5); c.add(4); print(c.n)"
+    "diagram": "class C:\n    def __init__(self,n): self.n=n\n    def add(self,x): self.n+=x\nc=C(5); c.add(4); print(c.n)"
   },
   {
     "id": "PROG-222",
@@ -7090,7 +7090,7 @@
       },
       {
         "key": "C",
-        "text": "10"
+        "text": "6"
       },
       {
         "key": "D",
@@ -7101,7 +7101,7 @@
     "correctAnswerText": "10",
     "explanation": "self refers to the current instance; the method updates that object's attribute.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class C:\ndef __init__(self,n): self.n=n\ndef add(self,x): self.n+=x\nc=C(6); c.add(4); print(c.n)"
+    "diagram": "class C:\n    def __init__(self,n): self.n=n\n    def add(self,x): self.n+=x\nc=C(6); c.add(4); print(c.n)"
   },
   {
     "id": "PROG-223",
@@ -7126,14 +7126,14 @@
       },
       {
         "key": "D",
-        "text": "11"
+        "text": "7"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "11",
     "explanation": "self refers to the current instance; the method updates that object's attribute.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class C:\ndef __init__(self,n): self.n=n\ndef add(self,x): self.n+=x\nc=C(7); c.add(4); print(c.n)"
+    "diagram": "class C:\n    def __init__(self,n): self.n=n\n    def add(self,x): self.n+=x\nc=C(7); c.add(4); print(c.n)"
   },
   {
     "id": "PROG-224",
@@ -7154,7 +7154,7 @@
       },
       {
         "key": "C",
-        "text": "12"
+        "text": "8"
       },
       {
         "key": "D",
@@ -7165,7 +7165,7 @@
     "correctAnswerText": "12",
     "explanation": "self refers to the current instance; the method updates that object's attribute.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class C:\ndef __init__(self,n): self.n=n\ndef add(self,x): self.n+=x\nc=C(8); c.add(4); print(c.n)"
+    "diagram": "class C:\n    def __init__(self,n): self.n=n\n    def add(self,x): self.n+=x\nc=C(8); c.add(4); print(c.n)"
   },
   {
     "id": "PROG-225",
@@ -7190,14 +7190,14 @@
       },
       {
         "key": "D",
-        "text": "13"
+        "text": "9"
       }
     ],
     "correctAnswer": "C",
     "correctAnswerText": "13",
     "explanation": "self refers to the current instance; the method updates that object's attribute.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class C:\ndef __init__(self,n): self.n=n\ndef add(self,x): self.n+=x\nc=C(9); c.add(4); print(c.n)"
+    "diagram": "class C:\n    def __init__(self,n): self.n=n\n    def add(self,x): self.n+=x\nc=C(9); c.add(4); print(c.n)"
   },
   {
     "id": "PROG-226",
@@ -7214,7 +7214,7 @@
       },
       {
         "key": "B",
-        "text": "child0"
+        "text": "parent"
       },
       {
         "key": "C",
@@ -7229,7 +7229,7 @@
     "correctAnswerText": "child0",
     "explanation": "The subclass implementation overrides the inherited method.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class A:\ndef tag(self): return 'parent'\nclass B(A):\ndef tag(self): return 'child0'\nprint(B().tag())"
+    "diagram": "class A:\n    def tag(self): return 'parent'\nclass B(A):\n    def tag(self): return 'child0'\nprint(B().tag())"
   },
   {
     "id": "PROG-227",
@@ -7254,14 +7254,14 @@
       },
       {
         "key": "D",
-        "text": "child1"
+        "text": "parent"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "child1",
     "explanation": "The subclass implementation overrides the inherited method.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class A:\ndef tag(self): return 'parent'\nclass B(A):\ndef tag(self): return 'child1'\nprint(B().tag())"
+    "diagram": "class A:\n    def tag(self): return 'parent'\nclass B(A):\n    def tag(self): return 'child1'\nprint(B().tag())"
   },
   {
     "id": "PROG-228",
@@ -7286,14 +7286,14 @@
       },
       {
         "key": "D",
-        "text": "child2"
+        "text": "parent"
       }
     ],
     "correctAnswer": "A",
     "correctAnswerText": "child2",
     "explanation": "The subclass implementation overrides the inherited method.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class A:\ndef tag(self): return 'parent'\nclass B(A):\ndef tag(self): return 'child2'\nprint(B().tag())"
+    "diagram": "class A:\n    def tag(self): return 'parent'\nclass B(A):\n    def tag(self): return 'child2'\nprint(B().tag())"
   },
   {
     "id": "PROG-229",
@@ -7318,14 +7318,14 @@
       },
       {
         "key": "D",
-        "text": "child3"
+        "text": "parent"
       }
     ],
     "correctAnswer": "B",
     "correctAnswerText": "child3",
     "explanation": "The subclass implementation overrides the inherited method.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class A:\ndef tag(self): return 'parent'\nclass B(A):\ndef tag(self): return 'child3'\nprint(B().tag())"
+    "diagram": "class A:\n    def tag(self): return 'parent'\nclass B(A):\n    def tag(self): return 'child3'\nprint(B().tag())"
   },
   {
     "id": "PROG-230",
@@ -7342,7 +7342,7 @@
       },
       {
         "key": "B",
-        "text": "child4"
+        "text": "parent"
       },
       {
         "key": "C",
@@ -7357,7 +7357,7 @@
     "correctAnswerText": "child4",
     "explanation": "The subclass implementation overrides the inherited method.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "class A:\ndef tag(self): return 'parent'\nclass B(A):\ndef tag(self): return 'child4'\nprint(B().tag())"
+    "diagram": "class A:\n    def tag(self): return 'parent'\nclass B(A):\n    def tag(self): return 'child4'\nprint(B().tag())"
   },
   {
     "id": "PROG-231",
@@ -7526,7 +7526,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q236",
     "pageNumber": 43,
-    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values?",
+    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7558,7 +7558,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q237",
     "pageNumber": 43,
-    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values?",
+    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7590,7 +7590,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q238",
     "pageNumber": 43,
-    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values?",
+    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7622,7 +7622,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q239",
     "pageNumber": 44,
-    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values?",
+    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7654,7 +7654,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q240",
     "pageNumber": 44,
-    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values?",
+    "question": "A function uses short-circuit Boolean evaluation. What is the exact output for the given input/values? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7686,7 +7686,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q241",
     "pageNumber": 44,
-    "question": "String methods normalize case and replace a lowercase character. What is the exact output?",
+    "question": "String methods normalize case and replace a lowercase character. What is the exact output? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7718,7 +7718,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q242",
     "pageNumber": 44,
-    "question": "String methods normalize case and replace a lowercase character. What is the exact output?",
+    "question": "String methods normalize case and replace a lowercase character. What is the exact output? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7750,7 +7750,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q243",
     "pageNumber": 44,
-    "question": "String methods normalize case and replace a lowercase character. What is the exact output?",
+    "question": "String methods normalize case and replace a lowercase character. What is the exact output? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7782,7 +7782,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q244",
     "pageNumber": 45,
-    "question": "String methods normalize case and replace a lowercase character. What is the exact output?",
+    "question": "String methods normalize case and replace a lowercase character. What is the exact output? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7814,7 +7814,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q245",
     "pageNumber": 45,
-    "question": "String methods normalize case and replace a lowercase character. What is the exact output?",
+    "question": "String methods normalize case and replace a lowercase character. What is the exact output? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7846,7 +7846,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q246",
     "pageNumber": 45,
-    "question": "A script uses short-circuit evaluation with or. What is printed?",
+    "question": "A script uses short-circuit evaluation with or. What is printed? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7869,7 +7869,7 @@
     "correctAnswerText": "PROBE 9",
     "explanation": "or evaluates the right operand only when the left operand is falsey.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def probe():\nprint('PROBE')\nreturn 9\nx=0\nprint(x or probe())"
+    "diagram": "def probe():\n    print('PROBE')\n    return 9\nx=0\nprint(x or probe())"
   },
   {
     "id": "PROG-247",
@@ -7878,7 +7878,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q247",
     "pageNumber": 45,
-    "question": "A script uses short-circuit evaluation with or. What is printed?",
+    "question": "A script uses short-circuit evaluation with or. What is printed? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7901,7 +7901,7 @@
     "correctAnswerText": "1",
     "explanation": "or evaluates the right operand only when the left operand is falsey.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def probe():\nprint('PROBE')\nreturn 9\nx=1\nprint(x or probe())"
+    "diagram": "def probe():\n    print('PROBE')\n    return 9\nx=1\nprint(x or probe())"
   },
   {
     "id": "PROG-248",
@@ -7910,7 +7910,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q248",
     "pageNumber": 46,
-    "question": "A script uses short-circuit evaluation with or. What is printed?",
+    "question": "A script uses short-circuit evaluation with or. What is printed? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7933,7 +7933,7 @@
     "correctAnswerText": "2",
     "explanation": "or evaluates the right operand only when the left operand is falsey.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def probe():\nprint('PROBE')\nreturn 9\nx=2\nprint(x or probe())"
+    "diagram": "def probe():\n    print('PROBE')\n    return 9\nx=2\nprint(x or probe())"
   },
   {
     "id": "PROG-249",
@@ -7942,7 +7942,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q249",
     "pageNumber": 46,
-    "question": "A script uses short-circuit evaluation with or. What is printed?",
+    "question": "A script uses short-circuit evaluation with or. What is printed? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7965,7 +7965,7 @@
     "correctAnswerText": "3",
     "explanation": "or evaluates the right operand only when the left operand is falsey.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def probe():\nprint('PROBE')\nreturn 9\nx=3\nprint(x or probe())"
+    "diagram": "def probe():\n    print('PROBE')\n    return 9\nx=3\nprint(x or probe())"
   },
   {
     "id": "PROG-250",
@@ -7974,7 +7974,7 @@
     "sourceSection": "PYTHON — CODE-BASED",
     "sourceQuestionNumber": "Q250",
     "pageNumber": 46,
-    "question": "A script uses short-circuit evaluation with or. What is printed?",
+    "question": "A script uses short-circuit evaluation with or. What is printed? Separate output lines are shown with spaces between them.",
     "options": [
       {
         "key": "A",
@@ -7997,7 +7997,7 @@
     "correctAnswerText": "4",
     "explanation": "or evaluates the right operand only when the left operand is falsey.",
     "topic": "Python Code Tracing & Output",
-    "diagram": "def probe():\nprint('PROBE')\nreturn 9\nx=4\nprint(x or probe())"
+    "diagram": "def probe():\n    print('PROBE')\n    return 9\nx=4\nprint(x or probe())"
   },
   {
     "id": "PROG-251",
@@ -8006,7 +8006,7 @@
     "sourceSection": "PYTHON — THEORY",
     "sourceQuestionNumber": "Q251",
     "pageNumber": 47,
-    "question": "During a lab, a trainee needs to isolate project dependencies between two lab machines. Which option is the best technical choice?",
+    "question": "During a lab, a trainee needs to isolate Python project dependencies from the system Python packages on each lab machine. Which option is the best technical choice?",
     "options": [
       {
         "key": "A",
@@ -8038,7 +8038,7 @@
     "sourceSection": "PYTHON — THEORY",
     "sourceQuestionNumber": "Q252",
     "pageNumber": 47,
-    "question": "A support team is designing a Python utility to isolate project dependencies between two lab machines. What should it use?",
+    "question": "A support team is designing a Python utility to isolate Python project dependencies from the system Python packages on each lab machine. What should it use?",
     "options": [
       {
         "key": "A",
@@ -8070,7 +8070,7 @@
     "sourceSection": "PYTHON — THEORY",
     "sourceQuestionNumber": "Q253",
     "pageNumber": 47,
-    "question": "A CMCE scenario describes a script that must isolate project dependencies between two lab machines. Select the most appropriate answer.",
+    "question": "A CMCE scenario describes a script that must isolate Python project dependencies from the system Python packages on each lab machine. Select the most appropriate answer.",
     "options": [
       {
         "key": "A",
@@ -8102,7 +8102,7 @@
     "sourceSection": "PYTHON — THEORY",
     "sourceQuestionNumber": "Q254",
     "pageNumber": 47,
-    "question": "While reviewing an automation workflow, you must decide how to isolate project dependencies between two lab machines. Which choice is correct?",
+    "question": "While reviewing an automation workflow, you must decide how to isolate Python project dependencies from the system Python packages on each lab machine. Which choice is correct?",
     "options": [
       {
         "key": "A",
@@ -8134,7 +8134,7 @@
     "sourceSection": "PYTHON — THEORY",
     "sourceQuestionNumber": "Q255",
     "pageNumber": 47,
-    "question": "A developer is asked to isolate project dependencies between two lab machines without adding unrelated complexity. Which option fits?",
+    "question": "A developer is asked to isolate Python project dependencies from the system Python packages on each lab machine without adding unrelated complexity. Which option fits?",
     "options": [
       {
         "key": "A",
@@ -12795,7 +12795,7 @@
     ],
     "correctAnswer": "A",
     "correctAnswerText": "Use input validation, logging, bounded retries and cleanup",
-    "explanation": "Reliable automation is observable, bounded and safe to rerun. References and validation notes Primary course source: Uploaded ACTS, Pune — Suggested Teaching Guideline for Advanced Programming Concepts, PGCP-ITISS August 2026 (4 pages). Python Tutorial: https://docs.python.org/3/tutorial/ Python Regular Expression HOWTO: https://docs.python.org/3/howto/regex.html Python pathlib documentation: https://docs.python.org/3/library/pathlib.html MySQL 8.4 SELECT reference: https://dev.mysql.com/doc/refman/8.4/en/select.html MySQL subqueries: https://dev.mysql.com/doc/refman/8.4/en/subqueries.html W3Schools SQL exercises: https://www.w3schools.com/sql/sql_exercises.asp W3Schools MySQL exercises: https://www.w3schools.com/mysql/mysql_exercises.asp W3Schools Python tutorial: https://www.w3schools.com/python/ GeeksforGeeks Python MCQs and output questions: https://www.geeksforgeeks.org/python/python-multiple-choice-questions/ GeeksforGeeks Python dictionary output practice: https://www.geeksforgeeks.org/python/output-python-program-set-14-dictionary/ GeeksforGeeks SQL query examples: https://www.geeksforgeeks.org/sql/sql-query-interview-questions/ Question design: Online references were used to check topic coverage, syntax and standard behaviour, and to review exercise-oriented question styles. Questions are newly authored rather than copied. All 150 Python code snippets were executed in the generation environment and their printed outputs matched the marked answers. The SQL questions were checked against MySQL 8.x clause order and documented query behaviour. Some theory concepts are tested through different applied scenarios for revision.",
+    "explanation": "Reliable automation is observable, bounded and safe to rerun.",
     "topic": "Python Architecture & Standard Library",
     "diagram": null
   }
