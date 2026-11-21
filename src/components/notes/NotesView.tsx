@@ -6,8 +6,7 @@ import { ModuleSelector } from '../common/ModuleSelector';
 import { BookOpenText, Info, Layers, Search, Sparkles } from 'lucide-react';
 
 /**
- * Short, exam-focused study notes per module, split into groups (e.g. Linux and
- * Windows) and topics. Text only — no PDF download.
+ * Module study notes organised into session guides and topic references.
  */
 export const NotesView: React.FC = () => {
   const { activeModuleId } = useProgress();
@@ -35,6 +34,10 @@ export const NotesView: React.FC = () => {
     const topics = activeGroup?.topics || [];
     const term = query.trim().toLowerCase();
     if (!term) return topics;
+    const sessionNumber = /^sessions?\s+(\d+)$/.exec(term);
+    if (sessionNumber && topics.some(topic => topic.sessionNumbers)) {
+      return topics.filter(topic => topic.sessionNumbers?.includes(Number(sessionNumber[1])));
+    }
     return topics.filter(
       topic =>
         topic.name.toLowerCase().includes(term) ||
@@ -42,12 +45,14 @@ export const NotesView: React.FC = () => {
         topic.sections.some(
           section =>
             section.title.toLowerCase().includes(term) ||
-            section.points.some(point => point.toLowerCase().includes(term)),
+            section.points.some(point => point.toLowerCase().includes(term)) ||
+            section.example?.toLowerCase().includes(term),
         ),
     );
   }, [activeGroup, query]);
 
-  const currentTopic = activeGroup?.topics.find(topic => topic.name === selectedTopic) || filteredTopics[0] || null;
+  const currentTopic = filteredTopics.find(topic => topic.name === selectedTopic) || filteredTopics[0] || null;
+  const guideSelected = moduleId === 'fcn' && activeGroup === groups[0];
 
   const handleModuleChange = (nextModuleId: string) => setModuleId(nextModuleId);
 
@@ -67,7 +72,7 @@ export const NotesView: React.FC = () => {
             STUDY NOTES
           </span>
           <span className="text-xs text-[#8C98A6] font-mono">
-            {moduleTopicCount} topics · detailed, exam-focused points
+            {guideSelected ? 'Sessions 1–20' : `${activeGroup?.topics.length || 0} topics`}
           </span>
         </div>
         <h1 className="text-2xl font-extrabold text-white flex items-center gap-2">
@@ -76,8 +81,7 @@ export const NotesView: React.FC = () => {
         </h1>
         <p className="text-xs text-[#9CA3AF] max-w-3xl">
           {module ? `${module.name} · ` : ''}
-          Important points only, written in simple English and organised by topic. Module 2 notes are split into
-          separate Linux and Windows sections.
+          {activeGroup?.description}
         </p>
 
         <div className="flex flex-col gap-3 lg:flex-row lg:items-center lg:justify-between">
@@ -97,6 +101,7 @@ export const NotesView: React.FC = () => {
                     key={group.name}
                     type="button"
                     onClick={() => handleGroupChange(group.name)}
+                    aria-pressed={activeGroup?.name === group.name}
                     className={`rounded-lg px-3 py-1.5 text-[11px] font-semibold transition-all ${
                       activeGroup?.name === group.name
                         ? 'border border-[#76B900]/40 bg-[#1D2733] text-[#76B900]'
@@ -115,7 +120,8 @@ export const NotesView: React.FC = () => {
             <input
               value={query}
               onChange={event => setQuery(event.target.value)}
-              placeholder="Search notes (topic, keyword…)"
+              aria-label="Search study notes"
+              placeholder="Search study notes"
               className="w-full rounded-lg border border-[#243240] bg-[#0C1014] py-2 pl-9 pr-3 text-xs text-white placeholder:text-[#556372] outline-none focus:border-[#76B900]"
             />
           </div>
@@ -135,10 +141,10 @@ export const NotesView: React.FC = () => {
                 <Layers className="h-3 w-3" />
                 {activeGroup?.name || 'Topics'}
                 <span className="ml-auto normal-case tracking-normal text-[#556372]">
-                  {query ? `${filteredTopics.length} matches` : `${activeGroup?.topics.length || 0} topics`}
+                  {query && `${filteredTopics.length} matches`}
                 </span>
               </div>
-              <ul className="space-y-1">
+              <ul className="space-y-1 lg:max-h-[calc(100vh-8rem)] lg:overflow-y-auto">
                 {filteredTopics.map(topic => {
                   const active = currentTopic?.name === topic.name;
                   return (
@@ -146,14 +152,15 @@ export const NotesView: React.FC = () => {
                       <button
                         type="button"
                         onClick={() => setSelectedTopic(topic.name)}
+                        aria-current={active ? 'true' : undefined}
                         className={`w-full rounded-lg px-3 py-2 text-left text-xs transition-colors ${
                           active
                             ? 'border border-[#76B900]/40 bg-[#1B2733] text-white'
                             : 'border border-transparent text-[#9CA3AF] hover:bg-[#141C24] hover:text-white'
                         }`}
                       >
-                        <span className="flex items-center justify-between gap-2">
-                          <span className="truncate">{topic.name}</span>
+                        <span className="flex items-start justify-between gap-2">
+                          <span>{topic.name}</span>
                           <span className="shrink-0 font-mono text-[10px] text-[#718092]">
                             {countNotePoints(topic)}
                           </span>
@@ -167,7 +174,7 @@ export const NotesView: React.FC = () => {
           </aside>
 
           {/* Topic content */}
-          <section className="lg:col-span-8 xl:col-span-9 space-y-4">
+          <section className="min-w-0 lg:col-span-8 xl:col-span-9 space-y-4">
             {currentTopic ? (
               <>
                 <div className="rounded-xl border border-[#232F3B] bg-[#141C24] p-5">
@@ -186,22 +193,29 @@ export const NotesView: React.FC = () => {
                     </h3>
                     <ul className="mt-3 space-y-2">
                       {section.points.map(point => (
-                        <li key={point} className="flex gap-2 text-xs leading-relaxed text-[#C4CDD6]">
+                        <li key={point} className="flex gap-2 text-sm leading-relaxed text-[#C4CDD6]">
                           <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-[#76B900]" />
-                          <span>{point}</span>
+                          <span className="min-w-0 break-words">{point}</span>
                         </li>
                       ))}
                     </ul>
+                    {section.example && (
+                      <pre className="mt-4 max-w-full overflow-x-auto rounded-lg border border-[#243240] bg-[#0C1014] p-3 text-xs leading-relaxed text-[#DCE6EF]">
+                        <code>{section.example}</code>
+                      </pre>
+                    )}
                   </div>
                 ))}
 
-                <div className="flex items-start gap-2 rounded-lg border border-[#232F3B] bg-[#0C1014] px-3 py-2.5 text-[11px] text-[#718092]">
-                  <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#76B900]" />
-                  <span>
-                    Tip: after reading this topic, open <strong className="text-[#C4CDD6]">Practice MCQs</strong> and pick the
-                    same module and topic for a focused test.
-                  </span>
-                </div>
+                {!guideSelected && (
+                  <div className="flex items-start gap-2 rounded-lg border border-[#232F3B] bg-[#0C1014] px-3 py-2.5 text-[11px] text-[#718092]">
+                    <Info className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#76B900]" />
+                    <span>
+                      Tip: after reading this topic, open <strong className="text-[#C4CDD6]">Practice MCQs</strong> and pick the
+                      same module and topic for a focused test.
+                    </span>
+                  </div>
+                )}
               </>
             ) : (
               <div className="rounded-xl border border-[#232F3B] bg-[#141C24] p-8 text-center text-xs text-[#8C98A6]">

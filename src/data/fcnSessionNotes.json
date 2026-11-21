@@ -1,0 +1,520 @@
+[
+  {
+    "name": "Sessions 1–2 · Internetworking, OSI, Ethernet and Wi-Fi",
+    "summary": "Build a mental model of how a message moves from an application to a local frame and across multiple networks. Compare physical media and identify where each device acts.",
+    "sections": [
+      {
+        "title": "Internetworking and the packet journey",
+        "points": [
+          "A LAN connects devices in a local area. A switch connects hosts within a Layer 2 network. A router connects different IP networks and chooses a next hop for each destination. A default gateway is the router a host uses when it has no more specific route.",
+          "A host uses its subnet mask to decide whether an IPv4 destination is local. For a local destination, ARP resolves the destination’s MAC address. For a remote destination, ARP resolves the gateway’s MAC address. The packet still carries the final destination IP address.",
+          "As a packet crosses a router, the link-layer header is replaced for the next link. The IP TTL decreases. TCP or UDP ports usually stay end to end except when a device such as NAT explicitly translates them."
+        ]
+      },
+      {
+        "title": "OSI model and encapsulation",
+        "points": [
+          "Layers 7, 6 and 5 are Application, Presentation and Session. Think of network services, data representation, and dialogue management. HTTP and DNS are application protocols. Encoding, compression and encryption can be discussed as presentation functions, although real protocols do not always fit a single OSI layer.",
+          "Layers 4 and 3 are Transport and Network. TCP and UDP use ports to identify applications. IP adds logical addresses and enables forwarding across networks. The usual units are a TCP segment or UDP datagram, then an IP packet.",
+          "Layers 2 and 1 are Data Link and Physical. Ethernet uses MAC addresses and frames. The physical layer sends bits as electrical, optical or radio signals. A switch reads frames, while a repeater repeats signals.",
+          "Encapsulation adds the transport header, IP header, then link-layer header and trailer. The receiver interprets them in reverse order. A router removes the incoming link header to inspect the IP packet and then encapsulates it for the outgoing link."
+        ]
+      },
+      {
+        "title": "Ethernet and wireless networking",
+        "points": [
+          "An Ethernet frame carries destination and source MAC addresses, a type or length field, payload, and a frame check sequence (FCS). The standard untagged maximum is 1,518 bytes including FCS, with up to 1,500 bytes of payload. The preamble and start delimiter are outside that count.",
+          "Switched full-duplex Ethernet sends and receives simultaneously and does not use collision detection during normal operation. Legacy shared half-duplex Ethernet uses CSMA/CD. In Wi-Fi, stations contend for shared airtime using CSMA/CA and can acknowledge successful reception.",
+          "The SSID identifies the wireless network. An access point bridges wireless clients to the wired distribution network. Band, channel width, signal quality and interference affect airtime and throughput. In the familiar 2.4 GHz 20 MHz plan, channels 1, 6 and 11 are used to reduce overlap where permitted.",
+          "Wi-Fi examples include 802.11a on 5 GHz, 802.11b/g on 2.4 GHz, and 802.11n on 2.4 GHz or 5 GHz. WPA2/WPA3 describe security capabilities, not Wi-Fi data rates."
+        ]
+      },
+      {
+        "title": "Lab · UTP, STP and cable categories",
+        "points": [
+          "UTP twists balanced wire pairs to reduce interference. Shielded twisted pair adds a foil or braid construction that can improve noise immunity when the shielding and grounding are installed correctly. Here STP means shielded twisted pair, not Spanning Tree Protocol.",
+          "Cat 5e expands to Category 5 enhanced and improves crosstalk specifications over Cat 5. Cat 5e supports 1000BASE-T over a standard 100 m channel. Cat 6 also supports Gigabit Ethernet at that channel length. Cat 6A supports 10GBASE-T at 100 m. Shorter 10GBASE-T runs may be possible on Cat 6 subject to installation conditions.",
+          "T568A and T568B swap the orange and green pairs. The same scheme at both ends makes a straight-through cable. Different schemes make a traditional crossover cable for 10/100 Mb/s pairs. Auto-MDI-X on modern ports often makes crossover wiring unnecessary.",
+          "In the lab, read the jacket marking, inspect connectors and compare a known-good cable with the sample. Use a cable tester to check pair mapping and continuity. Confirm link negotiation before troubleshooting IP reachability."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": "Session 3 · Internet Protocol and TCP/IP",
+    "summary": "Contrast OSI with the Internet protocol suite, then follow an IPv4 packet and compare how TCP and UDP carry application data.",
+    "sections": [
+      {
+        "title": "IP and the four-layer model",
+        "points": [
+          "The TCP/IP Application layer includes services such as DNS, HTTP and SMTP. Transport is TCP or UDP. Internet is IPv4 or IPv6 and related control messages such as ICMP. Link or Network Access handles local framing and physical transmission.",
+          "IP provides best-effort delivery. An IPv4 header carries source and destination addresses, TTL, a protocol field, fragmentation information and a header checksum. Each routed hop reduces TTL. The IP protocol field identifies the payload, such as TCP, UDP or ICMP.",
+          "IPv4 uses 32-bit addresses and subnet prefixes. Packets sent to a device on another subnet pass to a gateway. A router uses the most specific matching destination prefix to select a route."
+        ]
+      },
+      {
+        "title": "TCP versus UDP",
+        "points": [
+          "TCP sets up a connection with SYN, SYN-ACK and ACK. It delivers an ordered byte stream using sequence numbers, acknowledgments and retransmission. Its receive window provides flow control, and congestion control limits load on the network.",
+          "UDP sends independent datagrams without establishing a connection or guaranteeing delivery, order or retransmission. Its header preserves ports, length and checksum. Applications can add their own reliability when required.",
+          "TCP is common for SSH and mail. DHCP uses UDP. DNS uses both UDP and TCP as appropriate. A TCP connection is identified by source IP, source port, destination IP and destination port."
+        ]
+      },
+      {
+        "title": "Lab · IP and transport observation",
+        "points": [
+          "Inspect your host IP address, mask and gateway with ipconfig /all on Windows or ip addr and ip route on Linux. Test loopback, then a same-subnet host and then the gateway. A local failure limits which later tests are useful.",
+          "In a packet capture of your own lab traffic, identify the link header, IP addresses, transport fields and application traffic. Compare a TCP three-way handshake with a UDP DNS exchange. A ping uses ICMP directly over IP and has no TCP or UDP ports.",
+          "If an IP test succeeds while name resolution fails, inspect the DNS server settings and compare an nslookup or dig query. A successful ping shows reachability for ICMP and does not by itself verify the application service."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      3
+    ]
+  },
+  {
+    "name": "Sessions 4–5 · IPv4 subnetting and VLSM",
+    "summary": "Use masks to identify network, host, broadcast and usable ranges. Work through the two addresses and the four-subnet VLSM exercise from the teaching guide.",
+    "sections": [
+      {
+        "title": "CIDR and address calculation",
+        "points": [
+          "The prefix length is the number of network bits. For an IPv4 subnet with prefix /p, there are 2^(32 − p) total addresses. For conventional subnets up to /30, subtract the network and broadcast addresses to get the usable host count. /31 point-to-point links and /32 host routes are special cases.",
+          "Network address = address AND mask. The host part is the remaining bits, which can also be calculated as the numeric offset from the network address. The broadcast address sets all host bits to 1. The first and last usable hosts sit one address inside those endpoints.",
+          "A dotted-mask shortcut finds the block size as 256 minus the mask value in the relevant octet. A /30 has mask 255.255.255.252 with blocks of four. A /27 has mask 255.255.255.224 with blocks of 32."
+        ]
+      },
+      {
+        "title": "Worked lab · Network and host parts",
+        "points": [
+          "192.168.5.85/24 has network 192.168.5.0, a host offset of 85, and broadcast 192.168.5.255. Its mask is 255.255.255.0 and its usable range is 192.168.5.1 to 192.168.5.254.",
+          "10.128.240.50/30 falls in the .48–.51 block. Network is 10.128.240.48, host offset is 2, usable addresses are .49 and .50, and broadcast is 10.128.240.51."
+        ]
+      },
+      {
+        "title": "Worked lab · Divide 192.168.1.0/24 by host demand",
+        "points": [
+          "VLSM assigns different prefix sizes to different subnets. Sort by largest demand before allocating. For each demand, choose the smallest power-of-two block with room for the requested hosts plus network and broadcast.",
+          "Allocate the 52-host block first. A /26 gives 62 usable addresses. Both 28 hosts and 15 hosts need /27 blocks because a /28 can hold only 14 usable addresses. Five hosts fit in /29, which provides six usable.",
+          "Allocate each block at a valid boundary and start the next block at the first valid aligned address. None of the four allocations overlap and they all stay inside the original /24."
+        ],
+        "example": "Subnet  Hosts   Network/prefix       Usable (192.168.1.x)   Broadcast\n2       52      192.168.1.0/26       .1–.62                 .63\n1       28      192.168.1.64/27      .65–.94                .95\n3       15      192.168.1.96/27      .97–.126               .127\n4       5       192.168.1.128/29     .129–.134              .135"
+      }
+    ],
+    "sessionNumbers": [
+      4,
+      5
+    ]
+  },
+  {
+    "name": "Session 6 · Cisco IOS, SDM and fixed-length subnetting",
+    "summary": "Read Cisco IOS prompts, distinguish the CLI from the legacy graphical manager, and use fixed-length masks for the two addressing exercises.",
+    "sections": [
+      {
+        "title": "IOS management modes and SDM",
+        "points": [
+          "Cisco IOS is the router’s network operating system. User EXEC (Router>) offers basic monitoring. Privileged EXEC (Router#) provides broader show commands and operational commands. configure terminal opens global configuration (Router(config)#). Entering an interface opens Router(config-if)#.",
+          "Running configuration is the active configuration. Startup configuration is read at boot. With suitable access, copy running-config startup-config saves the intended running settings after verification. Use end to return to privileged EXEC.",
+          "Security Device Manager (SDM) was a web-based Cisco IOS graphical tool for supported legacy routers. It guided LAN, WAN and security setup. In an IOS CLI or simulator lab, learn to identify and verify the same resulting configuration from the command line."
+        ]
+      },
+      {
+        "title": "Worked lab · 195.1.1.0/24 for 10 subnets",
+        "points": [
+          "Treat 12 as the required capacity per subnet. Four host bits give 14 usable addresses, so the mask is /28 (255.255.255.240). A /24 then contains 16 /28 subnets, enough for 10. The worksheet includes index 10, which is the eleventh subnet with zero-based numbering.",
+          "The first usable address is the network address plus one. The broadcast address is 15 above the network address. The starting octets are 16 × subnet index."
+        ],
+        "example": "Subnet index     Network             First usable\n0                195.1.1.0/28        195.1.1.1\n1                195.1.1.16/28       195.1.1.17\n2                195.1.1.32/28       195.1.1.33\n3                195.1.1.48/28       195.1.1.49\n10               195.1.1.160/28      195.1.1.161"
+      },
+      {
+        "title": "Worked lab · 500 hosts from 152.152.0.0/16",
+        "points": [
+          "Nine host bits give 510 usable addresses. The new mask is /23 (255.255.254.0), so the third octet advances in steps of two. Borrowing seven bits from the /16 produces 128 equal subnets.",
+          "The first block is 152.152.0.0/23 with usable addresses 152.152.0.1–152.152.1.254 and broadcast 152.152.1.255. The second starts at 152.152.2.0/23 and broadcasts at 152.152.3.255."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      6
+    ]
+  },
+  {
+    "name": "Session 7 · Managing an internetworking router",
+    "summary": "Follow the router boot process, inspect saved and active configuration, and isolate management and name-resolution faults.",
+    "sections": [
+      {
+        "title": "Boot sequence, storage and the configuration register",
+        "points": [
+          "On classic Cisco IOS routers, power-on tests check hardware. Bootstrap code selects an IOS image using boot settings and the configuration register. IOS loads and then reads startup configuration unless boot settings instruct it to skip it. Modern platforms may use a different boot workflow.",
+          "RAM holds runtime state and the running configuration. NVRAM traditionally holds startup configuration. Flash holds persistent files such as the IOS image. ROM contains bootstrap or recovery components.",
+          "Use show version to inspect IOS, uptime and register values, show boot or the platform equivalent for boot variables, and dir flash: to see image files. On many classic routers 0x2102 is the common normal setting and 0x2142 skips startup configuration. In a lab, observe the register and expected behavior before making any changes."
+        ]
+      },
+      {
+        "title": "Lab · Remote access, names and diagnostics",
+        "points": [
+          "Set a meaningful IOS hostname to identify the router at its prompt. A hostname on the router does not create a DNS record. IOS can use ip host for a static mapping or ip name-server and domain lookup for DNS queries. Compare a ping by IP with one by name to isolate resolution problems.",
+          "A VTY line handles remote terminal access. Telnet normally uses TCP port 23 and sends terminal data in clear text. Compare its behavior inside the simulator with SSH, which encrypts the session. Verify the management IP, subnet, routing, configured transport and VTY authentication in that order.",
+          "Start with show ip interface brief, show ip route and show running-config. Use targeted ping and traceroute. Reserve debug for the specific protocol and a short lab window, then stop it with undebug all. A busy router can produce considerable debug output.",
+          "Before ending the lab, compare running and startup configuration and save only the intended changes. Document interfaces, IPs and expected routes so that you can confirm them after the next boot."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      7
+    ]
+  },
+  {
+    "name": "Session 8 · Static and dynamic routing",
+    "summary": "Read a routing-table entry and trace the difference between a manually configured next hop and a learned route.",
+    "sections": [
+      {
+        "title": "Route selection",
+        "points": [
+          "Connected routes appear for up interfaces with an IP address. Static routes are entered by an administrator. Routing protocols exchange updates and adapt the route table when the topology changes.",
+          "Forwarding uses longest-prefix match. For the same destination prefix from different sources, a Cisco router generally prefers a lower administrative distance. A routing protocol uses its own metric when choosing paths within that protocol.",
+          "A default route 0.0.0.0/0 matches all IPv4 destinations but loses to a more specific match. It is common on a branch router with one upstream path. A floating static route has an administrative distance above the preferred path and can serve as backup."
+        ]
+      },
+      {
+        "title": "Routing protocol families",
+        "points": [
+          "RIP is a distance-vector protocol that uses hop count. OSPF is link-state and calculates paths from a link-state database. EIGRP uses DUAL and metrics based by default on minimum bandwidth and cumulative delay. BGP exchanges reachability and applies routing policy between autonomous systems.",
+          "Stable routing means routers have converged on current paths. Compare initial convergence, behavior after a link loss, and what a routing table shows after recovery."
+        ]
+      },
+      {
+        "title": "Lab · Compare two ways to reach a remote LAN",
+        "points": [
+          "Use R1 and R2 with 10.0.12.1/30 and 10.0.12.2/30 on the link, R1 LAN 192.168.11.0/24 and R2 LAN 192.168.22.0/24. Hosts must use their local router as the default gateway.",
+          "Configure the static route on each router, then check show ip route and test from a host in one LAN to a host in the other. The return path is as important as the route toward the destination.",
+          "Repeat with a dynamic protocol from Sessions 9–10. Remove the competing static routes before assessing the learned path, because a default static route entry for the same prefix can be preferred by administrative distance."
+        ],
+        "example": "R1(config)# ip route 192.168.22.0 255.255.255.0 10.0.12.2\nR2(config)# ip route 192.168.11.0 255.255.255.0 10.0.12.1"
+      }
+    ],
+    "sessionNumbers": [
+      8
+    ]
+  },
+  {
+    "name": "Sessions 9–10 · Implement routing protocols",
+    "summary": "Set up and verify static routes, RIP, IGRP, EIGRP and OSPF. Use one routing method at a time so you can explain each route in the table.",
+    "sections": [
+      {
+        "title": "Shared routing lab",
+        "points": [
+          "Reuse the Session 8 two-router topology. Give the LAN-facing ports .1/24 in their respective LANs, use .1 and .2 on the /30 link, and set each host’s default gateway. First verify neighbor IP reachability across the link, then verify remote LANs.",
+          "For the static stage, configure the two next-hop routes from Session 8. Verify connected and static entries with show ip route, then test both directions with ping and traceroute. An unknown remote destination can fail even when the physical link is up.",
+          "For the dynamic stages, remove the competing static routes, enable the same protocol on both routers, and exchange the LAN prefixes. Make the host-facing network passive when the protocol supports it so it can be advertised without unnecessary routing messages to hosts."
+        ]
+      },
+      {
+        "title": "RIPv2 and historical IGRP",
+        "points": [
+          "RIPv2 advertises subnet masks, allowing VLSM and classless routing. RIP uses hop count. A metric of 16 means unreachable. On R1, enable router rip, set version 2 and no auto-summary, then include network 10.0.0.0 and network 192.168.11.0. On R2, use network 10.0.0.0 and network 192.168.22.0.",
+          "Use show ip protocols to confirm settings and show ip route rip to locate the learned route. Look for a remote /24 through the neighboring link IP. A route count of zero suggests a disabled interface, wrong network statement, passive link, filtering or a version mismatch.",
+          "IGRP is Cisco’s older classful distance-vector protocol. It uses a composite metric, with bandwidth and delay as defaults, and does not advertise masks for VLSM. In a legacy image that supports it, configure router igrp 100 and include the corresponding classful link and LAN networks on both routers. Confirm the autonomous system number matches. Most current lab images no longer provide IGRP, so use the legacy exercise to compare its behavior with RIPv2 and EIGRP."
+        ]
+      },
+      {
+        "title": "EIGRP and single-area OSPF",
+        "points": [
+          "In classic EIGRP configuration, use the same autonomous system number on both sides. The network statements select local interfaces, and each router uses its own LAN prefix. show ip eigrp neighbors checks adjacency, show ip eigrp topology shows learned paths, and show ip route eigrp confirms installation.",
+          "In a single-area OSPF lab, place the transit and LAN interfaces in area 0. The process ID is local and does not need to match between routers. Verify router IDs are distinct. Check interfaces, subnet match, area, timers and authentication if the adjacency does not form.",
+          "In IOS routing tables, R indicates RIP, D indicates EIGRP and O indicates OSPF. Compare failure and recovery by disconnecting and reconnecting the transit link. Time how long it takes for the route to disappear and return."
+        ],
+        "example": "R1 example for EIGRP\nrouter eigrp 100\n network 10.0.12.0 0.0.0.3\n network 192.168.11.0 0.0.0.255\n\nR1 alternative for OSPF\nrouter ospf 1\n router-id 1.1.1.1\n network 10.0.12.0 0.0.0.3 area 0\n network 192.168.11.0 0.0.0.255 area 0\n\nR2 uses 192.168.22.0 in place of 192.168.11.0.\nFor OSPF, use a distinct router ID such as 2.2.2.2."
+      }
+    ],
+    "sessionNumbers": [
+      9,
+      10
+    ]
+  },
+  {
+    "name": "Session 11 · Layer 2 switching and Spanning Tree",
+    "summary": "Explain how switches learn and forward frames, then use bridge priority to select the root in a small redundant topology.",
+    "sections": [
+      {
+        "title": "MAC learning and switching",
+        "points": [
+          "A switch learns the source MAC address of each received frame on the ingress port and VLAN. It looks up the destination MAC to choose an egress port. Unknown unicast and broadcast traffic are flooded to eligible ports within that VLAN.",
+          "Each switched link is its own collision domain. Each VLAN is a separate broadcast domain. A redundant Layer 2 path can circulate frames, multiply broadcasts and cause the same MAC to appear on alternating ports."
+        ]
+      },
+      {
+        "title": "STP, root election and variants",
+        "points": [
+          "STP exchanges BPDUs to form a loop-free logical tree. The lowest bridge ID becomes root. The bridge ID compares priority (including the extended system ID where used) before MAC address. A lower numerical configured priority is preferred.",
+          "A non-root switch selects its lowest-cost path toward the root through a root port. Each segment has a designated port. Redundant ports can remain blocking or discarding until a topology change requires them. Traditional STP uses blocking, listening, learning and forwarding states for its transition. RSTP simplifies this to discarding, learning and forwarding and improves convergence.",
+          "Classic STP refers to IEEE 802.1D and RSTP historically to 802.1w. Cisco PVST+ and Rapid PVST+ run a tree per VLAN. MST maps multiple VLANs to a smaller set of spanning-tree instances.",
+          "On many Cisco switches using the extended system ID, configurable priorities are in steps of 4096 and commonly default to 32768. The displayed bridge priority may include the VLAN number. A configured priority of 4096 on VLAN 1 may therefore appear as 4097."
+        ]
+      },
+      {
+        "title": "Lab · Elect and verify a root",
+        "points": [
+          "Example topology for the guide’s diagram reference: link S1–S2, S2–S3 and S3–S1 in a triangle. Use a common VLAN on the test links. Set S2’s priority below the other switches, verify the root ID from all three, and locate the port placed in a non-forwarding state.",
+          "Use show spanning-tree vlan 1, show interfaces status and show mac address-table. Take down the active path in the simulator and observe the alternate path before restoring it.",
+          "To study the guide’s STP-disable item, use a disposable simulator with only a single path and no redundant link. Compare show spanning-tree vlan 1 before and after no spanning-tree vlan 1 where supported. Restore it with spanning-tree vlan 1 before restoring any redundant link."
+        ],
+        "example": "S2(config)# spanning-tree vlan 1 priority 4096\nS2# show spanning-tree vlan 1"
+      }
+    ],
+    "sessionNumbers": [
+      11
+    ]
+  },
+  {
+    "name": "Session 12 · VLANs, VTP and inter-VLAN routing",
+    "summary": "Configure access and trunk links, follow VLAN advertisements between switches, and route between distinct VLAN subnets.",
+    "sections": [
+      {
+        "title": "VLANs, trunks and inter-VLAN routing",
+        "points": [
+          "An access port carries one data VLAN. An IEEE 802.1Q trunk carries multiple VLANs and normally tags each frame except native VLAN traffic, depending on the configuration. Trunk mode, native VLAN and allowed VLAN lists need to be coherent at both ends.",
+          "VLAN IDs 1–1005 are in the normal range, with some reserved or default VLANs. The extended range is 1006–4094. VTP v1/v2 do not distribute extended VLANs and generally require transparent mode for local extended VLANs on classic Catalyst platforms. VTP v3 can distribute them on supporting devices.",
+          "Devices in the same VLAN still need compatible IP settings. Devices in different VLANs need a Layer 3 gateway. Use router-on-a-stick with one tagged subinterface per VLAN, or a multilayer switch with an SVI for each VLAN and IP routing enabled."
+        ]
+      },
+      {
+        "title": "Lab A · Server and four clients on 192.168.10.0/24",
+        "points": [
+          "Example topology for the omitted diagram: trunk S1 directly to S2, S3, S4 and S5. Use a common VTP domain, version and authentication settings. Set S1 to server and the four downstream switches to client. Use a fresh lab VLAN database.",
+          "Create VLANs 10 and 20 on S1. A practical address plan divides 192.168.10.0/24 into /26s. Use 192.168.10.0/26 for VLAN 10 and 192.168.10.64/26 for VLAN 20. Assign two hosts across different switches in each VLAN, for example .11/.12 and .75/.76 respectively.",
+          "Confirm that show vtp status and show vlan brief show the expected domain, modes and learned VLANs. Check show interfaces trunk and assign host access ports to the right VLAN locally. VTP shares the VLAN database, while access-port assignments are made on each switch."
+        ]
+      },
+      {
+        "title": "Lab B · Transparent switch on 192.168.1.0/24",
+        "points": [
+          "Example topology: S1–S2 and S1–S3–S4. Configure S1 as server, S2 and S4 as clients, and S3 as VTP transparent, which is what the guide calls transfer mode. Use compatible VTP v2 switches and trunk links. S3 forwards advertisements to S4 without applying them to its own local VLAN database.",
+          "Verify VLANs 10 and 20 on S4. If S3 must switch data for a VLAN, create that VLAN locally on S3 and allow it on the relevant trunks. Place VLAN 10 hosts in 192.168.1.0/26 and VLAN 20 hosts in 192.168.1.64/26. Verify same-VLAN pings across switches before attempting inter-VLAN traffic."
+        ]
+      },
+      {
+        "title": "Verify and troubleshoot inter-VLAN traffic",
+        "points": [
+          "For a router-on-a-stick example with the 192.168.10.0 plan, trunk S1 to R1. Assign R1 .1/26 to VLAN 10 and .65/26 to VLAN 20. Use those addresses as the hosts’ gateways.",
+          "If same-VLAN pings fail, check physical state, host mask, VLAN membership, trunk permissions, STP forwarding and the MAC table. If same-VLAN works and inter-VLAN fails, check gateways, subinterfaces or SVIs, routing and ACLs."
+        ],
+        "example": "R1 example (interface names vary)\ninterface GigabitEthernet0/0\n no shutdown\ninterface GigabitEthernet0/0.10\n encapsulation dot1q 10\n ip address 192.168.10.1 255.255.255.192\ninterface GigabitEthernet0/0.20\n encapsulation dot1q 20\n ip address 192.168.10.65 255.255.255.192"
+      }
+    ],
+    "sessionNumbers": [
+      12
+    ]
+  },
+  {
+    "name": "Sessions 13–14 · Infrastructure security, ACLs and AAA",
+    "summary": "Secure access ports and device management, then predict and verify filtering for IPv4 and IPv6 traffic.",
+    "sections": [
+      {
+        "title": "Access-layer protection",
+        "points": [
+          "Port security associates an access port with a permitted number of source MAC addresses. Addresses can be statically configured, learned dynamically or learned as sticky addresses. Check the secure MAC count and violation policy before connecting a replacement device.",
+          "The common violation modes are protect (drop violating frames), restrict (drop and record violations), and shutdown (place the port in an error-disabled state). Use show port-security interface, show port-security address and switch logs to explain the observed outcome.",
+          "DHCP snooping limits DHCP server messages to trusted interfaces. Dynamic ARP Inspection can validate IPv4 ARP against trusted bindings. BPDU Guard can protect an edge port when it unexpectedly receives a BPDU. Place unused access ports out of service, and set trunk and access modes deliberately."
+        ]
+      },
+      {
+        "title": "IPv4 and IPv6 ACL behavior",
+        "points": [
+          "ACLs are evaluated in order with first match winning. An unmatched packet reaches an implicit deny. Decide which flows must work, including return traffic and required control traffic, before applying a list.",
+          "A standard IPv4 ACL usually matches source address. An extended IPv4 ACL can match source, destination, protocol and ports. IPv4 wildcard masks use 0 for bits that must match and 1 for ignored bits. For /24, the wildcard is 0.0.0.255. Inbound means the packet is entering the configured interface.",
+          "IPv6 ACLs use IPv6 prefix lengths. Interface application uses ipv6 traffic-filter. Account for ICMPv6 Neighbor Discovery and essential ICMPv6 messages. Check IOS platform defaults and the ordering of explicit and implicit IPv6 rules.",
+          "In a simulator, design a rule that allows an approved client to reach a lab HTTPS service while denying the same service to a second client. Write expected outcomes first. Apply the list on the intended interface and direction, then test allowed and denied traffic and compare match counters."
+        ]
+      },
+      {
+        "title": "Verify ACLs and harden device management",
+        "points": [
+          "Use show access-lists, show ipv6 access-list and interface configuration to verify rule order, placement, direction and counters. Ping and traceroute supplement service tests. A permitted ping does not establish that TCP 443 is permitted.",
+          "The guide’s APIC-EM Path Trace exercise describes a legacy controller feature. Given a source and destination known to the controller, inspect the calculated path and the ACL checks shown along it. If the controller is unavailable, trace the same hops manually and check the ACL, interface and direction on each device.",
+          "Basic hardening includes SSH management, named accounts, an enable secret, restricted management-source networks, disabling unused services and ports, and checking logging and time synchronization. Finish by validating console access and a permitted remote login before saving the configuration."
+        ]
+      },
+      {
+        "title": "AAA with TACACS+ and RADIUS",
+        "points": [
+          "Authentication verifies identity. Authorization determines what an authenticated identity can do. Accounting records activity. A device can use an AAA method list with a remote server and a local fallback where appropriate.",
+          "TACACS+ commonly uses TCP 49 and is often used for device administration, including per-command authorization and accounting where configured. RADIUS is common for network access such as 802.1X and VPNs and typically uses UDP 1812 for authentication and 1813 for accounting.",
+          "In the lab, verify server reachability, shared settings, configured authentication method and expected privileges. Use a console session during AAA changes so you can correct a failed remote login."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      13,
+      14
+    ]
+  },
+  {
+    "name": "Sessions 15–16 · NAT and IPv6",
+    "summary": "Distinguish one-to-one address translation from address-and-port sharing, then configure and troubleshoot a routed IPv6 link.",
+    "sections": [
+      {
+        "title": "IPv4 NAT and PAT",
+        "points": [
+          "Static NAT maps an inside address to a fixed translated address. Dynamic NAT borrows an address from a configured pool. Port address translation (PAT or overload) lets multiple inside sessions share a translated address and keeps them distinct with transport identifiers such as TCP or UDP ports.",
+          "The inside local address is how the inside device is addressed on the inside network, such as 192.168.50.10. The inside global address represents it on the outside network. NAT changes addressing and sometimes ports. Routing and filtering still need separate configuration."
+        ]
+      },
+      {
+        "title": "Lab · Configure and verify PAT",
+        "points": [
+          "On the lab edge router, designate the LAN link as ip nat inside and the upstream link as ip nat outside. Make sure a route to the upstream test destination and the necessary return path are in place.",
+          "The ACL in this example identifies the addresses eligible for NAT. It is used by the translation command and is not applied as an interface traffic filter. Generate traffic from two LAN hosts and compare show ip nat translations and show ip nat statistics."
+        ],
+        "example": "interface GigabitEthernet0/0\n ip nat inside\ninterface GigabitEthernet0/1\n ip nat outside\naccess-list 10 permit 192.168.50.0 0.0.0.255\nip nat inside source list 10 interface GigabitEthernet0/1 overload"
+      },
+      {
+        "title": "IPv6 addressing and router configuration",
+        "points": [
+          "IPv6 addresses are 128 bits. Omit leading zeros within a hextet and use :: once to compress a run of zero hextets. Link-local addresses are in fe80::/10, global unicast commonly falls in 2000::/3, and multicast starts with ff00::/8. IPv6 has no broadcast.",
+          "IPv6 Neighbor Discovery uses ICMPv6 for local address resolution and router discovery. A host can learn network prefixes from router advertisements and use SLAAC where configured. DHCPv6 can supply addresses or other settings, while the default router is normally learned through router advertisements.",
+          "Enable ipv6 unicast-routing on an IOS router that must forward IPv6. Configure a /64 on each lab link, with unique address suffixes at each end. Use show ipv6 interface brief, show ipv6 neighbors and show ipv6 route. Test the directly connected peer first and specify the outgoing interface when required for a link-local ping."
+        ],
+        "example": "ipv6 unicast-routing\ninterface GigabitEthernet0/0\n ipv6 address 2001:db8:15:1::1/64\n no shutdown\n\nConfigure the peer as 2001:db8:15:1::2/64.\nThen test from R1 with ping ipv6 2001:db8:15:1::2."
+      }
+    ],
+    "sessionNumbers": [
+      15,
+      16
+    ]
+  },
+  {
+    "name": "Session 17 · WAN, PPP, PPPoE, GRE and eBGP",
+    "summary": "Match each WAN technology to its role. Verify the underlying link, authentication, IP negotiation, tunnel and routing in order.",
+    "sections": [
+      {
+        "title": "WAN links and PPP",
+        "points": [
+          "A WAN connects geographically separated networks. Examples include leased point-to-point links, provider Ethernet, broadband and managed private networks. Compare bandwidth, delay, availability, provider handoff and routing ownership.",
+          "PPP carries network-layer traffic over point-to-point links. LCP establishes and tests the link. Authentication is optional and occurs after LCP. Network Control Protocols such as IPCP and IPv6CP negotiate parameters for the relevant network-layer protocol.",
+          "PAP sends credentials without encryption at the PPP layer. CHAP verifies a challenge-response using a shared secret without sending the secret itself. For a two-router CHAP exercise, configure matching peer identities and secrets and verify the LCP, authentication and IPCP phases if one side fails.",
+          "On a supported serial IOS lab interface, select encapsulation ppp, enable ppp authentication chap and configure the remote peer name in the local username database. Set clocking on the DCE end when required by the lab. Test show interfaces serial, interface protocol state and a ping to the peer IP."
+        ]
+      },
+      {
+        "title": "Multilink PPP and PPPoE",
+        "points": [
+          "Multilink PPP (MLPPP) combines multiple physical PPP links into one logical bundle. It can fragment and sequence packets across member links. Place the IP configuration on the multilink interface and bind the physical members to the same group. Verify the member count and bundle status with show ppp multilink before testing traffic across the bundle.",
+          "PPPoE runs PPP over Ethernet. Discovery uses PADI, PADO, PADR and PADS to find an access concentrator and establish a session identifier. PPP then performs LCP, authentication and IP negotiation inside that session.",
+          "On a supported IOS client, enable PPPoE toward the service, associate its Ethernet port with a dial pool, and match that pool on the Dialer interface. Set PPP encapsulation, negotiated IP and the lab CHAP or PAP credentials on the dialer. Standard Ethernet PPPoE commonly uses IP MTU 1492 because of the extra eight bytes of PPPoE and PPP overhead.",
+          "Verify Ethernet state, then show pppoe session, show interfaces dialer and the routing table. No discovery response suggests the wrong access link or provider service. An established session with no IP points toward PPP authentication or network-layer negotiation."
+        ]
+      },
+      {
+        "title": "GRE tunnel lab",
+        "points": [
+          "GRE encapsulates a packet in an outer packet so it can cross an IP underlay. The two tunnel endpoints must be reachable through the physical routing table. GRE by itself does not encrypt the encapsulated traffic.",
+          "A sample pair uses WAN endpoints 198.51.100.1 and .2, and tunnel IPs 10.17.0.1/30 and 10.17.0.2/30. Configure matching source and destination settings on each end. Ping the remote WAN IP first, then ping the remote tunnel IP. Use show interface Tunnel0 and show ip route. A route to the remote WAN endpoint should not point into the tunnel itself."
+        ],
+        "example": "R1 example\ninterface Tunnel0\n ip address 10.17.0.1 255.255.255.252\n tunnel source 198.51.100.1\n tunnel destination 198.51.100.2\n\nOn R2, use 10.17.0.2/30 and reverse the WAN endpoints."
+      },
+      {
+        "title": "Single-homed branch with IPv4 eBGP",
+        "points": [
+          "In a separate direct-link exercise, use AS 65001 on the branch and AS 65002 on the upstream router. Give the branch 192.0.2.1/30 and upstream 192.0.2.2/30. Each side configures the other IP as its neighbor in the other AS. BGP uses TCP 179.",
+          "Advertise only the branch lab LAN using the BGP network statement. The exact advertised prefix and mask must already exist in the branch routing table, for example as an up, connected interface. The network statement does not create that route.",
+          "Use show ip bgp summary to verify peering, show ip bgp to inspect advertised and learned prefixes, and show ip route for installed routes. A valid BGP session with no advertised prefix usually warrants checking the exact route and mask first."
+        ],
+        "example": "Branch IOS example\nrouter bgp 65001\n neighbor 192.0.2.2 remote-as 65002\n network 10.17.10.0 mask 255.255.255.0\n\nUpstream IOS example\nrouter bgp 65002\n neighbor 192.0.2.1 remote-as 65001"
+      }
+    ],
+    "sessionNumbers": [
+      17
+    ]
+  },
+  {
+    "name": "Session 18 · Software-defined networking",
+    "summary": "Study the architecture, the boundary between forwarding and control decisions, and the practical trade-offs of operating a programmable network.",
+    "sections": [
+      {
+        "title": "Applications, control plane and data plane",
+        "points": [
+          "The data plane forwards, drops, marks or queues packets according to installed rules. The control plane computes or translates topology and policy into forwarding decisions. The management plane covers operations such as configuration, logging and monitoring.",
+          "In an SDN architecture, network applications express requirements through northbound interfaces. A logically centralized controller tracks topology and desired policy. Southbound interfaces such as OpenFlow can program forwarding behavior. A logically centralized controller may be physically distributed for scale and availability.",
+          "Example: a policy application requests that two lab groups communicate only with a particular service. The controller checks the topology and policy and installs the relevant rules on switches. Subsequent packets use those rules in the data plane."
+        ]
+      },
+      {
+        "title": "Scalability, reliability and consistency",
+        "points": [
+          "Data centers use automation to provision tenant networks and fabric policy repeatedly. Providers and ISPs can automate service changes, traffic placement and validation across many devices. At larger scale, distribute controllers, scope policy to domains and measure rule-installation load and device flow-table capacity.",
+          "For QoS, classify traffic and apply marking, policing, shaping or queue scheduling at the points that enforce policy. A controller can coordinate the intended behavior, while switches and routers enforce it. For availability, use redundant controllers and links, define failure behavior and know which existing traffic can continue without fresh rules.",
+          "Treat configuration as desired state, check the deployed state, and test for access control violations using positive and negative traffic cases. During staged changes, inconsistent versions can temporarily permit or block traffic. Maintain change records and a rollback path.",
+          "Opportunities include faster provisioning, repeatable policy and centralized visibility. Challenges include interoperability, controller or API failures, capacity, policy mistakes and operating legacy and programmable devices together."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      18
+    ]
+  },
+  {
+    "name": "Session 19 · Virtual networking and virtual switches",
+    "summary": "Explain how virtual machines communicate on one host and across physical hosts. Apply virtual switching to access control, branch connectivity and data center design.",
+    "sections": [
+      {
+        "title": "Virtual networking and switches",
+        "points": [
+          "A VM’s virtual network interface connects to a virtual switch managed by a host or virtualization platform. The switch forwards Layer 2 traffic much like a physical switch. A physical uplink connects that virtual network to the outside fabric.",
+          "Traffic between two VMs on the same virtual switch and logical network may stay inside the host. Traffic between hosts needs an uplink and a matching physical VLAN or configured overlay. VXLAN is one overlay example that encapsulates Layer 2 frames in a UDP/IP underlay.",
+          "A port group or logical network can apply VLAN, policy and uplink settings to multiple virtual ports. Virtual switches can be managed individually per host or through a distributed configuration spanning hosts. VLAN or overlay membership must be correct on both sides."
+        ]
+      },
+      {
+        "title": "Use cases and troubleshooting",
+        "points": [
+          "Network access control can place workloads in distinct logical segments and enforce permitted traffic at virtual ports or virtual firewalls. Example: separate a build runner from a database segment and verify that only the approved application path is reachable.",
+          "A Virtual Customer Edge (vCE) is a software-based customer-edge function. It can connect a branch or tenant network to a provider using virtual routing interfaces and WAN services. It separates the network role from a dedicated hardware router.",
+          "For data center optimization, use virtual segmentation to consolidate workloads on shared hardware, standardize policy across hosts and support VM movement. An overlay can preserve logical segmentation while the underlying routed network changes.",
+          "Troubleshoot from the VM outward: confirm the vNIC is attached, check the port group or overlay, verify local switching, then test the uplink and gateway. If same-host traffic works but cross-host traffic fails, investigate trunk permissions, overlay reachability and MTU."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      19
+    ]
+  },
+  {
+    "name": "Session 20 · Mininet and SDN simulation",
+    "summary": "Install or start Mininet, create linear and tree topologies, and distinguish a connectivity failure from an emulation or controller problem.",
+    "sections": [
+      {
+        "title": "What Mininet emulates",
+        "points": [
+          "Mininet runs virtual hosts, links and software switches on one Linux system. Hosts commonly run in separate network namespaces and can use ordinary Linux tools. Switches can be managed by a controller for SDN experiments or can act as conventional local bridges for a baseline.",
+          "Use the Mininet VM or a supported Ubuntu lab VM. On Ubuntu with the appropriate repository enabled, install the mininet package and verify mn --version. Check that Open vSwitch is installed and running if the chosen switch type requires it. A basic ping test provides a known-good starting point."
+        ]
+      },
+      {
+        "title": "Lab · Linear and tree topologies",
+        "points": [
+          "In the linear exercise, four switches connect in a chain and each has one host. h1 to h4 crosses the full chain. In the tree exercise, depth 2 and fanout 2 give one root switch, two downstream switches and four hosts.",
+          "Use nodes, net and dump at the Mininet prompt to check that the topology matches your diagram. Run pingall to test all host pairs and h1 ping -c 3 h4 to test one end-to-end path. Use h1 ip addr to inspect the test address.",
+          "The baseline below uses the Open vSwitch bridge type so that controller setup is separate. For the SDN comparison, start a lab controller with a forwarding application and rerun the same topology using a compatible OpenFlow switch and the matching controller endpoint."
+        ],
+        "example": "Ubuntu VM shell\nsudo apt update\nsudo apt install mininet\nmn --version\n\nLinear topology\nsudo mn --switch ovsbr --controller none --topo linear,4\n\nAt the Mininet prompt\nnodes\nnet\npingall\nh1 ping -c 3 h4\nexit\n\nTree topology with an automatic connectivity check\nsudo mn --switch ovsbr --controller none --topo tree,depth=2,fanout=2 --test pingall"
+      },
+      {
+        "title": "Interpret and repeat the test",
+        "points": [
+          "A healthy baseline reports no lost host-to-host pings. The first echo may be slower while ARP or controller rules are established. Persistent loss requires checking host IPs, link state, bridge or flow entries and controller connectivity.",
+          "Test a link change on the linear chain with link s2 s3 down. Re-run a cross-chain ping, then restore the link with link s2 s3 up and retest. The linear topology has no alternate path across that break.",
+          "Exit each run before starting another. If interrupted runs leave stale interfaces or processes, use sudo mn -c to remove Mininet’s leftover state inside the lab VM."
+        ]
+      }
+    ],
+    "sessionNumbers": [
+      20
+    ]
+  }
+]

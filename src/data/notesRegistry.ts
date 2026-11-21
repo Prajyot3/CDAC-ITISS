@@ -1,16 +1,19 @@
 import fcnNotesRaw from './fcnNotes.json';
+import fcnSessionNotes from './fcnSessionNotes.json';
 import osNotesLinuxRaw from './osNotesLinux.json';
 import osNotesWindowsRaw from './osNotesWindows.json';
 
 export interface NoteSection {
   title: string;
   points: string[];
+  example?: string;
 }
 
 export interface TopicNote {
   name: string;
   summary: string;
   sections: NoteSection[];
+  sessionNumbers?: number[];
 }
 
 export interface NoteGroup {
@@ -27,7 +30,12 @@ const NOTES_BY_MODULE: Record<string, ModuleNotes> = {
   fcn: {
     groups: [
       {
-        name: 'All Topics',
+        name: 'Sessions',
+        description: 'Sessions 1–20 from the ACTS Pune teaching guide (August 2026), with theory, worked examples and lab walkthroughs.',
+        topics: fcnSessionNotes,
+      },
+      {
+        name: 'Topic Reference',
         description: 'Thirteen FCN topics aligned with the MCQ practice bank.',
         topics: fcnNotesRaw as TopicNote[],
       },
