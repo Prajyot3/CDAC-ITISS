@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, useEffect, useMemo } from 'react';
 import { QuestionAttempt, MockExamAttempt, UserStats } from '../types/userProgress';
 import { Question } from '../types/question';
-import { getQuestionsForModule, getActiveModules } from '../data/moduleRegistry';
+import { getQuestionsForModule, getActiveModules, getCanonicalQuestionId } from '../data/moduleRegistry';
 
 interface ProgressContextType {
   activeModuleId: string;
@@ -43,6 +43,32 @@ const STORAGE_KEYS = {
 
 const ProgressContext = createContext<ProgressContextType | undefined>(undefined);
 
+const mergeDuplicateAttempts = (saved: Record<string, QuestionAttempt>): Record<string, QuestionAttempt> => {
+  const merged: Record<string, QuestionAttempt> = {};
+  for (const attempt of Object.values(saved)) {
+    const canonicalId = getCanonicalQuestionId(attempt.questionId);
+    const canonicalAttempt = canonicalId === attempt.questionId ? attempt : {
+      ...attempt,
+      questionId: canonicalId,
+      answeredQuestionId: attempt.answeredQuestionId ?? attempt.questionId
+    };
+    const previous = merged[canonicalId];
+    if (!previous) {
+      merged[canonicalId] = canonicalAttempt;
+      continue;
+    }
+    const latest = previous.timestamp > canonicalAttempt.timestamp ? previous : canonicalAttempt;
+    merged[canonicalId] = {
+      ...latest,
+      attemptsCount: previous.attemptsCount + canonicalAttempt.attemptsCount
+    };
+  }
+  return merged;
+};
+
+const mergeDuplicateQuestionIds = (ids: string[]): string[] =>
+  [...new Set(ids.map(getCanonicalQuestionId))];
+
 export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [activeModuleId, setActiveModuleIdState] = useState<string>(() => {
     return localStorage.getItem(STORAGE_KEYS.ACTIVE_MODULE) || 'fcn';
@@ -51,7 +77,7 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [attempts, setAttempts] = useState<Record<string, QuestionAttempt>>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.ATTEMPTS);
-      return saved ? JSON.parse(saved) : {};
+      return saved ? mergeDuplicateAttempts(JSON.parse(saved)) : {};
     } catch {
       return {};
     }
@@ -60,7 +86,7 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [bookmarks, setBookmarks] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.BOOKMARKS);
-      return saved ? JSON.parse(saved) : [];
+      return saved ? mergeDuplicateQuestionIds(JSON.parse(saved)) : [];
     } catch {
       return [];
     }
@@ -69,7 +95,7 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [revisions, setRevisions] = useState<string[]>(() => {
     try {
       const saved = localStorage.getItem(STORAGE_KEYS.REVISIONS);
-      return saved ? JSON.parse(saved) : [];
+      return saved ? mergeDuplicateQuestionIds(JSON.parse(saved)) : [];
     } catch {
       return [];
     }
@@ -124,14 +150,15 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   };
 
   const toggleBookmark = (questionId: string) => {
+    const canonicalId = getCanonicalQuestionId(questionId);
     setBookmarks(prev => 
-      prev.includes(questionId) 
-        ? prev.filter(id => id !== questionId)
-        : [...prev, questionId]
+      prev.includes(canonicalId)
+        ? prev.filter(id => id !== canonicalId)
+        : [...prev, canonicalId]
     );
   };
 
-  const isBookmarked = (questionId: string) => bookmarks.includes(questionId);
+  const isBookmarked = (questionId: string) => bookmarks.includes(getCanonicalQuestionId(questionId));
 
   const toggleRevision = (questionId: string) => {
     setRevisions(prev => 
@@ -195,9 +222,12 @@ export const ProgressProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const importData = (jsonStr: string): boolean => {
     try {
       const data = JSON.parse(jsonStr);
-      if (data.attempts) setAttempts(data.attempts);
-      if (data.bookmarks) setBookmarks(data.bookmarks);
-      if (data.revisions) setRevisions(data.revisions);
+      const importedAttempts = data.attempts && mergeDuplicateAttempts(data.attempts);
+      const importedBookmarks = data.bookmarks && mergeDuplicateQuestionIds(data.bookmarks);
+      const importedRevisions = data.revisions && mergeDuplicateQuestionIds(data.revisions);
+      if (importedAttempts) setAttempts(importedAttempts);
+      if (importedBookmarks) setBookmarks(importedBookmarks);
+      if (importedRevisions) setRevisions(importedRevisions);
       if (data.mockAttempts) setMockAttempts(data.mockAttempts);
       return true;
     } catch {

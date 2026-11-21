@@ -15,12 +15,11 @@ Built with **React 18**, **TypeScript**, **Vite**, and **Tailwind CSS** featurin
   - **SECTION D**: Employability Skills (Aptitude, Effective Communication)
   - **SECTION E**: Project Capstone
 - **FCN Initial Module Active (120 Hours)**:
-  - **309 Verified Multiple-Choice Questions** extracted directly from official examination papers (`FCN01.pdf` through `FCN05.pdf`).
-  - Zero synthetic or hallucinated questions.
+  - **191 distinct multiple-choice questions**, including 176 selected from `FCN01.pdf` through `FCN05.pdf` and 15 original practice questions.
   - Complete provenance tracking: source PDF, page number, and original question ID.
   - Curricular classification across all **13 official topics** (Routing, TCP/IP, NAT, Switching, Subnetting, Protocols, Wireless, DNS/DHCP, IPv4/IPv6, WAN, OSI Model, Security, VLAN).
 - **Practice Engine (3 Modes)**:
-  - **Mode A (All Questions)**: Browse all 309 questions sequentially with instant technical explanations.
+  - **Mode A (All Questions)**: Browse the active question bank sequentially with instant technical explanations.
   - **Mode B (Random Practice)**: Selectable question quantity (10, 20, 30, 50, 100).
   - **Mode C (Topic-wise Practice)**: Focused mastery by domain.
 - **Realistic 40-Question Mock Examinations**:
@@ -79,6 +78,8 @@ npm run build
 | **FCN05.pdf** | 5 | 39 | 39 | PDF Highlight Annotation coordinate mapping |
 | **TOTAL** | **57** | **309** | **309** | **100% Data Integrity** |
 
+Practice and mock exams use 191 distinct FCN questions. The source records for repeated questions are retained so saved mock exams can still show the questions and option order used in the original attempt.
+
 ## 📊 Module 2 — OS Administration Extraction Audit
 
 | Source File | Type | Imported | Notes |
@@ -88,6 +89,8 @@ npm run build
 | **02-windows.pdf** | PDF | 22 | Windows Server, Active Directory, DNS/DHCP questions (fill-in items converted to 4-option MCQs) |
 | **COSA01.docx** | DOCX | 48 | Linux and Windows administration (vi, cron, /proc, Apache, quotas, GPO, Samba, mail/print services) |
 | **TOTAL** | | **249** | 10 topic domains, every question carries an explanation |
+
+Practice and mock exams use 247 distinct OS Administration questions, including 15 original practice questions.
 
 Answer-key corrections applied while verifying the banks:
 

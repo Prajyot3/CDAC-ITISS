@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { MockExamAttempt } from '../../types/userProgress';
-import { Question } from '../../types/question';
 import { 
   Award, 
   CheckCircle2, 
@@ -18,25 +17,22 @@ import {
 } from 'lucide-react';
 import { Show, SignInButton } from '@clerk/react';
 import { getModuleById } from '../../config/modules';
+import { getQuestionById } from '../../data/moduleRegistry';
 import { useProgress } from '../../context/ProgressContext';
 
 interface MockResultViewProps {
   attempt: MockExamAttempt;
-  questions: Question[];
   onRetake: () => void;
   onExit: () => void;
 }
 
 export const MockResultView: React.FC<MockResultViewProps> = ({
   attempt,
-  questions,
   onRetake,
   onExit
 }) => {
   const [filter, setFilter] = useState<'all' | 'incorrect' | 'correct' | 'unanswered'>('all');
   const { toggleBookmark, isBookmarked } = useProgress();
-
-  const questionMap = new Map(questions.map(q => [q.id, q]));
 
   const isPassed = attempt.score >= 24; // 60% standard passing score (24 / 40)
 
@@ -217,7 +213,7 @@ export const MockResultView: React.FC<MockResultViewProps> = ({
         {/* Questions Review List */}
         <div className="space-y-4">
           {filteredResults.map((res, idx) => {
-            const q = questionMap.get(res.questionId);
+            const q = getQuestionById(res.questionId);
             if (!q) return null;
 
             return (

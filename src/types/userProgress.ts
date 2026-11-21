@@ -2,6 +2,7 @@ export interface QuestionAttempt {
   questionId: string;
   moduleId: string;
   selectedAnswer: string;
+  answeredQuestionId?: string;
   isCorrect: boolean;
   timestamp: number;
   attemptsCount: number;

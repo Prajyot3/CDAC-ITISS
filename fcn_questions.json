@@ -4125,7 +4125,8 @@
     "correctAnswerText": "0 to 1023",
     "explanation": "Correct option is (B) '0 to 1023'. This addresses the networking requirement in TCP/IP.",
     "topic": "TCP/IP",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-113"
   },
   {
     "id": "FCN01-130",
@@ -4317,7 +4318,8 @@
     "correctAnswerText": "NVRAM",
     "explanation": "Correct option is (D) 'NVRAM'. This addresses the networking requirement in Routing.",
     "topic": "Routing",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-123"
   },
   {
     "id": "FCN01-136",
@@ -4701,7 +4703,8 @@
     "correctAnswerText": "router",
     "explanation": "Correct option is (C) 'router'. This addresses the networking requirement in Routing.",
     "topic": "Routing",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-098"
   },
   {
     "id": "FCN01-148",
@@ -5085,7 +5088,8 @@
     "correctAnswerText": "when the interface is functioning as a DCE device",
     "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
     "topic": "WAN",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-108"
   },
   {
     "id": "FCN02-001",
@@ -5149,7 +5153,8 @@
     "correctAnswerText": "Fiber optic cables transfer data in light form",
     "explanation": "Fiber optic cables transmit data as pulses of light through thin strands of glass or plastic optical fibers, offering immense bandwidth and total immunity to electromagnetic interference (EMI).",
     "topic": "Routing",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-007"
   },
   {
     "id": "FCN02-003",
@@ -5245,7 +5250,8 @@
     "correctAnswerText": "No routing is needed for connectivity between VLANs.",
     "explanation": "Traffic between separate VLANs requires Layer 3 routing.",
     "topic": "VLAN",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-034"
   },
   {
     "id": "FCN02-006",
@@ -5277,7 +5283,8 @@
     "correctAnswerText": "Server responds to a request, and then forgets about it",
     "explanation": "A stateless protocol (like HTTP) treats each request as an independent transaction unrelated to any previous request; the server processes the request and retains no session state about previous requests.",
     "topic": "TCP/IP",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-001"
   },
   {
     "id": "FCN02-007",
@@ -5341,7 +5348,8 @@
     "correctAnswerText": "SMTP",
     "explanation": "Correct option is (D) 'SMTP'. This addresses the networking requirement in DNS and DHCP.",
     "topic": "DNS and DHCP",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-009"
   },
   {
     "id": "FCN02-009",
@@ -5469,7 +5477,8 @@
     "correctAnswerText": "All computers except A will receive",
     "explanation": "A hub repeats the signal onto all ports except the incoming port, so the other 23 computers see it. B accepts the frame addressed to it.",
     "topic": "Switching",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-016"
   },
   {
     "id": "FCN02-013",
@@ -5565,7 +5574,8 @@
     "correctAnswerText": "Wireless LAN and Ethernet cannot coexist.",
     "explanation": "Wired Ethernet and Wi-Fi can coexist and can carry IP traffic on the same bridged LAN.",
     "topic": "Wireless Networks",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-002"
   },
   {
     "id": "FCN02-016",
@@ -5629,7 +5639,8 @@
     "correctAnswerText": "Sender IP & Sender Port, Receiver IP & Receiver Port",
     "explanation": "A TCP connection is identified by the two endpoints: source IP and port, plus destination IP and port.",
     "topic": "TCP/IP",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-011"
   },
   {
     "id": "FCN02-018",
@@ -5725,7 +5736,8 @@
     "correctAnswerText": "A - iii, B - iv, C - i, D - ii",
     "explanation": "Correct option is (A) 'A - iii, B - iv, C - i, D - ii'. This addresses the networking requirement in TCP/IP.",
     "topic": "TCP/IP",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-026"
   },
   {
     "id": "FCN02-021",
@@ -5789,7 +5801,8 @@
     "correctAnswerText": "Data Link Layer",
     "explanation": "Correct option is (D) 'Data Link Layer'. This addresses the networking requirement in TCP/IP.",
     "topic": "TCP/IP",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-032"
   },
   {
     "id": "FCN02-023",
@@ -5981,7 +5994,8 @@
     "correctAnswerText": "UTP-RJ45,Serial I/F – V.35, Telephone – RJ11",
     "explanation": "Correct option is (C) 'UTP-RJ45,Serial I/F – V.35, Telephone – RJ11'. This addresses the networking requirement in WAN.",
     "topic": "WAN",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "FCN01-014"
   },
   {
     "id": "FCN02-029",
@@ -6108,7 +6122,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "physical addressing",
     "explanation": "Ethernet uses physical MAC addresses at the data link layer.",
-    "topic": "OSI Model"
+    "topic": "OSI Model",
+    "duplicateOf": "FCN01-080"
   },
   {
     "id": "FCN03-002",
@@ -6139,7 +6154,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
     "explanation": "The enable secret command sets a hashed credential for privileged EXEC access.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-081"
   },
   {
     "id": "FCN03-003",
@@ -6170,7 +6186,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "transport",
     "explanation": "A reliable transport protocol such as TCP detects missing data and requests retransmission.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-082"
   },
   {
     "id": "FCN03-004",
@@ -6201,7 +6218,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "an upper-layer, connection-oriented protocol or service",
     "explanation": "A connection-oriented higher-layer protocol can acknowledge received data and trigger retransmission of missing data.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-083"
   },
   {
     "id": "FCN03-005",
@@ -6232,7 +6250,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "255.255.248.0",
     "explanation": "A /21 leaves 11 host bits for 2,046 usable IPv4 host addresses. A /22 provides only 1,022.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-084"
   },
   {
     "id": "FCN03-006",
@@ -6263,7 +6282,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "It specifies the remaining “life” of the packet.",
     "explanation": "TTL limits how long an IPv4 packet can circulate. Each router decrements it before forwarding.",
-    "topic": "IPv4 and IPv6"
+    "topic": "IPv4 and IPv6",
+    "duplicateOf": "FCN01-085"
   },
   {
     "id": "FCN03-007",
@@ -6294,7 +6314,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "peer-to-peer",
     "explanation": "In a peer-to-peer network, peers can both request and provide resources without a dedicated server.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-086"
   },
   {
     "id": "FCN03-008",
@@ -6325,7 +6346,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "router",
     "explanation": "Routers forward packets between IP networks and are the devices to check for an inter-network routing issue.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-087"
   },
   {
     "id": "FCN03-009",
@@ -6356,7 +6378,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Configure individual interfaces.",
     "explanation": "Router(config-if)# is the interface configuration prompt, used to configure the selected interface.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-088"
   },
   {
     "id": "FCN03-010",
@@ -6387,7 +6410,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "active TCP connections",
     "explanation": "Netstat can show active TCP connections and their local and remote endpoints.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-089"
   },
   {
     "id": "FCN03-011",
@@ -6418,7 +6442,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "It can provide a list of physical addresses on the network.",
     "explanation": "The ARP cache shows IPv4 addresses and corresponding MAC addresses learned on the local link.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-090"
   },
   {
     "id": "FCN03-012",
@@ -6449,7 +6474,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "frame",
     "explanation": "A frame is the data link layer protocol data unit.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-091"
   },
   {
     "id": "FCN03-013",
@@ -6480,7 +6506,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "Telnet",
     "explanation": "Telnet provides an interactive remote terminal session. It is the remote login protocol among these choices.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-092"
   },
   {
     "id": "FCN03-014",
@@ -6511,7 +6538,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "It matches a resource name with the required network address.",
     "explanation": "DNS resolves names to records, including A and AAAA records for IPv4 and IPv6 addresses.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-093"
   },
   {
     "id": "FCN03-015",
@@ -6542,7 +6570,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "VTY password",
     "explanation": "Cisco IOS virtual terminal (VTY) lines handle remote Telnet sessions. A line password applies when line-password authentication is configured.",
-    "topic": "Network Security"
+    "topic": "Network Security",
+    "duplicateOf": "FCN01-094"
   },
   {
     "id": "FCN03-016",
@@ -6573,7 +6602,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "physical source and destination addresses",
     "explanation": "The Ethernet header carries both source and destination MAC addresses.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-095"
   },
   {
     "id": "FCN03-017",
@@ -6604,7 +6634,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "The node sends out an ARP request with the destination IP address.",
     "explanation": "For a destination on the same IPv4 subnet, the sender broadcasts an ARP request to learn the destination host’s MAC address.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-096"
   },
   {
     "id": "FCN03-018",
@@ -6635,7 +6666,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Issue the erase startup-config command, and then reboot the router.",
     "explanation": "Erasing the startup configuration removes the saved settings. A reload without saving the running configuration restarts the device without those settings.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-097"
   },
   {
     "id": "FCN03-019",
@@ -6666,7 +6698,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "router",
     "explanation": "A router forwards traffic between IP subnets.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-098"
   },
   {
     "id": "FCN03-020",
@@ -6697,7 +6730,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "HyperTerminal",
     "explanation": "HyperTerminal is a terminal emulator that can open a serial session through the router’s console port.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-099"
   },
   {
     "id": "FCN03-021",
@@ -6728,7 +6762,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Access control is decentralized.",
     "explanation": "Peers share files directly and can manage access to their own resources without a dedicated file server.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-100"
   },
   {
     "id": "FCN03-022",
@@ -6759,7 +6794,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "data encapsulation",
     "explanation": "The MAC sublayer handles data encapsulation, including frame delimiting, MAC addressing and error detection.",
-    "topic": "OSI Model"
+    "topic": "OSI Model",
+    "duplicateOf": "FCN01-101"
   },
   {
     "id": "FCN03-023",
@@ -6790,7 +6826,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "line",
     "explanation": "Remote terminal access is configured under virtual terminal lines in line configuration mode.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-102"
   },
   {
     "id": "FCN03-024",
@@ -6821,7 +6858,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "provides device identification to users logging on remotely",
     "explanation": "A hostname identifies the device to administrators and normally appears in the device prompt.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-103"
   },
   {
     "id": "FCN03-025",
@@ -6852,7 +6890,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "R1#",
     "explanation": "The # suffix in R1# identifies privileged EXEC mode. The > suffix identifies user EXEC mode.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-104"
   },
   {
     "id": "FCN03-026",
@@ -6883,7 +6922,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Interconnect the two PCs with a crossover cable.",
     "explanation": "A crossover cable connects the transmit and receive pairs of the two older NICs directly when they lack auto-MDI-X.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-105"
   },
   {
     "id": "FCN03-027",
@@ -6914,7 +6954,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "The clock rate command has not been entered on the DCE interface.",
     "explanation": "The interface can be physically up while the line protocol remains down if the DCE end of the serial link supplies no clock signal.",
-    "topic": "WAN"
+    "topic": "WAN",
+    "duplicateOf": "FCN01-106"
   },
   {
     "id": "FCN03-028",
@@ -6945,7 +6986,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "10.10.128.0 to 10.10.159.255",
     "explanation": "The /19 block covers third-octet values 128 through 159, inclusive. The first and last addresses are the network and broadcast addresses.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-107"
   },
   {
     "id": "FCN03-029",
@@ -6976,7 +7018,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "when the interface is functioning as a DCE device",
     "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
-    "topic": "WAN"
+    "topic": "WAN",
+    "duplicateOf": "FCN01-108"
   },
   {
     "id": "FCN03-030",
@@ -7007,7 +7050,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "The entries specify four Telnet lines for remote access.",
     "explanation": "The VTY range 0 through 3 contains four lines. The password and login commands enable line-password checking on those lines.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-109"
   },
   {
     "id": "FCN03-031",
@@ -7038,7 +7082,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
     "explanation": "Cisco IOS stores the enable secret in hashed form.",
-    "topic": "Network Security"
+    "topic": "Network Security",
+    "duplicateOf": "FCN01-110"
   },
   {
     "id": "FCN03-032",
@@ -7069,7 +7114,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Switch-6J#",
     "explanation": "The # suffix with no configuration-mode qualifier is privileged EXEC, where the copy command runs.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-111"
   },
   {
     "id": "FCN03-033",
@@ -7100,7 +7146,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "the network portion of the IP address",
     "explanation": "The router matches the destination IP address against routing-table prefixes and forwards using the longest matching prefix.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-112"
   },
   {
     "id": "FCN03-034",
@@ -7131,7 +7178,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "0 to 1023",
     "explanation": "IANA assigns system ports in the range 0 to 1023. Port 0 is reserved.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-113"
   },
   {
     "id": "FCN03-035",
@@ -7162,7 +7210,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "192.168.4.63 /26",
     "explanation": "A /26 subnet has 64 addresses, so 192.168.4.0/26 ends at the broadcast address 192.168.4.63.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-114"
   },
   {
     "id": "FCN03-036",
@@ -7193,7 +7242,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "A portion of the address is used to identify the network.",
     "explanation": "A Layer 3 address contains a network prefix. Routers use that prefix when selecting a route.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-115"
   },
   {
     "id": "FCN03-037",
@@ -7224,7 +7274,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Layer 3",
     "explanation": "Routers forward packets between networks using Layer 3 addresses.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-116"
   },
   {
     "id": "FCN03-038",
@@ -7255,7 +7306,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "2046",
     "explanation": "A /21 leaves 11 host bits and has 2,048 total addresses. Removing the network and broadcast addresses leaves 2,046.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-117"
   },
   {
     "id": "FCN03-039",
@@ -7286,7 +7338,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "packet",
     "explanation": "The TCP/IP internet layer encapsulates data into an IP packet.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-118"
   },
   {
     "id": "FCN03-040",
@@ -7317,7 +7370,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "DNS",
     "explanation": "Nslookup sends DNS queries to resolve names or inspect DNS records.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-119"
   },
   {
     "id": "FCN04-001",
@@ -7348,7 +7402,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "physical addressing",
     "explanation": "Ethernet uses physical MAC addresses at the data link layer.",
-    "topic": "OSI Model"
+    "topic": "OSI Model",
+    "duplicateOf": "FCN01-080"
   },
   {
     "id": "FCN04-002",
@@ -7379,7 +7434,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
     "explanation": "The enable secret command sets a hashed credential for privileged EXEC access.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-081"
   },
   {
     "id": "FCN04-003",
@@ -7410,7 +7466,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "transport",
     "explanation": "A reliable transport protocol such as TCP detects missing data and requests retransmission.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-082"
   },
   {
     "id": "FCN04-004",
@@ -7441,7 +7498,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "an upper-layer, connection-oriented protocol or service",
     "explanation": "A connection-oriented higher-layer protocol can acknowledge received data and trigger retransmission of missing data.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-083"
   },
   {
     "id": "FCN04-005",
@@ -7472,7 +7530,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "255.255.248.0",
     "explanation": "A /21 leaves 11 host bits for 2,046 usable IPv4 host addresses. A /22 provides only 1,022.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-084"
   },
   {
     "id": "FCN04-006",
@@ -7503,7 +7562,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "It specifies the remaining “life” of the packet.",
     "explanation": "TTL limits how long an IPv4 packet can circulate. Each router decrements it before forwarding.",
-    "topic": "IPv4 and IPv6"
+    "topic": "IPv4 and IPv6",
+    "duplicateOf": "FCN01-085"
   },
   {
     "id": "FCN04-007",
@@ -7534,7 +7594,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "peer-to-peer",
     "explanation": "In a peer-to-peer network, peers can both request and provide resources without a dedicated server.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-086"
   },
   {
     "id": "FCN04-008",
@@ -7565,7 +7626,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "router",
     "explanation": "Routers forward packets between IP networks and are the devices to check for an inter-network routing issue.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-087"
   },
   {
     "id": "FCN04-009",
@@ -7596,7 +7658,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Configure individual interfaces.",
     "explanation": "Router(config-if)# is the interface configuration prompt, used to configure the selected interface.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-088"
   },
   {
     "id": "FCN04-010",
@@ -7627,7 +7690,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "active TCP connections",
     "explanation": "Netstat can show active TCP connections and their local and remote endpoints.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-089"
   },
   {
     "id": "FCN04-011",
@@ -7658,7 +7722,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "It can provide a list of physical addresses on the network.",
     "explanation": "The ARP cache shows IPv4 addresses and corresponding MAC addresses learned on the local link.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-090"
   },
   {
     "id": "FCN04-012",
@@ -7689,7 +7754,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "frame",
     "explanation": "A frame is the data link layer protocol data unit.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-091"
   },
   {
     "id": "FCN04-013",
@@ -7720,7 +7786,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "Telnet",
     "explanation": "Telnet provides an interactive remote terminal session. It is the remote login protocol among these choices.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-092"
   },
   {
     "id": "FCN04-014",
@@ -7751,7 +7818,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "It matches a resource name with the required network address.",
     "explanation": "DNS resolves names to records, including A and AAAA records for IPv4 and IPv6 addresses.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-093"
   },
   {
     "id": "FCN04-015",
@@ -7782,7 +7850,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "VTY password",
     "explanation": "Cisco IOS virtual terminal (VTY) lines handle remote Telnet sessions. A line password applies when line-password authentication is configured.",
-    "topic": "Network Security"
+    "topic": "Network Security",
+    "duplicateOf": "FCN01-094"
   },
   {
     "id": "FCN04-016",
@@ -7813,7 +7882,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "physical source and destination addresses",
     "explanation": "The Ethernet header carries both source and destination MAC addresses.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-095"
   },
   {
     "id": "FCN04-017",
@@ -7844,7 +7914,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "The node sends out an ARP request with the destination IP address.",
     "explanation": "For a destination on the same IPv4 subnet, the sender broadcasts an ARP request to learn the destination host’s MAC address.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-096"
   },
   {
     "id": "FCN04-018",
@@ -7875,7 +7946,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Issue the erase startup-config command, and then reboot the router.",
     "explanation": "Erasing the startup configuration removes the saved settings. A reload without saving the running configuration restarts the device without those settings.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-097"
   },
   {
     "id": "FCN04-019",
@@ -7906,7 +7978,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "router",
     "explanation": "A router forwards traffic between IP subnets.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-098"
   },
   {
     "id": "FCN04-020",
@@ -7937,7 +8010,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "HyperTerminal",
     "explanation": "HyperTerminal is a terminal emulator that can open a serial session through the router’s console port.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-099"
   },
   {
     "id": "FCN04-021",
@@ -7968,7 +8042,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Access control is decentralized.",
     "explanation": "Peers share files directly and can manage access to their own resources without a dedicated file server.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-100"
   },
   {
     "id": "FCN04-022",
@@ -7999,7 +8074,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "data encapsulation",
     "explanation": "The MAC sublayer handles data encapsulation, including frame delimiting, MAC addressing and error detection.",
-    "topic": "OSI Model"
+    "topic": "OSI Model",
+    "duplicateOf": "FCN01-101"
   },
   {
     "id": "FCN04-023",
@@ -8030,7 +8106,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "line",
     "explanation": "Remote terminal access is configured under virtual terminal lines in line configuration mode.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-102"
   },
   {
     "id": "FCN04-024",
@@ -8061,7 +8138,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "provides device identification to users logging on remotely",
     "explanation": "A hostname identifies the device to administrators and normally appears in the device prompt.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-103"
   },
   {
     "id": "FCN04-025",
@@ -8092,7 +8170,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "R1#",
     "explanation": "The # suffix in R1# identifies privileged EXEC mode. The > suffix identifies user EXEC mode.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-104"
   },
   {
     "id": "FCN04-026",
@@ -8123,7 +8202,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Interconnect the two PCs with a crossover cable.",
     "explanation": "A crossover cable connects the transmit and receive pairs of the two older NICs directly when they lack auto-MDI-X.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-105"
   },
   {
     "id": "FCN04-027",
@@ -8154,7 +8234,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "The clock rate command has not been entered on the DCE interface.",
     "explanation": "The interface can be physically up while the line protocol remains down if the DCE end of the serial link supplies no clock signal.",
-    "topic": "WAN"
+    "topic": "WAN",
+    "duplicateOf": "FCN01-106"
   },
   {
     "id": "FCN04-028",
@@ -8185,7 +8266,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "10.10.128.0 to 10.10.159.255",
     "explanation": "The /19 block covers third-octet values 128 through 159, inclusive. The first and last addresses are the network and broadcast addresses.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-107"
   },
   {
     "id": "FCN04-029",
@@ -8216,7 +8298,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "when the interface is functioning as a DCE device",
     "explanation": "The DCE side supplies clocking for a back-to-back serial link.",
-    "topic": "WAN"
+    "topic": "WAN",
+    "duplicateOf": "FCN01-108"
   },
   {
     "id": "FCN04-030",
@@ -8247,7 +8330,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "The entries specify four Telnet lines for remote access.",
     "explanation": "The VTY range 0 through 3 contains four lines. The password and login commands enable line-password checking on those lines.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-109"
   },
   {
     "id": "FCN04-031",
@@ -8278,7 +8362,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "enable secret",
     "explanation": "Cisco IOS stores the enable secret in hashed form.",
-    "topic": "Network Security"
+    "topic": "Network Security",
+    "duplicateOf": "FCN01-110"
   },
   {
     "id": "FCN04-032",
@@ -8309,7 +8394,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Switch-6J#",
     "explanation": "The # suffix with no configuration-mode qualifier is privileged EXEC, where the copy command runs.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-111"
   },
   {
     "id": "FCN04-033",
@@ -8340,7 +8426,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "the network portion of the IP address",
     "explanation": "The router matches the destination IP address against routing-table prefixes and forwards using the longest matching prefix.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-112"
   },
   {
     "id": "FCN04-034",
@@ -8371,7 +8458,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "0 to 1023",
     "explanation": "IANA assigns system ports in the range 0 to 1023. Port 0 is reserved.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-113"
   },
   {
     "id": "FCN04-035",
@@ -8402,7 +8490,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "192.168.4.63 /26",
     "explanation": "A /26 subnet has 64 addresses, so 192.168.4.0/26 ends at the broadcast address 192.168.4.63.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-114"
   },
   {
     "id": "FCN04-036",
@@ -8433,7 +8522,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "A portion of the address is used to identify the network.",
     "explanation": "A Layer 3 address contains a network prefix. Routers use that prefix when selecting a route.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-115"
   },
   {
     "id": "FCN04-037",
@@ -8464,7 +8554,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Layer 3",
     "explanation": "Routers forward packets between networks using Layer 3 addresses.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-116"
   },
   {
     "id": "FCN04-038",
@@ -8495,7 +8586,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "2046",
     "explanation": "A /21 leaves 11 host bits and has 2,048 total addresses. Removing the network and broadcast addresses leaves 2,046.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-117"
   },
   {
     "id": "FCN04-039",
@@ -8526,7 +8618,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "packet",
     "explanation": "The TCP/IP internet layer encapsulates data into an IP packet.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-118"
   },
   {
     "id": "FCN04-040",
@@ -8557,7 +8650,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "DNS",
     "explanation": "Nslookup sends DNS queries to resolve names or inspect DNS records.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-119"
   },
   {
     "id": "FCN05-001",
@@ -8588,7 +8682,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "MTU",
     "explanation": "The MTU gives the largest network-layer packet the link can carry without fragmentation.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-041"
   },
   {
     "id": "FCN05-002",
@@ -8619,7 +8714,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "TTL",
     "explanation": "Traceroute varies the IPv4 TTL so successive routers return ICMP Time Exceeded messages.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-042"
   },
   {
     "id": "FCN05-003",
@@ -8650,7 +8746,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "ipconfig",
     "explanation": "On Windows, ipconfig /release releases a DHCP lease and ipconfig /renew requests a new lease.",
-    "topic": "DNS and DHCP"
+    "topic": "DNS and DHCP",
+    "duplicateOf": "FCN01-043"
   },
   {
     "id": "FCN05-004",
@@ -8681,7 +8778,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "arp",
     "explanation": "The ARP cache stores IPv4-to-MAC mappings. On Windows, arp -a displays them.",
-    "topic": "IPv4 and IPv6"
+    "topic": "IPv4 and IPv6",
+    "duplicateOf": "FCN01-044"
   },
   {
     "id": "FCN05-005",
@@ -8712,7 +8810,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "Single Mode Fiber",
     "explanation": "Single-mode fiber supports longer link distances than multimode fiber or twisted-pair copper.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-045"
   },
   {
     "id": "FCN05-006",
@@ -8743,7 +8842,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "It is less affected by the Electro Magnetic Interference than UTP",
     "explanation": "Shielding helps reduce electromagnetic interference in twisted-pair cabling.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-046"
   },
   {
     "id": "FCN05-007",
@@ -8774,7 +8874,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Data Link",
     "explanation": "MAC addresses identify interfaces for frame delivery at the data link layer.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-047"
   },
   {
     "id": "FCN05-008",
@@ -8805,7 +8906,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "Transport",
     "explanation": "The transport layer can provide end-to-end reliability through a protocol such as TCP.",
-    "topic": "OSI Model"
+    "topic": "OSI Model",
+    "duplicateOf": "FCN01-048"
   },
   {
     "id": "FCN05-009",
@@ -8836,7 +8938,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Network",
     "explanation": "The TCP/IP application layer covers the OSI application, presentation and session layers. The OSI network layer maps to the TCP/IP internet layer.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-049"
   },
   {
     "id": "FCN05-010",
@@ -8867,7 +8970,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "Error Detection",
     "explanation": "Ethernet uses its frame check sequence to detect corrupted frames.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-050"
   },
   {
     "id": "FCN05-011",
@@ -8898,7 +9002,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "Echo request",
     "explanation": "Ping sends an ICMP Echo Request. A responding host returns an Echo Reply.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-051"
   },
   {
     "id": "FCN05-012",
@@ -8929,7 +9034,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Multilayer switch",
     "explanation": "A multilayer switch can forward Ethernet frames at Layer 2 and route IP packets at Layer 3.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-052"
   },
   {
     "id": "FCN05-013",
@@ -8960,7 +9066,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "Destination MAC Address",
     "explanation": "The first field of the Ethernet MAC frame is the destination MAC address.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-053"
   },
   {
     "id": "FCN05-014",
@@ -8991,7 +9098,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "100 Mb/s",
     "explanation": "Fast Ethernet denotes 100 Mb/s Ethernet, such as 100BASE-TX. Some ports also negotiate 10 Mb/s for compatibility.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-054"
   },
   {
     "id": "FCN05-015",
@@ -9022,7 +9130,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "1518 Bytes",
     "explanation": "An untagged Ethernet frame with a 1500-byte payload, 14-byte header and 4-byte FCS is 1518 bytes.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-055"
   },
   {
     "id": "FCN05-016",
@@ -9053,7 +9162,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Token Ring",
     "explanation": "IEEE 802.5 specifies Token Ring.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-056"
   },
   {
     "id": "FCN05-017",
@@ -9084,7 +9194,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "16 Mbps",
     "explanation": "Classic Token Ring installations used 4 or 16 Mb/s. The higher of these two rates is 16 Mb/s.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-057"
   },
   {
     "id": "FCN05-018",
@@ -9115,7 +9226,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "PPP",
     "explanation": "PPP supports peer authentication through protocols such as PAP and CHAP.",
-    "topic": "WAN"
+    "topic": "WAN",
+    "duplicateOf": "FCN01-058"
   },
   {
     "id": "FCN05-019",
@@ -9146,7 +9258,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "CHAP",
     "explanation": "CHAP verifies a challenge-dependent response derived from a shared secret without sending the secret itself.",
-    "topic": "WAN"
+    "topic": "WAN",
+    "duplicateOf": "FCN01-059"
   },
   {
     "id": "FCN05-020",
@@ -9177,7 +9290,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "SNMP",
     "explanation": "An SNMP agent can send a trap notification to a monitoring system when an event occurs.",
-    "topic": "Networking Protocols"
+    "topic": "Networking Protocols",
+    "duplicateOf": "FCN01-060"
   },
   {
     "id": "FCN05-021",
@@ -9208,7 +9322,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "ICMP",
     "explanation": "ICMP carries IP-related errors back toward the sender, such as Destination Unreachable or Time Exceeded.",
-    "topic": "TCP/IP"
+    "topic": "TCP/IP",
+    "duplicateOf": "FCN01-061"
   },
   {
     "id": "FCN05-022",
@@ -9239,7 +9354,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "WPA-Enterprise",
     "explanation": "WPA-Enterprise uses 802.1X, commonly backed by a RADIUS authentication server.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-062"
   },
   {
     "id": "FCN05-023",
@@ -9270,7 +9386,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "128 Bit",
     "explanation": "An IPv6 address is 128 bits long.",
-    "topic": "IPv4 and IPv6"
+    "topic": "IPv4 and IPv6",
+    "duplicateOf": "FCN01-063"
   },
   {
     "id": "FCN05-024",
@@ -9301,7 +9418,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "0202:4AFF:FE57:6B73",
     "explanation": "Insert FF:FE between the MAC address halves and flip the universal/local bit in the first octet. 00 becomes 02, yielding 0202:4AFF:FE57:6B73.",
-    "topic": "IPv4 and IPv6"
+    "topic": "IPv4 and IPv6",
+    "duplicateOf": "FCN01-064"
   },
   {
     "id": "FCN05-025",
@@ -9332,7 +9450,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "802.11e",
     "explanation": "IEEE 802.11e introduced MAC-layer quality-of-service mechanisms that help prioritize delay-sensitive voice and video traffic.",
-    "topic": "Wireless Networks"
+    "topic": "Wireless Networks",
+    "duplicateOf": "FCN01-065"
   },
   {
     "id": "FCN05-026",
@@ -9363,7 +9482,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "255.255.192.0",
     "explanation": "Eighteen leading one bits give 255.255.192.0.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-066"
   },
   {
     "id": "FCN05-027",
@@ -9394,7 +9514,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "NAT Overload",
     "explanation": "NAT overload uses port translation to let several internal hosts share one public IPv4 address.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-067"
   },
   {
     "id": "FCN05-028",
@@ -9425,7 +9546,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "8,190 hosts",
     "explanation": "A /19 leaves 13 host bits, giving 8,192 addresses. Excluding the network and broadcast addresses leaves 8,190 usable host addresses.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-068"
   },
   {
     "id": "FCN05-029",
@@ -9456,7 +9578,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "192.168.10.15",
     "explanation": "A /28 contains 16 addresses. The 192.168.10.0 subnet ends at 192.168.10.15, its broadcast address.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-069"
   },
   {
     "id": "FCN05-030",
@@ -9487,7 +9610,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "You configured RIP version 1",
     "explanation": "RIPv1 omits subnet masks from routing updates, so it cannot advertise variable-length subnet masks. RIPv2 includes subnet masks.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-070"
   },
   {
     "id": "FCN05-031",
@@ -9518,7 +9642,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "110",
     "explanation": "Cisco routers assign OSPF routes a default administrative distance of 110.",
-    "topic": "Routing"
+    "topic": "Routing",
+    "duplicateOf": "FCN01-071"
   },
   {
     "id": "FCN05-032",
@@ -9549,7 +9674,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "IGRP",
     "explanation": "IGRP is classful and does not advertise subnet masks. EIGRP, OSPF and RIPv2 support VLSM.",
-    "topic": "Subnetting"
+    "topic": "Subnetting",
+    "duplicateOf": "FCN01-072"
   },
   {
     "id": "FCN05-033",
@@ -9580,7 +9706,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "TTL",
     "explanation": "IPv4 routers decrement TTL by at least one before forwarding, discarding a packet if its TTL expires.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-073"
   },
   {
     "id": "FCN05-034",
@@ -9611,7 +9738,8 @@
     "correctAnswer": "B",
     "correctAnswerText": "Don’t Fragment",
     "explanation": "Classic IPv4 Path MTU Discovery sets the DF flag so a router that cannot forward a packet without fragmentation returns an ICMP error.",
-    "topic": "NAT"
+    "topic": "NAT",
+    "duplicateOf": "FCN01-074"
   },
   {
     "id": "FCN05-035",
@@ -9642,7 +9770,8 @@
     "correctAnswer": "C",
     "correctAnswerText": "11",
     "explanation": "ICMPv4 type 11 is Time Exceeded. Code 0 indicates that TTL expired in transit.",
-    "topic": "IPv4 and IPv6"
+    "topic": "IPv4 and IPv6",
+    "duplicateOf": "FCN01-075"
   },
   {
     "id": "FCN05-036",
@@ -9673,7 +9802,8 @@
     "correctAnswer": "D",
     "correctAnswerText": "STP",
     "explanation": "Spanning Tree Protocol prevents Layer 2 forwarding loops by blocking redundant paths as needed.",
-    "topic": "VLAN"
+    "topic": "VLAN",
+    "duplicateOf": "FCN01-076"
   },
   {
     "id": "FCN05-037",
@@ -9704,7 +9834,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "VTP",
     "explanation": "Cisco VLAN Trunking Protocol distributes VLAN configuration across participating switches in a VTP domain.",
-    "topic": "VLAN"
+    "topic": "VLAN",
+    "duplicateOf": "FCN01-077"
   },
   {
     "id": "FCN05-038",
@@ -9735,7 +9866,8 @@
     "correctAnswer": "A",
     "correctAnswerText": "1",
     "explanation": "All ports on a shared Ethernet hub belong to one collision domain.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-078"
   },
   {
     "id": "FCN05-039",
@@ -9766,6 +9898,7 @@
     "correctAnswer": "C",
     "correctAnswerText": "1",
     "explanation": "With all 24 ports in one VLAN and no Layer 3 separation, the switch has one broadcast domain.",
-    "topic": "Switching"
+    "topic": "Switching",
+    "duplicateOf": "FCN01-079"
   }
 ]

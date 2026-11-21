@@ -2012,7 +2012,8 @@
     "explanation": "DHCP assigns the IP address together with the subnet mask, default gateway and DNS servers; the MAC address belongs to the NIC hardware.",
     "topic": "Windows Administration",
     "diagram": null,
-    "id": "OS-065"
+    "id": "OS-065",
+    "duplicateOf": "OS-025"
   },
   {
     "moduleId": "os",
@@ -2570,7 +2571,8 @@
     "explanation": "SSH encrypts the whole session; telnet and rlogin send keystrokes and passwords in cleartext.",
     "topic": "Security and Permissions",
     "diagram": null,
-    "id": "OS-083"
+    "id": "OS-083",
+    "duplicateOf": "OS-036"
   },
   {
     "moduleId": "os",
@@ -2694,7 +2696,8 @@
     "explanation": "httpd's main configuration is /etc/httpd/conf/httpd.conf; /etc/httpd/conf.d holds additional drop-in snippets.",
     "topic": "Network Services",
     "diagram": null,
-    "id": "OS-087"
+    "id": "OS-087",
+    "duplicateOf": "OS-019"
   },
   {
     "moduleId": "os",
@@ -3004,7 +3007,8 @@
     "explanation": "init (or systemd in modern distributions) is the first user-space process and therefore has PID 1.",
     "topic": "OS Fundamentals",
     "diagram": null,
-    "id": "OS-097"
+    "id": "OS-097",
+    "duplicateOf": "OS-031"
   },
   {
     "moduleId": "os",
@@ -3624,7 +3628,8 @@
     "explanation": "Samba provides SMB/CIFS file and print sharing between Unix/Linux and Windows.",
     "topic": "Network Services",
     "diagram": null,
-    "id": "OS-117"
+    "id": "OS-117",
+    "duplicateOf": "OS-115"
   },
   {
     "moduleId": "os",
@@ -3748,7 +3753,8 @@
     "explanation": "Memory allocation and paging trade internal fragmentation against external fragmentation; demand paging loads pages only when referenced. Correct choice: “Thrashing”.",
     "topic": "Memory Management",
     "diagram": null,
-    "id": "OS-121"
+    "id": "OS-121",
+    "duplicateOf": "OS-212"
   },
   {
     "moduleId": "os",
@@ -3841,7 +3847,8 @@
     "explanation": "Seek time is the time the disk head takes to move to the target track. Rotational latency is the subsequent wait for the sector to rotate under the head.",
     "topic": "OS Fundamentals",
     "diagram": null,
-    "id": "OS-124"
+    "id": "OS-124",
+    "duplicateOf": "OS-236"
   },
   {
     "moduleId": "os",
@@ -3872,7 +3879,8 @@
     "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Process Control block”.",
     "topic": "Process Management",
     "diagram": null,
-    "id": "OS-125"
+    "id": "OS-125",
+    "duplicateOf": "OS-128"
   },
   {
     "moduleId": "os",
@@ -5112,7 +5120,8 @@
     "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Race conditions”.",
     "topic": "Process Management",
     "diagram": null,
-    "id": "OS-165"
+    "id": "OS-165",
+    "duplicateOf": "OS-166"
   },
   {
     "moduleId": "os",
@@ -5267,7 +5276,8 @@
     "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Long-term Scheduler”.",
     "topic": "Process Management",
     "diagram": null,
-    "id": "OS-170"
+    "id": "OS-170",
+    "duplicateOf": "OS-206"
   },
   {
     "moduleId": "os",
@@ -5298,7 +5308,8 @@
     "explanation": "The file system stores metadata (owner, permissions, location) in structures such as the FCB/inode and organises names in a directory tree. Correct choice: “Seek time”.",
     "topic": "File Systems",
     "diagram": null,
-    "id": "OS-171"
+    "id": "OS-171",
+    "duplicateOf": "OS-236"
   },
   {
     "moduleId": "os",
@@ -5825,7 +5836,8 @@
     "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Throughput”.",
     "topic": "Process Management",
     "diagram": null,
-    "id": "OS-188"
+    "id": "OS-188",
+    "duplicateOf": "OS-244"
   },
   {
     "moduleId": "os",
@@ -6011,7 +6023,8 @@
     "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Context Switch”.",
     "topic": "Process Management",
     "diagram": null,
-    "id": "OS-194"
+    "id": "OS-194",
+    "duplicateOf": "OS-147"
   },
   {
     "moduleId": "os",
@@ -6476,7 +6489,8 @@
     "explanation": "Memory allocation and paging trade internal fragmentation against external fragmentation; demand paging loads pages only when referenced. Correct choice: “when excessive swapping takes place”.",
     "topic": "Memory Management",
     "diagram": null,
-    "id": "OS-209"
+    "id": "OS-209",
+    "duplicateOf": "OS-212"
   },
   {
     "moduleId": "os",
@@ -6879,7 +6893,8 @@
     "explanation": "Operating-system concepts follow the standard textbook definitions used by CDAC ITISS. Correct choice: “Real time”.",
     "topic": "OS Fundamentals",
     "diagram": null,
-    "id": "OS-222"
+    "id": "OS-222",
+    "duplicateOf": "OS-226"
   },
   {
     "moduleId": "os",
@@ -7189,7 +7204,8 @@
     "explanation": "Processes are programs in execution; their state lives in the process control block (PCB), which the kernel uses for scheduling and context switches. Correct choice: “Process Control Block”.",
     "topic": "Process Management",
     "diagram": null,
-    "id": "OS-232"
+    "id": "OS-232",
+    "duplicateOf": "OS-128"
   },
   {
     "moduleId": "os",
@@ -7468,7 +7484,8 @@
     "explanation": "Deadlocks need mutual exclusion, hold-and-wait, no preemption and circular wait; semaphores and monitors provide mutual exclusion and ordering. Correct choice: “Real-time”.",
     "topic": "Deadlock and Synchronization",
     "diagram": null,
-    "id": "OS-241"
+    "id": "OS-241",
+    "duplicateOf": "OS-226"
   },
   {
     "moduleId": "os",
@@ -7717,5 +7734,455 @@
     "topic": "Process Management",
     "diagram": null,
     "id": "OS-249"
+  },
+  {
+    "id": "OS-ORIG-001",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 1",
+    "question": "Three jobs arrive at time zero in order P1, P2, P3, with CPU bursts of 7, 4 and 1 ms. Under nonpreemptive shortest-job-first scheduling, what is P1’s waiting time?",
+    "options": [
+      {
+        "key": "A",
+        "text": "0 ms"
+      },
+      {
+        "key": "B",
+        "text": "12 ms"
+      },
+      {
+        "key": "C",
+        "text": "4 ms"
+      },
+      {
+        "key": "D",
+        "text": "5 ms"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "5 ms",
+    "explanation": "P3 runs for 1 ms, then P2 for 4 ms. P1 starts after both have finished.",
+    "topic": "CPU Scheduling",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-002",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 2",
+    "question": "Two jobs arrive together and are queued A then B. A needs 5 ms and B needs 3 ms. Round robin uses a 2 ms quantum with zero context-switch overhead. At what time does B finish?",
+    "options": [
+      {
+        "key": "A",
+        "text": "6 ms"
+      },
+      {
+        "key": "B",
+        "text": "5 ms"
+      },
+      {
+        "key": "C",
+        "text": "7 ms"
+      },
+      {
+        "key": "D",
+        "text": "8 ms"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "7 ms",
+    "explanation": "The timeline is A 0–2, B 2–4, A 4–6, B 6–7, then A 7–8.",
+    "topic": "CPU Scheduling",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-003",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 3",
+    "question": "A process references pages 2, 1, 2, 3, 1, 4 with three initially empty frames and LRU replacement. Which page is evicted to load page 4?",
+    "options": [
+      {
+        "key": "A",
+        "text": "4"
+      },
+      {
+        "key": "B",
+        "text": "3"
+      },
+      {
+        "key": "C",
+        "text": "1"
+      },
+      {
+        "key": "D",
+        "text": "2"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "2",
+    "explanation": "Just before page 4, the last uses of pages 2, 3 and 1 occurred at references 3, 4 and 5 respectively, so page 2 is least recent.",
+    "topic": "Memory Management",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-004",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 4",
+    "question": "A system uses 4,096-byte pages. A process needs 10,500 bytes of pageable memory. How many bytes are unused inside its last allocated page?",
+    "options": [
+      {
+        "key": "A",
+        "text": "4,096"
+      },
+      {
+        "key": "B",
+        "text": "1,788"
+      },
+      {
+        "key": "C",
+        "text": "2,308"
+      },
+      {
+        "key": "D",
+        "text": "3,404"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "1,788",
+    "explanation": "Three pages allocate 12,288 bytes. Subtracting 10,500 gives 1,788 bytes of internal fragmentation.",
+    "topic": "Memory Management",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-005",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 5",
+    "question": "A scheduler chooses a process that was waiting in the ready queue and gives it a CPU. Which state transition occurs?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Blocked → ready"
+      },
+      {
+        "key": "B",
+        "text": "Running → blocked"
+      },
+      {
+        "key": "C",
+        "text": "Ready → running"
+      },
+      {
+        "key": "D",
+        "text": "Ready → terminated"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "Ready → running",
+    "explanation": "A process waiting for CPU time is ready. It becomes running when dispatched.",
+    "topic": "Process Management",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-006",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 6",
+    "question": "A bounded queue has five slots, with two items already stored, and no threads waiting. What should its counting semaphore for free slots report?",
+    "options": [
+      {
+        "key": "A",
+        "text": "5"
+      },
+      {
+        "key": "B",
+        "text": "2"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "0"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "3",
+    "explanation": "Five total slots minus two occupied leaves three free slots.",
+    "topic": "Deadlock and Synchronization",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-007",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 7",
+    "question": "A worker locks a mutex, changes shared data and reaches an error return before unlocking. Other workers subsequently wait on that mutex. Which fix prevents this failure path?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Set the mutex to be held by all workers simultaneously"
+      },
+      {
+        "key": "B",
+        "text": "Move the error return deeper into the protected region"
+      },
+      {
+        "key": "C",
+        "text": "Increase the scheduler time slice"
+      },
+      {
+        "key": "D",
+        "text": "Release the mutex on every exit path from the protected region"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "Release the mutex on every exit path from the protected region",
+    "explanation": "The worker must release ownership even when the protected operation fails. Structured cleanup can enforce this on every exit.",
+    "topic": "Deadlock and Synchronization",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-008",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 8",
+    "question": "On the same filesystem, file report has one hard link. You run ln report retained and then remove report. What can you read through retained?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only an empty replacement file"
+      },
+      {
+        "key": "B",
+        "text": "The original file contents"
+      },
+      {
+        "key": "C",
+        "text": "Only the original file name"
+      },
+      {
+        "key": "D",
+        "text": "Nothing because every link vanishes when report is removed"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "The original file contents",
+    "explanation": "A hard link is another directory entry for the same inode. Removing one name leaves the other link and its contents available.",
+    "topic": "File Systems",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-009",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 9",
+    "question": "An application writes 12 KiB to a new file on a filesystem with 8 KiB allocation blocks. Ignoring metadata, compression and sparse files, how many allocation blocks must hold its data?",
+    "options": [
+      {
+        "key": "A",
+        "text": "2"
+      },
+      {
+        "key": "B",
+        "text": "8"
+      },
+      {
+        "key": "C",
+        "text": "3"
+      },
+      {
+        "key": "D",
+        "text": "1"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "2",
+    "explanation": "The first block holds 8 KiB. The remainder requires a second block.",
+    "topic": "File Systems",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-010",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 10",
+    "question": "A Linux process has umask 027. It creates a regular file with requested mode 0666, under a parent without default ACLs. Which mode does the file receive?",
+    "options": [
+      {
+        "key": "A",
+        "text": "0750"
+      },
+      {
+        "key": "B",
+        "text": "0640"
+      },
+      {
+        "key": "C",
+        "text": "0627"
+      },
+      {
+        "key": "D",
+        "text": "0660"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "0640",
+    "explanation": "The process clears the permission bits named by the mask. 0666 with the 0027 bits cleared is 0640.",
+    "topic": "Security and Permissions",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-011",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 11",
+    "question": "A service must start on the current run and also be enabled at boot on a systemd machine. The unit is named metrics-cache.service. Which command does both?",
+    "options": [
+      {
+        "key": "A",
+        "text": "systemctl daemon-reload metrics-cache.service"
+      },
+      {
+        "key": "B",
+        "text": "systemctl enable --now metrics-cache.service"
+      },
+      {
+        "key": "C",
+        "text": "systemctl start metrics-cache.service"
+      },
+      {
+        "key": "D",
+        "text": "systemctl enable metrics-cache.service"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "systemctl enable --now metrics-cache.service",
+    "explanation": "enable configures activation at boot for an installable unit. The --now option also starts it immediately.",
+    "topic": "Linux Administration",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-012",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 12",
+    "question": "A backup job should run at 02:15 on Mondays and Thursdays only. Which five cron time fields match?",
+    "options": [
+      {
+        "key": "A",
+        "text": "15 2 * * 1,4"
+      },
+      {
+        "key": "B",
+        "text": "15 2 * 1,4 *"
+      },
+      {
+        "key": "C",
+        "text": "2 15 * * 1,4"
+      },
+      {
+        "key": "D",
+        "text": "15 2 1,4 * *"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "15 2 * * 1,4",
+    "explanation": "The fields are minute, hour, day of month, month and day of week. Monday is 1 and Thursday is 4.",
+    "topic": "Linux Administration",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-013",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 13",
+    "question": "An NFS export is mounted read-only on a client. A user has write permission in the file’s owner bits. What happens to an attempted write through this mount?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The write succeeds because owner bits take precedence"
+      },
+      {
+        "key": "B",
+        "text": "The write changes the owner permission bits"
+      },
+      {
+        "key": "C",
+        "text": "The write succeeds and makes the mount read-write"
+      },
+      {
+        "key": "D",
+        "text": "The write fails because the mount is read-only"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "The write fails because the mount is read-only",
+    "explanation": "A read-only mount rejects writes even when the file’s permission bits would otherwise allow them.",
+    "topic": "Network Services",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-014",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 14",
+    "question": "An NTFS folder grants a user Read. The share permission grants the user Change. What effective permissions does that user get over the share, assuming no other relevant grants or denies?",
+    "options": [
+      {
+        "key": "A",
+        "text": "No access at all"
+      },
+      {
+        "key": "B",
+        "text": "Change, including write access"
+      },
+      {
+        "key": "C",
+        "text": "Full Control"
+      },
+      {
+        "key": "D",
+        "text": "Read only"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "Read only",
+    "explanation": "Access through an SMB share must satisfy both the share permissions and the NTFS permissions. Their intersection allows reads.",
+    "topic": "Windows Administration",
+    "diagram": null
+  },
+  {
+    "id": "OS-ORIG-015",
+    "moduleId": "os",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 15",
+    "question": "A program calls the operating system to open a file and receives an access-denied error. Which component validates the caller’s access to the file object?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The boot loader"
+      },
+      {
+        "key": "B",
+        "text": "The CPU scheduler’s ready queue"
+      },
+      {
+        "key": "C",
+        "text": "The command prompt’s display renderer"
+      },
+      {
+        "key": "D",
+        "text": "The kernel’s file access implementation"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "The kernel’s file access implementation",
+    "explanation": "The file-open system call enters the kernel, which evaluates permissions before returning a handle or an error.",
+    "topic": "OS Fundamentals",
+    "diagram": null
   }
 ]

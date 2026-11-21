@@ -8061,7 +8061,8 @@
     "correctAnswerText": "Create a project virtual environment",
     "explanation": "A virtual environment isolates project packages from the base interpreter.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-251"
   },
   {
     "id": "PROG-253",
@@ -8093,7 +8094,8 @@
     "correctAnswerText": "Create a project virtual environment",
     "explanation": "A virtual environment isolates project packages from the base interpreter.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-251"
   },
   {
     "id": "PROG-254",
@@ -8125,7 +8127,8 @@
     "correctAnswerText": "Create a project virtual environment",
     "explanation": "A virtual environment isolates project packages from the base interpreter.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-251"
   },
   {
     "id": "PROG-255",
@@ -8157,7 +8160,8 @@
     "correctAnswerText": "Create a project virtual environment",
     "explanation": "A virtual environment isolates project packages from the base interpreter.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-251"
   },
   {
     "id": "PROG-256",
@@ -8221,7 +8225,8 @@
     "correctAnswerText": "Use an if/elif/else structure with consistent indentation",
     "explanation": "Python uses indentation to define code suites.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-256"
   },
   {
     "id": "PROG-258",
@@ -8253,7 +8258,8 @@
     "correctAnswerText": "Use an if/elif/else structure with consistent indentation",
     "explanation": "Python uses indentation to define code suites.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-256"
   },
   {
     "id": "PROG-259",
@@ -8285,7 +8291,8 @@
     "correctAnswerText": "Use an if/elif/else structure with consistent indentation",
     "explanation": "Python uses indentation to define code suites.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-256"
   },
   {
     "id": "PROG-260",
@@ -8317,7 +8324,8 @@
     "correctAnswerText": "Use an if/elif/else structure with consistent indentation",
     "explanation": "Python uses indentation to define code suites.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-256"
   },
   {
     "id": "PROG-261",
@@ -8381,7 +8389,8 @@
     "correctAnswerText": "Use int",
     "explanation": "int is appropriate for whole-number counts.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-261"
   },
   {
     "id": "PROG-263",
@@ -8413,7 +8422,8 @@
     "correctAnswerText": "Use int",
     "explanation": "int is appropriate for whole-number counts.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-261"
   },
   {
     "id": "PROG-264",
@@ -8445,7 +8455,8 @@
     "correctAnswerText": "Use int",
     "explanation": "int is appropriate for whole-number counts.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-261"
   },
   {
     "id": "PROG-265",
@@ -8477,7 +8488,8 @@
     "correctAnswerText": "Use int",
     "explanation": "int is appropriate for whole-number counts.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-261"
   },
   {
     "id": "PROG-266",
@@ -8541,7 +8553,8 @@
     "correctAnswerText": "Use bool",
     "explanation": "bool represents True and False.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-266"
   },
   {
     "id": "PROG-268",
@@ -8573,7 +8586,8 @@
     "correctAnswerText": "Use bool",
     "explanation": "bool represents True and False.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-266"
   },
   {
     "id": "PROG-269",
@@ -8605,7 +8619,8 @@
     "correctAnswerText": "Use bool",
     "explanation": "bool represents True and False.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-266"
   },
   {
     "id": "PROG-270",
@@ -8637,7 +8652,8 @@
     "correctAnswerText": "Use bool",
     "explanation": "bool represents True and False.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-266"
   },
   {
     "id": "PROG-271",
@@ -8701,7 +8717,8 @@
     "correctAnswerText": "Use list",
     "explanation": "Lists preserve order and allow duplicates.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-271"
   },
   {
     "id": "PROG-273",
@@ -8733,7 +8750,8 @@
     "correctAnswerText": "Use list",
     "explanation": "Lists preserve order and allow duplicates.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-271"
   },
   {
     "id": "PROG-274",
@@ -8765,7 +8783,8 @@
     "correctAnswerText": "Use list",
     "explanation": "Lists preserve order and allow duplicates.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-271"
   },
   {
     "id": "PROG-275",
@@ -8797,7 +8816,8 @@
     "correctAnswerText": "Use list",
     "explanation": "Lists preserve order and allow duplicates.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-271"
   },
   {
     "id": "PROG-276",
@@ -8861,7 +8881,8 @@
     "correctAnswerText": "Use tuple",
     "explanation": "Tuples are immutable sequences.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-276"
   },
   {
     "id": "PROG-278",
@@ -8893,7 +8914,8 @@
     "correctAnswerText": "Use tuple",
     "explanation": "Tuples are immutable sequences.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-276"
   },
   {
     "id": "PROG-279",
@@ -8925,7 +8947,8 @@
     "correctAnswerText": "Use tuple",
     "explanation": "Tuples are immutable sequences.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-276"
   },
   {
     "id": "PROG-280",
@@ -8957,7 +8980,8 @@
     "correctAnswerText": "Use tuple",
     "explanation": "Tuples are immutable sequences.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-276"
   },
   {
     "id": "PROG-281",
@@ -9021,7 +9045,8 @@
     "correctAnswerText": "Use set",
     "explanation": "Sets retain unique hashable elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-281"
   },
   {
     "id": "PROG-283",
@@ -9053,7 +9078,8 @@
     "correctAnswerText": "Use set",
     "explanation": "Sets retain unique hashable elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-281"
   },
   {
     "id": "PROG-284",
@@ -9085,7 +9111,8 @@
     "correctAnswerText": "Use set",
     "explanation": "Sets retain unique hashable elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-281"
   },
   {
     "id": "PROG-285",
@@ -9117,7 +9144,8 @@
     "correctAnswerText": "Use set",
     "explanation": "Sets retain unique hashable elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-281"
   },
   {
     "id": "PROG-286",
@@ -9181,7 +9209,8 @@
     "correctAnswerText": "Use dictionary",
     "explanation": "Dictionaries map keys to values.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-286"
   },
   {
     "id": "PROG-288",
@@ -9213,7 +9242,8 @@
     "correctAnswerText": "Use dictionary",
     "explanation": "Dictionaries map keys to values.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-286"
   },
   {
     "id": "PROG-289",
@@ -9245,7 +9275,8 @@
     "correctAnswerText": "Use dictionary",
     "explanation": "Dictionaries map keys to values.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-286"
   },
   {
     "id": "PROG-290",
@@ -9277,7 +9308,8 @@
     "correctAnswerText": "Use dictionary",
     "explanation": "Dictionaries map keys to values.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-286"
   },
   {
     "id": "PROG-291",
@@ -9341,7 +9373,8 @@
     "correctAnswerText": "Use append()",
     "explanation": "append adds one object at the end of a list.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-291"
   },
   {
     "id": "PROG-293",
@@ -9373,7 +9406,8 @@
     "correctAnswerText": "Use append()",
     "explanation": "append adds one object at the end of a list.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-291"
   },
   {
     "id": "PROG-294",
@@ -9405,7 +9439,8 @@
     "correctAnswerText": "Use append()",
     "explanation": "append adds one object at the end of a list.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-291"
   },
   {
     "id": "PROG-295",
@@ -9437,7 +9472,8 @@
     "correctAnswerText": "Use append()",
     "explanation": "append adds one object at the end of a list.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-291"
   },
   {
     "id": "PROG-296",
@@ -9501,7 +9537,8 @@
     "correctAnswerText": "Use extend()",
     "explanation": "extend iterates over the supplied iterable and adds its elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-296"
   },
   {
     "id": "PROG-298",
@@ -9533,7 +9570,8 @@
     "correctAnswerText": "Use extend()",
     "explanation": "extend iterates over the supplied iterable and adds its elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-296"
   },
   {
     "id": "PROG-299",
@@ -9565,7 +9603,8 @@
     "correctAnswerText": "Use extend()",
     "explanation": "extend iterates over the supplied iterable and adds its elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-296"
   },
   {
     "id": "PROG-300",
@@ -9597,7 +9636,8 @@
     "correctAnswerText": "Use extend()",
     "explanation": "extend iterates over the supplied iterable and adds its elements.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-296"
   },
   {
     "id": "PROG-301",
@@ -9661,7 +9701,8 @@
     "correctAnswerText": "Use re.search()",
     "explanation": "search looks for the first match anywhere in the string.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-301"
   },
   {
     "id": "PROG-303",
@@ -9693,7 +9734,8 @@
     "correctAnswerText": "Use re.search()",
     "explanation": "search looks for the first match anywhere in the string.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-301"
   },
   {
     "id": "PROG-304",
@@ -9725,7 +9767,8 @@
     "correctAnswerText": "Use re.search()",
     "explanation": "search looks for the first match anywhere in the string.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-301"
   },
   {
     "id": "PROG-305",
@@ -9757,7 +9800,8 @@
     "correctAnswerText": "Use re.search()",
     "explanation": "search looks for the first match anywhere in the string.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-301"
   },
   {
     "id": "PROG-306",
@@ -9821,7 +9865,8 @@
     "correctAnswerText": "Use re.fullmatch()",
     "explanation": "fullmatch requires the whole string to match.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-306"
   },
   {
     "id": "PROG-308",
@@ -9853,7 +9898,8 @@
     "correctAnswerText": "Use re.fullmatch()",
     "explanation": "fullmatch requires the whole string to match.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-306"
   },
   {
     "id": "PROG-309",
@@ -9885,7 +9931,8 @@
     "correctAnswerText": "Use re.fullmatch()",
     "explanation": "fullmatch requires the whole string to match.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-306"
   },
   {
     "id": "PROG-310",
@@ -9917,7 +9964,8 @@
     "correctAnswerText": "Use re.fullmatch()",
     "explanation": "fullmatch requires the whole string to match.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-306"
   },
   {
     "id": "PROG-311",
@@ -9981,7 +10029,8 @@
     "correctAnswerText": "Use \\d+",
     "explanation": "\\d matches a digit and + means one or more repetitions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-311"
   },
   {
     "id": "PROG-313",
@@ -10013,7 +10062,8 @@
     "correctAnswerText": "Use \\d+",
     "explanation": "\\d matches a digit and + means one or more repetitions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-311"
   },
   {
     "id": "PROG-314",
@@ -10045,7 +10095,8 @@
     "correctAnswerText": "Use \\d+",
     "explanation": "\\d matches a digit and + means one or more repetitions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-311"
   },
   {
     "id": "PROG-315",
@@ -10077,7 +10128,8 @@
     "correctAnswerText": "Use \\d+",
     "explanation": "\\d matches a digit and + means one or more repetitions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-311"
   },
   {
     "id": "PROG-316",
@@ -10141,7 +10193,8 @@
     "correctAnswerText": "Use \\s",
     "explanation": "\\s matches whitespace.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-316"
   },
   {
     "id": "PROG-318",
@@ -10173,7 +10226,8 @@
     "correctAnswerText": "Use \\s",
     "explanation": "\\s matches whitespace.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-316"
   },
   {
     "id": "PROG-319",
@@ -10205,7 +10259,8 @@
     "correctAnswerText": "Use \\s",
     "explanation": "\\s matches whitespace.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-316"
   },
   {
     "id": "PROG-320",
@@ -10237,7 +10292,8 @@
     "correctAnswerText": "Use \\s",
     "explanation": "\\s matches whitespace.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-316"
   },
   {
     "id": "PROG-321",
@@ -10301,7 +10357,8 @@
     "correctAnswerText": "Use hashlib",
     "explanation": "hashlib provides cryptographic hash functions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-321"
   },
   {
     "id": "PROG-323",
@@ -10333,7 +10390,8 @@
     "correctAnswerText": "Use hashlib",
     "explanation": "hashlib provides cryptographic hash functions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-321"
   },
   {
     "id": "PROG-324",
@@ -10365,7 +10423,8 @@
     "correctAnswerText": "Use hashlib",
     "explanation": "hashlib provides cryptographic hash functions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-321"
   },
   {
     "id": "PROG-325",
@@ -10397,7 +10456,8 @@
     "correctAnswerText": "Use hashlib",
     "explanation": "hashlib provides cryptographic hash functions.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-321"
   },
   {
     "id": "PROG-326",
@@ -10461,7 +10521,8 @@
     "correctAnswerText": "Use datetime",
     "explanation": "datetime provides date and time types.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-326"
   },
   {
     "id": "PROG-328",
@@ -10493,7 +10554,8 @@
     "correctAnswerText": "Use datetime",
     "explanation": "datetime provides date and time types.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-326"
   },
   {
     "id": "PROG-329",
@@ -10525,7 +10587,8 @@
     "correctAnswerText": "Use datetime",
     "explanation": "datetime provides date and time types.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-326"
   },
   {
     "id": "PROG-330",
@@ -10557,7 +10620,8 @@
     "correctAnswerText": "Use datetime",
     "explanation": "datetime provides date and time types.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-326"
   },
   {
     "id": "PROG-331",
@@ -10621,7 +10685,8 @@
     "correctAnswerText": "Use the Shodan library/API client",
     "explanation": "The Shodan library provides a Python interface to the Shodan service.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-331"
   },
   {
     "id": "PROG-333",
@@ -10653,7 +10718,8 @@
     "correctAnswerText": "Use the Shodan library/API client",
     "explanation": "The Shodan library provides a Python interface to the Shodan service.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-331"
   },
   {
     "id": "PROG-334",
@@ -10685,7 +10751,8 @@
     "correctAnswerText": "Use the Shodan library/API client",
     "explanation": "The Shodan library provides a Python interface to the Shodan service.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-331"
   },
   {
     "id": "PROG-335",
@@ -10717,7 +10784,8 @@
     "correctAnswerText": "Use the Shodan library/API client",
     "explanation": "The Shodan library provides a Python interface to the Shodan service.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-331"
   },
   {
     "id": "PROG-336",
@@ -10781,7 +10849,8 @@
     "correctAnswerText": "Use pathlib.Path",
     "explanation": "pathlib provides object-oriented filesystem paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-336"
   },
   {
     "id": "PROG-338",
@@ -10813,7 +10882,8 @@
     "correctAnswerText": "Use pathlib.Path",
     "explanation": "pathlib provides object-oriented filesystem paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-336"
   },
   {
     "id": "PROG-339",
@@ -10845,7 +10915,8 @@
     "correctAnswerText": "Use pathlib.Path",
     "explanation": "pathlib provides object-oriented filesystem paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-336"
   },
   {
     "id": "PROG-340",
@@ -10877,7 +10948,8 @@
     "correctAnswerText": "Use pathlib.Path",
     "explanation": "pathlib provides object-oriented filesystem paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-336"
   },
   {
     "id": "PROG-341",
@@ -10941,7 +11013,8 @@
     "correctAnswerText": "Call Path.exists()",
     "explanation": "Path.exists() tests whether the path exists.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-341"
   },
   {
     "id": "PROG-343",
@@ -10973,7 +11046,8 @@
     "correctAnswerText": "Call Path.exists()",
     "explanation": "Path.exists() tests whether the path exists.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-341"
   },
   {
     "id": "PROG-344",
@@ -11005,7 +11079,8 @@
     "correctAnswerText": "Call Path.exists()",
     "explanation": "Path.exists() tests whether the path exists.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-341"
   },
   {
     "id": "PROG-345",
@@ -11037,7 +11112,8 @@
     "correctAnswerText": "Call Path.exists()",
     "explanation": "Path.exists() tests whether the path exists.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-341"
   },
   {
     "id": "PROG-346",
@@ -11101,7 +11177,8 @@
     "correctAnswerText": "Call Path.iterdir()",
     "explanation": "iterdir yields immediate directory entries.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-346"
   },
   {
     "id": "PROG-348",
@@ -11133,7 +11210,8 @@
     "correctAnswerText": "Call Path.iterdir()",
     "explanation": "iterdir yields immediate directory entries.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-346"
   },
   {
     "id": "PROG-349",
@@ -11165,7 +11243,8 @@
     "correctAnswerText": "Call Path.iterdir()",
     "explanation": "iterdir yields immediate directory entries.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-346"
   },
   {
     "id": "PROG-350",
@@ -11197,7 +11276,8 @@
     "correctAnswerText": "Call Path.iterdir()",
     "explanation": "iterdir yields immediate directory entries.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-346"
   },
   {
     "id": "PROG-351",
@@ -11261,7 +11341,8 @@
     "correctAnswerText": "Call mkdir(parents=True, exist_ok=True)",
     "explanation": "mkdir creates directories; parents and exist_ok handle parent creation and existing paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-351"
   },
   {
     "id": "PROG-353",
@@ -11293,7 +11374,8 @@
     "correctAnswerText": "Call mkdir(parents=True, exist_ok=True)",
     "explanation": "mkdir creates directories; parents and exist_ok handle parent creation and existing paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-351"
   },
   {
     "id": "PROG-354",
@@ -11325,7 +11407,8 @@
     "correctAnswerText": "Call mkdir(parents=True, exist_ok=True)",
     "explanation": "mkdir creates directories; parents and exist_ok handle parent creation and existing paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-351"
   },
   {
     "id": "PROG-355",
@@ -11357,7 +11440,8 @@
     "correctAnswerText": "Call mkdir(parents=True, exist_ok=True)",
     "explanation": "mkdir creates directories; parents and exist_ok handle parent creation and existing paths.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-351"
   },
   {
     "id": "PROG-356",
@@ -11421,7 +11505,8 @@
     "correctAnswerText": "Open the file in append mode 'a'",
     "explanation": "Append mode writes at the end without truncating existing content.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-356"
   },
   {
     "id": "PROG-358",
@@ -11453,7 +11538,8 @@
     "correctAnswerText": "Open the file in append mode 'a'",
     "explanation": "Append mode writes at the end without truncating existing content.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-356"
   },
   {
     "id": "PROG-359",
@@ -11485,7 +11571,8 @@
     "correctAnswerText": "Open the file in append mode 'a'",
     "explanation": "Append mode writes at the end without truncating existing content.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-356"
   },
   {
     "id": "PROG-360",
@@ -11517,7 +11604,8 @@
     "correctAnswerText": "Open the file in append mode 'a'",
     "explanation": "Append mode writes at the end without truncating existing content.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-356"
   },
   {
     "id": "PROG-361",
@@ -11581,7 +11669,8 @@
     "correctAnswerText": "Use a with statement/context manager",
     "explanation": "Context managers handle cleanup when the block exits.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-361"
   },
   {
     "id": "PROG-363",
@@ -11613,7 +11702,8 @@
     "correctAnswerText": "Use a with statement/context manager",
     "explanation": "Context managers handle cleanup when the block exits.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-361"
   },
   {
     "id": "PROG-364",
@@ -11645,7 +11735,8 @@
     "correctAnswerText": "Use a with statement/context manager",
     "explanation": "Context managers handle cleanup when the block exits.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-361"
   },
   {
     "id": "PROG-365",
@@ -11677,7 +11768,8 @@
     "correctAnswerText": "Use a with statement/context manager",
     "explanation": "Context managers handle cleanup when the block exits.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-361"
   },
   {
     "id": "PROG-366",
@@ -11741,7 +11833,8 @@
     "correctAnswerText": "Call bind(), listen(), then accept()",
     "explanation": "A TCP server binds to a local endpoint, listens and accepts connections.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-366"
   },
   {
     "id": "PROG-368",
@@ -11773,7 +11866,8 @@
     "correctAnswerText": "Call bind(), listen(), then accept()",
     "explanation": "A TCP server binds to a local endpoint, listens and accepts connections.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-366"
   },
   {
     "id": "PROG-369",
@@ -11805,7 +11899,8 @@
     "correctAnswerText": "Call bind(), listen(), then accept()",
     "explanation": "A TCP server binds to a local endpoint, listens and accepts connections.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-366"
   },
   {
     "id": "PROG-370",
@@ -11837,7 +11932,8 @@
     "correctAnswerText": "Call bind(), listen(), then accept()",
     "explanation": "A TCP server binds to a local endpoint, listens and accepts connections.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-366"
   },
   {
     "id": "PROG-371",
@@ -11901,7 +11997,8 @@
     "correctAnswerText": "Call connect()",
     "explanation": "connect initiates a connection to a remote endpoint.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-371"
   },
   {
     "id": "PROG-373",
@@ -11933,7 +12030,8 @@
     "correctAnswerText": "Call connect()",
     "explanation": "connect initiates a connection to a remote endpoint.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-371"
   },
   {
     "id": "PROG-374",
@@ -11965,7 +12063,8 @@
     "correctAnswerText": "Call connect()",
     "explanation": "connect initiates a connection to a remote endpoint.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-371"
   },
   {
     "id": "PROG-375",
@@ -11997,7 +12096,8 @@
     "correctAnswerText": "Call connect()",
     "explanation": "connect initiates a connection to a remote endpoint.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-371"
   },
   {
     "id": "PROG-376",
@@ -12061,7 +12161,8 @@
     "correctAnswerText": "Decode the bytes using the expected encoding",
     "explanation": "Socket APIs exchange bytes; decode converts bytes to text.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-376"
   },
   {
     "id": "PROG-378",
@@ -12093,7 +12194,8 @@
     "correctAnswerText": "Decode the bytes using the expected encoding",
     "explanation": "Socket APIs exchange bytes; decode converts bytes to text.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-376"
   },
   {
     "id": "PROG-379",
@@ -12125,7 +12227,8 @@
     "correctAnswerText": "Decode the bytes using the expected encoding",
     "explanation": "Socket APIs exchange bytes; decode converts bytes to text.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-376"
   },
   {
     "id": "PROG-380",
@@ -12157,7 +12260,8 @@
     "correctAnswerText": "Decode the bytes using the expected encoding",
     "explanation": "Socket APIs exchange bytes; decode converts bytes to text.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-376"
   },
   {
     "id": "PROG-381",
@@ -12221,7 +12325,8 @@
     "correctAnswerText": "Use the browser as an HTTP client",
     "explanation": "The browser sends HTTP requests as a client.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-381"
   },
   {
     "id": "PROG-383",
@@ -12253,7 +12358,8 @@
     "correctAnswerText": "Use the browser as an HTTP client",
     "explanation": "The browser sends HTTP requests as a client.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-381"
   },
   {
     "id": "PROG-384",
@@ -12285,7 +12391,8 @@
     "correctAnswerText": "Use the browser as an HTTP client",
     "explanation": "The browser sends HTTP requests as a client.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-381"
   },
   {
     "id": "PROG-385",
@@ -12317,7 +12424,8 @@
     "correctAnswerText": "Use the browser as an HTTP client",
     "explanation": "The browser sends HTTP requests as a client.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-381"
   },
   {
     "id": "PROG-386",
@@ -12381,7 +12489,8 @@
     "correctAnswerText": "Define a stable plugin interface and controlled loading process",
     "explanation": "A narrow, versioned plugin API supports extensibility and safer operation.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-386"
   },
   {
     "id": "PROG-388",
@@ -12413,7 +12522,8 @@
     "correctAnswerText": "Define a stable plugin interface and controlled loading process",
     "explanation": "A narrow, versioned plugin API supports extensibility and safer operation.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-386"
   },
   {
     "id": "PROG-389",
@@ -12445,7 +12555,8 @@
     "correctAnswerText": "Define a stable plugin interface and controlled loading process",
     "explanation": "A narrow, versioned plugin API supports extensibility and safer operation.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-386"
   },
   {
     "id": "PROG-390",
@@ -12477,7 +12588,8 @@
     "correctAnswerText": "Define a stable plugin interface and controlled loading process",
     "explanation": "A narrow, versioned plugin API supports extensibility and safer operation.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-386"
   },
   {
     "id": "PROG-391",
@@ -12541,7 +12653,8 @@
     "correctAnswerText": "Use breakpoints and inspect stack, variables and execution state",
     "explanation": "A debugger helps identify the failing instruction and relevant program state.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-391"
   },
   {
     "id": "PROG-393",
@@ -12573,7 +12686,8 @@
     "correctAnswerText": "Use breakpoints and inspect stack, variables and execution state",
     "explanation": "A debugger helps identify the failing instruction and relevant program state.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-391"
   },
   {
     "id": "PROG-394",
@@ -12605,7 +12719,8 @@
     "correctAnswerText": "Use breakpoints and inspect stack, variables and execution state",
     "explanation": "A debugger helps identify the failing instruction and relevant program state.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-391"
   },
   {
     "id": "PROG-395",
@@ -12637,7 +12752,8 @@
     "correctAnswerText": "Use breakpoints and inspect stack, variables and execution state",
     "explanation": "A debugger helps identify the failing instruction and relevant program state.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-391"
   },
   {
     "id": "PROG-396",
@@ -12701,7 +12817,8 @@
     "correctAnswerText": "Use input validation, logging, bounded retries and cleanup",
     "explanation": "Reliable automation is observable, bounded and safe to rerun.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-396"
   },
   {
     "id": "PROG-398",
@@ -12733,7 +12850,8 @@
     "correctAnswerText": "Use input validation, logging, bounded retries and cleanup",
     "explanation": "Reliable automation is observable, bounded and safe to rerun.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-396"
   },
   {
     "id": "PROG-399",
@@ -12765,7 +12883,8 @@
     "correctAnswerText": "Use input validation, logging, bounded retries and cleanup",
     "explanation": "Reliable automation is observable, bounded and safe to rerun.",
     "topic": "Python Architecture & Standard Library",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "PROG-396"
   },
   {
     "id": "PROG-400",
@@ -12796,6 +12915,457 @@
     "correctAnswer": "A",
     "correctAnswerText": "Use input validation, logging, bounded retries and cleanup",
     "explanation": "Reliable automation is observable, bounded and safe to rerun.",
+    "topic": "Python Architecture & Standard Library",
+    "diagram": null,
+    "duplicateOf": "PROG-396"
+  },
+  {
+    "id": "PROG-ORIG-001",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 1",
+    "question": "What does this Python code print after modifying a shallow copy?",
+    "options": [
+      {
+        "key": "A",
+        "text": "[[1, 2], [3]]"
+      },
+      {
+        "key": "B",
+        "text": "[[8, 2], [3]]"
+      },
+      {
+        "key": "C",
+        "text": "[[8, 2], [3], [4]]"
+      },
+      {
+        "key": "D",
+        "text": "[[1, 2], [3], [4]]"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "[[8, 2], [3]]",
+    "explanation": "The outer lists are separate. Both still refer to the same first inner list, so editing its element changes both views. Appending a new row affects only the copy.",
+    "topic": "Python Code Tracing & Output",
+    "diagram": "rows = [[1, 2], [3]]\ncopy = rows[:]\ncopy[0][0] = 8\ncopy.append([4])\nprint(rows)"
+  },
+  {
+    "id": "PROG-ORIG-002",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 2",
+    "question": "What does this comprehension print when duplicate keys occur?",
+    "options": [
+      {
+        "key": "A",
+        "text": "{'a': 2, 'b': 4}"
+      },
+      {
+        "key": "B",
+        "text": "{'a': 6, 'b': 4}"
+      },
+      {
+        "key": "C",
+        "text": "{'b': 4, 'a': 6}"
+      },
+      {
+        "key": "D",
+        "text": "{'a': 8, 'b': 4}"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "{'a': 6, 'b': 4}",
+    "explanation": "The last value assigned to a wins. Reassigning an existing dictionary key preserves its insertion position.",
+    "topic": "Python Code Tracing & Output",
+    "diagram": "pairs = [('a', 2), ('b', 4), ('a', 6)]\nprint({name: score for name, score in pairs})"
+  },
+  {
+    "id": "PROG-ORIG-003",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 3",
+    "question": "What does this Python code print after limiting split to one separator?",
+    "options": [
+      {
+        "key": "A",
+        "text": "['north:east:core']"
+      },
+      {
+        "key": "B",
+        "text": "['north', 'east', 'core']"
+      },
+      {
+        "key": "C",
+        "text": "['north', 'east:core']"
+      },
+      {
+        "key": "D",
+        "text": "['north:east', 'core']"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "['north', 'east:core']",
+    "explanation": "str.split with maxsplit=1 splits once from the left. The rest of the string remains in the second element.",
+    "topic": "Python Code Tracing & Output",
+    "diagram": "print('north:east:core'.split(':', 1))"
+  },
+  {
+    "id": "PROG-ORIG-004",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 4",
+    "question": "What does this Python 3 code print when zip receives unequal-length inputs?",
+    "options": [
+      {
+        "key": "A",
+        "text": "[('disk', 7), ('net', 9), ('cpu', None)]"
+      },
+      {
+        "key": "B",
+        "text": "ValueError"
+      },
+      {
+        "key": "C",
+        "text": "[('disk', 7)]"
+      },
+      {
+        "key": "D",
+        "text": "[('disk', 7), ('net', 9)]"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "[('disk', 7), ('net', 9)]",
+    "explanation": "Normal zip stops at the shortest iterable. The third label has no corresponding number.",
+    "topic": "Python Code Tracing & Output",
+    "diagram": "labels = ['disk', 'net', 'cpu']\nprint(list(zip(labels, [7, 9])))"
+  },
+  {
+    "id": "PROG-ORIG-005",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 5",
+    "question": "What value does the outer print call display?",
+    "options": [
+      {
+        "key": "A",
+        "text": "ok"
+      },
+      {
+        "key": "B",
+        "text": "None"
+      },
+      {
+        "key": "C",
+        "text": "done"
+      },
+      {
+        "key": "D",
+        "text": "timeout"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "timeout",
+    "explanation": "The dictionary get call supplies the fallback when the key is absent. The fallback is returned directly.",
+    "topic": "Python Code Tracing & Output",
+    "diagram": "def state(data):\n    return data.get('status', 'timeout')\n\nprint(state({'result': 'ok', 'message': 'done'}))"
+  },
+  {
+    "id": "PROG-ORIG-006",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 6",
+    "question": "What does this Python code print after sorting the rows?",
+    "options": [
+      {
+        "key": "A",
+        "text": "['gamma', 'alpha', 'beta']"
+      },
+      {
+        "key": "B",
+        "text": "['alpha', 'beta', 'gamma']"
+      },
+      {
+        "key": "C",
+        "text": "['beta', 'alpha', 'gamma']"
+      },
+      {
+        "key": "D",
+        "text": "['beta', 'gamma', 'alpha']"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "['beta', 'alpha', 'gamma']",
+    "explanation": "Sorting by priority places beta first. Python’s stable sort keeps alpha before gamma when their priorities tie.",
+    "topic": "Python Code Tracing & Output",
+    "diagram": "rows = [('alpha', 2), ('beta', 1), ('gamma', 2)]\nprint([name for name, _ in sorted(rows, key=lambda row: row[1])])"
+  },
+  {
+    "id": "PROG-ORIG-007",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 7",
+    "question": "A MySQL table trial contains three values in response_ms: 12, NULL and 18. What does SELECT COUNT(*), COUNT(response_ms) FROM trial return?",
+    "options": [
+      {
+        "key": "A",
+        "text": "2, 3"
+      },
+      {
+        "key": "B",
+        "text": "2, 2"
+      },
+      {
+        "key": "C",
+        "text": "3, 2"
+      },
+      {
+        "key": "D",
+        "text": "3, 3"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "3, 2",
+    "explanation": "COUNT(*) includes all three rows. COUNT(response_ms) counts only the two non-NULL values.",
+    "topic": "MySQL Query Construction",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-008",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 8",
+    "question": "A MySQL query left-joins assets a to checks c ON c.asset_id = a.id. You need every asset included and only checks whose status is PASS matched. Where should c.status = 'PASS' go?",
+    "options": [
+      {
+        "key": "A",
+        "text": "In a WHERE clause after the LEFT JOIN"
+      },
+      {
+        "key": "B",
+        "text": "In the ON condition, combined with AND"
+      },
+      {
+        "key": "C",
+        "text": "In LIMIT after the LEFT JOIN"
+      },
+      {
+        "key": "D",
+        "text": "In ORDER BY after the LEFT JOIN"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "In the ON condition, combined with AND",
+    "explanation": "An ON filter limits matches while keeping the left row. A WHERE filter on the right table’s status removes the NULL-extended rows.",
+    "topic": "MySQL Query Construction",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-009",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 9",
+    "question": "A MySQL table readings has columns sensor_id and volts. An index supports searches by sensor_id. Which query lists each sensor once, even if multiple rows have the same sensor_id?",
+    "options": [
+      {
+        "key": "A",
+        "text": "SELECT sensor_id FROM readings ORDER BY sensor_id;"
+      },
+      {
+        "key": "B",
+        "text": "SELECT sensor_id FROM readings WHERE volts IS NOT NULL;"
+      },
+      {
+        "key": "C",
+        "text": "SELECT sensor_id FROM readings LIMIT 1;"
+      },
+      {
+        "key": "D",
+        "text": "SELECT DISTINCT sensor_id FROM readings;"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "SELECT DISTINCT sensor_id FROM readings;",
+    "explanation": "DISTINCT removes duplicate result rows based here on the selected sensor_id column.",
+    "topic": "MySQL Query Construction",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-010",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 10",
+    "question": "A query reports the latest three events. Several rows may share logged_at, and event_id is unique. Which clause combination consistently prefers the highest event_id among tied times?",
+    "options": [
+      {
+        "key": "A",
+        "text": "ORDER BY event_id DESC, logged_at DESC LIMIT 3"
+      },
+      {
+        "key": "B",
+        "text": "ORDER BY logged_at DESC, event_id ASC LIMIT 3"
+      },
+      {
+        "key": "C",
+        "text": "ORDER BY logged_at DESC LIMIT 3"
+      },
+      {
+        "key": "D",
+        "text": "ORDER BY logged_at DESC, event_id DESC LIMIT 3"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "ORDER BY logged_at DESC, event_id DESC LIMIT 3",
+    "explanation": "The timestamp is the primary sort key. Sorting tied timestamps by event_id descending gives a deterministic order.",
+    "topic": "MySQL Query Construction",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-011",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 11",
+    "question": "A MySQL InnoDB transaction starts, inserts one row, creates a savepoint named after_first, inserts a second row, rolls back to after_first, and then commits. What persists?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Only the first inserted row"
+      },
+      {
+        "key": "B",
+        "text": "Only the second inserted row"
+      },
+      {
+        "key": "C",
+        "text": "Neither row"
+      },
+      {
+        "key": "D",
+        "text": "Both rows"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "Only the first inserted row",
+    "explanation": "Rolling back to a savepoint undoes changes after that point. COMMIT persists the first insert.",
+    "topic": "MySQL Database Administration & DDL",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-012",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 12",
+    "question": "A MySQL table has a composite B-tree index on (room_id, checked_at). Which filter can use the index’s leading column for a conventional index lookup?",
+    "options": [
+      {
+        "key": "A",
+        "text": "WHERE room_id = 7"
+      },
+      {
+        "key": "B",
+        "text": "WHERE checked_at = '2026-01-14'"
+      },
+      {
+        "key": "C",
+        "text": "WHERE reading > 200"
+      },
+      {
+        "key": "D",
+        "text": "WHERE checked_at IS NULL"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "WHERE room_id = 7",
+    "explanation": "The index is ordered first by room_id. A filter on room_id can use the leftmost prefix of the indexed columns.",
+    "topic": "MySQL Database Administration & DDL",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-013",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 13",
+    "question": "A Python script needs to calculate a file’s SHA-256 digest without reading the entire file into memory. How should it use hashlib?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Call update on the same hash object for each binary chunk, then read hexdigest after the final chunk"
+      },
+      {
+        "key": "B",
+        "text": "Call update once on the filename rather than the file’s bytes"
+      },
+      {
+        "key": "C",
+        "text": "Calculate hexdigest for each chunk and concatenate the digest strings"
+      },
+      {
+        "key": "D",
+        "text": "Create a new hash object for every chunk and return the last digest"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "Call update on the same hash object for each binary chunk, then read hexdigest after the final chunk",
+    "explanation": "Updating one hash object with the chunks in order hashes the concatenation of their bytes.",
+    "topic": "Python Architecture & Standard Library",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-014",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 14",
+    "question": "A script receives the bytes b'node-12' from a UTF-8 source. Which expression produces the Python string 'node-12'?",
+    "options": [
+      {
+        "key": "A",
+        "text": "str(payload)"
+      },
+      {
+        "key": "B",
+        "text": "repr(payload)"
+      },
+      {
+        "key": "C",
+        "text": "payload.encode('utf-8')"
+      },
+      {
+        "key": "D",
+        "text": "payload.decode('utf-8')"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "payload.decode('utf-8')",
+    "explanation": "decode interprets the bytes using UTF-8. str without an encoding displays a bytes representation, including the b prefix.",
+    "topic": "Python Architecture & Standard Library",
+    "diagram": null
+  },
+  {
+    "id": "PROG-ORIG-015",
+    "moduleId": "programming",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 15",
+    "question": "A Python program creates an aware UTC timestamp. Before showing it to a user in Asia/Kolkata, which operation converts it to local wall time while preserving the instant?",
+    "options": [
+      {
+        "key": "A",
+        "text": "stamp.replace(hour=0)"
+      },
+      {
+        "key": "B",
+        "text": "stamp.date()"
+      },
+      {
+        "key": "C",
+        "text": "stamp.replace(tzinfo=ZoneInfo('Asia/Kolkata'))"
+      },
+      {
+        "key": "D",
+        "text": "stamp.astimezone(ZoneInfo('Asia/Kolkata'))"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "stamp.astimezone(ZoneInfo('Asia/Kolkata'))",
+    "explanation": "astimezone adjusts the displayed UTC offset and clock fields to represent the same instant in a different time zone.",
     "topic": "Python Architecture & Standard Library",
     "diagram": null
   }

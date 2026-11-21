@@ -6,10 +6,10 @@ export interface MCQOption {
 export interface Question {
   id: string;
   moduleId: string;
-  sourcePdf: string;
+  sourcePdf?: string;
   sourceSection?: string;
   sourceQuestionNumber: string;
-  pageNumber: number;
+  pageNumber?: number;
   question: string;
   options: MCQOption[];
   correctAnswer: string;
@@ -17,6 +17,7 @@ export interface Question {
   explanation: string;
   topic: string;
   diagram?: string | null;
+  duplicateOf?: string;
 }
 
 export interface PDFSourceAudit {

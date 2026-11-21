@@ -26,7 +26,7 @@ const infraQuestions: Question[] = infraQuestionsRaw as Question[];
  * - Bookmarked Questions bank
  * - Independent Performance dashboard & analytics
  */
-const QUESTION_BANKS: Record<string, Question[]> = {
+const SOURCE_BANKS: Record<string, Question[]> = {
   fcn: fcnQuestions,
   os: osQuestions,
   programming: programmingQuestions,
@@ -43,6 +43,22 @@ const QUESTION_BANKS: Record<string, Question[]> = {
   // communication: communicationQuestions,
   // project: projectQuestions,
 };
+
+const QUESTION_BANKS = Object.fromEntries(
+  Object.entries(SOURCE_BANKS).map(([moduleId, questions]) => [
+    moduleId,
+    questions.filter(question => !question.duplicateOf)
+  ])
+);
+
+// Saved mock results reference the original question and its option order.
+const questionsById = new Map(
+  Object.values(SOURCE_BANKS).flat().map(question => [question.id, question])
+);
+
+export const getQuestionById = (id: string): Question | undefined => questionsById.get(id);
+
+export const getCanonicalQuestionId = (id: string): string => getQuestionById(id)?.duplicateOf ?? id;
 
 /**
  * Retrieve questions for any module

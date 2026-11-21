@@ -70,7 +70,6 @@ export const MockTestView: React.FC = () => {
     return (
       <MockResultView
         attempt={selectedResultAttempt}
-        questions={allQuestions}
         onRetake={handleStartExam}
         onExit={() => setSelectedResultAttempt(null)}
       />

@@ -29,7 +29,8 @@
     "correctAnswerText": "Service Strategy",
     "explanation": "The statement defines Service Strategy: defines the perspective, position, plans and patterns through which a service provider competes and creates value.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-002"
   },
   {
     "id": "INFRA-002",
@@ -93,7 +94,8 @@
     "correctAnswerText": "Market Space",
     "explanation": "The statement defines Market Space: is the set of business outcomes that customers want to achieve and that services can support.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-004"
   },
   {
     "id": "INFRA-004",
@@ -157,7 +159,8 @@
     "correctAnswerText": "Service Provider Type I",
     "explanation": "The statement defines Service Provider Type I: is an internal service provider embedded within one business unit.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-006"
   },
   {
     "id": "INFRA-006",
@@ -221,7 +224,8 @@
     "correctAnswerText": "Service Provider Type II",
     "explanation": "The statement defines Service Provider Type II: is an internal shared-services provider that serves multiple business units within the same organization.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-008"
   },
   {
     "id": "INFRA-008",
@@ -285,7 +289,8 @@
     "correctAnswerText": "Service Provider Type III",
     "explanation": "The statement defines Service Provider Type III: is an external service provider that supplies services to customers outside its own organization.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-010"
   },
   {
     "id": "INFRA-010",
@@ -349,7 +354,8 @@
     "correctAnswerText": "Financial Management for IT Services",
     "explanation": "The statement defines Financial Management for IT Services: evaluates and manages the financial resources used to provide IT services, including budgeting, accounting and charging.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-012"
   },
   {
     "id": "INFRA-012",
@@ -413,7 +419,8 @@
     "correctAnswerText": "Service Portfolio Management",
     "explanation": "The statement defines Service Portfolio Management: manages the complete set of services, including the service pipeline, service catalogue and retired services.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-014"
   },
   {
     "id": "INFRA-014",
@@ -477,7 +484,8 @@
     "correctAnswerText": "Demand Management",
     "explanation": "The statement defines Demand Management: understands and influences customer demand for services and aligns demand with capacity.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-016"
   },
   {
     "id": "INFRA-016",
@@ -541,7 +549,8 @@
     "correctAnswerText": "Service Design",
     "explanation": "The statement defines Service Design: designs new or changed services, including architecture, processes, policies and documentation, to meet current and future business needs.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-018"
   },
   {
     "id": "INFRA-018",
@@ -605,7 +614,8 @@
     "correctAnswerText": "Service Design Package (SDP)",
     "explanation": "The statement defines Service Design Package (SDP): contains the requirements and design details needed to build, test, transition and operate a new or changed service.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-020"
   },
   {
     "id": "INFRA-020",
@@ -669,7 +679,8 @@
     "correctAnswerText": "Service Catalogue Management",
     "explanation": "The statement defines Service Catalogue Management: ensures that an accurate catalogue is available with information about live services and those approved for deployment.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-022"
   },
   {
     "id": "INFRA-022",
@@ -733,7 +744,8 @@
     "correctAnswerText": "Service Level Management",
     "explanation": "The statement defines Service Level Management: negotiates, agrees, documents, monitors and reports service-level targets with customers.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-024"
   },
   {
     "id": "INFRA-024",
@@ -797,7 +809,8 @@
     "correctAnswerText": "Capacity Management",
     "explanation": "The statement defines Capacity Management: ensures that IT services and infrastructure have sufficient capacity to meet agreed and future business needs cost-effectively.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-026"
   },
   {
     "id": "INFRA-026",
@@ -861,7 +874,8 @@
     "correctAnswerText": "Availability Management",
     "explanation": "The statement defines Availability Management: ensures that services deliver agreed levels of availability and that failures and recovery are managed.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-028"
   },
   {
     "id": "INFRA-028",
@@ -925,7 +939,8 @@
     "correctAnswerText": "IT Service Continuity Management",
     "explanation": "The statement defines IT Service Continuity Management: supports business continuity by preparing IT recovery arrangements for major disruptions or disasters.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-030"
   },
   {
     "id": "INFRA-030",
@@ -989,7 +1004,8 @@
     "correctAnswerText": "Information Security Management",
     "explanation": "The statement defines Information Security Management: protects the confidentiality, integrity and availability of information and services.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-032"
   },
   {
     "id": "INFRA-032",
@@ -1053,7 +1069,8 @@
     "correctAnswerText": "Service Transition",
     "explanation": "The statement defines Service Transition: moves new or changed services into the live environment while controlling risk and preserving service quality.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-034"
   },
   {
     "id": "INFRA-034",
@@ -1117,7 +1134,8 @@
     "correctAnswerText": "Service Asset and Configuration Management",
     "explanation": "The statement defines Service Asset and Configuration Management: maintains information about configuration items and their relationships to support effective service management.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-036"
   },
   {
     "id": "INFRA-036",
@@ -1181,7 +1199,8 @@
     "correctAnswerText": "Configuration Item (CI)",
     "explanation": "The statement defines Configuration Item (CI): is any component that needs to be managed to deliver an IT service, such as hardware, software, documentation or a service.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-038"
   },
   {
     "id": "INFRA-038",
@@ -1245,7 +1264,8 @@
     "correctAnswerText": "Configuration Management System (CMS)",
     "explanation": "The statement defines Configuration Management System (CMS): stores and manages configuration data and relationships, potentially drawing from multiple configuration management databases.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-040"
   },
   {
     "id": "INFRA-040",
@@ -1309,7 +1329,8 @@
     "correctAnswerText": "Change Management",
     "explanation": "The statement defines Change Management: controls the lifecycle of changes so beneficial changes can be made with minimum disruption and risk.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-042"
   },
   {
     "id": "INFRA-042",
@@ -1373,7 +1394,8 @@
     "correctAnswerText": "Standard Change",
     "explanation": "The statement defines Standard Change: is a pre-authorized, low-risk, repeatable change carried out using an established procedure.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-044"
   },
   {
     "id": "INFRA-044",
@@ -1437,7 +1459,8 @@
     "correctAnswerText": "Emergency Change",
     "explanation": "The statement defines Emergency Change: is a change that must be implemented as soon as possible to resolve a serious issue or protect the business.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-046"
   },
   {
     "id": "INFRA-046",
@@ -1501,7 +1524,8 @@
     "correctAnswerText": "Release and Deployment Management",
     "explanation": "The statement defines Release and Deployment Management: plans, schedules and controls the movement of releases into test and live environments.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-048"
   },
   {
     "id": "INFRA-048",
@@ -1565,7 +1589,8 @@
     "correctAnswerText": "Knowledge Management",
     "explanation": "The statement defines Knowledge Management: ensures that reliable information and knowledge are available to the right people at the right time.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-050"
   },
   {
     "id": "INFRA-050",
@@ -1629,7 +1654,8 @@
     "correctAnswerText": "Service Operation",
     "explanation": "The statement defines Service Operation: coordinates and carries out the activities needed to deliver and support services at agreed levels.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-052"
   },
   {
     "id": "INFRA-052",
@@ -1693,7 +1719,8 @@
     "correctAnswerText": "Event Management",
     "explanation": "The statement defines Event Management: monitors events and determines the appropriate response based on their significance.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-054"
   },
   {
     "id": "INFRA-054",
@@ -1757,7 +1784,8 @@
     "correctAnswerText": "Incident Management",
     "explanation": "The statement defines Incident Management: restores normal service operation as quickly as possible and minimizes the adverse impact of incidents.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-056"
   },
   {
     "id": "INFRA-056",
@@ -1821,7 +1849,8 @@
     "correctAnswerText": "Problem Management",
     "explanation": "The statement defines Problem Management: investigates the underlying causes of incidents and manages workarounds and known errors.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-058"
   },
   {
     "id": "INFRA-058",
@@ -1885,7 +1914,8 @@
     "correctAnswerText": "Request Fulfilment",
     "explanation": "The statement defines Request Fulfilment: handles standard service requests from users, such as information, access or approved software.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-060"
   },
   {
     "id": "INFRA-060",
@@ -1949,7 +1979,8 @@
     "correctAnswerText": "Service Desk",
     "explanation": "The statement defines Service Desk: is the single point of contact between users and the service provider for communication and support.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-062"
   },
   {
     "id": "INFRA-062",
@@ -2013,7 +2044,8 @@
     "correctAnswerText": "Access Management",
     "explanation": "The statement defines Access Management: grants authorized users the right to use a service while preventing access by unauthorized users.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-064"
   },
   {
     "id": "INFRA-064",
@@ -2077,7 +2109,8 @@
     "correctAnswerText": "Workaround",
     "explanation": "The statement defines Workaround: is a temporary method of reducing or eliminating the impact of an incident or problem when a full resolution is not yet available.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-066"
   },
   {
     "id": "INFRA-066",
@@ -2141,7 +2174,8 @@
     "correctAnswerText": "Known Error",
     "explanation": "The statement defines Known Error: is a problem that has a documented root cause and a workaround, even if it has not been permanently resolved.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-068"
   },
   {
     "id": "INFRA-068",
@@ -2205,7 +2239,8 @@
     "correctAnswerText": "Continual Service Improvement (CSI)",
     "explanation": "The statement defines Continual Service Improvement (CSI): uses measurement and review to identify and implement improvements to services, processes and the service lifecycle.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-070"
   },
   {
     "id": "INFRA-070",
@@ -2269,7 +2304,8 @@
     "correctAnswerText": "Deming Cycle",
     "explanation": "The statement defines Deming Cycle: is the iterative improvement cycle Plan, Do, Check, Act.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-072"
   },
   {
     "id": "INFRA-072",
@@ -2333,7 +2369,8 @@
     "correctAnswerText": "RACI Matrix",
     "explanation": "The statement defines RACI Matrix: defines who is Responsible, Accountable, Consulted and Informed for activities.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-074"
   },
   {
     "id": "INFRA-074",
@@ -2397,7 +2434,8 @@
     "correctAnswerText": "Service Level Agreement (SLA)",
     "explanation": "The statement defines Service Level Agreement (SLA): is an agreement between a service provider and customer describing the service and agreed service-level targets.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-076"
   },
   {
     "id": "INFRA-076",
@@ -2461,7 +2499,8 @@
     "correctAnswerText": "Operational Level Agreement (OLA)",
     "explanation": "The statement defines Operational Level Agreement (OLA): is an agreement between internal parts of the same service provider that supports delivery of an SLA.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-078"
   },
   {
     "id": "INFRA-078",
@@ -2525,7 +2564,8 @@
     "correctAnswerText": "Underpinning Contract",
     "explanation": "The statement defines Underpinning Contract: is a contract with an external supplier that supports delivery of a service and must align with relevant SLA targets.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-080"
   },
   {
     "id": "INFRA-080",
@@ -2589,7 +2629,8 @@
     "correctAnswerText": "Utility",
     "explanation": "The statement defines Utility: is the functionality of a service: what it does, or its fitness for purpose.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-082"
   },
   {
     "id": "INFRA-082",
@@ -2653,7 +2694,8 @@
     "correctAnswerText": "Warranty",
     "explanation": "The statement defines Warranty: is the assurance that a service will meet agreed requirements, such as availability, capacity, continuity and security.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-084"
   },
   {
     "id": "INFRA-084",
@@ -2717,7 +2759,8 @@
     "correctAnswerText": "Service Value",
     "explanation": "The statement defines Service Value: is commonly expressed through the combination of utility and warranty.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-086"
   },
   {
     "id": "INFRA-086",
@@ -2781,7 +2824,8 @@
     "correctAnswerText": "Service Pipeline",
     "explanation": "The statement defines Service Pipeline: contains services that are under consideration or development and are not yet live in the service catalogue.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-088"
   },
   {
     "id": "INFRA-088",
@@ -2845,7 +2889,8 @@
     "correctAnswerText": "Service Catalogue",
     "explanation": "The statement defines Service Catalogue: contains information about services currently available to customers and users.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-090"
   },
   {
     "id": "INFRA-090",
@@ -2909,7 +2954,8 @@
     "correctAnswerText": "Service Owner",
     "explanation": "The statement defines Service Owner: is accountable for a specific service and ensures that it is managed and delivered to meet agreed requirements.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-092"
   },
   {
     "id": "INFRA-092",
@@ -2973,7 +3019,8 @@
     "correctAnswerText": "Process Owner",
     "explanation": "The statement defines Process Owner: is accountable for ensuring that a process is fit for purpose, documented, measured and improved.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-094"
   },
   {
     "id": "INFRA-094",
@@ -3037,7 +3084,8 @@
     "correctAnswerText": "Change Advisory Board (CAB)",
     "explanation": "The statement defines Change Advisory Board (CAB): is a group that advises on the assessment, prioritization and scheduling of changes.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-096"
   },
   {
     "id": "INFRA-096",
@@ -3101,7 +3149,8 @@
     "correctAnswerText": "Service Request versus Incident",
     "explanation": "The statement defines Service Request versus Incident: distinguishes a user request for a standard service from an unplanned interruption or degradation of service.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-098"
   },
   {
     "id": "INFRA-098",
@@ -3165,7 +3214,8 @@
     "correctAnswerText": "MTBF and MTTR",
     "explanation": "The statement defines MTBF and MTTR: are reliability and repair measures: mean time between failures and mean time to restore or repair service.",
     "topic": "ITIL Service Management",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-100"
   },
   {
     "id": "INFRA-100",
@@ -3229,7 +3279,8 @@
     "correctAnswerText": "Data Center Architecture",
     "explanation": "The statement defines Data Center Architecture: defines how compute, storage, network, power, cooling, physical space and security components fit together.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-102"
   },
   {
     "id": "INFRA-102",
@@ -3293,7 +3344,8 @@
     "correctAnswerText": "Equipment space planning",
     "explanation": "Equipment space planning reserves room for racks, service clearances, cabling and future expansion.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-104"
   },
   {
     "id": "INFRA-104",
@@ -3357,7 +3409,8 @@
     "correctAnswerText": "PDU",
     "explanation": "The statement defines PDU: is a power distribution unit that distributes electrical power to equipment or racks.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-106"
   },
   {
     "id": "INFRA-106",
@@ -3421,7 +3474,8 @@
     "correctAnswerText": "UPS",
     "explanation": "The statement defines UPS: provides temporary backup power and power conditioning during utility interruptions.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-108"
   },
   {
     "id": "INFRA-108",
@@ -3485,7 +3539,8 @@
     "correctAnswerText": "HVAC",
     "explanation": "The statement defines HVAC: heats, ventilates and air-conditions the facility to maintain suitable environmental conditions.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-110"
   },
   {
     "id": "INFRA-110",
@@ -3549,7 +3604,8 @@
     "correctAnswerText": "CRAC Unit",
     "explanation": "The statement defines CRAC Unit: is a computer-room air-conditioning unit used to control temperature and humidity in a data centre.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-112"
   },
   {
     "id": "INFRA-112",
@@ -3613,7 +3669,8 @@
     "correctAnswerText": "Hot Aisle / Cold Aisle",
     "explanation": "The statement defines Hot Aisle / Cold Aisle: arrangement places rack fronts facing cold aisles and rack backs facing hot aisles to manage airflow.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-114"
   },
   {
     "id": "INFRA-114",
@@ -3677,7 +3734,8 @@
     "correctAnswerText": "Geographic Site Selection",
     "explanation": "The statement defines Geographic Site Selection: evaluates hazards, connectivity, power availability, climate, access, regulations and proximity to users.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-116"
   },
   {
     "id": "INFRA-116",
@@ -3741,7 +3799,8 @@
     "correctAnswerText": "Modular Cabling Design",
     "explanation": "The statement defines Modular Cabling Design: uses structured, standardized cabling and distribution points to simplify moves, adds and changes.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-118"
   },
   {
     "id": "INFRA-118",
@@ -3805,7 +3864,8 @@
     "correctAnswerText": "Main Distribution Frame (MDF)",
     "explanation": "The statement defines Main Distribution Frame (MDF): is a central termination and cross-connect point for incoming telecommunications or carrier circuits.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-120"
   },
   {
     "id": "INFRA-120",
@@ -3869,7 +3929,8 @@
     "correctAnswerText": "Intermediate Distribution Frame (IDF)",
     "explanation": "The statement defines Intermediate Distribution Frame (IDF): provides an intermediate network distribution point serving a zone, floor or area.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-122"
   },
   {
     "id": "INFRA-122",
@@ -3965,7 +4026,8 @@
     "correctAnswerText": "Point of Distribution (POD)",
     "explanation": "Point of Distribution (POD) is the best match. is a structured rack or area that consolidates network distribution components for a data-centre zone.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-123"
   },
   {
     "id": "INFRA-125",
@@ -3997,7 +4059,8 @@
     "correctAnswerText": "ISP WAN Link",
     "explanation": "The statement defines ISP WAN Link: connects the data centre to external networks or service-provider infrastructure.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-126"
   },
   {
     "id": "INFRA-126",
@@ -4061,7 +4124,8 @@
     "correctAnswerText": "NOC",
     "explanation": "The statement defines NOC: is a staffed operations facility that monitors network and service availability and coordinates response.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-128"
   },
   {
     "id": "INFRA-128",
@@ -4125,7 +4189,8 @@
     "correctAnswerText": "Physical Security",
     "explanation": "The statement defines Physical Security: protects facilities and equipment using controls such as access badges, guards, locks and CCTV.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-130"
   },
   {
     "id": "INFRA-130",
@@ -4189,7 +4254,8 @@
     "correctAnswerText": "Logical Security",
     "explanation": "The statement defines Logical Security: protects systems and data through identity, authentication, authorization, network controls and auditing.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-132"
   },
   {
     "id": "INFRA-132",
@@ -4253,7 +4319,8 @@
     "correctAnswerText": "Environmental Monitoring",
     "explanation": "The statement defines Environmental Monitoring: tracks conditions such as temperature, humidity, smoke, water leakage and power status.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-134"
   },
   {
     "id": "INFRA-134",
@@ -4317,7 +4384,8 @@
     "correctAnswerText": "Relative Humidity (RH)",
     "explanation": "The statement defines Relative Humidity (RH): expresses the amount of moisture in air relative to the maximum moisture it can hold at that temperature.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-136"
   },
   {
     "id": "INFRA-136",
@@ -4381,7 +4449,8 @@
     "correctAnswerText": "ESD",
     "explanation": "The statement defines ESD: is electrostatic discharge: a rapid transfer of static charge between objects at different electrical potentials.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-138"
   },
   {
     "id": "INFRA-138",
@@ -4445,7 +4514,8 @@
     "correctAnswerText": "Rack Unit (U)",
     "explanation": "The statement defines Rack Unit (U): is a standard vertical measurement of rack equipment height equal to 1.75 inches.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-140"
   },
   {
     "id": "INFRA-140",
@@ -4509,7 +4579,8 @@
     "correctAnswerText": "Rack Density",
     "explanation": "The statement defines Rack Density: describes how much equipment or power load is concentrated within a rack or rack area.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-142"
   },
   {
     "id": "INFRA-142",
@@ -4573,7 +4644,8 @@
     "correctAnswerText": "Port Density",
     "explanation": "The statement defines Port Density: is the number of network ports provided per unit of rack height or equipment space.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-144"
   },
   {
     "id": "INFRA-144",
@@ -4637,7 +4709,8 @@
     "correctAnswerText": "PUE",
     "explanation": "The statement defines PUE: is Power Usage Effectiveness, calculated as total facility energy divided by IT equipment energy.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-146"
   },
   {
     "id": "INFRA-146",
@@ -4701,7 +4774,8 @@
     "correctAnswerText": "Load Balancer",
     "explanation": "The statement defines Load Balancer: distributes incoming client requests across a group of backend servers.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-148"
   },
   {
     "id": "INFRA-148",
@@ -4765,7 +4839,8 @@
     "correctAnswerText": "Front-end Machine and Web Server Farm",
     "explanation": "The statement defines Front-end Machine and Web Server Farm: the front-end machine receives client requests and distributes them to a group of backend web servers, known as a server farm.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-150"
   },
   {
     "id": "INFRA-150",
@@ -4829,7 +4904,8 @@
     "correctAnswerText": "Stickiness",
     "explanation": "The statement defines Stickiness: keeps requests from a particular client or session directed to the same backend server when required.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-152"
   },
   {
     "id": "INFRA-152",
@@ -4893,7 +4969,8 @@
     "correctAnswerText": "Round-Robin DNS",
     "explanation": "The statement defines Round-Robin DNS: returns multiple IP addresses in rotation to distribute name-resolution responses across servers.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-154"
   },
   {
     "id": "INFRA-154",
@@ -4957,7 +5034,8 @@
     "correctAnswerText": "Fault Tolerance",
     "explanation": "The statement defines Fault Tolerance: allows a system to continue operating when a component fails, usually through redundancy.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-156"
   },
   {
     "id": "INFRA-156",
@@ -5021,7 +5099,8 @@
     "correctAnswerText": "MTBF",
     "explanation": "The statement defines MTBF: is mean time between failures and is used as a reliability measure for repairable components.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-158"
   },
   {
     "id": "INFRA-158",
@@ -5085,7 +5164,8 @@
     "correctAnswerText": "MTTR",
     "explanation": "The statement defines MTTR: is mean time to repair or restore a failed component or service.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-160"
   },
   {
     "id": "INFRA-160",
@@ -5149,7 +5229,8 @@
     "correctAnswerText": "MTBSI",
     "explanation": "The statement defines MTBSI: is mean time between system incidents and includes the time between failures plus restoration time.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-162"
   },
   {
     "id": "INFRA-162",
@@ -5213,7 +5294,8 @@
     "correctAnswerText": "Throughput",
     "explanation": "The statement defines Throughput: is the amount of work or data processed per unit of time.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-164"
   },
   {
     "id": "INFRA-164",
@@ -5277,7 +5359,8 @@
     "correctAnswerText": "Latency",
     "explanation": "The statement defines Latency: is the time delay between a request and its response or between sending and receiving data.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-166"
   },
   {
     "id": "INFRA-166",
@@ -5341,7 +5424,8 @@
     "correctAnswerText": "Utilization",
     "explanation": "The statement defines Utilization: is the proportion of a resource's capacity currently being used.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-168"
   },
   {
     "id": "INFRA-168",
@@ -5405,7 +5489,8 @@
     "correctAnswerText": "Horizontal Scaling",
     "explanation": "The statement defines Horizontal Scaling: increases capacity by adding more servers or instances and distributing workload across them.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-170"
   },
   {
     "id": "INFRA-170",
@@ -5469,7 +5554,8 @@
     "correctAnswerText": "Vertical Scaling",
     "explanation": "The statement defines Vertical Scaling: increases the resources of an existing server, such as CPU, memory or storage.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-172"
   },
   {
     "id": "INFRA-172",
@@ -5533,7 +5619,8 @@
     "correctAnswerText": "Server Consolidation",
     "explanation": "The statement defines Server Consolidation: reduces the number of physical servers by combining workloads onto fewer, more capable systems.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-174"
   },
   {
     "id": "INFRA-174",
@@ -5597,7 +5684,8 @@
     "correctAnswerText": "SAN",
     "explanation": "The statement defines SAN: is a dedicated high-speed network that provides block-level storage access to servers.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-176"
   },
   {
     "id": "INFRA-176",
@@ -5661,7 +5749,8 @@
     "correctAnswerText": "NAS",
     "explanation": "The statement defines NAS: provides file-level storage over a network using protocols such as NFS or SMB.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-178"
   },
   {
     "id": "INFRA-178",
@@ -5725,7 +5814,8 @@
     "correctAnswerText": "iSCSI",
     "explanation": "The statement defines iSCSI: carries SCSI storage commands over IP networks to provide block-level storage access.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-180"
   },
   {
     "id": "INFRA-180",
@@ -5789,7 +5879,8 @@
     "correctAnswerText": "ZFS",
     "explanation": "The statement defines ZFS: is a filesystem and volume manager with features such as pooled storage, checksums, snapshots and data integrity.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-182"
   },
   {
     "id": "INFRA-182",
@@ -5853,7 +5944,8 @@
     "correctAnswerText": "SNMP",
     "explanation": "The statement defines SNMP: is a protocol used to monitor and manage network devices through managers, agents and managed objects.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-184"
   },
   {
     "id": "INFRA-184",
@@ -5917,7 +6009,8 @@
     "correctAnswerText": "MIB",
     "explanation": "The statement defines MIB: is a hierarchical collection of managed object definitions identified by object identifiers (OIDs).",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-186"
   },
   {
     "id": "INFRA-186",
@@ -5981,7 +6074,8 @@
     "correctAnswerText": "SNMP Trap",
     "explanation": "The statement defines SNMP Trap: is an unsolicited notification sent by an agent to a manager when a defined event occurs.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-188"
   },
   {
     "id": "INFRA-188",
@@ -6045,7 +6139,8 @@
     "correctAnswerText": "SNMP GET",
     "explanation": "The statement defines SNMP GET: requests the value of a managed object from an agent.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-190"
   },
   {
     "id": "INFRA-190",
@@ -6109,7 +6204,8 @@
     "correctAnswerText": "SNMP SET",
     "explanation": "The statement defines SNMP SET: requests a change to the value of a managed object, when permitted.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-192"
   },
   {
     "id": "INFRA-192",
@@ -6173,7 +6269,8 @@
     "correctAnswerText": "SPEC Benchmark",
     "explanation": "The statement defines SPEC Benchmark: is a standardized benchmark suite used to evaluate and compare computer system performance.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-194"
   },
   {
     "id": "INFRA-194",
@@ -6237,7 +6334,8 @@
     "correctAnswerText": "N+1 Redundancy",
     "explanation": "The statement defines N+1 Redundancy: provides one additional component beyond the number required to support the load.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-196"
   },
   {
     "id": "INFRA-196",
@@ -6301,7 +6399,8 @@
     "correctAnswerText": "2N Redundancy",
     "explanation": "The statement defines 2N Redundancy: provides two complete independent capacity paths or systems, each capable of supporting the required load.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-198"
   },
   {
     "id": "INFRA-198",
@@ -6365,7 +6464,8 @@
     "correctAnswerText": "Data Center Cleaning",
     "explanation": "The statement defines Data Center Cleaning: uses controlled procedures and suitable materials to reduce dust and contamination without damaging equipment.",
     "topic": "Data Center Management (DCM)",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-200"
   },
   {
     "id": "INFRA-200",
@@ -6429,7 +6529,8 @@
     "correctAnswerText": "DevOps",
     "explanation": "The statement defines DevOps: is a culture and set of practices that bring development and operations together to deliver software faster and more reliably.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-202"
   },
   {
     "id": "INFRA-202",
@@ -6493,7 +6594,8 @@
     "correctAnswerText": "Continuous Integration (CI)",
     "explanation": "The statement defines Continuous Integration (CI): frequently integrates code changes into a shared repository and validates them through automated builds and tests.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-204"
   },
   {
     "id": "INFRA-204",
@@ -6557,7 +6659,8 @@
     "correctAnswerText": "Continuous Delivery",
     "explanation": "The statement defines Continuous Delivery: keeps software in a deployable state through automated build, test and release preparation, while production release may require approval.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-206"
   },
   {
     "id": "INFRA-206",
@@ -6621,7 +6724,8 @@
     "correctAnswerText": "Pipeline Stage",
     "explanation": "The statement defines Pipeline Stage: is a logical phase in an automated workflow, such as build, test, package or deploy.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-208"
   },
   {
     "id": "INFRA-208",
@@ -6685,7 +6789,8 @@
     "correctAnswerText": "Build Artifact",
     "explanation": "The statement defines Build Artifact: is the packaged output produced by a build process and passed to later pipeline stages.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-210"
   },
   {
     "id": "INFRA-210",
@@ -6749,7 +6854,8 @@
     "correctAnswerText": "Version Control System",
     "explanation": "The statement defines Version Control System: tracks changes to files over time and supports collaboration, history and branching.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-212"
   },
   {
     "id": "INFRA-212",
@@ -6813,7 +6919,8 @@
     "correctAnswerText": "Git",
     "explanation": "Git stores history and supports local commits. A shallow clone deliberately limits how much history it downloads.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-214"
   },
   {
     "id": "INFRA-214",
@@ -6877,7 +6984,8 @@
     "correctAnswerText": "git clone",
     "explanation": "git clone creates a new local repository from an existing one. A shallow clone can limit the history it fetches.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-216"
   },
   {
     "id": "INFRA-216",
@@ -6941,7 +7049,8 @@
     "correctAnswerText": "git commit",
     "explanation": "The statement defines git commit: records staged changes as a new commit in the local repository history.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-218"
   },
   {
     "id": "INFRA-218",
@@ -7005,7 +7114,8 @@
     "correctAnswerText": "git push",
     "explanation": "The statement defines git push: sends local commits to a remote repository.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-220"
   },
   {
     "id": "INFRA-220",
@@ -7069,7 +7179,8 @@
     "correctAnswerText": "git pull",
     "explanation": "The statement defines git pull: fetches remote changes and integrates them into the current local branch.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-222"
   },
   {
     "id": "INFRA-222",
@@ -7133,7 +7244,8 @@
     "correctAnswerText": "git branch",
     "explanation": "The statement defines git branch: creates, lists or manages independent lines of development.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-224"
   },
   {
     "id": "INFRA-224",
@@ -7197,7 +7309,8 @@
     "correctAnswerText": "Git Merge",
     "explanation": "The statement defines Git Merge: combines changes from one branch into another branch.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-226"
   },
   {
     "id": "INFRA-226",
@@ -7261,7 +7374,8 @@
     "correctAnswerText": "Pull Request",
     "explanation": "The statement defines Pull Request: proposes changes from one branch to another and supports review and discussion before merging.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-228"
   },
   {
     "id": "INFRA-228",
@@ -7325,7 +7439,8 @@
     "correctAnswerText": "Docker",
     "explanation": "The statement defines Docker: is a platform for building, distributing and running applications in containers.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-230"
   },
   {
     "id": "INFRA-230",
@@ -7389,7 +7504,8 @@
     "correctAnswerText": "Container",
     "explanation": "The statement defines Container: is an isolated running process created from an image and sharing the host operating-system kernel.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-232"
   },
   {
     "id": "INFRA-232",
@@ -7453,7 +7569,8 @@
     "correctAnswerText": "Docker Image",
     "explanation": "The statement defines Docker Image: is a read-only template containing application files, dependencies and metadata used to create containers.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-234"
   },
   {
     "id": "INFRA-234",
@@ -7517,7 +7634,8 @@
     "correctAnswerText": "Dockerfile",
     "explanation": "The statement defines Dockerfile: is a text file containing instructions used to build a Docker image.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-236"
   },
   {
     "id": "INFRA-236",
@@ -7581,7 +7699,8 @@
     "correctAnswerText": "docker build",
     "explanation": "The statement defines docker build: builds an image from a Dockerfile and a build context.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-238"
   },
   {
     "id": "INFRA-238",
@@ -7645,7 +7764,8 @@
     "correctAnswerText": "Docker Port Mapping",
     "explanation": "The statement defines Docker Port Mapping: publishes a container port on a host port so clients can reach the service through the host.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-240"
   },
   {
     "id": "INFRA-240",
@@ -7709,7 +7829,8 @@
     "correctAnswerText": "Docker Volume",
     "explanation": "The statement defines Docker Volume: provides persistent data storage that can outlive an individual container.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-242"
   },
   {
     "id": "INFRA-242",
@@ -7773,7 +7894,8 @@
     "correctAnswerText": "Docker Bind Mount",
     "explanation": "The statement defines Docker Bind Mount: maps a specific host filesystem path into a container.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-244"
   },
   {
     "id": "INFRA-244",
@@ -7869,7 +7991,8 @@
     "correctAnswerText": "Docker Compose",
     "explanation": "Docker Compose is the best match. defines and manages multi-container applications using a declarative YAML file.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-245"
   },
   {
     "id": "INFRA-247",
@@ -7901,7 +8024,8 @@
     "correctAnswerText": "Docker Hub",
     "explanation": "The statement defines Docker Hub: is a hosted registry where container images can be stored, shared and pulled.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-248"
   },
   {
     "id": "INFRA-248",
@@ -7965,7 +8089,8 @@
     "correctAnswerText": "Image Tag",
     "explanation": "The tag is a readable label that can point to an image version. An image digest identifies a specific image by content.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-250"
   },
   {
     "id": "INFRA-250",
@@ -8029,7 +8154,8 @@
     "correctAnswerText": "Docker Swarm",
     "explanation": "The statement defines Docker Swarm: is Docker's native orchestration mode for managing services across a cluster of Docker nodes.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-252"
   },
   {
     "id": "INFRA-252",
@@ -8093,7 +8219,8 @@
     "correctAnswerText": "Swarm Worker Node",
     "explanation": "The statement defines Swarm Worker Node: runs service tasks assigned by Swarm managers and reports node status.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-254"
   },
   {
     "id": "INFRA-254",
@@ -8157,7 +8284,8 @@
     "correctAnswerText": "Kubernetes",
     "explanation": "The statement defines Kubernetes: is a container orchestration platform for deploying, scaling and managing containerized applications.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-256"
   },
   {
     "id": "INFRA-256",
@@ -8221,7 +8349,8 @@
     "correctAnswerText": "Kubernetes Pod",
     "explanation": "The statement defines Kubernetes Pod: is the smallest deployable unit in Kubernetes and can contain one or more closely related containers.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-258"
   },
   {
     "id": "INFRA-258",
@@ -8285,7 +8414,8 @@
     "correctAnswerText": "Kubernetes Node",
     "explanation": "The statement defines Kubernetes Node: is a worker machine, physical or virtual, that runs Pods in a Kubernetes cluster.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-260"
   },
   {
     "id": "INFRA-260",
@@ -8349,7 +8479,8 @@
     "correctAnswerText": "Kubernetes Control Plane",
     "explanation": "The statement defines Kubernetes Control Plane: manages the cluster's overall state and exposes the Kubernetes API.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-262"
   },
   {
     "id": "INFRA-262",
@@ -8413,7 +8544,8 @@
     "correctAnswerText": "Kubernetes Deployment",
     "explanation": "The statement defines Kubernetes Deployment: manages stateless application Pods and supports declarative updates and rollouts.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-264"
   },
   {
     "id": "INFRA-264",
@@ -8477,7 +8609,8 @@
     "correctAnswerText": "Kubernetes Secret",
     "explanation": "The statement defines Kubernetes Secret: stores sensitive configuration data such as credentials or tokens, subject to appropriate access controls.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-266"
   },
   {
     "id": "INFRA-266",
@@ -8541,7 +8674,8 @@
     "correctAnswerText": "Kubernetes ReplicaSet",
     "explanation": "The statement defines Kubernetes ReplicaSet: ensures that a specified number of identical Pod replicas are running.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-268"
   },
   {
     "id": "INFRA-268",
@@ -8605,7 +8739,8 @@
     "correctAnswerText": "Kubernetes Ingress",
     "explanation": "The statement defines Kubernetes Ingress: manages external HTTP or HTTPS access to services in a cluster through routing rules and an ingress controller.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-270"
   },
   {
     "id": "INFRA-270",
@@ -8669,7 +8804,8 @@
     "correctAnswerText": "Microservices",
     "explanation": "The statement defines Microservices: is an architectural style that structures an application as small, independently deployable services communicating through APIs or messaging.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-272"
   },
   {
     "id": "INFRA-272",
@@ -8733,7 +8869,8 @@
     "correctAnswerText": "AWS EC2",
     "explanation": "The statement defines AWS EC2: provides resizable virtual compute instances in the AWS cloud.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-274"
   },
   {
     "id": "INFRA-274",
@@ -8797,7 +8934,8 @@
     "correctAnswerText": "AWS S3",
     "explanation": "The statement defines AWS S3: provides scalable object storage for objects stored in buckets.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-276"
   },
   {
     "id": "INFRA-276",
@@ -8861,7 +8999,8 @@
     "correctAnswerText": "AWS Lambda",
     "explanation": "The statement defines AWS Lambda: runs code in response to events without requiring the user to manage the underlying servers.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-278"
   },
   {
     "id": "INFRA-278",
@@ -8925,7 +9064,8 @@
     "correctAnswerText": "Amazon VPC",
     "explanation": "The statement defines Amazon VPC: provides a logically isolated virtual network in AWS where users define IP ranges, subnets, routes and network controls.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-280"
   },
   {
     "id": "INFRA-280",
@@ -8989,7 +9129,8 @@
     "correctAnswerText": "Public Subnet",
     "explanation": "The statement defines Public Subnet: is a VPC subnet whose route table has a route to an internet gateway; resources still need suitable public addressing and security rules.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-282"
   },
   {
     "id": "INFRA-282",
@@ -9053,7 +9194,8 @@
     "correctAnswerText": "Internet Gateway",
     "explanation": "The statement defines Internet Gateway: enables communication between a VPC and the internet when routing and security rules permit it.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-284"
   },
   {
     "id": "INFRA-284",
@@ -9117,7 +9259,8 @@
     "correctAnswerText": "NAT Gateway",
     "explanation": "The statement defines NAT Gateway: allows resources in a private subnet to initiate outbound internet connections without accepting unsolicited inbound connections through that path.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-286"
   },
   {
     "id": "INFRA-286",
@@ -9181,7 +9324,8 @@
     "correctAnswerText": "Security Group",
     "explanation": "The statement defines Security Group: is a stateful virtual firewall associated with resources such as EC2 instances and controls allowed inbound and outbound traffic.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-288"
   },
   {
     "id": "INFRA-288",
@@ -9245,7 +9389,8 @@
     "correctAnswerText": "Network ACL",
     "explanation": "The statement defines Network ACL: is a stateless subnet-level traffic filter that evaluates inbound and outbound rules.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-290"
   },
   {
     "id": "INFRA-290",
@@ -9309,7 +9454,8 @@
     "correctAnswerText": "IAM Role",
     "explanation": "An IAM role defines permissions and who can assume it. AWS issues temporary credentials for the resulting role session.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-292"
   },
   {
     "id": "INFRA-292",
@@ -9373,7 +9519,8 @@
     "correctAnswerText": "Cloud API",
     "explanation": "The statement defines Cloud API: allows software to programmatically create, configure, query or delete cloud resources.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-294"
   },
   {
     "id": "INFRA-294",
@@ -9437,7 +9584,8 @@
     "correctAnswerText": "Terraform",
     "explanation": "The statement defines Terraform: is an infrastructure-as-code tool that uses declarative configuration to provision and manage infrastructure through providers.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-296"
   },
   {
     "id": "INFRA-296",
@@ -9501,7 +9649,8 @@
     "correctAnswerText": "Terraform State",
     "explanation": "The statement defines Terraform State: records the mapping between Terraform configuration and real infrastructure objects and tracks managed resource metadata.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-298"
   },
   {
     "id": "INFRA-298",
@@ -9565,7 +9714,8 @@
     "correctAnswerText": "Terraform Plan",
     "explanation": "The statement defines Terraform Plan: shows the proposed changes Terraform intends to make before applying them.",
     "topic": "DevOps & Containerization",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-300"
   },
   {
     "id": "INFRA-300",
@@ -9629,7 +9779,8 @@
     "correctAnswerText": "Terraform Apply",
     "explanation": "The statement defines Terraform Apply: executes the planned actions to create, update or delete infrastructure resources.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-302"
   },
   {
     "id": "INFRA-302",
@@ -9693,7 +9844,8 @@
     "correctAnswerText": "Terraform Backend",
     "explanation": "The statement defines Terraform Backend: defines where and how Terraform state is stored, including remote storage options for collaboration.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-304"
   },
   {
     "id": "INFRA-304",
@@ -9757,7 +9909,8 @@
     "correctAnswerText": "Ansible",
     "explanation": "The statement defines Ansible: is an automation and configuration-management tool that commonly connects to managed nodes over SSH without requiring an agent.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-306"
   },
   {
     "id": "INFRA-306",
@@ -9821,7 +9974,8 @@
     "correctAnswerText": "Ansible Inventory",
     "explanation": "The statement defines Ansible Inventory: lists the managed hosts and groups that Ansible targets.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-308"
   },
   {
     "id": "INFRA-308",
@@ -9885,7 +10039,8 @@
     "correctAnswerText": "Ansible Playbook",
     "explanation": "The statement defines Ansible Playbook: is a YAML file that defines ordered plays and tasks to automate configuration or deployment.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-310"
   },
   {
     "id": "INFRA-310",
@@ -9949,7 +10104,8 @@
     "correctAnswerText": "Ansible Module",
     "explanation": "The statement defines Ansible Module: is a reusable unit of work that performs a specific task on a managed host or control node.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-312"
   },
   {
     "id": "INFRA-312",
@@ -10013,7 +10169,8 @@
     "correctAnswerText": "Ansible Role",
     "explanation": "The statement defines Ansible Role: organizes related tasks, handlers, variables, templates and files into a reusable structure.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-314"
   },
   {
     "id": "INFRA-314",
@@ -10077,7 +10234,8 @@
     "correctAnswerText": "Chef",
     "explanation": "The statement defines Chef: is a configuration-management and infrastructure-automation platform that uses cookbooks and recipes to describe system configuration.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-316"
   },
   {
     "id": "INFRA-316",
@@ -10141,7 +10299,8 @@
     "correctAnswerText": "Chef Recipe",
     "explanation": "The statement defines Chef Recipe: contains ordered resources that describe the desired configuration steps for a node.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-318"
   },
   {
     "id": "INFRA-318",
@@ -10205,7 +10364,8 @@
     "correctAnswerText": "Puppet",
     "explanation": "The statement defines Puppet: is a configuration-management tool that describes desired system state using manifests and resources.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-320"
   },
   {
     "id": "INFRA-320",
@@ -10269,7 +10429,8 @@
     "correctAnswerText": "Puppet Manifest",
     "explanation": "The statement defines Puppet Manifest: contains Puppet code describing resources and their desired configuration.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-322"
   },
   {
     "id": "INFRA-322",
@@ -10333,7 +10494,8 @@
     "correctAnswerText": "Prometheus Exporter",
     "explanation": "The statement defines Prometheus Exporter: exposes metrics from a system or application in a format Prometheus can scrape.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-324"
   },
   {
     "id": "INFRA-324",
@@ -10397,7 +10559,8 @@
     "correctAnswerText": "Node Exporter",
     "explanation": "The statement defines Node Exporter: exposes hardware and operating-system metrics from Unix-like systems for Prometheus.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-326"
   },
   {
     "id": "INFRA-326",
@@ -10461,7 +10624,8 @@
     "correctAnswerText": "Windows Exporter",
     "explanation": "The statement defines Windows Exporter: exposes Windows system metrics for Prometheus monitoring.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-328"
   },
   {
     "id": "INFRA-328",
@@ -10525,7 +10689,8 @@
     "correctAnswerText": "PromQL",
     "explanation": "The statement defines PromQL: is Prometheus's query language for selecting and aggregating time-series data.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-330"
   },
   {
     "id": "INFRA-330",
@@ -10589,7 +10754,8 @@
     "correctAnswerText": "Grafana",
     "explanation": "The statement defines Grafana: is commonly used to visualize metrics and logs through dashboards and panels using connected data sources.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-332"
   },
   {
     "id": "INFRA-332",
@@ -10653,7 +10819,8 @@
     "correctAnswerText": "Jenkins",
     "explanation": "The statement defines Jenkins: is an automation server used to implement build, test and deployment pipelines.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-334"
   },
   {
     "id": "INFRA-334",
@@ -10717,7 +10884,8 @@
     "correctAnswerText": "Webhook",
     "explanation": "The statement defines Webhook: is an HTTP callback used by one system to notify another about an event.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-336"
   },
   {
     "id": "INFRA-336",
@@ -10781,7 +10949,8 @@
     "correctAnswerText": "Rolling Update",
     "explanation": "The statement defines Rolling Update: replaces application instances gradually so that the service can remain available during an update.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-338"
   },
   {
     "id": "INFRA-338",
@@ -10845,7 +11014,8 @@
     "correctAnswerText": "Blue-Green Deployment",
     "explanation": "The statement defines Blue-Green Deployment: uses two production-like environments and switches traffic from the current version to the new version after validation.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-340"
   },
   {
     "id": "INFRA-340",
@@ -10909,7 +11079,8 @@
     "correctAnswerText": "Secrets Management",
     "explanation": "The statement defines Secrets Management: stores and controls access to credentials, tokens and keys instead of embedding them in source code or images.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-342"
   },
   {
     "id": "INFRA-342",
@@ -10973,7 +11144,8 @@
     "correctAnswerText": "Observability",
     "explanation": "The statement defines Observability: uses telemetry such as metrics, logs and traces to understand internal system behavior from its outputs.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-344"
   },
   {
     "id": "INFRA-344",
@@ -11037,7 +11209,8 @@
     "correctAnswerText": "Log Aggregation",
     "explanation": "The statement defines Log Aggregation: collects logs from multiple systems into a central searchable location for analysis and troubleshooting.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-346"
   },
   {
     "id": "INFRA-346",
@@ -11101,7 +11274,8 @@
     "correctAnswerText": "Server Orchestration",
     "explanation": "The statement defines Server Orchestration: coordinates automated provisioning, configuration and operation of multiple servers or services.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-348"
   },
   {
     "id": "INFRA-348",
@@ -11165,7 +11339,8 @@
     "correctAnswerText": "Cloud Logging",
     "explanation": "The statement defines Cloud Logging: collects and stores events from cloud resources and applications for troubleshooting, auditing and monitoring.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-350"
   },
   {
     "id": "INFRA-350",
@@ -11229,7 +11404,8 @@
     "correctAnswerText": "Cloud Monitoring",
     "explanation": "The statement defines Cloud Monitoring: observes cloud resource health and performance using metrics, alarms and dashboards.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-352"
   },
   {
     "id": "INFRA-352",
@@ -11293,7 +11469,8 @@
     "correctAnswerText": "Type 1 Hypervisor",
     "explanation": "The statement defines Type 1 Hypervisor: runs directly on the physical hardware and manages guest virtual machines without a conventional host operating system beneath it.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-354"
   },
   {
     "id": "INFRA-354",
@@ -11357,7 +11534,8 @@
     "correctAnswerText": "Type 2 Hypervisor",
     "explanation": "The statement defines Type 2 Hypervisor: runs as an application on top of a host operating system and provides virtual machines.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-356"
   },
   {
     "id": "INFRA-356",
@@ -11421,7 +11599,8 @@
     "correctAnswerText": "Hardware Virtualization",
     "explanation": "The statement defines Hardware Virtualization: uses a hypervisor and hardware support to present virtual hardware to guest operating systems.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-358"
   },
   {
     "id": "INFRA-358",
@@ -11485,7 +11664,8 @@
     "correctAnswerText": "Para-Virtualization",
     "explanation": "The statement defines Para-Virtualization: uses guest operating-system cooperation or awareness of the virtualization layer to improve interaction with the hypervisor.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-360"
   },
   {
     "id": "INFRA-360",
@@ -11549,7 +11729,8 @@
     "correctAnswerText": "VM Snapshot",
     "explanation": "The statement defines VM Snapshot: captures the state of a virtual machine at a particular point in time for rollback or testing.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-362"
   },
   {
     "id": "INFRA-362",
@@ -11613,7 +11794,8 @@
     "correctAnswerText": "Cloud SPI Model",
     "explanation": "The statement defines Cloud SPI Model: classifies cloud service delivery into Software as a Service, Platform as a Service and Infrastructure as a Service.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-364"
   },
   {
     "id": "INFRA-364",
@@ -11677,7 +11859,8 @@
     "correctAnswerText": "IaaS, PaaS and SaaS",
     "explanation": "The statement defines IaaS, PaaS and SaaS: represent infrastructure resources, managed application platforms and ready-to-use software applications respectively.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-366"
   },
   {
     "id": "INFRA-366",
@@ -11741,7 +11924,8 @@
     "correctAnswerText": "Private Cloud",
     "explanation": "The statement defines Private Cloud: is cloud infrastructure dedicated to a single organization, with resources operated internally or by a third party.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-368"
   },
   {
     "id": "INFRA-368",
@@ -11805,7 +11989,8 @@
     "correctAnswerText": "Docker Compose",
     "explanation": "The statement defines Docker Compose: uses a YAML configuration to define and run multi-container Docker applications and their services.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-245"
   },
   {
     "id": "INFRA-370",
@@ -11837,7 +12022,8 @@
     "correctAnswerText": "Docker Compose",
     "explanation": "Docker Compose is the best match. uses a YAML configuration to define and run multi-container Docker applications and their services.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-245"
   },
   {
     "id": "INFRA-371",
@@ -11869,7 +12055,8 @@
     "correctAnswerText": "Cloud Development Best Practices",
     "explanation": "The statement defines Cloud Development Best Practices: include least-privilege access, secure secrets, automation, resilient design, monitoring, cost awareness and repeatable deployments.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-372"
   },
   {
     "id": "INFRA-372",
@@ -11933,7 +12120,8 @@
     "correctAnswerText": "Cloud Logging and Monitoring",
     "explanation": "The statement defines Cloud Logging and Monitoring: combine logs, metrics and alarms to observe cloud workloads, detect faults and support troubleshooting.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-374"
   },
   {
     "id": "INFRA-374",
@@ -11997,7 +12185,8 @@
     "correctAnswerText": "ZFS Storage Pool",
     "explanation": "The statement defines ZFS Storage Pool: combines physical storage devices into a managed pool from which datasets or volumes can be created.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-376"
   },
   {
     "id": "INFRA-376",
@@ -12061,7 +12250,8 @@
     "correctAnswerText": "IP-Based Storage Communication",
     "explanation": "The statement defines IP-Based Storage Communication: carries storage traffic over IP networks using protocols such as iSCSI or NFS, depending on the storage access model.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-378"
   },
   {
     "id": "INFRA-378",
@@ -12125,7 +12315,8 @@
     "correctAnswerText": "SAN High Availability",
     "explanation": "The statement defines SAN High Availability: uses redundant storage paths, switches and controllers to reduce single points of failure in shared block storage access.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-380"
   },
   {
     "id": "INFRA-380",
@@ -12189,7 +12380,8 @@
     "correctAnswerText": "FreeNAS / TrueNAS Storage Setup",
     "explanation": "The statement defines FreeNAS / TrueNAS Storage Setup: provides network-attached storage services and can expose shared storage to clients over supported protocols.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-382"
   },
   {
     "id": "INFRA-382",
@@ -12253,7 +12445,8 @@
     "correctAnswerText": "Storage Area Network (SAN)",
     "explanation": "The statement defines Storage Area Network (SAN): is a dedicated network that provides servers with shared block-level storage access, often using redundant storage paths.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-176"
   },
   {
     "id": "INFRA-384",
@@ -12285,7 +12478,8 @@
     "correctAnswerText": "Storage Area Network (SAN)",
     "explanation": "Storage Area Network (SAN) is the best match. is a dedicated network that provides servers with shared block-level storage access, often using redundant storage paths.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-176"
   },
   {
     "id": "INFRA-385",
@@ -12317,7 +12511,8 @@
     "correctAnswerText": "Puppet Architecture",
     "explanation": "The statement defines Puppet Architecture: typically includes a Puppet Server and managed agents that retrieve and apply catalogues describing desired state.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-386"
   },
   {
     "id": "INFRA-386",
@@ -12381,7 +12576,8 @@
     "correctAnswerText": "Ansible SSH Key Authentication",
     "explanation": "The statement defines Ansible SSH Key Authentication: uses SSH public-key authentication so the control node can connect to managed Linux hosts without interactive password entry.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-388"
   },
   {
     "id": "INFRA-388",
@@ -12445,7 +12641,8 @@
     "correctAnswerText": "Terraform Variables",
     "explanation": "The statement defines Terraform Variables: allow configuration inputs to be parameterized so the same infrastructure code can be reused with different values.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-390"
   },
   {
     "id": "INFRA-390",
@@ -12509,7 +12706,8 @@
     "correctAnswerText": "Terraform Outputs",
     "explanation": "The statement defines Terraform Outputs: expose selected values from provisioned infrastructure, such as an instance IP or VPC identifier.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-392"
   },
   {
     "id": "INFRA-392",
@@ -12573,7 +12771,8 @@
     "correctAnswerText": "Kubernetes Scaling",
     "explanation": "The statement defines Kubernetes Scaling: changes the number of application replicas or adjusts resources to meet workload requirements.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-394"
   },
   {
     "id": "INFRA-394",
@@ -12637,7 +12836,8 @@
     "correctAnswerText": "Docker Networking",
     "explanation": "The statement defines Docker Networking: connects containers to each other and to external networks through network drivers and configuration.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-396"
   },
   {
     "id": "INFRA-396",
@@ -12701,7 +12901,8 @@
     "correctAnswerText": "AWS Availability Zone",
     "explanation": "An Availability Zone is an isolated location inside an AWS Region. Spreading workloads across zones helps isolate failures.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-398"
   },
   {
     "id": "INFRA-398",
@@ -12765,7 +12966,8 @@
     "correctAnswerText": "EC2 Auto Scaling",
     "explanation": "The statement defines EC2 Auto Scaling: automatically adjusts the number of EC2 instances in a group according to configured scaling policies and demand.",
     "topic": "IaC, Configuration Management & Monitoring",
-    "diagram": null
+    "diagram": null,
+    "duplicateOf": "INFRA-400"
   },
   {
     "id": "INFRA-400",
@@ -12796,6 +12998,456 @@
     "correctAnswer": "D",
     "correctAnswerText": "EC2 Auto Scaling",
     "explanation": "EC2 Auto Scaling is the best match. automatically adjusts the number of EC2 instances in a group according to configured scaling policies and demand.",
+    "topic": "IaC, Configuration Management & Monitoring",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-001",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 1",
+    "question": "A recurring printer failure affects two departments. Today a workaround restores printing in ten minutes. What should the team do with the incident and the underlying investigation?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Keep the incident open until every underlying cause is fixed"
+      },
+      {
+        "key": "B",
+        "text": "Resolve this incident after service is restored and keep a separate problem investigation open"
+      },
+      {
+        "key": "C",
+        "text": "Close the incident and discard the recurring-failure investigation"
+      },
+      {
+        "key": "D",
+        "text": "Replace the incident record with a new service request"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "Resolve this incident after service is restored and keep a separate problem investigation open",
+    "explanation": "The incident records the interruption and restoration. A linked problem record can remain open to investigate the recurring cause.",
+    "topic": "ITIL Service Management",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-002",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 2",
+    "question": "A customer SLA promises a two-hour restoration target. The service desk and internal network team agree that the network team will acknowledge escalations within 15 minutes. What kind of agreement is the internal 15-minute commitment?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Service Design Package"
+      },
+      {
+        "key": "B",
+        "text": "Operational Level Agreement"
+      },
+      {
+        "key": "C",
+        "text": "Underpinning contract with a supplier"
+      },
+      {
+        "key": "D",
+        "text": "Service Level Agreement with the customer"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "Operational Level Agreement",
+    "explanation": "An operational level agreement records commitments between internal groups supporting the customer-facing SLA.",
+    "topic": "ITIL Service Management",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-003",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 3",
+    "question": "An approved standard change covers adding a DNS record using a documented procedure. A new request also changes the primary DNS server for the department, which the procedure does not cover. What should the change coordinator do?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Submit the additional work for assessment through the normal change process"
+      },
+      {
+        "key": "B",
+        "text": "Treat all of the work as pre-authorized by the standard procedure"
+      },
+      {
+        "key": "C",
+        "text": "Classify the additional work as emergency solely because it differs from the procedure"
+      },
+      {
+        "key": "D",
+        "text": "Ask the requester to bypass the change record"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "Submit the additional work for assessment through the normal change process",
+    "explanation": "Standard change authorization covers a defined procedure and scope. Additional planned work outside that scope needs separate assessment.",
+    "topic": "ITIL Service Management",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-004",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 4",
+    "question": "A RACI matrix must distinguish the engineer doing the work from the service owner who gives final sign-off. Which RACI letter belongs to the service owner for this activity?",
+    "options": [
+      {
+        "key": "A",
+        "text": "C"
+      },
+      {
+        "key": "B",
+        "text": "A"
+      },
+      {
+        "key": "C",
+        "text": "R"
+      },
+      {
+        "key": "D",
+        "text": "I"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "A",
+    "explanation": "A is Accountable and owns the outcome or final sign-off. R is Responsible for performing the work.",
+    "topic": "ITIL Service Management",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-005",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 5",
+    "question": "Meter readings show 360 MWh of facility energy and 240 MWh used by IT equipment over the same period. What is the site’s power usage effectiveness for that period?",
+    "options": [
+      {
+        "key": "A",
+        "text": "3.60"
+      },
+      {
+        "key": "B",
+        "text": "2.40"
+      },
+      {
+        "key": "C",
+        "text": "0.67"
+      },
+      {
+        "key": "D",
+        "text": "1.50"
+      }
+    ],
+    "correctAnswer": "D",
+    "correctAnswerText": "1.50",
+    "explanation": "PUE uses total facility energy divided by IT equipment energy over the same boundary and period. 360 divided by 240 is 1.50.",
+    "topic": "Data Center Management (DCM)",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-006",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 6",
+    "question": "A server room needs four working cooling units at peak load. It installs a fifth unit that can take over if any one fails. Which redundancy design does this illustrate?",
+    "options": [
+      {
+        "key": "A",
+        "text": "N with no spare"
+      },
+      {
+        "key": "B",
+        "text": "N+1"
+      },
+      {
+        "key": "C",
+        "text": "2N"
+      },
+      {
+        "key": "D",
+        "text": "2N+1"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "N+1",
+    "explanation": "N is the required capacity of four units. One additional unit provides N+1 redundancy.",
+    "topic": "Data Center Management (DCM)",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-007",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 7",
+    "question": "A backup runs at 01:00 and again at 05:00. An outage occurs at 07:30. If the 05:00 backup is the most recent recoverable point, how much recent data could be lost?",
+    "options": [
+      {
+        "key": "A",
+        "text": "2 hours 30 minutes"
+      },
+      {
+        "key": "B",
+        "text": "4 hours"
+      },
+      {
+        "key": "C",
+        "text": "30 minutes"
+      },
+      {
+        "key": "D",
+        "text": "6 hours 30 minutes"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "2 hours 30 minutes",
+    "explanation": "The gap between the outage and the latest recoverable point is 07:30 minus 05:00. It expresses potential loss in time, separate from the restoration duration.",
+    "topic": "Data Center Management (DCM)",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-008",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 8",
+    "question": "One application server must mount a shared directory of reports from a storage appliance and open files by name. Which service fits a file-level mount for Linux clients?",
+    "options": [
+      {
+        "key": "A",
+        "text": "An iSCSI target alone"
+      },
+      {
+        "key": "B",
+        "text": "An SNMP MIB"
+      },
+      {
+        "key": "C",
+        "text": "An NFS export"
+      },
+      {
+        "key": "D",
+        "text": "An Ethernet trunk port"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "An NFS export",
+    "explanation": "NFS exposes a remote filesystem. An iSCSI target presents block storage, on which the client would need to manage a filesystem.",
+    "topic": "Data Center Management (DCM)",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-009",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 9",
+    "question": "The release team needs two systems to pull exactly the same immutable container image content, even if the release tag is moved. What should it pin?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The repository name alone"
+      },
+      {
+        "key": "B",
+        "text": "The image manifest digest"
+      },
+      {
+        "key": "C",
+        "text": "The container’s local display name"
+      },
+      {
+        "key": "D",
+        "text": "The release tag only"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "The image manifest digest",
+    "explanation": "An image digest identifies the manifest by content. Tags can move to another manifest.",
+    "topic": "DevOps & Containerization",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-010",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 10",
+    "question": "A Kubernetes Pod is running but has marked itself unready during cache warm-up. When a normal Service uses ready endpoints, what happens to traffic for this Pod?",
+    "options": [
+      {
+        "key": "A",
+        "text": "The Service excludes the Pod from routine endpoint selection until it becomes ready"
+      },
+      {
+        "key": "B",
+        "text": "The Service prioritizes the Pod until startup completes"
+      },
+      {
+        "key": "C",
+        "text": "The liveness probe immediately restarts the Pod"
+      },
+      {
+        "key": "D",
+        "text": "The Deployment deletes all other replicas"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "The Service excludes the Pod from routine endpoint selection until it becomes ready",
+    "explanation": "Readiness controls eligibility to receive normal Service traffic. Liveness can trigger a restart for a separate health condition.",
+    "topic": "DevOps & Containerization",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-011",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 11",
+    "question": "One commit on a shared Git branch introduced a configuration error. Which operation can undo that commit by creating a new commit that teammates can pull normally?",
+    "options": [
+      {
+        "key": "A",
+        "text": "git reset --hard <commit>"
+      },
+      {
+        "key": "B",
+        "text": "git fetch origin"
+      },
+      {
+        "key": "C",
+        "text": "git revert <commit>"
+      },
+      {
+        "key": "D",
+        "text": "git tag <name> <commit>"
+      }
+    ],
+    "correctAnswer": "C",
+    "correctAnswerText": "git revert <commit>",
+    "explanation": "git revert records an inverse change as a new commit. It preserves the existing branch history for other collaborators.",
+    "topic": "DevOps & Containerization",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-012",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 12",
+    "question": "A rollout must reduce release risk by sending 5% of incoming traffic to a new version and monitoring results before increasing the share. Which strategy does this describe?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Full immediate cutover"
+      },
+      {
+        "key": "B",
+        "text": "Canary deployment"
+      },
+      {
+        "key": "C",
+        "text": "Blue-green cutover"
+      },
+      {
+        "key": "D",
+        "text": "Recreate deployment"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "Canary deployment",
+    "explanation": "A canary exposes a small portion of users or traffic to the new version first, allowing comparison before a wider rollout.",
+    "topic": "DevOps & Containerization",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-013",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 13",
+    "question": "A teammate changes a resource directly in the cloud console. Before applying anything, which Terraform command normally refreshes its view and shows how the configuration differs from real infrastructure?",
+    "options": [
+      {
+        "key": "A",
+        "text": "terraform fmt"
+      },
+      {
+        "key": "B",
+        "text": "terraform plan"
+      },
+      {
+        "key": "C",
+        "text": "terraform output"
+      },
+      {
+        "key": "D",
+        "text": "terraform validate"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "terraform plan",
+    "explanation": "A normal plan refreshes resource information and proposes changes needed to reconcile it with configuration.",
+    "topic": "IaC, Configuration Management & Monitoring",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-014",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 14",
+    "question": "An Ansible task should leave the package acme-agent installed, regardless of whether it is already present. Which declaration expresses that desired end state without reinstalling it on every run?",
+    "options": [
+      {
+        "key": "A",
+        "text": "Run a forced reinstall shell command on every host"
+      },
+      {
+        "key": "B",
+        "text": "Use the package module with state: present"
+      },
+      {
+        "key": "C",
+        "text": "Use the package module with state: absent"
+      },
+      {
+        "key": "D",
+        "text": "Run an uninstall command and stop the play"
+      }
+    ],
+    "correctAnswer": "B",
+    "correctAnswerText": "Use the package module with state: present",
+    "explanation": "The package module’s present state installs a missing package. An existing installation already satisfies the desired state.",
+    "topic": "IaC, Configuration Management & Monitoring",
+    "diagram": null
+  },
+  {
+    "id": "INFRA-ORIG-015",
+    "moduleId": "it-infrastructure",
+    "sourceSection": "Original practice questions",
+    "sourceQuestionNumber": "Original 15",
+    "question": "The Prometheus counter jobs_completed_total increases across normal operation and resets on process restart. Which PromQL expression estimates completed jobs per second over a rolling five-minute window?",
+    "options": [
+      {
+        "key": "A",
+        "text": "rate(jobs_completed_total[5m])"
+      },
+      {
+        "key": "B",
+        "text": "count(jobs_completed_total)"
+      },
+      {
+        "key": "C",
+        "text": "max_over_time(jobs_completed_total[5m])"
+      },
+      {
+        "key": "D",
+        "text": "sum(jobs_completed_total)"
+      }
+    ],
+    "correctAnswer": "A",
+    "correctAnswerText": "rate(jobs_completed_total[5m])",
+    "explanation": "rate estimates a per-second average increase for a counter and adjusts for counter resets.",
     "topic": "IaC, Configuration Management & Monitoring",
     "diagram": null
   }
